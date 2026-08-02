@@ -34,10 +34,12 @@ On avance dans l'ordre. Une phase = une branche = une validation.
       serveur sur la réutilisation du jeton immédiatement précédent.
 
 ## Phase 3 — Profil prestataire et documents
-- [ ] Profil : identité, statut juridique, SIRET, coordonnées, RIB, tarif
-- [ ] Coffre à documents (upload, date de validité, statut de validation)
-- [ ] Indicateur de complétude du dossier
-- [ ] Côté admin : validation des documents, alertes d'expiration
+- [x] Profil : identité, statut juridique, SIRET, coordonnées, RIB, tarif
+- [x] Coffre à documents (upload, date de validité, statut de validation)
+- [x] Indicateur de complétude du dossier
+- [x] Côté admin : validation des documents, alertes d'expiration
+- [ ] **Reste ouvert** : les relances d'expiration sont affichées, pas envoyées.
+      L'envoi de mails relève de la phase 9.
 
 ## Phase 4 — Disponibilités
 - [ ] Déclaration par jour ou créneau, avec récurrence

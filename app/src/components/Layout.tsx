@@ -2,9 +2,11 @@ import { NavLink, Outlet } from 'react-router'
 import { useAuth } from '@/lib/auth-context'
 import { cn } from '@/lib/utils'
 
+// Quatre entrées au maximum : au-delà, la barre n'est plus atteignable au pouce.
 const links = [
   { to: '/', label: 'Accueil' },
-  { to: '/demo', label: 'Démo' },
+  { to: '/profil', label: 'Profil' },
+  { to: '/documents', label: 'Documents' },
   { to: '/statut', label: 'Statut' },
 ]
 

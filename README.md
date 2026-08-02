@@ -185,6 +185,40 @@ agences.
 - L'agence courante vient d'un claim signé, jamais du client. Sur une requête
   anonyme elle vaut `Guid.Empty` et le filtre global ne laisse rien passer.
 
+---
+
+## Pièces justificatives
+
+Les fichiers ne sont **jamais** en base : seule leur clé de stockage l'est.
+En développement ils atterrissent dans `storage/` à la racine, ignoré par git ;
+en production, derrière une implémentation S3-compatible.
+
+- **Formats acceptés** : PDF, JPEG, PNG, 10 Mo au maximum. Le type est déduit
+  des **octets d'en-tête**, pas de l'extension ni du `Content-Type` annoncé :
+  un fichier texte renommé en `.pdf` est refusé.
+- **Consultation** : le contenu n'est servi que par un lien signé HMAC valable
+  deux minutes. Un navigateur qui ouvre un document ou charge une image ne pose
+  pas d'en-tête `Authorization` — le lien porte donc lui-même son autorisation.
+  La clé de signature est dérivée de `Jwt:SigningKey` avec une étiquette
+  distincte : un seul secret à provisionner, deux clés indépendantes.
+- **Expiration** : jamais stockée comme statut, toujours calculée depuis
+  `expires_at`. Un statut figé demanderait un traitement périodique, et une
+  pièce affichée comme valide alors qu'elle est périmée serait pire que pas de
+  statut du tout.
+
+### Complétude du dossier
+
+Un dossier est complet quand le SIRET et l'IBAN sont renseignés et que ces
+quatre pièces sont validées et non périmées : pièce d'identité, attestation de
+vigilance URSSAF, Kbis ou avis SIRENE, attestation RC pro. Permis et
+habilitations restent facultatifs, ils ne concernent que certaines missions.
+
+La règle est écrite une seule fois, dans `DossierRules`, et sert aux deux
+côtés : l'application prestataire et le back-office affichent forcément le
+même verdict.
+
+---
+
 ### Comptes de démonstration
 
 Créés par le seed au premier démarrage en développement. Code agence : `demo`.

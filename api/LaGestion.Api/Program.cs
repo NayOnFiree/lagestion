@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -106,7 +107,26 @@ builder.Services
     .AddPolicy("owner", policy => policy.RequireRole(nameof(UserRole.Owner)));
 
 // --- OpenAPI ---------------------------------------------------------------
-builder.Services.AddOpenApi();
+builder.Services.AddOpenApi(options =>
+{
+    // .NET 10 déclare les nombres en ["integer", "string"] : System.Text.Json
+    // sait lire un nombre écrit entre guillemets. C'est exact pour ce que
+    // l'API accepte, mais faux pour ce qu'elle renvoie — et le générateur de
+    // types produit alors des `number | string` sur chaque champ numérique.
+    // On ne garde que le type numérique.
+    options.AddSchemaTransformer((schema, _, _) =>
+    {
+        if (schema.Type is { } type
+            && type.HasFlag(JsonSchemaType.String)
+            && (type.HasFlag(JsonSchemaType.Integer) || type.HasFlag(JsonSchemaType.Number)))
+        {
+            schema.Type = type & ~JsonSchemaType.String;
+            schema.Pattern = null;
+        }
+
+        return Task.CompletedTask;
+    });
+});
 
 // --- Développement ---------------------------------------------------------
 if (builder.Environment.IsDevelopment())

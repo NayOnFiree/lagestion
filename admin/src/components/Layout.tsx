@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils'
 
 const links = [
   { to: '/', label: 'Tableau de bord' },
-  { to: '/demo', label: 'Démo' },
+  { to: '/conformite', label: 'Conformité' },
   { to: '/statut', label: 'Statut API' },
 ]
 
