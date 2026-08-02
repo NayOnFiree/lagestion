@@ -143,16 +143,61 @@ l'équipe. Ce ne sont pas des secrets.
 Les `.env` des fronts sont ignorés par git ; seuls les `.env.example` sont
 versionnés.
 
-Tout secret réel passe par les *user-secrets* :
+**La clé de signature des jetons est le seul vrai secret du projet.** Elle
+n'est nulle part dans le dépôt et l'API refuse de démarrer sans elle. À poser
+une fois par machine :
 
 ```bash
 cd api/LaGestion.Api
-dotnet user-secrets set "ConnectionStrings:Postgres" "Host=...;Password=..."
+dotnet user-secrets set "Jwt:SigningKey" "<au moins 32 caractères aléatoires>"
 dotnet user-secrets list
 ```
 
 En production, la configuration vient des variables d'environnement
-(`ConnectionStrings__Postgres`, `Cors__AllowedOrigins__0`, …).
+(`Jwt__SigningKey`, `ConnectionStrings__Postgres`, `Cors__AllowedOrigins__0`, …).
+
+---
+
+## Authentification
+
+Connexion par **code agence + adresse électronique + mot de passe**. Le code
+agence est nécessaire parce qu'avant toute identité il n'existe aucun moyen de
+savoir sur quelle agence filtrer : une même adresse peut exister dans deux
+agences.
+
+| Endpoint        | Rôle                                                     |
+| --------------- | -------------------------------------------------------- |
+| `POST /auth/login`   | ouvre une session                                   |
+| `POST /auth/refresh` | échange le cookie contre un nouvel access token     |
+| `POST /auth/logout`  | révoque le refresh token courant                    |
+| `GET /auth/me`       | compte associé à l'access token présenté            |
+
+- **Access token** : JWT signé HS256, 15 minutes, renvoyé en JSON et gardé
+  **en mémoire** par les fronts. Jamais dans `localStorage`.
+- **Refresh token** : 30 jours, en cookie `httpOnly` + `Secure` + `SameSite=Lax`,
+  limité au chemin `/auth`. Stocké **haché** en base — une fuite de la table ne
+  permet pas de rejouer les jetons.
+- **Rotation** : chaque rafraîchissement consomme le jeton et en émet un
+  nouveau. Représenter un jeton déjà consommé est traité comme un vol :
+  toute la chaîne active du compte est révoquée.
+- **Rôles** : `Contractor`, `Admin`, `Owner`, exposés en policies `contractor`,
+  `admin` (Admin ou Owner), `owner`.
+- L'agence courante vient d'un claim signé, jamais du client. Sur une requête
+  anonyme elle vaut `Guid.Empty` et le filtre global ne laisse rien passer.
+
+### Comptes de démonstration
+
+Créés par le seed au premier démarrage en développement. Code agence : `demo`.
+
+| Adresse                          | Rôle        |
+| -------------------------------- | ----------- |
+| `admin@agence-demo.test`         | Admin       |
+| `camille.rousseau@example.test`  | Contractor  |
+| `yanis.belkacem@example.test`    | Contractor  |
+| `lea.marchand@example.test`      | Contractor  |
+
+Mot de passe commun : `LaGestion!2026`. Ce sont des comptes locaux de
+démonstration, pas des identifiants sensibles.
 
 ---
 

@@ -24,9 +24,14 @@ On avance dans l'ordre. Une phase = une branche = une validation.
 - [x] Seed de dev : 1 agence, 1 admin, 3 prestataires, 1 événement
 
 ## Phase 2 — Authentification
-- [ ] JWT access token + refresh token en cookie httpOnly
-- [ ] Rôles : contractor / admin / owner
-- [ ] Login sur les deux fronts, routes protégées, déconnexion
+- [x] JWT access token + refresh token en cookie httpOnly
+- [x] Rôles : contractor / admin / owner
+- [x] Login sur les deux fronts, routes protégées, déconnexion
+- [ ] **Reste ouvert** : deux onglets ouverts sur le même compte rafraîchissent
+      en parallèle et présentent le même jeton ; le second passe pour un rejeu
+      et révoque la chaîne. Corrigé dans un onglet (une seule requête en vol),
+      pas entre onglets. Correctif prévu : tolérance de quelques secondes côté
+      serveur sur la réutilisation du jeton immédiatement précédent.
 
 ## Phase 3 — Profil prestataire et documents
 - [ ] Profil : identité, statut juridique, SIRET, coordonnées, RIB, tarif

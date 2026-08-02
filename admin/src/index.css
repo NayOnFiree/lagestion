@@ -1,12 +1,71 @@
 @import 'tailwindcss';
 
+/* Inter, empaquetée avec l'application : aucune requête vers un CDN. */
+@import '@fontsource-variable/inter';
+
 @theme {
-  /* Largeur de la sidebar, réutilisée par le layout. */
-  --spacing-sidebar: 15rem;
+  --font-sans: 'Inter Variable', system-ui, sans-serif;
+
+  /* Trois niveaux de texte, pas quatre. */
+  --color-primary: #0f1115;
+  --color-secondary: #5b6472;
+  --color-muted: #8a93a0;
+
+  /* Surfaces. */
+  --color-bg: #ffffff;
+  --color-surface: #f7f8f9;
+  --color-border: #e6e8eb;
+
+  /* Accent unique, réservé aux actions primaires et aux états confirmés. */
+  --color-accent: #1f6f5c;
+  --color-accent-weak: #eaf3f0;
+  --color-accent-contrast: #ffffff;
+
+  /* Statuts : usage strict, jamais décoratif. */
+  --color-success: #1f6f5c;
+  --color-warning: #a8630b;
+  --color-danger: #b42318;
+  --color-info: #3c5a99;
+
+  /* Échelle typographique, et rien d'autre. */
+  --text-meta: 0.75rem; /* 12 — en-têtes de colonnes, méta */
+  --text-meta--line-height: 1.4;
+  --text-dense: 0.8125rem; /* 13 — texte dense de tableau */
+  --text-dense--line-height: 1.4;
+  --text-base: 0.875rem; /* 14 — texte courant */
+  --text-base--line-height: 1.4;
+  --text-strong: 0.9375rem; /* 15 — titres de carte */
+  --text-strong--line-height: 1.4;
+  --text-title: 1.25rem; /* 20 — titre de page */
+  --text-title--line-height: 1.2;
+  --text-hero: 1.75rem; /* 28 — chiffre héro d'un KPI */
+  --text-hero--line-height: 1.2;
+
+  --radius-control: 6px;
+  --radius-card: 8px;
+  --radius-modal: 12px;
+
+  /* Une seule ombre, réservée aux éléments flottants. */
+  --shadow-floating: 0 1px 2px rgba(16, 24, 40, 0.05);
+
+  --spacing-sidebar: 240px;
+  /* Densité : lignes de tableau à 40px. */
+  --spacing-row: 40px;
 }
 
-/* Back-office : densité d'information avant tout, texte plus compact que
-   la valeur par défaut de Tailwind. */
 html {
-  font-size: 15px;
+  font-feature-settings: 'cv11', 'ss01';
+  font-variant-numeric: tabular-nums;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+  font-size: var(--text-base);
+  line-height: 1.4;
+}
+
+.text-title,
+.text-hero {
+  letter-spacing: -0.01em;
 }

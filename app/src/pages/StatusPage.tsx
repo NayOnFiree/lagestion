@@ -1,13 +1,12 @@
 import { useQuery } from '@tanstack/react-query'
-import { api } from '../lib/api'
-import type { components } from '../types/api'
+import { Button } from '@/components/ui/button'
+import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { api } from '@/lib/api'
+import type { components } from '@/types/api'
 
-/** Type généré depuis le Swagger de l'API (`npm run gen:api`). */
 type HealthResponse = components['schemas']['HealthResponse']
 
-/**
- * Preuve que la chaîne front → API → PostgreSQL fonctionne de bout en bout.
- */
+/** Preuve que la chaîne front → API → PostgreSQL fonctionne de bout en bout. */
 export function StatusPage() {
   const { data, error, isPending, isFetching, refetch } = useQuery({
     queryKey: ['health'],
@@ -17,49 +16,53 @@ export function StatusPage() {
 
   return (
     <section>
-      <h2 className="text-lg font-semibold">Statut de l'API</h2>
-      <p className="mt-1 text-sm text-slate-500">
-        Appel de <code className="rounded bg-slate-200 px-1">GET /health</code>.
-      </p>
+      <h2 className="text-title font-semibold">Statut de l'API</h2>
+      <p className="mt-1 text-base text-secondary">Vérification de la connexion au serveur.</p>
 
-      <div className="mt-4 rounded-xl border border-slate-200 bg-white p-4">
-        {isPending && <p className="text-sm text-slate-500">Vérification…</p>}
+      <Card className="mt-4">
+        {isPending && <div className="h-12 rounded-control bg-surface" aria-busy="true" />}
 
         {error && (
-          <div>
-            <p className="font-medium text-red-600">API injoignable</p>
-            <p className="mt-1 text-sm text-slate-500">{error.message}</p>
-          </div>
+          <CardHeader>
+            <CardTitle className="text-danger">Serveur injoignable</CardTitle>
+            <CardDescription>{error.message}</CardDescription>
+          </CardHeader>
         )}
 
         {data && (
-          <dl className="space-y-2 text-sm">
-            <div className="flex items-center justify-between">
-              <dt className="text-slate-500">Statut</dt>
-              <dd className="font-medium">{data.status}</dd>
-            </div>
-            <div className="flex items-center justify-between">
-              <dt className="text-slate-500">Base de données</dt>
-              <dd className="font-medium">{data.database ? 'connectée' : 'injoignable'}</dd>
-            </div>
-            <div className="flex items-center justify-between">
-              <dt className="text-slate-500">Vérifié à</dt>
-              <dd className="font-medium tabular-nums">
-                {new Date(data.timestamp).toLocaleTimeString('fr-FR')}
-              </dd>
-            </div>
+          <dl className="flex flex-col gap-3">
+            <Row label="Statut" value={data.status === 'healthy' ? 'en service' : 'dégradé'} />
+            <Row label="Base de données" value={data.database ? 'connectée' : 'injoignable'} />
+            <Row
+              label="Vérifié à"
+              value={new Date(data.timestamp).toLocaleTimeString('fr-FR', {
+                hour: '2-digit',
+                minute: '2-digit',
+              })}
+            />
           </dl>
         )}
-      </div>
+      </Card>
 
-      <button
+      <Button
         type="button"
+        variant="outline"
+        size="block"
         onClick={() => void refetch()}
         disabled={isFetching}
-        className="mt-4 h-12 w-full rounded-xl bg-slate-900 font-medium text-white disabled:opacity-50"
+        className="mt-4"
       >
         {isFetching ? 'Vérification…' : 'Revérifier'}
-      </button>
+      </Button>
     </section>
+  )
+}
+
+function Row({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="flex items-baseline justify-between gap-4">
+      <dt className="text-base text-secondary">{label}</dt>
+      <dd className="text-base font-medium">{value}</dd>
+    </div>
   )
 }

@@ -1,4 +1,6 @@
 import { NavLink, Outlet } from 'react-router'
+import { useAuth } from '@/lib/auth-context'
+import { cn } from '@/lib/utils'
 
 const links = [
   { to: '/', label: 'Tableau de bord' },
@@ -7,32 +9,34 @@ const links = [
 ]
 
 /**
- * Coque desktop : sidebar fixe à gauche, zone de contenu pleine largeur
- * prévue pour des tableaux denses.
+ * Coque desktop : sidebar fixe à gauche, contenu pleine largeur prévu pour
+ * des tableaux denses.
  */
 export function Layout() {
+  const { user, signOut } = useAuth()
+
   return (
-    <div className="flex min-h-dvh bg-slate-100 text-slate-900">
-      <aside className="w-sidebar shrink-0 border-r border-slate-200 bg-white">
-        <div className="border-b border-slate-200 px-4 py-3">
-          <span className="text-sm font-semibold tracking-tight">LaGestion</span>
-          <span className="ml-1.5 text-xs text-slate-400">admin</span>
+    <div className="flex min-h-dvh">
+      <aside className="flex w-sidebar shrink-0 flex-col border-r border-border">
+        <div className="border-b border-border px-4 py-3">
+          <span className="text-strong font-medium">LaGestion</span>
+          <span className="ml-1.5 text-meta text-secondary">admin</span>
         </div>
 
-        <nav className="p-2">
-          <ul className="space-y-0.5">
+        <nav className="flex-1 p-2">
+          <ul className="flex flex-col gap-0.5">
             {links.map((link) => (
               <li key={link.to}>
                 <NavLink
                   to={link.to}
                   end={link.to === '/'}
                   className={({ isActive }) =>
-                    [
-                      'block rounded px-2.5 py-1.5 text-sm',
+                    cn(
+                      'block rounded-control px-3 py-2 text-base',
                       isActive
-                        ? 'bg-slate-900 text-white'
-                        : 'text-slate-600 hover:bg-slate-100',
-                    ].join(' ')
+                        ? 'bg-accent-weak font-medium text-accent'
+                        : 'text-secondary hover:bg-surface hover:text-primary',
+                    )
                   }
                 >
                   {link.label}
@@ -41,6 +45,20 @@ export function Layout() {
             ))}
           </ul>
         </nav>
+
+        <div className="border-t border-border p-3">
+          <p className="truncate text-base font-medium">
+            {user?.firstName} {user?.lastName}
+          </p>
+          <p className="truncate text-meta text-secondary">{user?.agencyName}</p>
+          <button
+            type="button"
+            onClick={() => void signOut()}
+            className="mt-2 rounded-control text-base text-secondary hover:text-primary"
+          >
+            Déconnexion
+          </button>
+        </div>
       </aside>
 
       <main className="min-w-0 flex-1 p-6">
