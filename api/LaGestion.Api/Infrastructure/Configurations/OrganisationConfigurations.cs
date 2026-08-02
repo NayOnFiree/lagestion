@@ -27,6 +27,12 @@ public abstract class EntityConfiguration<TEntity> : IEntityTypeConfiguration<TE
             builder.Property(nameof(IAgencyOwned.AgencyId)).IsRequired();
             builder.HasIndex(nameof(IAgencyOwned.AgencyId));
 
+            // Clé alternative servant de cible aux clés étrangères composites
+            // des entités filles : PostgreSQL refuse alors physiquement qu'une
+            // ligne référence un parent d'une autre agence. Redondante avec la
+            // clé primaire, mais c'est le prix de la contrainte.
+            builder.HasAlternateKey([nameof(Entity.Id), nameof(IAgencyOwned.AgencyId)]);
+
             // Relation sans navigation : l'agence est un cadre, pas quelque
             // chose qu'on remonte depuis chaque entité.
             builder

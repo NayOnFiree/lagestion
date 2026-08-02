@@ -25,7 +25,8 @@ public sealed class InvoiceConfiguration : EntityConfiguration<Invoice>
         builder
             .HasOne(i => i.Contractor)
             .WithMany()
-            .HasForeignKey(i => i.ContractorId)
+            .HasPrincipalKey(c => new { c.Id, c.AgencyId })
+            .HasForeignKey(i => new { i.ContractorId, i.AgencyId })
             .OnDelete(DeleteBehavior.Restrict);
     }
 }
@@ -44,13 +45,15 @@ public sealed class InvoiceLineConfiguration : EntityConfiguration<InvoiceLine>
         builder
             .HasOne(l => l.Invoice)
             .WithMany(i => i.Lines)
-            .HasForeignKey(l => l.InvoiceId)
+            .HasPrincipalKey(i => new { i.Id, i.AgencyId })
+            .HasForeignKey(l => new { l.InvoiceId, l.AgencyId })
             .OnDelete(DeleteBehavior.Cascade);
 
         builder
             .HasOne(l => l.Assignment)
             .WithMany()
-            .HasForeignKey(l => l.AssignmentId)
+            .HasPrincipalKey(a => new { a.Id, a.AgencyId })
+            .HasForeignKey(l => new { l.AssignmentId, l.AgencyId })
             .OnDelete(DeleteBehavior.Restrict);
     }
 }
@@ -70,7 +73,8 @@ public sealed class NotificationConfiguration : EntityConfiguration<Notification
         builder
             .HasOne(n => n.User)
             .WithMany()
-            .HasForeignKey(n => n.UserId)
+            .HasPrincipalKey(u => new { u.Id, u.AgencyId })
+            .HasForeignKey(n => new { n.UserId, n.AgencyId })
             .OnDelete(DeleteBehavior.Restrict);
     }
 }

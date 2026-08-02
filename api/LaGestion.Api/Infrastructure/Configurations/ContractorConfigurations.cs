@@ -22,7 +22,8 @@ public sealed class ContractorConfiguration : EntityConfiguration<Contractor>
         builder
             .HasOne(c => c.User)
             .WithMany()
-            .HasForeignKey(c => c.UserId)
+            .HasPrincipalKey(u => new { u.Id, u.AgencyId })
+            .HasForeignKey(c => new { c.UserId, c.AgencyId })
             .OnDelete(DeleteBehavior.Restrict);
     }
 }
@@ -46,13 +47,15 @@ public sealed class ContractorSkillConfiguration : EntityConfiguration<Contracto
         builder
             .HasOne(cs => cs.Contractor)
             .WithMany(c => c.Skills)
-            .HasForeignKey(cs => cs.ContractorId)
+            .HasPrincipalKey(c => new { c.Id, c.AgencyId })
+            .HasForeignKey(cs => new { cs.ContractorId, cs.AgencyId })
             .OnDelete(DeleteBehavior.Cascade);
 
         builder
             .HasOne(cs => cs.Skill)
             .WithMany(s => s.Contractors)
-            .HasForeignKey(cs => cs.SkillId)
+            .HasPrincipalKey(s => new { s.Id, s.AgencyId })
+            .HasForeignKey(cs => new { cs.SkillId, cs.AgencyId })
             .OnDelete(DeleteBehavior.Cascade);
     }
 }
@@ -71,13 +74,18 @@ public sealed class DocumentConfiguration : EntityConfiguration<Document>
         builder
             .HasOne(d => d.Contractor)
             .WithMany(c => c.Documents)
-            .HasForeignKey(d => d.ContractorId)
+            .HasPrincipalKey(c => new { c.Id, c.AgencyId })
+            .HasForeignKey(d => new { d.ContractorId, d.AgencyId })
             .OnDelete(DeleteBehavior.Cascade);
 
+        // Référence facultative : PostgreSQL n'applique pas une clé étrangère
+        // composite dont une colonne est nulle, ce qui est exactement le
+        // comportement voulu tant qu'aucun relecteur n'est désigné.
         builder
             .HasOne(d => d.ReviewedBy)
             .WithMany()
-            .HasForeignKey(d => d.ReviewedByUserId)
+            .HasPrincipalKey(u => new { u.Id, u.AgencyId })
+            .HasForeignKey(d => new { d.ReviewedByUserId, d.AgencyId })
             .OnDelete(DeleteBehavior.Restrict);
     }
 }
@@ -93,7 +101,8 @@ public sealed class AvailabilityConfiguration : EntityConfiguration<Availability
         builder
             .HasOne(a => a.Contractor)
             .WithMany()
-            .HasForeignKey(a => a.ContractorId)
+            .HasPrincipalKey(c => new { c.Id, c.AgencyId })
+            .HasForeignKey(a => new { a.ContractorId, a.AgencyId })
             .OnDelete(DeleteBehavior.Cascade);
     }
 }

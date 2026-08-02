@@ -30,7 +30,8 @@ public sealed class PositionConfiguration : EntityConfiguration<Position>
         builder
             .HasOne(p => p.Event)
             .WithMany(e => e.Positions)
-            .HasForeignKey(p => p.EventId)
+            .HasPrincipalKey(e => new { e.Id, e.AgencyId })
+            .HasForeignKey(p => new { p.EventId, p.AgencyId })
             .OnDelete(DeleteBehavior.Cascade);
     }
 }
@@ -52,13 +53,15 @@ public sealed class AssignmentConfiguration : EntityConfiguration<Assignment>
         builder
             .HasOne(a => a.Position)
             .WithMany(p => p.Assignments)
-            .HasForeignKey(a => a.PositionId)
+            .HasPrincipalKey(p => new { p.Id, p.AgencyId })
+            .HasForeignKey(a => new { a.PositionId, a.AgencyId })
             .OnDelete(DeleteBehavior.Restrict);
 
         builder
             .HasOne(a => a.Contractor)
             .WithMany()
-            .HasForeignKey(a => a.ContractorId)
+            .HasPrincipalKey(c => new { c.Id, c.AgencyId })
+            .HasForeignKey(a => new { a.ContractorId, a.AgencyId })
             .OnDelete(DeleteBehavior.Restrict);
     }
 }
@@ -77,13 +80,15 @@ public sealed class TimesheetConfiguration : EntityConfiguration<Timesheet>
         builder
             .HasOne(t => t.Assignment)
             .WithOne(a => a.Timesheet)
-            .HasForeignKey<Timesheet>(t => t.AssignmentId)
+            .HasPrincipalKey<Assignment>(a => new { a.Id, a.AgencyId })
+            .HasForeignKey<Timesheet>(t => new { t.AssignmentId, t.AgencyId })
             .OnDelete(DeleteBehavior.Restrict);
 
         builder
             .HasOne(t => t.ValidatedBy)
             .WithMany()
-            .HasForeignKey(t => t.ValidatedByUserId)
+            .HasPrincipalKey(u => new { u.Id, u.AgencyId })
+            .HasForeignKey(t => new { t.ValidatedByUserId, t.AgencyId })
             .OnDelete(DeleteBehavior.Restrict);
     }
 }
