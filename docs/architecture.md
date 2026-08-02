@@ -2,7 +2,7 @@
 
 ## Stack
 - API : .NET 10, Web API C#, controllers, EF Core + Npgsql
-- Base : PostgreSQL 16 (Docker, port 5433 en dev)
+- Base : PostgreSQL 16 (service local, port 5432 en dev ; Docker en prod)
 - Fronts : React + Vite + TypeScript, Tailwind, React Router, TanStack Query
 - Types partagés : générés depuis l'OpenAPI de l'API (`npm run gen:api`)
 
@@ -18,6 +18,27 @@ remplacée par du natif sans toucher au reste.
 Toute entité métier porte un `AgencyId`, filtré côté API par query filter
 global EF Core. Aucun sélecteur d'agence dans l'UI tant qu'on est seuls.
 Coût aujourd'hui : négligeable. Coût si ajouté plus tard : réécriture.
+
+**Un prestataire est rattaché à une seule agence.** Tranché le 2026-08-02.
+`contractors.agency_id` est une clé étrangère directe et non nullable. Un
+prestataire qui travaillerait pour deux agences aurait deux fiches. Passer
+en N-N plus tard imposerait de trancher, pour chaque attribut, s'il est
+global ou par agence (tarif, compétences, score, numérotation de facture) —
+on ne paie pas ce coût tant que le besoin n'existe pas.
+
+**`agency_id` est dénormalisé sur toutes les tables métier**, y compris les
+tables filles qui pourraient le déduire de leur parent (`documents`,
+`availabilities`, `positions`, `assignments`, `timesheets`,
+`invoice_lines`, `contractor_skills`). C'est la seule forme où chaque
+`DbSet` est filtré indépendamment : un oubli de jointure ne peut pas faire
+fuiter de données d'une autre agence. Coût : une colonne redondante et
+l'obligation de la garder cohérente avec le parent, posée automatiquement à
+l'insertion par le `SaveChanges` du `DbContext`.
+
+**Le référentiel de compétences est propre à chaque agence.** `skills`
+porte un `agency_id` comme le reste, chaque agence garde son vocabulaire
+métier. Un socle commun pourra être extrait plus tard si la duplication
+devient gênante.
 
 **Pas de workspace npm ni de package partagé.**
 Duplication assumée entre `app` et `admin`. Les types viennent de l'OpenAPI,
@@ -76,7 +97,5 @@ Aucune suppression physique sur invoices, timesheets et assignments : statut
 annulé, pour la traçabilité.
 
 ## Points ouverts
-- Prestataire rattaché à une seule agence ou à plusieurs, le jour où on vend
-  l'outil ? (aujourd'hui : une seule)
 - Fournisseur d'envoi de mails à choisir
 - Génération PDF : bibliothèque à arbitrer au moment de la phase 8

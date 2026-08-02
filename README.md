@@ -1,15 +1,17 @@
 # LaGestion
 
-Gestion de staffing événementiel : une agence staffe des prestataires
-indépendants (les *roads*) sur des événements.
+Gestion de staffing événementiel : une agence place des prestataires
+indépendants sur des événements.
 
 Deux interfaces distinctes, une seule API.
 
 | Dossier  | Rôle                                              | URL de dev              |
 | -------- | ------------------------------------------------- | ----------------------- |
 | `api/`   | API REST .NET 10 (controllers) + EF Core / Npgsql | <http://localhost:5080> |
-| `app/`   | Front *road*, mobile-first                        | <http://localhost:5173> |
+| `app/`   | Front prestataire, mobile-first                   | <http://localhost:5173> |
 | `admin/` | Back-office, desktop                              | <http://localhost:5174> |
+
+L'entité s'appelle `Contractor` dans le code et « prestataire » dans l'UI.
 
 Les deux fronts sont **indépendants** : pas de workspace npm, pas de package
 partagé, pas d'outillage monorepo. La duplication (client HTTP, types générés)
