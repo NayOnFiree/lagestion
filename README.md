@@ -1,0 +1,238 @@
+# LaGestion
+
+Gestion de staffing événementiel : une agence staffe des prestataires
+indépendants (les *roads*) sur des événements.
+
+Deux interfaces distinctes, une seule API.
+
+| Dossier  | Rôle                                              | URL de dev              |
+| -------- | ------------------------------------------------- | ----------------------- |
+| `api/`   | API REST .NET 10 (controllers) + EF Core / Npgsql | <http://localhost:5080> |
+| `app/`   | Front *road*, mobile-first                        | <http://localhost:5173> |
+| `admin/` | Back-office, desktop                              | <http://localhost:5174> |
+
+Les deux fronts sont **indépendants** : pas de workspace npm, pas de package
+partagé, pas d'outillage monorepo. La duplication (client HTTP, types générés)
+est assumée à ce stade.
+
+---
+
+## Prérequis
+
+| Outil                                                   | Version   | Épinglée par  |
+| ------------------------------------------------------- | --------- | ------------- |
+| [.NET SDK](https://dotnet.microsoft.com/download)        | 10.0.302+ | `global.json` |
+| [Node.js](https://nodejs.org)                            | 24.18.1   | `.nvmrc`      |
+| [Docker](https://docs.docker.com/get-docker/)            | —         | —             |
+
+`global.json` interdit la sélection d'un SDK .NET plus ancien : si seul le
+SDK 8 est présent, `dotnet` échoue avec « A compatible .NET SDK was not
+found » plutôt que de compiler silencieusement avec la mauvaise version.
+
+`.nvmrc` fixe la version de Node : `nvm use` (ou `fnm use`) à la racine du
+dépôt. Node 24 est la LTS active ; en dessous de 22.22, `react-router` 8
+émet un avertissement `EBADENGINE`.
+
+---
+
+## Ordre de démarrage
+
+1. `docker compose up -d` — la base doit être *healthy* avant l'API
+2. `cd api/LaGestion.Api && dotnet run --launch-profile http`
+3. `cd app && npm run dev` et/ou `cd admin && npm run dev`
+
+L'API ne crée pas la base : sans conteneur démarré, `/health` répond **503**.
+
+---
+
+## Lancer la base de données
+
+```bash
+docker compose up -d          # PostgreSQL 16, port hôte 5433
+docker compose ps             # vérifier l'état (attendu : healthy)
+docker compose logs -f postgres
+docker compose down           # arrête
+docker compose down -v        # arrête et supprime les données
+```
+
+**Le port hôte est 5433, pas 5432.** Le port 5432 est occupé par une
+instance PostgreSQL installée en service sur la machine de dev, qu'on ne
+touche pas. Le conteneur écoute sur 5432 *à l'intérieur*, publié sur 5433
+côté hôte.
+
+Le rôle et la base sont créés **automatiquement** au premier démarrage par
+l'image officielle, à partir de `POSTGRES_USER` / `POSTGRES_PASSWORD` /
+`POSTGRES_DB`. Aucune commande SQL manuelle n'est nécessaire.
+
+Identifiants de développement (en clair, volontairement — ils ne servent
+qu'en local et sont identiques pour toute l'équipe) : base `lagestion`,
+utilisateur `lagestion`, mot de passe `lagestion`. Ils correspondent à la
+chaîne de connexion de `api/LaGestion.Api/appsettings.Development.json`.
+
+Pour se connecter à la base du conteneur :
+
+```bash
+docker compose exec postgres psql -U lagestion -d lagestion
+```
+
+---
+
+## Lancer l'API
+
+```bash
+cd api/LaGestion.Api
+dotnet run --launch-profile http
+```
+
+- API : <http://localhost:5080>
+- Health : <http://localhost:5080/health>
+- Swagger UI : <http://localhost:5080/swagger>
+- Document OpenAPI : <http://localhost:5080/openapi/v1.json>
+
+`GET /health` renvoie **200** si la connexion PostgreSQL est établie,
+**503** sinon :
+
+```json
+{ "status": "healthy", "database": true, "timestamp": "2026-08-02T13:40:00Z" }
+```
+
+En développement l'API est servie en HTTP simple (pas de redirection HTTPS),
+pour que les fronts n'aient pas de certificat auto-signé à approuver.
+
+### Erreurs et sérialisation
+
+- Les erreurs sortent au format **ProblemDetails** (RFC 9457) :
+  `AddProblemDetails()` côté services, `UseExceptionHandler()` +
+  `UseStatusCodePages()` dans le pipeline. Une exception non gérée comme un
+  simple 404 renvoient un `application/problem+json`.
+- Le JSON est sérialisé en **camelCase** (`PropertyNamingPolicy` et
+  `DictionaryKeyPolicy` posés explicitement dans `Program.cs`), alors que le
+  C# reste en PascalCase.
+
+### Secrets
+
+`appsettings.Development.json` est **versionné** : il ne contient que les
+identifiants du conteneur Docker de dev, identiques pour toute l'équipe. Ce
+ne sont pas des secrets.
+
+Les `.env` des fronts sont ignorés par git ; seuls les `.env.example` sont
+versionnés.
+
+Tout secret réel passe par les *user-secrets* :
+
+```bash
+cd api/LaGestion.Api
+dotnet user-secrets set "ConnectionStrings:Postgres" "Host=...;Password=..."
+dotnet user-secrets list
+```
+
+En production, la configuration vient des variables d'environnement
+(`ConnectionStrings__Postgres`, `Cors__AllowedOrigins__0`, …).
+
+---
+
+## Lancer les fronts
+
+Même procédure pour `app/` et `admin/` :
+
+```bash
+nvm use         # lit .nvmrc → Node 24.18.1
+cd app          # ou: cd admin
+cp .env.example .env
+npm install
+npm run dev
+```
+
+| Commande          | Effet                                       |
+| ----------------- | ------------------------------------------- |
+| `npm run dev`     | serveur de dev Vite                         |
+| `npm run build`   | typecheck + build de production              |
+| `npm run lint`    | Oxlint                                       |
+| `npm run gen:api` | régénère les types TypeScript depuis l'API   |
+
+La route `/statut` de chaque front appelle `GET /health` : c'est le test de
+bout en bout de la chaîne front → API → PostgreSQL.
+
+---
+
+## Régénérer les types API
+
+Les types TypeScript sont générés depuis le document OpenAPI de l'API, avec
+[openapi-typescript](https://openapi-ts.dev). **L'API doit tourner.**
+
+```bash
+# terminal 1
+cd api/LaGestion.Api && dotnet run --launch-profile http
+
+# terminal 2 — à faire dans les deux fronts
+cd app   && npm run gen:api    # écrit app/src/types/api.ts
+cd admin && npm run gen:api    # écrit admin/src/types/api.ts
+```
+
+Le fichier généré est versionné : à regénérer et à commiter à chaque
+changement de contrat d'API.
+
+### Pourquoi TypeScript est épinglé en `~5.9`
+
+Le template Vite installe TypeScript 6, mais `openapi-typescript` 7.13
+déclare `"peerDependencies": { "typescript": "^5.x" }` : avec TS 6,
+`npm install` échoue en `ERESOLVE`. Les deux fronts sont donc épinglés en
+`typescript: "~5.9"`.
+
+**Quand lever le verrou :** dès qu'`openapi-typescript` publie une version
+dont le peer accepte TypeScript 6. Pour vérifier :
+
+```bash
+npm view openapi-typescript peerDependencies
+```
+
+Si la sortie n'est plus `{ typescript: '^5.x' }`, passer les deux fronts en
+`typescript: "~6.x"`, réinstaller et relancer `npm run build`. L'alternative
+`legacy-peer-deps` a été écartée : elle aurait cassé chaque `npm install`
+suivant ou imposé un `.npmrc` affaiblissant la résolution de tout le projet.
+
+---
+
+## Convention : `AgencyId` (multi-tenant)
+
+L'application est multi-tenant **dès le départ**. La règle, sans exception :
+
+1. **Toute entité métier porte un `AgencyId`.** C'est une colonne obligatoire,
+   non nullable, indexée — au même titre que la clé primaire. Aucune entité
+   métier n'existe en dehors d'une agence.
+2. **Tout accès aux données est filtré par `AgencyId`.** Lecture, écriture,
+   suppression, agrégat : chaque requête est restreinte à l'agence du contexte
+   courant. Une requête non filtrée est un bug de sécurité, pas une
+   optimisation.
+3. **Le filtre ne vient jamais du client.** L'`AgencyId` est déduit du contexte
+   d'authentification côté serveur ; il n'est jamais lu depuis le corps de la
+   requête, la query string ou un en-tête.
+4. **Les clés étrangères restent dans la même agence.** Une entité ne référence
+   jamais une entité d'une autre agence.
+
+Concrètement, côté EF Core, cela passera par un filtre de requête global sur
+`LaGestionDbContext` plus une valeur d'`AgencyId` posée automatiquement à
+l'insertion. Rien n'est encore implémenté : aucune entité n'existe à ce stade.
+
+---
+
+## Organisation de l'API
+
+```
+api/LaGestion.Api/
+├── Domain/           # entités et règles métier (vide pour l'instant)
+├── Features/         # un dossier par fonctionnalité : controller + DTOs
+│   └── Health/
+└── Infrastructure/   # accès aux données, DbContext, services techniques
+```
+
+Le `LaGestionDbContext` est **vide** : aucune entité, aucune migration.
+`Microsoft.EntityFrameworkCore.Design` est en place, les commandes
+`dotnet ef` sont donc utilisables dès la première entité :
+
+```bash
+dotnet tool install --global dotnet-ef       # une fois par machine
+cd api/LaGestion.Api
+dotnet ef migrations add <Nom>
+dotnet ef database update
+```

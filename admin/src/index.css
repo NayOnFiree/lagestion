@@ -1,0 +1,12 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Largeur de la sidebar, réutilisée par le layout. */
+  --spacing-sidebar: 15rem;
+}
+
+/* Back-office : densité d'information avant tout, texte plus compact que
+   la valeur par défaut de Tailwind. */
+html {
+  font-size: 15px;
+}

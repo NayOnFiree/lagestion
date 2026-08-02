@@ -1,0 +1,32 @@
+# PostgreSQL de développement local.
+#
+# Identifiants en clair : ils ne servent qu'en local, sont identiques pour
+# toute l'équipe et correspondent à ceux de
+# api/LaGestion.Api/appsettings.Development.json.
+#
+# Le port hôte est 5433 : 5432 est occupé par le service PostgreSQL installé
+# sur la machine, qu'on ne touche pas.
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: lagestion-postgres
+    restart: unless-stopped
+    environment:
+      # L'image officielle crée le rôle et la base au premier démarrage à
+      # partir de ces trois variables. Aucun SQL manuel n'est nécessaire.
+      POSTGRES_USER: lagestion
+      POSTGRES_PASSWORD: lagestion
+      POSTGRES_DB: lagestion
+    ports:
+      - '5433:5432'
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U lagestion -d lagestion']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+volumes:
+  postgres-data:

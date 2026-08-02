@@ -1,0 +1,16 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Hauteur de la barre de navigation basse, réutilisée pour le padding du contenu. */
+  --spacing-nav: 4rem;
+}
+
+html {
+  /* Pas de zoom involontaire au double-tap, usage à une main. */
+  touch-action: manipulation;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  overscroll-behavior-y: none;
+}

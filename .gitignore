@@ -1,0 +1,24 @@
+# --- .NET ---
+bin/
+obj/
+*.user
+.vs/
+
+# --- Node ---
+node_modules/
+dist/
+*.log
+
+# --- Environnement local ---
+# Les .env contiennent des URLs et éventuellement des secrets : seuls les
+# .env.example sont versionnés.
+.env
+.env.*
+!.env.example
+
+# --- Éditeurs / OS ---
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+Thumbs.db
