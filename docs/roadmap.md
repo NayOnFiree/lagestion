@@ -13,14 +13,15 @@ On avance dans l'ordre. Une phase = une branche = une validation.
 - [x] README à jour (base de données, ports, raison du TypeScript épinglé en 5.9)
 
 ## Phase 1 — Modèle de données
-- [ ] Trancher : un prestataire est-il rattaché à une seule agence ou à
-      plusieurs ? (par défaut : une seule)
-- [ ] Entités : agencies, users, contractors, skills, contractor_skills,
+- [x] Trancher : un prestataire est-il rattaché à une seule agence ou à
+      plusieurs ? → **une seule**, `contractors.agency_id` en clé étrangère
+      directe (voir architecture.md)
+- [x] Entités : agencies, users, contractors, skills, contractor_skills,
       documents, availabilities, events, positions, assignments,
       timesheets, invoices, invoice_lines, notifications
-- [ ] AgencyId + query filter global EF Core sur toutes les entités métier
-- [ ] Migration initiale
-- [ ] Seed de dev : 1 agence, 1 admin, 3 prestataires, 1 événement
+- [x] AgencyId + query filter global EF Core sur toutes les entités métier
+- [x] Migration initiale
+- [x] Seed de dev : 1 agence, 1 admin, 3 prestataires, 1 événement
 
 ## Phase 2 — Authentification
 - [ ] JWT access token + refresh token en cookie httpOnly
