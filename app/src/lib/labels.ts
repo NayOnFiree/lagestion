@@ -49,6 +49,47 @@ export function formatDate(value: string | null | undefined) {
   })
 }
 
+/** Jours de la semaine, dans l'ordre français : lundi d'abord. */
+export const weekdays = [
+  { value: 'Monday', short: 'lun.' },
+  { value: 'Tuesday', short: 'mar.' },
+  { value: 'Wednesday', short: 'mer.' },
+  { value: 'Thursday', short: 'jeu.' },
+  { value: 'Friday', short: 'ven.' },
+  { value: 'Saturday', short: 'sam.' },
+  { value: 'Sunday', short: 'dim.' },
+] as const
+
+/** « jeu. 14 mars », jamais 14/03/2026. */
+export function formatDayLabel(isoDate: string) {
+  return new Date(`${isoDate}T00:00:00`).toLocaleDateString('fr-FR', {
+    weekday: 'short',
+    day: 'numeric',
+    month: 'long',
+  })
+}
+
+/** « 18h » ou « 18h30 » : on n'écrit pas 18:00. */
+export function formatTime(time: string | null | undefined) {
+  if (!time) {
+    return null
+  }
+
+  const [hours, minutes] = time.split(':')
+  return minutes === '00' ? `${Number(hours)}h` : `${Number(hours)}h${minutes}`
+}
+
+export function formatSlot(startsAt?: string | null, endsAt?: string | null) {
+  const start = formatTime(startsAt)
+  const end = formatTime(endsAt)
+
+  return start && end ? `${start}–${end}` : 'journée entière'
+}
+
+export function formatAmount(amount: number) {
+  return amount.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })
+}
+
 export function formatFileSize(bytes: number) {
   return bytes < 1024 * 1024
     ? `${Math.max(1, Math.round(bytes / 1024))} ko`

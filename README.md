@@ -206,6 +206,33 @@ en production, derrière une implémentation S3-compatible.
   pièce affichée comme valide alors qu'elle est périmée serait pire que pas de
   statut du tout.
 
+---
+
+## Disponibilités et calendrier
+
+Le prestataire **déclare** être disponible ou indisponible, par journée ou par
+créneau, plusieurs créneaux par jour étant admis. Une déclaration qui en
+recouvre une autre la remplace : redéclarer, c'est changer d'avis.
+
+**« Confirmé » ne se déclare pas.** C'est la conséquence d'une mission
+acceptée, déduite des `assignments` au moment de construire le calendrier.
+L'énumération `AvailabilityStatus` ne contient donc que `Available` et
+`Unavailable`. Corollaire : on ne peut pas se déclarer indisponible sur un
+créneau couvert par une mission confirmée — l'API répond 409 et renvoie vers
+l'agence.
+
+**La récurrence est un confort de saisie, pas une règle stockée.** « Tous les
+samedis » se matérialise immédiatement en autant de lignes que de jours, sur
+six mois au maximum. Chaque jour reste modifiable indépendamment, et la
+recherche de prestataires disponibles de la phase 6 lira la table directement,
+sans rien avoir à déplier.
+
+Les compteurs du mois — heures prévues et rémunération estimée — se calculent
+sur les missions confirmées, à partir du créneau et du tarif du poste. Estimés
+et non facturés : les heures réelles ne seront connues qu'après pointage.
+
+---
+
 ### Complétude du dossier
 
 Un dossier est complet quand le SIRET et l'IBAN sont renseignés et que ces

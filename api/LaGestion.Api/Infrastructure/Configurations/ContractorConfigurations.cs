@@ -101,6 +101,11 @@ public sealed class AvailabilityConfiguration : EntityConfiguration<Availability
 
         builder.HasIndex(a => new { a.ContractorId, a.Date });
 
+        // Deux déclarations ne peuvent pas partager le même début sur une même
+        // date. Les recouvrements partiels sont refusés côté application : la
+        // base ne sait pas comparer des intervalles sans extension.
+        builder.HasIndex(a => new { a.ContractorId, a.Date, a.StartsAt }).IsUnique();
+
         builder
             .HasOne(a => a.Contractor)
             .WithMany()

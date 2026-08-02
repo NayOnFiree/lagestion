@@ -20,6 +20,7 @@ namespace LaGestion.Api.Infrastructure;
 public sealed class DevelopmentSeeder(
     AgencyDbContextFactory contextFactory,
     IPasswordHasher<User> passwordHasher,
+    TimeProvider timeProvider,
     ILogger<DevelopmentSeeder> logger)
 {
     /// <summary>Agence du jeu de démonstration, saisie comme « demo » à la connexion.</summary>
@@ -43,6 +44,8 @@ public sealed class DevelopmentSeeder(
     private static readonly Guid EventId = new("0198f000-0000-7000-8000-000000000030");
     private static readonly Guid BarPositionId = new("0198f000-0000-7000-8000-000000000031");
     private static readonly Guid WelcomePositionId = new("0198f000-0000-7000-8000-000000000032");
+    private static readonly Guid BarAssignmentId = new("0198f000-0000-7000-8000-000000000040");
+    private static readonly Guid WelcomeAssignmentId = new("0198f000-0000-7000-8000-000000000041");
 
     public async Task SeedAsync(CancellationToken cancellationToken = default)
     {
@@ -122,10 +125,53 @@ public sealed class DevelopmentSeeder(
                 HourlyRate = 18.00m,
             });
 
+        // Deux missions confirmées : sans elles le calendrier n'aurait que
+        // deux états sur trois et les compteurs du mois resteraient à zéro.
+        var proposedAt = timeProvider.GetUtcNow().AddDays(-3);
+
+        db.Assignments.AddRange(
+            new Assignment
+            {
+                Id = BarAssignmentId,
+                AgencyId = DemoAgencyId,
+                PositionId = BarPositionId,
+                ContractorId = Contractors[0].ContractorId,
+                Status = AssignmentStatus.Confirmed,
+                ProposedAt = proposedAt,
+                ResponseDeadline = proposedAt.AddDays(2),
+                RespondedAt = proposedAt.AddHours(5),
+            },
+            new Assignment
+            {
+                Id = WelcomeAssignmentId,
+                AgencyId = DemoAgencyId,
+                PositionId = WelcomePositionId,
+                ContractorId = Contractors[1].ContractorId,
+                Status = AssignmentStatus.Confirmed,
+                ProposedAt = proposedAt,
+                ResponseDeadline = proposedAt.AddDays(2),
+                RespondedAt = proposedAt.AddHours(9),
+            });
+
+        // Quelques disponibilités déclarées, pour que le calendrier ne soit pas
+        // vide à la première ouverture.
+        var firstOfMonth = DateOnly.FromDateTime(timeProvider.GetUtcNow().UtcDateTime).AddDays(1);
+
+        foreach (var offset in new[] { 0, 1, 2, 6, 7, 8 })
+        {
+            db.Availabilities.Add(new Availability
+            {
+                AgencyId = DemoAgencyId,
+                ContractorId = Contractors[0].ContractorId,
+                Date = firstOfMonth.AddDays(offset),
+                Status = offset % 3 == 2 ? AvailabilityStatus.Unavailable : AvailabilityStatus.Available,
+            });
+        }
+
         await db.SaveChangesAsync(cancellationToken);
 
         logger.LogInformation(
-            "Seed de dév : agence « demo », 1 compte d'agence et {ContractorCount} prestataires, mot de passe commun documenté dans le README.",
+            "Seed de dév : agence « demo », 1 compte d'agence et {ContractorCount} prestataires, 1 événement, 2 missions confirmées. Mot de passe commun documenté dans le README.",
             Contractors.Length);
     }
 

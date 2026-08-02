@@ -42,9 +42,12 @@ On avance dans l'ordre. Une phase = une branche = une validation.
       L'envoi de mails relève de la phase 9.
 
 ## Phase 4 — Disponibilités
-- [ ] Déclaration par jour ou créneau, avec récurrence
-- [ ] Calendrier d'accueil, 3 états : disponible / confirmé / indisponible
-- [ ] Compteurs du mois (heures, montant)
+- [x] Déclaration par jour ou créneau, avec récurrence
+- [x] Calendrier d'accueil, 3 états : disponible / confirmé / indisponible
+- [x] Compteurs du mois (heures, montant)
+- [ ] **Reste ouvert** : la récurrence est matérialisée sur six mois glissants.
+      Personne ne prolonge l'horizon aujourd'hui — à traiter quand une tâche
+      planifiée existera, ou en re-déclarant à la main d'ici là.
 
 ## Phase 5 — Événements et postes (admin)
 - [ ] CRUD événements (client, lieu, dates, confidentialité)

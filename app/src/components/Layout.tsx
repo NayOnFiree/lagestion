@@ -2,12 +2,13 @@ import { NavLink, Outlet } from 'react-router'
 import { useAuth } from '@/lib/auth-context'
 import { cn } from '@/lib/utils'
 
-// Quatre entrées au maximum : au-delà, la barre n'est plus atteignable au pouce.
+// Quatre entrées au maximum : au-delà, la barre n'est plus atteignable au
+// pouce. /statut reste accessible par son URL, c'est un écran de diagnostic.
 const links = [
   { to: '/', label: 'Accueil' },
-  { to: '/profil', label: 'Profil' },
+  { to: '/dispos', label: 'Dispos' },
   { to: '/documents', label: 'Documents' },
-  { to: '/statut', label: 'Statut' },
+  { to: '/profil', label: 'Profil' },
 ]
 
 /**

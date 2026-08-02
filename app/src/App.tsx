@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router'
 import { Layout } from '@/components/Layout'
 import { RequireAuth } from '@/components/RequireAuth'
 import { AuthProvider } from '@/lib/auth'
+import { AvailabilitiesPage } from '@/pages/AvailabilitiesPage'
 import { DocumentsPage } from '@/pages/DocumentsPage'
 import { HomePage } from '@/pages/HomePage'
 import { LoginPage } from '@/pages/LoginPage'
@@ -18,6 +19,7 @@ export default function App() {
           <Route element={<RequireAuth />}>
             <Route element={<Layout />}>
               <Route index element={<HomePage />} />
+              <Route path="dispos" element={<AvailabilitiesPage />} />
               <Route path="profil" element={<ProfilePage />} />
               <Route path="documents" element={<DocumentsPage />} />
               <Route path="statut" element={<StatusPage />} />

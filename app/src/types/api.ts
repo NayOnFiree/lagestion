@@ -599,6 +599,267 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/me/availabilities": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: {
+            parameters: {
+                query?: {
+                    from?: string;
+                    to?: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description OK */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["AvailabilitySlot"][];
+                        "application/json": components["schemas"]["AvailabilitySlot"][];
+                        "text/json": components["schemas"]["AvailabilitySlot"][];
+                    };
+                };
+                /** @description Not Found */
+                404: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["ProblemDetails"];
+                        "application/json": components["schemas"]["ProblemDetails"];
+                        "text/json": components["schemas"]["ProblemDetails"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["DeclareAvailabilityRequest"];
+                    "text/json": components["schemas"]["DeclareAvailabilityRequest"];
+                    "application/*+json": components["schemas"]["DeclareAvailabilityRequest"];
+                };
+            };
+            responses: {
+                /** @description Created */
+                201: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["AvailabilitySlot"];
+                        "application/json": components["schemas"]["AvailabilitySlot"];
+                        "text/json": components["schemas"]["AvailabilitySlot"];
+                    };
+                };
+                /** @description Bad Request */
+                400: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["ProblemDetails"];
+                        "application/json": components["schemas"]["ProblemDetails"];
+                        "text/json": components["schemas"]["ProblemDetails"];
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["ProblemDetails"];
+                        "application/json": components["schemas"]["ProblemDetails"];
+                        "text/json": components["schemas"]["ProblemDetails"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/me/availabilities/recurring": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["DeclareRecurringRequest"];
+                    "text/json": components["schemas"]["DeclareRecurringRequest"];
+                    "application/*+json": components["schemas"]["DeclareRecurringRequest"];
+                };
+            };
+            responses: {
+                /** @description OK */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["RecurringResult"];
+                        "application/json": components["schemas"]["RecurringResult"];
+                        "text/json": components["schemas"]["RecurringResult"];
+                    };
+                };
+                /** @description Bad Request */
+                400: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["ProblemDetails"];
+                        "application/json": components["schemas"]["ProblemDetails"];
+                        "text/json": components["schemas"]["ProblemDetails"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/me/availabilities/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description No Content */
+                204: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content?: never;
+                };
+                /** @description Not Found */
+                404: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["ProblemDetails"];
+                        "application/json": components["schemas"]["ProblemDetails"];
+                        "text/json": components["schemas"]["ProblemDetails"];
+                    };
+                };
+            };
+        };
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/me/calendar": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: {
+            parameters: {
+                query?: {
+                    month?: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description OK */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["MonthCalendar"];
+                        "application/json": components["schemas"]["MonthCalendar"];
+                        "text/json": components["schemas"]["MonthCalendar"];
+                    };
+                };
+                /** @description Bad Request */
+                400: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["ProblemDetails"];
+                        "application/json": components["schemas"]["ProblemDetails"];
+                        "text/json": components["schemas"]["ProblemDetails"];
+                    };
+                };
+                /** @description Not Found */
+                404: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["ProblemDetails"];
+                        "application/json": components["schemas"]["ProblemDetails"];
+                        "text/json": components["schemas"]["ProblemDetails"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/auth/login": {
         parameters: {
             query?: never;
@@ -803,6 +1064,36 @@ export interface components {
             expiresInSeconds: number;
             user: components["schemas"]["AuthenticatedUser"];
         };
+        AvailabilitySlot: {
+            /** Format: uuid */
+            id: string;
+            /** Format: date */
+            date: string;
+            /** Format: time */
+            startsAt: null | string;
+            /** Format: time */
+            endsAt: null | string;
+            status: string;
+        };
+        CalendarDay: {
+            /** Format: date */
+            date: string;
+            state: string;
+            slots: components["schemas"]["AvailabilitySlot"][];
+            missions: components["schemas"]["CalendarMission"][];
+        };
+        CalendarMission: {
+            /** Format: uuid */
+            assignmentId: string;
+            eventTitle: string;
+            positionLabel: string;
+            /** Format: date-time */
+            startsAt: string;
+            /** Format: date-time */
+            endsAt: string;
+            /** Format: double */
+            hourlyRate: number;
+        };
         ComplianceDocument: {
             /** Format: uuid */
             id: string;
@@ -858,6 +1149,27 @@ export interface components {
             /** Format: int32 */
             travelRadiusKm: null | number;
         };
+        DeclareAvailabilityRequest: {
+            /** Format: date */
+            date: string;
+            /** Format: time */
+            startsAt: null | string;
+            /** Format: time */
+            endsAt: null | string;
+            status: string;
+        };
+        DeclareRecurringRequest: {
+            /** Format: date */
+            from: string;
+            /** Format: date */
+            to: string;
+            weekdays: string[];
+            /** Format: time */
+            startsAt: null | string;
+            /** Format: time */
+            endsAt: null | string;
+            status: string;
+        };
         DocumentLink: {
             url: string;
             /** Format: date-time */
@@ -909,6 +1221,22 @@ export interface components {
             email: string;
             password: string;
         };
+        MonthCalendar: {
+            /** Format: int32 */
+            year: number;
+            /** Format: int32 */
+            month: number;
+            totals: components["schemas"]["MonthTotals"];
+            days: components["schemas"]["CalendarDay"][];
+        };
+        MonthTotals: {
+            /** Format: int32 */
+            confirmedMissions: number;
+            /** Format: double */
+            plannedHours: number;
+            /** Format: double */
+            estimatedAmount: number;
+        };
         ProblemDetails: {
             type?: null | string;
             title?: null | string;
@@ -916,6 +1244,10 @@ export interface components {
             status?: null | number;
             detail?: null | string;
             instance?: null | string;
+        };
+        RecurringResult: {
+            created: components["schemas"]["AvailabilitySlot"][];
+            skippedForConfirmedMission: string[];
         };
         ReviewDocumentRequest: {
             approved: boolean;
