@@ -29,6 +29,23 @@ public class LaGestionDbContext : DbContext
     /// </summary>
     private Guid CurrentAgencyId => _agencyContext.AgencyId;
 
+    // Racine du multi-tenant : non filtrée, c'est elle qui porte le filtre.
+    public DbSet<Agency> Agencies => Set<Agency>();
+
+    public DbSet<User> Users => Set<User>();
+    public DbSet<Contractor> Contractors => Set<Contractor>();
+    public DbSet<Skill> Skills => Set<Skill>();
+    public DbSet<ContractorSkill> ContractorSkills => Set<ContractorSkill>();
+    public DbSet<Document> Documents => Set<Document>();
+    public DbSet<Availability> Availabilities => Set<Availability>();
+    public DbSet<Event> Events => Set<Event>();
+    public DbSet<Position> Positions => Set<Position>();
+    public DbSet<Assignment> Assignments => Set<Assignment>();
+    public DbSet<Timesheet> Timesheets => Set<Timesheet>();
+    public DbSet<Invoice> Invoices => Set<Invoice>();
+    public DbSet<InvoiceLine> InvoiceLines => Set<InvoiceLine>();
+    public DbSet<Notification> Notifications => Set<Notification>();
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
