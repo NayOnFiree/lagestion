@@ -44,6 +44,12 @@ builder.Services.AddCors(options =>
 // --- OpenAPI ---------------------------------------------------------------
 builder.Services.AddOpenApi();
 
+// --- Développement ---------------------------------------------------------
+if (builder.Environment.IsDevelopment())
+{
+    builder.Services.AddScoped<DevelopmentSeeder>();
+}
+
 var app = builder.Build();
 
 // Toute exception non gérée et tout code d'erreur sortent en ProblemDetails.
@@ -59,6 +65,11 @@ if (app.Environment.IsDevelopment())
         options.SwaggerEndpoint("/openapi/v1.json", "LaGestion API v1");
         options.RoutePrefix = "swagger";
     });
+
+    // Jeu de données de dev. Idempotent : ne fait rien si l'agence existe.
+    // Le schéma reste géré par les migrations, le seed ne crée aucune table.
+    using var scope = app.Services.CreateScope();
+    await scope.ServiceProvider.GetRequiredService<DevelopmentSeeder>().SeedAsync();
 }
 else
 {
