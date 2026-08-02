@@ -5,39 +5,27 @@ namespace LaGestion.Api.Infrastructure;
 /// données sont filtrés.
 ///
 /// La valeur ne vient <b>jamais</b> du client : ni corps de requête, ni query
-/// string, ni en-tête. Elle est déduite côté serveur.
+/// string, ni en-tête. Elle est déduite côté serveur, du claim signé porté par
+/// le jeton d'accès.
 /// </summary>
 public interface IAgencyContext
 {
-    /// <summary>Agence courante.</summary>
+    /// <summary>
+    /// Agence courante. <see cref="Guid.Empty"/> quand aucune identité n'est
+    /// établie : le filtre global ne laisse alors rien passer.
+    /// </summary>
     Guid AgencyId { get; }
 }
 
 /// <summary>
-/// Implémentation de développement : l'agence est lue dans la configuration
-/// (<c>Tenant:DevAgencyId</c>), pas dans la requête.
+/// Agence fixée à la construction, pour les traitements qui s'exécutent hors
+/// requête HTTP : seed de développement, tâches de fond, tests.
 ///
-/// Elle disparaîtra en phase 2 au profit d'une implémentation lisant le claim
-/// d'agence du JWT. Seule l'implémentation change ; l'abstraction, le filtre
-/// global et les entités restent identiques.
+/// N'est jamais enregistrée dans le conteneur : elle s'utilise en construisant
+/// explicitement un <see cref="LaGestionDbContext"/>, ce qui rend visible dans
+/// le code appelant sur quelle agence on travaille.
 /// </summary>
-public sealed class ConfigurationAgencyContext : IAgencyContext
+public sealed class FixedAgencyContext(Guid agencyId) : IAgencyContext
 {
-    public const string ConfigurationKey = "Tenant:DevAgencyId";
-
-    public ConfigurationAgencyContext(IConfiguration configuration)
-    {
-        var raw = configuration[ConfigurationKey];
-
-        if (!Guid.TryParse(raw, out var agencyId))
-        {
-            throw new InvalidOperationException(
-                $"La configuration « {ConfigurationKey} » est absente ou n'est pas un GUID valide. " +
-                "Renseignez-la dans appsettings.Development.json.");
-        }
-
-        AgencyId = agencyId;
-    }
-
-    public Guid AgencyId { get; }
+    public Guid AgencyId { get; } = agencyId;
 }

@@ -33,6 +33,7 @@ public class LaGestionDbContext : DbContext
     public DbSet<Agency> Agencies => Set<Agency>();
 
     public DbSet<User> Users => Set<User>();
+    public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
     public DbSet<Contractor> Contractors => Set<Contractor>();
     public DbSet<Skill> Skills => Set<Skill>();
     public DbSet<ContractorSkill> ContractorSkills => Set<ContractorSkill>();

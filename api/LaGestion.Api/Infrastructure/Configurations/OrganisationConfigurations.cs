@@ -53,6 +53,11 @@ public sealed class AgencyConfiguration : EntityConfiguration<Agency>
     protected override void ConfigureEntity(EntityTypeBuilder<Agency> builder)
     {
         builder.Property(a => a.Name).HasMaxLength(200).IsRequired();
+
+        // Saisi à la connexion, donc unique toutes agences confondues.
+        builder.Property(a => a.Slug).HasMaxLength(50).IsRequired();
+        builder.HasIndex(a => a.Slug).IsUnique();
+
         builder.Property(a => a.Siret).HasMaxLength(14);
         builder.Property(a => a.Address).HasMaxLength(500);
         builder.Property(a => a.ContactEmail).HasMaxLength(320);
@@ -72,7 +77,29 @@ public sealed class UserConfiguration : EntityConfiguration<User>
         builder.Property(u => u.Phone).HasMaxLength(30);
 
         // Une adresse ne sert qu'une fois par agence : le même individu peut
-        // avoir un compte dans deux agences distinctes.
+        // avoir un compte dans deux agences distinctes. C'est le slug d'agence
+        // saisi à la connexion qui lève l'ambiguïté.
         builder.HasIndex(u => new { u.AgencyId, u.Email }).IsUnique();
+    }
+}
+
+public sealed class RefreshTokenConfiguration : EntityConfiguration<RefreshToken>
+{
+    protected override void ConfigureEntity(EntityTypeBuilder<RefreshToken> builder)
+    {
+        builder.Property(t => t.TokenHash).HasMaxLength(64).IsRequired();
+
+        // Point d'entrée du rafraîchissement : on cherche par condensat.
+        builder.HasIndex(t => t.TokenHash).IsUnique();
+
+        // Révocation en masse de la chaîne d'un utilisateur.
+        builder.HasIndex(t => new { t.UserId, t.RevokedAt });
+
+        builder
+            .HasOne(t => t.User)
+            .WithMany()
+            .HasPrincipalKey(u => new { u.Id, u.AgencyId })
+            .HasForeignKey(t => new { t.UserId, t.AgencyId })
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }
