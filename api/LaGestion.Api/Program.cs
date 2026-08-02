@@ -6,6 +6,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 const string FrontsCorsPolicy = "fronts";
 
+// --- Multi-tenant ----------------------------------------------------------
+// Agence du contexte courant, sur laquelle tous les accès sont filtrés.
+// Implémentation provisoire lisant la configuration : elle sera remplacée en
+// phase 2 par la lecture du claim d'agence du JWT. Dans les deux cas la valeur
+// ne vient jamais du client.
+builder.Services.AddScoped<IAgencyContext, ConfigurationAgencyContext>();
+
 // --- Persistance -----------------------------------------------------------
 // La chaîne de connexion vient de la configuration :
 //   - appsettings.Development.json en local (identifiants de dev, non secrets)
