@@ -3,15 +3,14 @@
 On avance dans l'ordre. Une phase = une branche = une validation.
 
 ## Phase 0 — Correctifs socle
-- [ ] Postgres dans Docker (port 5433), compose réellement exécuté et vérifié
-      — compose prêt (5433, création auto du rôle et de la base), mais **jamais
-        exécuté** : Docker n'est pas installé sur la machine de dev
+- [x] Base de données locale documentée et reproductible (Docker reporté au
+      déploiement)
 - [x] Node LTS à jour + .nvmrc, plus d'avertissement EBADENGINE
 - [x] global.json épinglant le SDK .NET 10
 - [x] Microsoft.EntityFrameworkCore.Design ajouté
 - [x] .env ignoré par git, .env.example versionné
 - [x] ProblemDetails + sérialisation camelCase vérifiés
-- [x] README à jour (Docker, ports, raison du TypeScript épinglé en 5.9)
+- [x] README à jour (base de données, ports, raison du TypeScript épinglé en 5.9)
 
 ## Phase 1 — Modèle de données
 - [ ] Trancher : un prestataire est-il rattaché à une seule agence ou à

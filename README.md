@@ -19,11 +19,14 @@ est assumée à ce stade.
 
 ## Prérequis
 
-| Outil                                                   | Version   | Épinglée par  |
-| ------------------------------------------------------- | --------- | ------------- |
-| [.NET SDK](https://dotnet.microsoft.com/download)        | 10.0.302+ | `global.json` |
-| [Node.js](https://nodejs.org)                            | 24.18.1   | `.nvmrc`      |
-| [Docker](https://docs.docker.com/get-docker/)            | —         | —             |
+| Outil                                                     | Version   | Épinglée par  |
+| --------------------------------------------------------- | --------- | ------------- |
+| [.NET SDK](https://dotnet.microsoft.com/download)          | 10.0.302+ | `global.json` |
+| [Node.js](https://nodejs.org)                              | 24.18.1   | `.nvmrc`      |
+| [PostgreSQL](https://www.postgresql.org/download/windows/) | 16.x      | —             |
+
+PostgreSQL 16 s'installe **localement**, en service. Pas de Docker en
+développement (voir plus bas).
 
 `global.json` interdit la sélection d'un SDK .NET plus ancien : si seul le
 SDK 8 est présent, `dotnet` échoue avec « A compatible .NET SDK was not
@@ -37,43 +40,63 @@ dépôt. Node 24 est la LTS active ; en dessous de 22.22, `react-router` 8
 
 ## Ordre de démarrage
 
-1. `docker compose up -d` — la base doit être *healthy* avant l'API
+1. Service PostgreSQL démarré, et `scripts/init-db.sql` passé une fois
 2. `cd api/LaGestion.Api && dotnet run --launch-profile http`
 3. `cd app && npm run dev` et/ou `cd admin && npm run dev`
 
-L'API ne crée pas la base : sans conteneur démarré, `/health` répond **503**.
+L'API ne crée ni le rôle ni la base : sans initialisation, `/health` répond
+**503**.
 
 ---
 
-## Lancer la base de données
+## Base de données en développement
+
+La base tourne sur un **PostgreSQL 16 installé localement en service**, sur
+le port **5432** par défaut. Pas de conteneur en développement.
+
+### Initialisation, une fois par machine
+
+Le rôle et la base sont créés par un script versionné, `scripts/init-db.sql`,
+à exécuter en superutilisateur :
 
 ```bash
-docker compose up -d          # PostgreSQL 16, port hôte 5433
-docker compose ps             # vérifier l'état (attendu : healthy)
-docker compose logs -f postgres
-docker compose down           # arrête
-docker compose down -v        # arrête et supprime les données
+psql -h localhost -p 5432 -U postgres -d postgres -f scripts/init-db.sql
 ```
 
-**Le port hôte est 5433, pas 5432.** Le port 5432 est occupé par une
-instance PostgreSQL installée en service sur la machine de dev, qu'on ne
-touche pas. Le conteneur écoute sur 5432 *à l'intérieur*, publié sur 5433
-côté hôte.
+Sous Windows, si `psql` n'est pas dans le `PATH` :
 
-Le rôle et la base sont créés **automatiquement** au premier démarrage par
-l'image officielle, à partir de `POSTGRES_USER` / `POSTGRES_PASSWORD` /
-`POSTGRES_DB`. Aucune commande SQL manuelle n'est nécessaire.
+```powershell
+& "C:\Program Files\PostgreSQL\16\bin\psql.exe" -h localhost -p 5432 -U postgres -d postgres -f scripts/init-db.sql
+```
 
-Identifiants de développement (en clair, volontairement — ils ne servent
-qu'en local et sont identiques pour toute l'équipe) : base `lagestion`,
-utilisateur `lagestion`, mot de passe `lagestion`. Ils correspondent à la
-chaîne de connexion de `api/LaGestion.Api/appsettings.Development.json`.
+Le script est **idempotent** : le relancer sur une installation déjà
+initialisée ne casse rien et ne réécrit pas le mot de passe existant.
 
-Pour se connecter à la base du conteneur :
+### Identifiants
+
+En clair et volontairement triviaux — ils ne servent qu'en local et sont
+identiques pour toute l'équipe : base `lagestion`, utilisateur `lagestion`,
+mot de passe `lagestion`. Ils correspondent à la chaîne de connexion de
+`api/LaGestion.Api/appsettings.Development.json`.
+
+### Se connecter à la main
 
 ```bash
-docker compose exec postgres psql -U lagestion -d lagestion
+psql -h localhost -p 5432 -U lagestion -d lagestion
 ```
+
+### Remise à zéro
+
+```bash
+psql -h localhost -p 5432 -U postgres -d postgres \
+  -c "DROP DATABASE IF EXISTS lagestion;" -c "DROP ROLE IF EXISTS lagestion;"
+psql -h localhost -p 5432 -U postgres -d postgres -f scripts/init-db.sql
+```
+
+> **Docker sera réintroduit pour le déploiement en production (VPS Ubuntu),
+> avec l'image `postgres:16-alpine` pour rester sur la même version majeure
+> qu'en dev.** Le `docker-compose.yml` de développement a été retiré ; il
+> reste consultable dans l'historique git (`git show 9de3ad7:docker-compose.yml`).
 
 ---
 
@@ -112,8 +135,8 @@ pour que les fronts n'aient pas de certificat auto-signé à approuver.
 ### Secrets
 
 `appsettings.Development.json` est **versionné** : il ne contient que les
-identifiants du conteneur Docker de dev, identiques pour toute l'équipe. Ce
-ne sont pas des secrets.
+identifiants de dev créés par `scripts/init-db.sql`, identiques pour toute
+l'équipe. Ce ne sont pas des secrets.
 
 Les `.env` des fronts sont ignorés par git ; seuls les `.env.example` sont
 versionnés.
