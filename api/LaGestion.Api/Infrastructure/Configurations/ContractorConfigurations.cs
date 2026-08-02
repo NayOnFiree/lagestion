@@ -67,6 +67,9 @@ public sealed class DocumentConfiguration : EntityConfiguration<Document>
         builder.Property(d => d.Type).HasConversion<string>().HasMaxLength(30).IsRequired();
         builder.Property(d => d.Status).HasConversion<string>().HasMaxLength(20).IsRequired();
         builder.Property(d => d.FileKey).HasMaxLength(500).IsRequired();
+        builder.Property(d => d.OriginalFileName).HasMaxLength(255).IsRequired();
+        builder.Property(d => d.ContentType).HasMaxLength(100).IsRequired();
+        builder.Property(d => d.ReviewNote).HasMaxLength(1000);
 
         // Le balayage des pièces qui expirent est la requête la plus fréquente.
         builder.HasIndex(d => new { d.AgencyId, d.ExpiresAt });

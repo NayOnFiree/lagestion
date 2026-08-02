@@ -16,16 +16,21 @@ public enum DocumentType
 
     BankDetails,
 
+    /// <summary>Permis de conduire.</summary>
+    DrivingLicence,
+
+    /// <summary>Habilitation ou certification métier : CACES, SSIAP, électricité…</summary>
+    Certification,
+
     Other,
 }
 
-/// <summary>Cycle de validation d'une pièce par l'agence.</summary>
+/// <summary>Décision de l'agence sur une pièce.</summary>
 public enum DocumentStatus
 {
     Pending,
     Approved,
     Rejected,
-    Expired,
 }
 
 /// <summary>
@@ -33,6 +38,11 @@ public enum DocumentStatus
 ///
 /// Le fichier lui-même vit hors base : seule sa clé de stockage est
 /// persistée, l'accès se fait par URL signée à durée courte.
+///
+/// L'expiration n'est pas un statut : elle se déduit de
+/// <see cref="ExpiresAt"/> à la lecture. Un statut stocké supposerait un
+/// traitement périodique pour le tenir à jour, et une pièce affichée comme
+/// valide alors qu'elle est périmée serait pire que pas de statut du tout.
 /// </summary>
 public class Document : AgencyOwnedEntity
 {
@@ -43,11 +53,22 @@ public class Document : AgencyOwnedEntity
     /// <summary>Clé de stockage : disque local en dev, S3-compatible en prod.</summary>
     public required string FileKey { get; set; }
 
+    /// <summary>Nom du fichier tel que déposé, réaffiché au prestataire.</summary>
+    public required string OriginalFileName { get; set; }
+
+    /// <summary>Type MIME déduit des octets d'en-tête, pas de ce qu'annonce le client.</summary>
+    public required string ContentType { get; set; }
+
+    public long SizeBytes { get; set; }
+
     public DateOnly? IssuedAt { get; set; }
 
     public DateOnly? ExpiresAt { get; set; }
 
     public DocumentStatus Status { get; set; } = DocumentStatus.Pending;
+
+    /// <summary>Motif du refus, indispensable pour éviter un redépôt à l'identique.</summary>
+    public string? ReviewNote { get; set; }
 
     public Guid? ReviewedByUserId { get; set; }
 
@@ -56,4 +77,11 @@ public class Document : AgencyOwnedEntity
     public Contractor? Contractor { get; set; }
 
     public User? ReviewedBy { get; set; }
+
+    /// <summary>Vrai si la pièce porte une date de validité déjà dépassée.</summary>
+    public bool IsExpired(DateOnly today) => ExpiresAt is { } expiry && expiry < today;
+
+    /// <summary>Une pièce ne compte pour le dossier que validée et non périmée.</summary>
+    public bool CountsTowardsCompleteness(DateOnly today) =>
+        Status == DocumentStatus.Approved && !IsExpired(today);
 }

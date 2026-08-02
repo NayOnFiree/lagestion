@@ -3,6 +3,7 @@ using System.Text.Json;
 using LaGestion.Api.Domain;
 using LaGestion.Api.Features.Auth;
 using LaGestion.Api.Infrastructure;
+using LaGestion.Api.Infrastructure.Storage;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -60,6 +61,18 @@ builder.Services.AddSingleton(TimeProvider.System);
 builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
 builder.Services.AddScoped<AgencyDbContextFactory>();
 builder.Services.AddScoped<TokenService>();
+
+// --- Stockage des pièces justificatives ------------------------------------
+// Les fichiers vivent hors base : seule leur clé est persistée. Le contenu
+// n'est servi que par un lien signé à durée courte.
+builder.Services
+    .AddOptions<StorageOptions>()
+    .Bind(builder.Configuration.GetSection(StorageOptions.SectionName))
+    .ValidateDataAnnotations()
+    .ValidateOnStart();
+
+builder.Services.AddSingleton<IDocumentStorage, LocalDiskDocumentStorage>();
+builder.Services.AddSingleton<DocumentLinkSigner>();
 
 var jwt = builder.Configuration.GetSection(JwtOptions.SectionName).Get<JwtOptions>() ?? new JwtOptions();
 

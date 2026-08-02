@@ -9,6 +9,10 @@ node_modules/
 dist/
 *.log
 
+# --- Pièces justificatives déposées en local ---
+# Les fichiers vivent hors base et hors dépôt : seule leur clé est persistée.
+storage/
+
 # --- Environnement local ---
 # Les .env contiennent des URLs et éventuellement des secrets : seuls les
 # .env.example sont versionnés.

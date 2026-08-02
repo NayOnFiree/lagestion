@@ -3,6 +3,7 @@ using System;
 using LaGestion.Api.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace LaGestion.Api.Infrastructure.Migrations
 {
     [DbContext(typeof(LaGestionDbContext))]
-    partial class LaGestionDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260802202217_CoffreADocuments")]
+    partial class CoffreADocuments
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
