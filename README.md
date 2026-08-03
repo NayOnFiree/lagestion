@@ -231,6 +231,50 @@ affiche avant de refermer le formulaire : à l'agence de les prévenir.
 
 ---
 
+## Facturation
+
+**Le prestataire reste l'émetteur.** L'application pré-remplit, numérote selon
+*sa* séquence et génère le PDF ; elle ne renumérote jamais et ne pratique pas
+l'auto-facturation.
+
+### Numérotation
+
+Préfixe et rang de départ se règlent dans le profil : quelqu'un qui a déjà
+facturé jusqu'à 41 hors application reprend à 42, sinon il émettrait une
+seconde facture n° 1. **Ces réglages se figent dès la première facture** — les
+changer ensuite rejouerait un numéro déjà émis.
+
+Le numéro et le PDF sont attribués dans la même transaction. Un numéro
+consommé sans document laisserait un trou dans la séquence ; l'inverse
+produirait un PDF sans numéro valide. Une facture annulée **garde son numéro**,
+pour la même raison. Une facture payée ne s'annule pas : elle appelle un avoir,
+qui n'existe pas encore.
+
+### Mentions
+
+Identité, adresse et SIRET de l'émetteur comme du client sont **recopiés à
+l'émission**, jamais relus sur le profil courant : un prestataire qui déménage
+ne doit pas réécrire des factures déjà transmises.
+
+Le PDF porte les mentions obligatoires : désignation, quantité, prix unitaire,
+total, « TVA non applicable, art. 293 B du CGI », délai de paiement, pénalités
+de retard et indemnité forfaitaire de recouvrement.
+
+### Limites assumées
+
+- **Franchise en base uniquement.** L'émission est refusée à un prestataire
+  assujetti à la TVA, avec un message explicite — mieux vaut un refus qu'une
+  facture non conforme.
+- L'émission est aussi refusée tant que le SIRET ou l'adresse manquent.
+- Une prestation déjà portée par une facture non annulée n'est plus
+  facturable : c'est ce qui empêche de la facturer deux fois.
+
+Le PDF est généré avec **QuestPDF**, sous licence Community — gratuite tant que
+le chiffre d'affaires de l'éditeur reste sous le seuil fixé par QuestPDF. À
+revoir si l'outil est vendu.
+
+---
+
 ## Heures
 
 **Il n'y a pas de pointage.** Le prestataire est indépendant : une fois la

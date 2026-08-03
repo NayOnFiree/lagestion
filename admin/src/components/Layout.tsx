@@ -6,6 +6,7 @@ const links = [
   { to: '/', label: 'Tableau de bord' },
   { to: '/evenements', label: 'Événements' },
   { to: '/heures', label: 'Heures' },
+  { to: '/factures', label: 'Factures' },
   { to: '/conformite', label: 'Conformité' },
   { to: '/statut', label: 'Statut API' },
 ]

@@ -6,6 +6,7 @@ import { AvailabilitiesPage } from '@/pages/AvailabilitiesPage'
 import { DocumentsPage } from '@/pages/DocumentsPage'
 import { HomePage } from '@/pages/HomePage'
 import { HoursPage } from '@/pages/HoursPage'
+import { InvoicesPage } from '@/pages/InvoicesPage'
 import { LoginPage } from '@/pages/LoginPage'
 import { MissionsPage } from '@/pages/MissionsPage'
 import { ProfilePage } from '@/pages/ProfilePage'
@@ -23,6 +24,7 @@ export default function App() {
               <Route index element={<HomePage />} />
               <Route path="missions" element={<MissionsPage />} />
               <Route path="heures" element={<HoursPage />} />
+              <Route path="factures" element={<InvoicesPage />} />
               <Route path="dispos" element={<AvailabilitiesPage />} />
               <Route path="profil" element={<ProfilePage />} />
               <Route path="documents" element={<DocumentsPage />} />

@@ -7,6 +7,7 @@ import { DashboardPage } from '@/pages/DashboardPage'
 import { EventDetailPage } from '@/pages/EventDetailPage'
 import { EventsPage } from '@/pages/EventsPage'
 import { HoursPage } from '@/pages/HoursPage'
+import { InvoicesPage } from '@/pages/InvoicesPage'
 import { LoginPage } from '@/pages/LoginPage'
 import { StaffingPage } from '@/pages/StaffingPage'
 import { StatusPage } from '@/pages/StatusPage'
@@ -25,6 +26,7 @@ export default function App() {
               <Route path="evenements/:id" element={<EventDetailPage />} />
               <Route path="postes/:id/staffing" element={<StaffingPage />} />
               <Route path="heures" element={<HoursPage />} />
+              <Route path="factures" element={<InvoicesPage />} />
               <Route path="conformite" element={<CompliancePage />} />
               <Route path="statut" element={<StatusPage />} />
             </Route>

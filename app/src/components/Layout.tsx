@@ -13,6 +13,7 @@ const links = [
   { to: '/missions', label: 'Missions', onBottomBar: true },
   { to: '/heures', label: 'Heures', onBottomBar: true },
   { to: '/dispos', label: 'Dispos', onBottomBar: true },
+  { to: '/factures', label: 'Factures', onBottomBar: false },
   { to: '/documents', label: 'Documents', onBottomBar: false },
   { to: '/profil', label: 'Profil', onBottomBar: false },
 ]

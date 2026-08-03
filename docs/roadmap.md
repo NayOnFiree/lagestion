@@ -83,11 +83,17 @@ On avance dans l'ordre. Une phase = une branche = une validation.
       alimenter autrement.
 
 ## Phase 8 — Facturation
-- [ ] Sélection des missions validées du mois
-- [ ] Génération du PDF avec toutes les mentions obligatoires
-- [ ] Numérotation continue par prestataire, sans trou
-- [ ] Statuts : déposée / validée / payée, annulation sans suppression
-- [ ] Export comptable côté admin
+- [x] Sélection des missions validées du mois
+- [x] Génération du PDF avec toutes les mentions obligatoires
+- [x] Numérotation continue par prestataire, sans trou
+      — préfixe et rang de départ paramétrables, figés dès la première facture
+- [x] Statuts : déposée / validée / payée, annulation sans suppression
+- [x] Export comptable côté admin (CSV point-virgule, UTF-8 avec BOM)
+- [ ] **Hors périmètre assumé** : seule la franchise en base de TVA est gérée.
+      Un prestataire assujetti se voit refuser l'émission avec un message
+      explicite plutôt que de recevoir une facture non conforme.
+- [ ] **Reste ouvert** : pas d'avoir. Une facture payée ne peut donc pas être
+      corrigée dans l'application.
 
 ## Phase 9 — Notifications
 - [ ] Mails transactionnels (proposition, confirmation, rappel J-1,

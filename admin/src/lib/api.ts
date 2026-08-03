@@ -152,8 +152,42 @@ async function request<T>(path: string, init: RequestInit = {}): Promise<T> {
   return payload as T
 }
 
+/**
+ * Télécharge un fichier servi par une route authentifiée.
+ *
+ * Un simple lien ne conviendrait pas : le navigateur n'y pose pas l'en-tête
+ * Authorization. On récupère donc le contenu, puis on déclenche
+ * l'enregistrement depuis un object URL.
+ */
+async function download(path: string, fallbackName: string) {
+  let response = await send(path, { method: 'GET' })
+
+  if (response.status === 401) {
+    if (await refreshSession()) {
+      response = await send(path, { method: 'GET' })
+    } else {
+      onSessionLost?.()
+    }
+  }
+
+  if (!response.ok) {
+    throw new ApiError(response.status, null)
+  }
+
+  const disposition = response.headers.get('Content-Disposition') ?? ''
+  const named = /filename="?([^";]+)"?/i.exec(disposition)?.[1]
+
+  const url = URL.createObjectURL(await response.blob())
+  const anchor = document.createElement('a')
+  anchor.href = url
+  anchor.download = named ?? fallbackName
+  anchor.click()
+  URL.revokeObjectURL(url)
+}
+
 export const api = {
   get: <T>(path: string, init?: RequestInit) => request<T>(path, { ...init, method: 'GET' }),
+  download,
   post: <T>(path: string, body?: unknown, init?: RequestInit) =>
     request<T>(path, { ...init, method: 'POST', body: body === undefined ? undefined : JSON.stringify(body) }),
   /** Envoi multipart, pour le dépôt de fichiers. */

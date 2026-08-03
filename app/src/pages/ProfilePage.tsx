@@ -41,6 +41,12 @@ const schema = z.object({
   travelRadiusKm: z
     .string()
     .refine((value) => value === '' || Number(value) >= 0, { message: 'Rayon invalide' }),
+  invoicePrefix: z.string().trim(),
+  nextInvoiceSequence: z
+    .string()
+    .refine((value) => value === '' || Number(value) >= 1, {
+      message: 'Le rang démarre à 1',
+    }),
 })
 
 type ProfileForm = z.infer<typeof schema>
@@ -57,6 +63,8 @@ function toForm(profile: ContractorProfile): ProfileForm {
     defaultHourlyRate: profile.defaultHourlyRate?.toString() ?? '',
     baseCity: profile.baseCity ?? '',
     travelRadiusKm: profile.travelRadiusKm?.toString() ?? '',
+    invoicePrefix: profile.invoicePrefix ?? '',
+    nextInvoiceSequence: profile.nextInvoiceSequence.toString(),
   }
 }
 
@@ -113,6 +121,10 @@ function ProfileForm({ profile }: { profile: ContractorProfile }) {
           : null,
         baseCity: values.baseCity || null,
         travelRadiusKm: values.travelRadiusKm ? Number(values.travelRadiusKm) : null,
+        invoicePrefix: values.invoicePrefix || null,
+        nextInvoiceSequence: values.nextInvoiceSequence
+          ? Number(values.nextInvoiceSequence)
+          : null,
       }),
     onSuccess: async (updated) => {
       setFormError(null)
@@ -226,6 +238,37 @@ function ProfileForm({ profile }: { profile: ContractorProfile }) {
           error={formState.errors.travelRadiusKm?.message}
         >
           <Input id="travelRadiusKm" inputMode="numeric" {...register('travelRadiusKm')} />
+        </Field>
+
+        <h3 className="mt-4 text-strong font-medium">Numérotation de mes factures</h3>
+        <p className="-mt-2 text-base text-secondary">
+          Vous restez l'émetteur de vos factures : reprenez ici votre propre numérotation.
+          {profile.numberingLocked
+            ? ' Le rang est figé depuis votre première facture — le changer produirait deux factures portant le même numéro.'
+            : " Ces réglages se figeront dès votre première facture."}
+        </p>
+
+        <Field
+          id="invoicePrefix"
+          label="Préfixe"
+          hint="Par exemple « F2026- ». Laissez vide pour n'avoir que le numéro."
+          error={formState.errors.invoicePrefix?.message}
+        >
+          <Input id="invoicePrefix" {...register('invoicePrefix')} />
+        </Field>
+
+        <Field
+          id="nextInvoiceSequence"
+          label="Numéro de la prochaine facture"
+          hint="Si vous avez déjà facturé jusqu'à 41 ailleurs, indiquez 42."
+          error={formState.errors.nextInvoiceSequence?.message}
+        >
+          <Input
+            id="nextInvoiceSequence"
+            inputMode="numeric"
+            disabled={profile.numberingLocked}
+            {...register('nextInvoiceSequence')}
+          />
         </Field>
 
         {formError && (
