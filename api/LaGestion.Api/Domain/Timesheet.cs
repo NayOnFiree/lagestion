@@ -3,41 +3,44 @@ namespace LaGestion.Api.Domain;
 /// <summary>Cycle de validation des heures d'une prestation.</summary>
 public enum TimesheetStatus
 {
-    /// <summary>Prestation à venir, aucun pointage.</summary>
-    Pending,
-
-    /// <summary>Heures pointées par le prestataire, en attente de validation.</summary>
+    /// <summary>Heures déclarées, en attente de validation par l'agence.</summary>
     Submitted,
 
     /// <summary>Heures validées par l'agence, facturables.</summary>
     Validated,
 
-    /// <summary>Écart contesté entre heures prévues et heures réelles.</summary>
+    /// <summary>Écart contesté entre heures prévues et heures déclarées.</summary>
     Disputed,
 }
 
 /// <summary>
-/// Heures d'une prestation : prévues au moment de la proposition, réelles
-/// après pointage, puis validées par l'agence avant facturation.
+/// Heures d'une prestation : prévues au moment de la proposition, déclarées
+/// après coup, puis validées par l'agence avant facturation.
 ///
-/// La géolocalisation n'est relevée qu'au check-in et au check-out, jamais en
-/// continu.
+/// Il n'y a pas de pointage. Le prestataire est indépendant : il déclare ce
+/// qu'il a effectué, il ne badge pas. L'agence valide, corrige en cas d'oubli
+/// ou conteste avec un motif.
+///
+/// Le relevé n'existe qu'à partir de la première déclaration : le créer à la
+/// confirmation produirait des relevés orphelins sur les missions annulées.
 /// </summary>
 public class Timesheet : AgencyOwnedEntity
 {
     public Guid AssignmentId { get; set; }
 
-    /// <summary>Heures prévues, déduites du créneau du poste.</summary>
+    /// <summary>Heures prévues, figées d'après le créneau du poste à la déclaration.</summary>
     public decimal PlannedHours { get; set; }
 
-    public DateTimeOffset? CheckInAt { get; set; }
+    /// <summary>Heures réellement effectuées, telles que déclarées puis éventuellement corrigées.</summary>
+    public decimal ActualHours { get; set; }
 
-    public DateTimeOffset? CheckOutAt { get; set; }
+    public TimesheetStatus Status { get; set; } = TimesheetStatus.Submitted;
 
-    /// <summary>Heures réellement effectuées, renseignées après le check-out.</summary>
-    public decimal? ActualHours { get; set; }
+    /// <summary>Commentaire du prestataire à la déclaration, s'il y a un écart à expliquer.</summary>
+    public string? ContractorNote { get; set; }
 
-    public TimesheetStatus Status { get; set; } = TimesheetStatus.Pending;
+    /// <summary>Motif de la contestation ou de la correction par l'agence.</summary>
+    public string? ReviewNote { get; set; }
 
     public Guid? ValidatedByUserId { get; set; }
 
@@ -46,4 +49,7 @@ public class Timesheet : AgencyOwnedEntity
     public Assignment? Assignment { get; set; }
 
     public User? ValidatedBy { get; set; }
+
+    /// <summary>Écart entre heures déclarées et heures prévues. Négatif si la prestation a été plus courte.</summary>
+    public decimal Variance => ActualHours - PlannedHours;
 }

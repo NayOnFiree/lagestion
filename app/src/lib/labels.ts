@@ -69,7 +69,10 @@ export function formatDayLabel(isoDate: string) {
   })
 }
 
-/** « 18h » ou « 18h30 » : on n'écrit pas 18:00. */
+/**
+ * « 18h » ou « 18h30 » à partir d'une heure murale (`TimeOnly` de l'API,
+ * sans fuseau) : on n'écrit pas 18:00.
+ */
 export function formatTime(time: string | null | undefined) {
   if (!time) {
     return null
@@ -77,6 +80,34 @@ export function formatTime(time: string | null | undefined) {
 
   const [hours, minutes] = time.split(':')
   return minutes === '00' ? `${Number(hours)}h` : `${Number(hours)}h${minutes}`
+}
+
+/**
+ * Heure d'un instant daté, convertie dans le fuseau du lecteur.
+ *
+ * Découper la chaîne ISO afficherait l'heure UTC : une prestation à 19h à
+ * Nantes se lirait 17h. C'est le genre d'erreur qui fait arriver quelqu'un
+ * deux heures en avance.
+ */
+export function formatClock(iso: string) {
+  return new Date(iso)
+    .toLocaleTimeString('fr-FR', { hour: 'numeric', minute: '2-digit' })
+    .replace(':', 'h')
+    .replace(/h00$/, 'h')
+}
+
+/** Jour d'un instant daté, dans le fuseau du lecteur. */
+export function formatDayOf(iso: string) {
+  return new Date(iso).toLocaleDateString('fr-FR', {
+    weekday: 'short',
+    day: 'numeric',
+    month: 'long',
+  })
+}
+
+/** « jeu. 14 mars, 8h–18h » à partir de deux instants. */
+export function formatRange(startsAt: string, endsAt: string) {
+  return `${formatDayOf(startsAt)}, ${formatClock(startsAt)}–${formatClock(endsAt)}`
 }
 
 export function formatSlot(startsAt?: string | null, endsAt?: string | null) {

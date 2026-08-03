@@ -47,6 +47,11 @@ public sealed class DevelopmentSeeder(
     private static readonly Guid BarAssignmentId = new("0198f000-0000-7000-8000-000000000040");
     private static readonly Guid WelcomeAssignmentId = new("0198f000-0000-7000-8000-000000000041");
 
+    private static readonly Guid PastEventId = new("0198f000-0000-7000-8000-000000000050");
+    private static readonly Guid PastPositionId = new("0198f000-0000-7000-8000-000000000051");
+    private static readonly Guid PastAssignmentOneId = new("0198f000-0000-7000-8000-000000000052");
+    private static readonly Guid PastAssignmentTwoId = new("0198f000-0000-7000-8000-000000000053");
+
     public async Task SeedAsync(CancellationToken cancellationToken = default)
     {
         await using var db = contextFactory.CreateFor(DemoAgencyId);
@@ -152,6 +157,60 @@ public sealed class DevelopmentSeeder(
                 ProposedAt = proposedAt,
                 ResponseDeadline = proposedAt.AddDays(2),
                 RespondedAt = proposedAt.AddHours(9),
+            });
+
+        // Un événement passé et staffé : sans lui, aucune déclaration d'heures
+        // n'est possible, et la facturation n'aurait rien à se mettre sous la
+        // dent.
+        var pastStart = timeProvider.GetUtcNow().AddDays(-9).Date.AddHours(17);
+        var pastStartsAt = new DateTimeOffset(pastStart, TimeSpan.Zero);
+
+        db.Events.Add(new Event
+        {
+            Id = PastEventId,
+            AgencyId = DemoAgencyId,
+            Title = "Congrès régional",
+            ClientName = "Chambre de commerce",
+            Address = "Cité des congrès, 44000 Nantes",
+            AccessNotes = "Livraison par le parking sud, code 4482.",
+            StartsAt = pastStartsAt,
+            EndsAt = pastStartsAt.AddHours(5),
+            Status = EventStatus.Published,
+        });
+
+        db.Positions.Add(new Position
+        {
+            Id = PastPositionId,
+            AgencyId = DemoAgencyId,
+            EventId = PastEventId,
+            Label = "Manutention",
+            Headcount = 2,
+            StartsAt = pastStartsAt,
+            EndsAt = pastStartsAt.AddHours(5),
+            HourlyRate = 19.00m,
+            DressCode = "Chaussures de sécurité.",
+        });
+
+        db.Assignments.AddRange(
+            new Assignment
+            {
+                Id = PastAssignmentOneId,
+                AgencyId = DemoAgencyId,
+                PositionId = PastPositionId,
+                ContractorId = Contractors[1].ContractorId,
+                Status = AssignmentStatus.Confirmed,
+                ProposedAt = pastStartsAt.AddDays(-5),
+                RespondedAt = pastStartsAt.AddDays(-5).AddHours(2),
+            },
+            new Assignment
+            {
+                Id = PastAssignmentTwoId,
+                AgencyId = DemoAgencyId,
+                PositionId = PastPositionId,
+                ContractorId = Contractors[2].ContractorId,
+                Status = AssignmentStatus.Confirmed,
+                ProposedAt = pastStartsAt.AddDays(-5),
+                RespondedAt = pastStartsAt.AddDays(-5).AddHours(6),
             });
 
         // Référentiel de compétences, propre à l'agence.

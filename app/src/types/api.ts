@@ -614,6 +614,340 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/me/hours": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description OK */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["TimesheetView"][];
+                        "application/json": components["schemas"]["TimesheetView"][];
+                        "text/json": components["schemas"]["TimesheetView"][];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/me/hours/{assignmentId}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    assignmentId: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["DeclareHoursRequest"];
+                    "text/json": components["schemas"]["DeclareHoursRequest"];
+                    "application/*+json": components["schemas"]["DeclareHoursRequest"];
+                };
+            };
+            responses: {
+                /** @description OK */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["TimesheetView"];
+                        "application/json": components["schemas"]["TimesheetView"];
+                        "text/json": components["schemas"]["TimesheetView"];
+                    };
+                };
+                /** @description Bad Request */
+                400: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["ProblemDetails"];
+                        "application/json": components["schemas"]["ProblemDetails"];
+                        "text/json": components["schemas"]["ProblemDetails"];
+                    };
+                };
+                /** @description Not Found */
+                404: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["ProblemDetails"];
+                        "application/json": components["schemas"]["ProblemDetails"];
+                        "text/json": components["schemas"]["ProblemDetails"];
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["ProblemDetails"];
+                        "application/json": components["schemas"]["ProblemDetails"];
+                        "text/json": components["schemas"]["ProblemDetails"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/timesheets": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: {
+            parameters: {
+                query?: {
+                    status?: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description OK */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["TimesheetView"][];
+                        "application/json": components["schemas"]["TimesheetView"][];
+                        "text/json": components["schemas"]["TimesheetView"][];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/timesheets/missing": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description OK */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["MissingDeclaration"][];
+                        "application/json": components["schemas"]["MissingDeclaration"][];
+                        "text/json": components["schemas"]["MissingDeclaration"][];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/timesheets/record": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["RecordHoursRequest"];
+                    "text/json": components["schemas"]["RecordHoursRequest"];
+                    "application/*+json": components["schemas"]["RecordHoursRequest"];
+                };
+            };
+            responses: {
+                /** @description OK */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["TimesheetView"];
+                        "application/json": components["schemas"]["TimesheetView"];
+                        "text/json": components["schemas"]["TimesheetView"];
+                    };
+                };
+                /** @description Bad Request */
+                400: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["ProblemDetails"];
+                        "application/json": components["schemas"]["ProblemDetails"];
+                        "text/json": components["schemas"]["ProblemDetails"];
+                    };
+                };
+                /** @description Not Found */
+                404: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["ProblemDetails"];
+                        "application/json": components["schemas"]["ProblemDetails"];
+                        "text/json": components["schemas"]["ProblemDetails"];
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["ProblemDetails"];
+                        "application/json": components["schemas"]["ProblemDetails"];
+                        "text/json": components["schemas"]["ProblemDetails"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/timesheets/{id}/review": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["ReviewHoursRequest"];
+                    "text/json": components["schemas"]["ReviewHoursRequest"];
+                    "application/*+json": components["schemas"]["ReviewHoursRequest"];
+                };
+            };
+            responses: {
+                /** @description OK */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["TimesheetView"];
+                        "application/json": components["schemas"]["TimesheetView"];
+                        "text/json": components["schemas"]["TimesheetView"];
+                    };
+                };
+                /** @description Bad Request */
+                400: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["ProblemDetails"];
+                        "application/json": components["schemas"]["ProblemDetails"];
+                        "text/json": components["schemas"]["ProblemDetails"];
+                    };
+                };
+                /** @description Not Found */
+                404: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["ProblemDetails"];
+                        "application/json": components["schemas"]["ProblemDetails"];
+                        "text/json": components["schemas"]["ProblemDetails"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/health": {
         parameters: {
             query?: never;
@@ -2161,6 +2495,11 @@ export interface components {
             endsAt: null | string;
             status: string;
         };
+        DeclareHoursRequest: {
+            /** Format: double */
+            actualHours: number;
+            note: null | string;
+        };
         DeclareRecurringRequest: {
             /** Format: date */
             from: string;
@@ -2265,6 +2604,21 @@ export interface components {
             email: string;
             password: string;
         };
+        MissingDeclaration: {
+            /** Format: uuid */
+            assignmentId: string;
+            eventTitle: string;
+            positionLabel: string;
+            contractorName: string;
+            /** Format: date-time */
+            startsAt: string;
+            /** Format: date-time */
+            endsAt: string;
+            /** Format: double */
+            plannedHours: number;
+            /** Format: double */
+            hourlyRate: number;
+        };
         Mission: {
             /** Format: uuid */
             id: string;
@@ -2357,12 +2711,25 @@ export interface components {
             /** Format: date-time */
             responseDeadline: null | string;
         };
+        RecordHoursRequest: {
+            /** Format: uuid */
+            assignmentId: string;
+            /** Format: double */
+            actualHours: number;
+            note: null | string;
+        };
         RecurringResult: {
             created: components["schemas"]["AvailabilitySlot"][];
             skippedForConfirmedMission: string[];
         };
         ReviewDocumentRequest: {
             approved: boolean;
+            note: null | string;
+        };
+        ReviewHoursRequest: {
+            validated: boolean;
+            /** Format: double */
+            actualHours: null | number;
             note: null | string;
         };
         SavedPosition: {
@@ -2393,6 +2760,34 @@ export interface components {
             hourlyRate: number;
             dressCode: null | string;
             brief: null | string;
+        };
+        TimesheetView: {
+            /** Format: uuid */
+            id: string;
+            /** Format: uuid */
+            assignmentId: string;
+            eventTitle: string;
+            positionLabel: string;
+            contractorName: string;
+            /** Format: date-time */
+            startsAt: string;
+            /** Format: date-time */
+            endsAt: string;
+            /** Format: double */
+            hourlyRate: number;
+            /** Format: double */
+            plannedHours: number;
+            /** Format: double */
+            actualHours: number;
+            /** Format: double */
+            variance: number;
+            /** Format: double */
+            amount: number;
+            status: string;
+            contractorNote: null | string;
+            reviewNote: null | string;
+            /** Format: date-time */
+            validatedAt: null | string;
         };
         UpdateProfileRequest: {
             firstName: string;

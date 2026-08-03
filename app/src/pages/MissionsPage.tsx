@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { api, ApiError } from '@/lib/api'
-import { formatAmount, formatDayLabel, formatTime } from '@/lib/labels'
+import { formatAmount, formatDayOf, formatRange } from '@/lib/labels'
 import { cn } from '@/lib/utils'
 import type { components } from '@/types/api'
 
@@ -119,8 +119,7 @@ function MissionCard({
         <p className="text-strong font-medium">{mission.positionLabel}</p>
         <p className="mt-0.5 text-base text-secondary">{mission.eventTitle}</p>
         <p className="mt-2 text-base tabular-nums first-letter:uppercase">
-          {formatDayLabel(mission.startsAt.slice(0, 10))}, {formatTime(mission.startsAt.slice(11, 19))}
-          –{formatTime(mission.endsAt.slice(11, 19))}
+          {formatRange(mission.startsAt, mission.endsAt)}
         </p>
         <p
           className={cn(
@@ -164,12 +163,7 @@ function MissionDetail({ mission }: { mission: Mission }) {
       </p>
 
       <dl className="mt-4 flex flex-col gap-2">
-        <Row
-          label="Quand"
-          value={`${formatDayLabel(mission.startsAt.slice(0, 10))}, ${formatTime(
-            mission.startsAt.slice(11, 19),
-          )}–${formatTime(mission.endsAt.slice(11, 19))}`}
-        />
+        <Row label="Quand" value={formatRange(mission.startsAt, mission.endsAt)} />
         <Row label="Où" value={mission.address ?? 'non communiqué'} />
         <Row label="Tarif horaire" value={`${formatAmount(mission.hourlyRate)} / h`} />
         <Row
@@ -180,7 +174,7 @@ function MissionDetail({ mission }: { mission: Mission }) {
         {mission.responseDeadline && mission.status === 'Proposed' && (
           <Row
             label="Réponse attendue"
-            value={`avant le ${formatDayLabel(mission.responseDeadline.slice(0, 10))}`}
+            value={`avant le ${formatDayOf(mission.responseDeadline)}`}
           />
         )}
       </dl>

@@ -84,7 +84,13 @@ public sealed class TimesheetConfiguration : EntityConfiguration<Timesheet>
     {
         builder.Property(t => t.Status).HasConversion<string>().HasMaxLength(20).IsRequired();
         builder.Property(t => t.PlannedHours).HasPrecision(6, 2).IsRequired();
-        builder.Property(t => t.ActualHours).HasPrecision(6, 2);
+        builder.Property(t => t.ActualHours).HasPrecision(6, 2).IsRequired();
+        builder.Property(t => t.ContractorNote).HasMaxLength(1000);
+        builder.Property(t => t.ReviewNote).HasMaxLength(1000);
+
+        // Calculé à la lecture, jamais stocké : deux colonnes qui doivent
+        // rester cohérentes valent mieux qu'une troisième qui peut mentir.
+        builder.Ignore(t => t.Variance);
 
         // Une prestation, un relevé d'heures.
         builder.HasIndex(t => t.AssignmentId).IsUnique();

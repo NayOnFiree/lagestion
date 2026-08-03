@@ -77,9 +77,17 @@ Documents et PDF de factures hors base : disque local en dev, S3-compatible
 en prod. Seule la clé est stockée en base. Accès via URLs signées à durée
 courte, jamais de fichier public.
 
-**Géolocalisation.**
-Uniquement au check-in/check-out, ponctuelle, jamais de suivi continu.
-Consentement explicite. RGPD.
+**Pas de pointage, pas de géolocalisation.** Tranché le 2026-08-03, revient
+sur la décision initiale. Le prestataire est indépendant : il **déclare** les
+heures qu'il a effectuées, il ne badge pas. Le principe 1 de `product.md` le
+disait déjà — « il ne pointe pas au travail » — et un check-in horodaté le
+contredisait. Sans pointage, la géolocalisation n'a plus d'objet : collecter
+des coordonnées « au cas où » serait de la donnée personnelle sans finalité,
+ce que le RGPD proscrit. Le jour où un litige de présence surviendra, on
+saura ce qu'on cherche à prouver et on l'implémentera pour ça.
+
+Conséquence à connaître : la **ponctualité**, listée comme critère de scoring
+en phase 10, n'a plus de source de données.
 
 ## Modèle de données
 

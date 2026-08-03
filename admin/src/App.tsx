@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router'
+﻿import { BrowserRouter, Route, Routes } from 'react-router'
 import { Layout } from '@/components/Layout'
 import { RequireAuth } from '@/components/RequireAuth'
 import { AuthProvider } from '@/lib/auth'
@@ -6,6 +6,7 @@ import { CompliancePage } from '@/pages/CompliancePage'
 import { DashboardPage } from '@/pages/DashboardPage'
 import { EventDetailPage } from '@/pages/EventDetailPage'
 import { EventsPage } from '@/pages/EventsPage'
+import { HoursPage } from '@/pages/HoursPage'
 import { LoginPage } from '@/pages/LoginPage'
 import { StaffingPage } from '@/pages/StaffingPage'
 import { StatusPage } from '@/pages/StatusPage'
@@ -23,6 +24,7 @@ export default function App() {
               <Route path="evenements" element={<EventsPage />} />
               <Route path="evenements/:id" element={<EventDetailPage />} />
               <Route path="postes/:id/staffing" element={<StaffingPage />} />
+              <Route path="heures" element={<HoursPage />} />
               <Route path="conformite" element={<CompliancePage />} />
               <Route path="statut" element={<StatusPage />} />
             </Route>
@@ -32,3 +34,4 @@ export default function App() {
     </BrowserRouter>
   )
 }
+

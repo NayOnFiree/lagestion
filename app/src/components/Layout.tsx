@@ -4,14 +4,20 @@ import { NavLink, Outlet } from 'react-router'
 import { useAuth } from '@/lib/auth-context'
 import { cn } from '@/lib/utils'
 
-// Quatre entrées : au-delà, la barre basse n'est plus atteignable au pouce.
-// /statut reste accessible par son URL, c'est un écran de diagnostic.
+// La barre basse est plafonnée à quatre entrées : au-delà, elle n'est plus
+// atteignable au pouce. Les barres haute et latérale ont la place, elles
+// montrent tout. /statut reste accessible par son URL, c'est un écran de
+// diagnostic.
 const links = [
-  { to: '/', label: 'Accueil' },
-  { to: '/missions', label: 'Missions' },
-  { to: '/dispos', label: 'Dispos' },
-  { to: '/documents', label: 'Documents' },
+  { to: '/', label: 'Accueil', onBottomBar: true },
+  { to: '/missions', label: 'Missions', onBottomBar: true },
+  { to: '/heures', label: 'Heures', onBottomBar: true },
+  { to: '/dispos', label: 'Dispos', onBottomBar: true },
+  { to: '/documents', label: 'Documents', onBottomBar: false },
+  { to: '/profil', label: 'Profil', onBottomBar: false },
 ]
+
+const bottomBarLinks = links.filter((link) => link.onBottomBar)
 
 /**
  * Coque responsive.
@@ -32,12 +38,14 @@ export function Layout() {
       <div className="flex min-h-dvh min-w-0 flex-1 flex-col">
         <header className="sticky top-0 z-10 border-b border-border bg-bg xl:hidden">
           <div className="mx-auto flex w-full max-w-content items-center justify-between gap-4 px-4 py-3">
-            <div className="min-w-0">
+            {/* En mobile, c'est le seul chemin vers le profil et les documents,
+                que la barre basse ne peut pas porter. */}
+            <NavLink to="/profil" className="min-w-0 md:pointer-events-none">
               <p className="truncate text-strong font-medium">
                 {user?.firstName} {user?.lastName}
               </p>
               <p className="truncate text-meta text-secondary">{user?.agencyName}</p>
-            </div>
+            </NavLink>
 
             {/* Tablette : la navigation remonte dans l'en-tête. */}
             <nav className="hidden md:block">
@@ -70,7 +78,7 @@ export function Layout() {
       {/* Mobile : barre basse fixe. */}
       <nav className="fixed inset-x-0 bottom-0 z-10 border-t border-border bg-bg pb-[env(safe-area-inset-bottom)] md:hidden">
         <ul className="mx-auto flex h-nav max-w-lg items-stretch">
-          {links.map((link) => (
+          {bottomBarLinks.map((link) => (
             <li key={link.to} className="flex-1">
               <NavItem to={link.to} className="h-full w-full">
                 {link.label}

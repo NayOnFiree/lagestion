@@ -231,6 +231,27 @@ affiche avant de refermer le formulaire : à l'agence de les prévenir.
 
 ---
 
+## Heures
+
+**Il n'y a pas de pointage.** Le prestataire est indépendant : une fois la
+prestation terminée, il **déclare** les heures qu'il a effectuées. Redéclarer
+écrase la déclaration précédente tant que l'agence n'a pas validé — c'est une
+correction, pas un doublon.
+
+L'agence valide, corrige ou conteste. Une correction des heures déclarées et
+une contestation exigent toutes deux un **motif** : sans lui, le prestataire
+n'a aucun moyen de savoir quoi refaire. Un relevé contesté revient dans « à
+déclarer » côté prestataire, avec le motif affiché.
+
+Si le prestataire oublie de déclarer, l'agence voit la prestation dans
+« prestations sans déclaration » et saisit les heures elle-même ; le relevé
+part alors directement validé, en portant la mention de qui l'a saisi.
+
+Le relevé n'est créé qu'à la première déclaration : le créer à la
+confirmation produirait des relevés orphelins sur les missions annulées.
+
+---
+
 ## Staffing et missions
 
 **Un candidat est un prestataire qui s'est déclaré disponible sur tout le

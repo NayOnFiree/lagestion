@@ -4,7 +4,14 @@ import { Link } from 'react-router'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { api } from '@/lib/api'
-import { formatAmount, formatDayLabel, formatTime, weekdays } from '@/lib/labels'
+import {
+  formatAmount,
+  formatClock,
+  formatDayLabel,
+  formatDayOf,
+  formatTime,
+  weekdays,
+} from '@/lib/labels'
 import { cn } from '@/lib/utils'
 import type { components } from '@/types/api'
 
@@ -82,9 +89,9 @@ export function HomePage() {
           <p className="mt-1 text-strong font-medium">{nextMission.positionLabel}</p>
           <p className="mt-0.5 text-base text-secondary">{nextMission.eventTitle}</p>
           <p className="mt-1 text-base">
-            {formatDayLabel(nextMission.startsAt.slice(0, 10))}, {formatTime(nextMission.startsAt.slice(11, 19))}
+            {formatDayOf(nextMission.startsAt)}, {formatClock(nextMission.startsAt)}
             {' – '}
-            {formatTime(nextMission.endsAt.slice(11, 19))}
+            {formatClock(nextMission.endsAt)}
           </p>
         </Card>
       )}
@@ -200,7 +207,7 @@ function DayDetail({ day }: { day: CalendarDay }) {
       {day.missions.map((mission) => (
         <p key={mission.assignmentId} className="mt-2 text-base">
           <span className="font-medium">{mission.positionLabel}</span> — {mission.eventTitle},{' '}
-          {formatTime(mission.startsAt.slice(11, 19))}–{formatTime(mission.endsAt.slice(11, 19))}
+          {formatClock(mission.startsAt)}–{formatClock(mission.endsAt)}
         </p>
       ))}
 

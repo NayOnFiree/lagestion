@@ -72,9 +72,15 @@ On avance dans l'ordre. Une phase = une branche = une validation.
       Aucun rappel n'est envoyé — cela relève de la phase 9.
 
 ## Phase 7 — Heures
-- [ ] Check-in / check-out
-- [ ] Écart heures estimées / réelles
-- [ ] Validation par l'admin
+- [ ] ~~Check-in / check-out~~ — **abandonné** le 2026-08-03. Le prestataire
+      déclare ses heures après la prestation, il ne badge pas : un pointage
+      contredisait le principe 1 de product.md. La géolocalisation tombe avec.
+- [x] Écart heures estimées / réelles
+- [x] Validation par l'admin, avec correction motivée ou contestation
+- [x] Saisie par l'agence quand le prestataire a oublié de déclarer
+- [ ] **Conséquence** : la ponctualité, critère de scoring de la phase 10,
+      n'a plus de source de données. À retrancher de la phase 10 ou à
+      alimenter autrement.
 
 ## Phase 8 — Facturation
 - [ ] Sélection des missions validées du mois

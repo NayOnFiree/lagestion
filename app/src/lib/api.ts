@@ -22,6 +22,8 @@ export interface ProblemDetails {
   status?: number
   detail?: string
   instance?: string
+  /** Messages par champ, sur une erreur de validation. */
+  errors?: Record<string, string[]>
 }
 
 export class ApiError extends Error {
@@ -29,11 +31,26 @@ export class ApiError extends Error {
   readonly problem: ProblemDetails | null
 
   constructor(status: number, problem: ProblemDetails | null) {
-    super(problem?.detail ?? problem?.title ?? `Requête échouée (HTTP ${status})`)
+    super(readableMessage(status, problem))
     this.name = 'ApiError'
     this.status = status
     this.problem = problem
   }
+}
+
+/**
+ * Message affichable à l'utilisateur.
+ *
+ * Sur une erreur de validation, le titre vaut « One or more validation errors
+ * occurred. » : inutilisable, et en anglais. Le message qui compte est dans
+ * `errors`, rédigé côté API.
+ */
+function readableMessage(status: number, problem: ProblemDetails | null) {
+  const fieldError = Object.values(problem?.errors ?? {})
+    .flat()
+    .find((message) => typeof message === 'string' && message.length > 0)
+
+  return fieldError ?? problem?.detail ?? problem?.title ?? `Requête échouée (HTTP ${status})`
 }
 
 let accessToken: string | null = null
