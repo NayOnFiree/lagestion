@@ -50,6 +50,11 @@
 
   /* Hauteur de la navigation basse. */
   --spacing-nav: 56px;
+  /* Colonne de navigation en desktop. */
+  --spacing-sidebar: 240px;
+  /* Largeur maximale du contenu : au-delà, une colonne étroite perdue au
+     milieu d'un grand écran ferait « app téléphone agrandie ». */
+  --spacing-content: 1120px;
 }
 
 html {

@@ -231,6 +231,46 @@ affiche avant de refermer le formulaire : à l'agence de les prévenir.
 
 ---
 
+## Staffing et missions
+
+**Un candidat est un prestataire qui s'est déclaré disponible sur tout le
+créneau du poste**, qui n'a pas déjà été sollicité dessus, et qui n'a aucune
+mission confirmée en conflit. Le filtre par compétence s'ajoute à cela ; le
+filtre par zone n'existe pas — sans géocodage, le rayon de déplacement
+déclaré n'est pas exploitable, il est seulement affiché.
+
+Un dossier documentaire incomplet **n'exclut personne** : le candidat apparaît
+avec la liste de ce qui manque, et l'agence arbitre. Sur un renfort de
+dernière minute, elle préfère parfois relancer la pièce après.
+
+### Le cycle d'une proposition
+
+```
+proposée --accepte--> acceptée --confirme--> confirmée
+    |                     |                      |
+    +--refuse--> refusée  +--annule--> annulée <-+
+```
+
+**Accepter ne réserve rien.** C'est une candidature : l'agence confirme
+ensuite. Un prestataire peut donc se porter candidat à deux endroits à la
+fois — mais il ne peut pas accepter une proposition qui chevauche une mission
+déjà **confirmée**, ni être confirmé sur un poste complet.
+
+Les **modalités d'accès** au site (quai, badge, code) ne sont transmises
+qu'une fois la mission confirmée.
+
+Une date limite dépassée se calcule à la lecture, comme l'expiration des
+documents : sans ordonnanceur, un statut stocké mentirait jusqu'au prochain
+passage.
+
+**Le remplacement d'un désistement** consiste à annuler la mission confirmée —
+la place se libère aussitôt — puis à resolliciter. Un prestataire qui a refusé
+ou s'est désisté redevient candidat sur le même poste : les deux propositions
+restent lisibles côte à côte, l'unicité ne portant que sur les propositions en
+cours.
+
+---
+
 ## Disponibilités et calendrier
 
 Le prestataire **déclare** être disponible ou indisponible, par journée ou par

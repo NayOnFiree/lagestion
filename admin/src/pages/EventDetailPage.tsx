@@ -248,6 +248,9 @@ function PositionsTable({
                     // Actions au survol : cinq boutons visibles par ligne
                     // rendraient le tableau illisible.
                     <div className="flex justify-end gap-1 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100">
+                      <Button asChild size="dense" variant="outline">
+                        <Link to={`/postes/${position.id}/staffing`}>Staffer</Link>
+                      </Button>
                       <Button
                         type="button"
                         variant="ghost"

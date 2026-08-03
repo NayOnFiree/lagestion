@@ -6,6 +6,7 @@ import { AvailabilitiesPage } from '@/pages/AvailabilitiesPage'
 import { DocumentsPage } from '@/pages/DocumentsPage'
 import { HomePage } from '@/pages/HomePage'
 import { LoginPage } from '@/pages/LoginPage'
+import { MissionsPage } from '@/pages/MissionsPage'
 import { ProfilePage } from '@/pages/ProfilePage'
 import { StatusPage } from '@/pages/StatusPage'
 
@@ -19,6 +20,7 @@ export default function App() {
           <Route element={<RequireAuth />}>
             <Route element={<Layout />}>
               <Route index element={<HomePage />} />
+              <Route path="missions" element={<MissionsPage />} />
               <Route path="dispos" element={<AvailabilitiesPage />} />
               <Route path="profil" element={<ProfilePage />} />
               <Route path="documents" element={<DocumentsPage />} />

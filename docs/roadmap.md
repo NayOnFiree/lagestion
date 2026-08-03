@@ -59,10 +59,17 @@ On avance dans l'ordre. Une phase = une branche = une validation.
       des modifications sera nécessaire le jour d'un litige.
 
 ## Phase 6 — Staffing et missions
-- [ ] Recherche de prestataires disponibles (date + compétence + zone)
-- [ ] Envoi de propositions groupées, suivi des réponses
-- [ ] Côté prestataire : fiche mission, accepter / refuser avec deadline
-- [ ] Remplacement d'un désistement
+- [x] Recherche de prestataires disponibles (date + compétence)
+- [ ] **Filtre par zone non livré.** Il n'y a ni coordonnées ni géocodage :
+      le rayon de déplacement déclaré est inexploitable. La ville et le rayon
+      sont affichés dans la liste, à l'admin d'en juger. Décision du
+      2026-08-03, à reprendre avec le géocodage.
+- [x] Envoi de propositions groupées, suivi des réponses
+- [x] Côté prestataire : fiche mission, accepter / refuser avec deadline
+- [x] Remplacement d'un désistement
+- [ ] **Reste ouvert** : une proposition dont le délai est dépassé reste
+      « en attente » en base, l'expiration n'étant que calculée à la lecture.
+      Aucun rappel n'est envoyé — cela relève de la phase 9.
 
 ## Phase 7 — Heures
 - [ ] Check-in / check-out
