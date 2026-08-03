@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #FFFFFF; font-family: Inter, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #1F6F5C; text-decoration: none; }
+  a:hover { color: #17513f; text-decoration: underline; }
+</style>
+</helmet>
+<div style="width: 1920px; min-height: 1080px; display: grid; grid-template-columns: 240px 1fr; background: #FFFFFF; color: #0F1115; font-size: 14px; line-height: 1.4;">
+
+  <nav style="width: 240px; border-right: 1px solid #E6E8EB; display: flex; flex-direction: column; position: sticky; top: 0; height: 100vh; box-sizing: border-box;">
+    <div style="padding: 24px 16px 20px 16px; display: flex; align-items: center; gap: 8px;">
+      <div style="width: 20px; height: 20px; border-radius: 6px; background: #1F6F5C;"></div>
+      <span style="font-size: 15px; font-weight: 600; letter-spacing: -0.01em;">lagestion</span>
+    </div>
+    <div style="padding: 0 12px; display: flex; flex-direction: column; gap: 2px;">
+      <div style="display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 10px; border-radius: 6px; background: #EAF3F0; color: #1F6F5C; font-weight: 500;">
+        <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="2" width="12" height="10" rx="2" fill="none" stroke="#1F6F5C" stroke-width="1.4"></rect><rect x="1" y="5" width="12" height="1.4" fill="#1F6F5C"></rect></svg>
+        Missions
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 10px; border-radius: 6px; color: #5B6472; font-weight: 500;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="5.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></circle><rect x="6.3" y="3.5" width="1.4" height="4.2" fill="#8A93A0"></rect></svg>
+        Disponibilités
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 10px; border-radius: 6px; color: #5B6472; font-weight: 500;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2.4" y="1.4" width="9.2" height="11.2" rx="1.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></rect><rect x="4.6" y="5" width="4.8" height="1.2" fill="#8A93A0"></rect><rect x="4.6" y="8" width="3" height="1.2" fill="#8A93A0"></rect></svg>
+        Factures
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 36px; padding: 0 10px; border-radius: 6px; color: #5B6472; font-weight: 500;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <span style="display: flex; align-items: center; gap: 10px;">
+          <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="1.4" y="2.8" width="11.2" height="8.4" rx="1.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></rect></svg>
+          Messages
+        </span>
+        <span style="font-size: 12px; font-weight: 500; color: #5B6472; background: #F7F8F9; border-radius: 6px; padding: 1px 6px; font-variant-numeric: tabular-nums;">2</span>
+      </div>
+    </div>
+    <div style="margin-top: auto; border-top: 1px solid #E6E8EB; padding: 12px 16px; display: flex; align-items: center; gap: 10px;">
+      <div style="width: 28px; height: 28px; border-radius: 6px; background: #F7F8F9; border: 1px solid #E6E8EB; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: #5B6472;">CB</div>
+      <div style="display: flex; flex-direction: column; line-height: 1.25;">
+        <span style="font-size: 13px; font-weight: 500;">Camille Berthier</span>
+        <span style="font-size: 12px; color: #8A93A0;">Technicien de montage</span>
+      </div>
+    </div>
+  </nav>
+
+  <main style="min-width: 0;">
+    <header style="padding: 32px; border-bottom: 1px solid #E6E8EB; display: flex; align-items: flex-start; justify-content: space-between; gap: 32px;">
+      <div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <h1 style="margin: 0; font-size: 32px; font-weight: 600; line-height: 1.2; letter-spacing: -0.015em;">Montage du défilé Maison Verly</h1>
+          <span style="font-size: 12px; font-weight: 500; color: #A8630B; background: #FBF2E6; border-radius: 6px; padding: 3px 8px;">Proposition à confirmer</span>
+        </div>
+        <p style="margin: 8px 0 0 0; font-size: 14px; color: #5B6472; font-variant-numeric: tabular-nums;">Mission M-2603-118 · Technicien de montage · Jeudi 14 mars 2026, 8h00 – 18h00 · Salon d'honneur, 12 avenue Montaigne, Paris 8e</p>
+        <p style="margin: 4px 0 0 0; font-size: 14px; color: #8A93A0; font-variant-numeric: tabular-nums;">Proposée par Sophie Nguyen le 6 mars à 11h24 · Agence Verly Events</p>
+      </div>
+      <button style="height: 36px; padding: 0 14px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 14px; font-weight: 500; color: #0F1115; cursor: pointer; white-space: nowrap;" style-hover="background: #F7F8F9;">Poser une question à l'agence</button>
+    </header>
+
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 48px; padding: 32px; align-items: start;">
+
+      <div style="display: flex; flex-direction: column; gap: 32px; min-width: 0;">
+
+        <section>
+          <div style="display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid #E6E8EB;">
+            <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Déroulé de la journée</h2>
+            <span style="font-size: 12px; color: #8A93A0; font-variant-numeric: tabular-nums;">11 étapes · 10 h de présence, pause déjeuner incluse</span>
+          </div>
+          <div style="margin-top: 16px; border-left: 1px solid #E6E8EB; padding-left: 0;">
+            <div style="display: grid; grid-template-columns: 56px minmax(0, 1fr) 200px; align-items: baseline; gap: 16px; padding: 10px 0 10px 16px; border-bottom: 1px solid #E6E8EB;">
+              <span style="font-size: 13px; font-weight: 500; color: #5B6472; font-variant-numeric: tabular-nums;">07:30</span>
+              <span style="font-size: 14px;">Arrivée sur site et émargement au poste de contrôle livraisons</span>
+              <span style="font-size: 13px; color: #8A93A0; text-align: right;">Quai livraisons</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 56px minmax(0, 1fr) 200px; align-items: baseline; gap: 16px; padding: 10px 0 10px 16px; border-bottom: 1px solid #E6E8EB;">
+              <span style="font-size: 13px; font-weight: 500; color: #5B6472; font-variant-numeric: tabular-nums;">08:00</span>
+              <span style="font-size: 14px;">Briefing sécurité, remise des badges et répartition des postes</span>
+              <span style="font-size: 13px; color: #8A93A0; text-align: right;">Salon d'honneur</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 56px minmax(0, 1fr) 200px; align-items: baseline; gap: 16px; padding: 10px 0 10px 16px; border-bottom: 1px solid #E6E8EB;">
+              <span style="font-size: 13px; font-weight: 500; color: #5B6472; font-variant-numeric: tabular-nums;">08:30</span>
+              <span style="font-size: 14px;">Déchargement des praticables, des éléments de podium et du tapis</span>
+              <span style="font-size: 13px; color: #8A93A0; text-align: right;">Quai livraisons</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 56px minmax(0, 1fr) 200px; align-items: baseline; gap: 16px; padding: 10px 0 10px 16px; border-bottom: 1px solid #E6E8EB;">
+              <span style="font-size: 13px; font-weight: 500; color: #5B6472; font-variant-numeric: tabular-nums;">10:00</span>
+              <span style="font-size: 14px;">Montage de la structure scénique, tronçon central (équipe de quatre)</span>
+              <span style="font-size: 13px; color: #8A93A0; text-align: right;">Salon d'honneur</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 56px minmax(0, 1fr) 200px; align-items: baseline; gap: 16px; padding: 10px 0 10px 16px; border-bottom: 1px solid #E6E8EB;">
+              <span style="font-size: 13px; font-weight: 500; color: #5B6472; font-variant-numeric: tabular-nums;">12:00</span>
+              <span style="font-size: 14px; color: #5B6472;">Pause déjeuner, 30 minutes, repas fourni sur place</span>
+              <span style="font-size: 13px; color: #8A93A0; text-align: right;">Office, niveau -1</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 56px minmax(0, 1fr) 200px; align-items: baseline; gap: 16px; padding: 10px 0 10px 16px; border-bottom: 1px solid #E6E8EB;">
+              <span style="font-size: 13px; font-weight: 500; color: #5B6472; font-variant-numeric: tabular-nums;">12:30</span>
+              <span style="font-size: 14px;">Montage des retours de podium et habillage des façades</span>
+              <span style="font-size: 13px; color: #8A93A0; text-align: right;">Salon d'honneur</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 56px minmax(0, 1fr) 200px; align-items: baseline; gap: 16px; padding: 10px 0 10px 16px; border-bottom: 1px solid #E6E8EB;">
+              <span style="font-size: 13px; font-weight: 500; color: #5B6472; font-variant-numeric: tabular-nums;">14:00</span>
+              <span style="font-size: 14px;">Pose du tapis, des plinthes et calage des jonctions</span>
+              <span style="font-size: 13px; color: #8A93A0; text-align: right;">Salon d'honneur</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 56px minmax(0, 1fr) 200px; align-items: baseline; gap: 16px; padding: 10px 0 10px 16px; border-bottom: 1px solid #E6E8EB;">
+              <span style="font-size: 13px; font-weight: 500; color: #5B6472; font-variant-numeric: tabular-nums;">15:30</span>
+              <span style="font-size: 14px;">Installation des ponts lumière en appui de l'équipe éclairage</span>
+              <span style="font-size: 13px; color: #8A93A0; text-align: right;">Salon d'honneur</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 56px minmax(0, 1fr) 200px; align-items: baseline; gap: 16px; padding: 10px 0 10px 16px; border-bottom: 1px solid #E6E8EB;">
+              <span style="font-size: 13px; font-weight: 500; color: #5B6472; font-variant-numeric: tabular-nums;">16:30</span>
+              <span style="font-size: 14px;">Essais techniques, raccords avec la régie et reprise des réserves</span>
+              <span style="font-size: 13px; color: #8A93A0; text-align: right;">Régie, fond de salle</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 56px minmax(0, 1fr) 200px; align-items: baseline; gap: 16px; padding: 10px 0 10px 16px; border-bottom: 1px solid #E6E8EB;">
+              <span style="font-size: 13px; font-weight: 500; color: #5B6472; font-variant-numeric: tabular-nums;">17:15</span>
+              <span style="font-size: 14px;">Nettoyage de la zone et évacuation des emballages vers le quai</span>
+              <span style="font-size: 13px; color: #8A93A0; text-align: right;">Quai livraisons</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 56px minmax(0, 1fr) 200px; align-items: baseline; gap: 16px; padding: 10px 0 10px 16px;">
+              <span style="font-size: 13px; font-weight: 500; color: #5B6472; font-variant-numeric: tabular-nums;">18:00</span>
+              <span style="font-size: 14px;">Fin de mission, signature de la feuille de présence auprès du régisseur</span>
+              <span style="font-size: 13px; color: #8A93A0; text-align: right;">Accueil prestataires</span>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div style="padding-bottom: 8px; border-bottom: 1px solid #E6E8EB;">
+            <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Tenue et matériel</h2>
+          </div>
+          <div style="margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px;">
+            <div>
+              <h3 style="margin: 0 0 12px 0; font-size: 15px; font-weight: 500;">À apporter par le prestataire</h3>
+              <div style="display: flex; flex-direction: column;">
+                <div style="display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 14px;">Chaussures de sécurité montantes, norme S3</span><span style="font-size: 13px; color: #B42318;">Obligatoire</span></div>
+                <div style="display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 14px;">Haut noir uni à manches longues, pantalon noir</span><span style="font-size: 13px; color: #B42318;">Obligatoire</span></div>
+                <div style="display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 14px;">Gants de manutention</span><span style="font-size: 13px; color: #5B6472;">Recommandé</span></div>
+                <div style="display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 14px;">Caisse à outils, visseuse et mètre</span><span style="font-size: 13px; color: #5B6472;">Recommandé</span></div>
+                <div style="display: flex; justify-content: space-between; gap: 16px; padding: 8px 0;"><span style="font-size: 14px;">Pièce d'identité en cours de validité</span><span style="font-size: 13px; color: #B42318;">Obligatoire</span></div>
+              </div>
+            </div>
+            <div>
+              <h3 style="margin: 0 0 12px 0; font-size: 15px; font-weight: 500;">Fourni sur place</h3>
+              <div style="display: flex; flex-direction: column;">
+                <div style="display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 14px;">Casque et gilet haute visibilité</span><span style="font-size: 13px; color: #8A93A0;">Vestiaire, niveau -1</span></div>
+                <div style="display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 14px;">Badge d'accès nominatif</span><span style="font-size: 13px; color: #8A93A0;">Accueil prestataires</span></div>
+                <div style="display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 14px;">Outillage lourd, perceuses et échafaudage roulant</span><span style="font-size: 13px; color: #8A93A0;">Régie technique</span></div>
+                <div style="display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 14px;">Repas chaud et boissons</span><span style="font-size: 13px; color: #8A93A0;">Office, 12h00</span></div>
+                <div style="display: flex; justify-content: space-between; gap: 16px; padding: 8px 0;"><span style="font-size: 14px;">Casier individuel fermant à clé</span><span style="font-size: 13px; color: #8A93A0;">Vestiaire, niveau -1</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div style="padding-bottom: 8px; border-bottom: 1px solid #E6E8EB;">
+            <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Accès et sécurité</h2>
+          </div>
+          <div style="margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px;">
+            <div style="display: flex; flex-direction: column;">
+              <div style="display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 16px; padding: 10px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Entrée prestataires</span><span style="font-size: 14px;">Porte de service, 4 rue Clément-Marot, Paris 8e. L'entrée principale avenue Montaigne est réservée aux invités.</span></div>
+              <div style="display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 16px; padding: 10px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Contrôle d'accès</span><span style="font-size: 14px;">Badge nominatif retiré à l'accueil contre pièce d'identité, à conserver visible toute la journée.</span></div>
+              <div style="display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 16px; padding: 10px 0;"><span style="font-size: 13px; color: #5B6472;">Transports</span><span style="font-size: 14px;">Métro Alma-Marceau, ligne 9, à 300 mètres. Aucun stationnement sur site, déchargement limité à 30 minutes.</span></div>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+              <div style="display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 16px; padding: 10px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Équipements obligatoires</span><span style="font-size: 14px;">Casque et gilet pendant toutes les phases de levage, port des chaussures de sécurité en continu.</span></div>
+              <div style="display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 16px; padding: 10px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Confidentialité</span><span style="font-size: 14px;">Photos et vidéos interdites dans l'ensemble du bâtiment. Accord de confidentialité signé à l'arrivée.</span></div>
+              <div style="display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 16px; padding: 10px 0;"><span style="font-size: 13px; color: #5B6472;">Consignes de site</span><span style="font-size: 14px;">Téléphone en mode silencieux, circulation interdite en salle pendant les essais lumière.</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div style="padding-bottom: 8px; border-bottom: 1px solid #E6E8EB;">
+            <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Contact sur place</h2>
+          </div>
+          <div style="margin-top: 16px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+            <div style="border: 1px solid #E6E8EB; border-radius: 8px; padding: 16px;">
+              <div style="font-size: 15px; font-weight: 500;">Élodie Marchand</div>
+              <div style="font-size: 13px; color: #5B6472; margin-top: 2px;">Régisseuse générale, référente du jour</div>
+              <div style="font-size: 14px; margin-top: 12px; font-variant-numeric: tabular-nums;">06 12 44 87 03</div>
+              <div style="font-size: 13px; color: #8A93A0; margin-top: 2px;">Joignable à partir de 7h00</div>
+            </div>
+            <div style="border: 1px solid #E6E8EB; border-radius: 8px; padding: 16px;">
+              <div style="font-size: 15px; font-weight: 500;">Karim Benali</div>
+              <div style="font-size: 13px; color: #5B6472; margin-top: 2px;">Chef de montage, structure et podium</div>
+              <div style="font-size: 14px; margin-top: 12px; font-variant-numeric: tabular-nums;">06 74 21 09 56</div>
+              <div style="font-size: 13px; color: #8A93A0; margin-top: 2px;">Point de rendez-vous au quai à 7h30</div>
+            </div>
+            <div style="border: 1px solid #E6E8EB; border-radius: 8px; padding: 16px;">
+              <div style="font-size: 15px; font-weight: 500;">Sophie Nguyen</div>
+              <div style="font-size: 13px; color: #5B6472; margin-top: 2px;">Chargée de staffing, agence Verly Events</div>
+              <div style="font-size: 14px; margin-top: 12px; font-variant-numeric: tabular-nums;">01 44 63 20 18</div>
+              <div style="font-size: 13px; color: #8A93A0; margin-top: 2px;">Pour toute question avant la mission</div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <aside style="position: sticky; top: 32px; background: #F7F8F9; border-radius: 8px; padding: 24px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+          <span style="font-size: 12px; font-weight: 500; color: #A8630B; background: #FBF2E6; border-radius: 6px; padding: 3px 8px;">Réponse attendue</span>
+          <span style="font-size: 13px; color: #5B6472; font-variant-numeric: tabular-nums;">Il reste 1 j 06 h</span>
+        </div>
+        <p style="margin: 12px 0 0 0; font-size: 14px; color: #5B6472;">Sans réponse de votre part avant le mercredi 7 mars à 18h00, la proposition sera transmise à un autre prestataire.</p>
+
+        <div style="margin-top: 24px; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Date</span><span style="font-size: 14px; font-variant-numeric: tabular-nums; text-align: right;">Jeudi 14 mars 2026</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Horaires</span><span style="font-size: 14px; font-variant-numeric: tabular-nums; text-align: right;">8h00 – 18h00</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Lieu</span><span style="font-size: 14px; text-align: right;">Salon d'honneur<br />12 avenue Montaigne, Paris 8e</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Durée estimée</span><span style="font-size: 14px; font-variant-numeric: tabular-nums; text-align: right;">{{ heuresLabel }}</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Tarif horaire</span><span style="font-size: 14px; font-variant-numeric: tabular-nums; text-align: right;">{{ tarifLabel }}</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Repas</span><span style="font-size: 14px; text-align: right;">Fourni sur place</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0;"><span style="font-size: 13px; color: #5B6472;">Frais de transport</span><span style="font-size: 14px; text-align: right;">Non pris en charge</span></div>
+        </div>
+
+        <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #E6E8EB; display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
+          <span style="font-size: 13px; color: #5B6472;">Rémunération estimée</span>
+          <span style="font-size: 28px; font-weight: 600; color: #1F6F5C; font-variant-numeric: tabular-nums; line-height: 1.2;">{{ montantLabel }}</span>
+        </div>
+        <p style="margin: 4px 0 0 0; font-size: 13px; color: #8A93A0; text-align: right;">Brut, heures supplémentaires comptées au réel</p>
+
+        <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 8px;">
+          <button onClick="{{ accepter }}" style="height: 36px; border: 1px solid #1F6F5C; background: #1F6F5C; color: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer;" style-hover="background: #17513f; border-color: #17513f;">Accepter la mission</button>
+          <button onClick="{{ refuser }}" style="height: 36px; border: 1px solid #E6E8EB; background: #FFFFFF; color: #0F1115; border-radius: 6px; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9;">Refuser</button>
+        </div>
+        <p style="margin: 12px 0 0 0; font-size: 13px; color: #8A93A0;">L'acceptation vaut engagement de présence. Toute annulation à moins de 48 heures doit être signalée à l'agence par téléphone.</p>
+
+        <sc-if value="{{ decision }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top: 16px; padding: 10px 12px; border-radius: 6px; background: #EAF3F0; font-size: 13px; color: #1F6F5C;">{{ decisionLabel }}</div>
+        </sc-if>
+      </aside>
+
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;tarifHoraire&quot;:{&quot;editor&quot;:&quot;float&quot;,&quot;default&quot;:22,&quot;tsType&quot;:&quot;number&quot;,&quot;min&quot;:10,&quot;max&quot;:60,&quot;step&quot;:0.5,&quot;unit&quot;:&quot;€/h&quot;,&quot;section&quot;:&quot;Rémunération&quot;},&quot;heuresEstimees&quot;:{&quot;editor&quot;:&quot;float&quot;,&quot;default&quot;:10,&quot;tsType&quot;:&quot;number&quot;,&quot;min&quot;:2,&quot;max&quot;:14,&quot;step&quot;:0.5,&quot;unit&quot;:&quot;h&quot;,&quot;section&quot;:&quot;Rémunération&quot;}}">
+class Component extends DCLogic {
+  state = { decision: null };
+  fmt(n, d) {
+    return n.toFixed(d).replace('.', ',');
+  }
+  renderVals() {
+    const tarif = this.props.tarifHoraire ?? 22;
+    const heures = this.props.heuresEstimees ?? 10;
+    return {
+      tarifLabel: this.fmt(tarif, 2) + ' € / h',
+      heuresLabel: this.fmt(heures, 0) + ' h',
+      montantLabel: this.fmt(tarif * heures, 2) + ' €',
+      decision: !!this.state.decision,
+      decisionLabel: this.state.decision === 'ok'
+        ? "Mission acceptée. L'agence en est informée."
+        : "Refus enregistré. La proposition est rendue à l'agence.",
+      accepter: () => this.setState({ decision: 'ok' }),
+      refuser: () => this.setState({ decision: 'no' }),
+    };
+  }
+}
+</script>
+</body>
+</html>

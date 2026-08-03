@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #FFFFFF; font-family: Inter, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #1F6F5C; text-decoration: none; }
+  a:hover { color: #17513f; text-decoration: underline; }
+  select { font-family: Inter, sans-serif; }
+  select:focus { outline: none; border-color: #1F6F5C; }
+</style>
+</helmet>
+<div style="width: 1920px; min-height: 1080px; display: grid; grid-template-columns: 232px minmax(0, 1fr); background: #FFFFFF; color: #0F1115; font-size: 13px; line-height: 1.4;">
+
+  <nav style="width: 232px; border-right: 1px solid #E6E8EB; display: flex; flex-direction: column; position: sticky; top: 0; height: 100vh; box-sizing: border-box;">
+    <div style="padding: 16px 16px 14px 16px; border-bottom: 1px solid #E6E8EB; display: flex; align-items: center; gap: 8px;">
+      <div style="width: 20px; height: 20px; border-radius: 6px; background: #1F6F5C;"></div>
+      <div style="display: flex; flex-direction: column; line-height: 1.25;">
+        <span style="font-size: 13px; font-weight: 600; letter-spacing: -0.01em;">Verso Prod</span>
+        <span style="font-size: 11px; color: #8A93A0;">Agence · back-office</span>
+      </div>
+    </div>
+    <div style="padding: 8px; display: flex; flex-direction: column; gap: 1px;">
+      <div style="display: flex; align-items: center; gap: 9px; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><rect x="1.4" y="1.4" width="4.6" height="4.6" rx="1.2" fill="#8A93A0"></rect><rect x="8" y="1.4" width="4.6" height="4.6" rx="1.2" fill="none" stroke="#8A93A0" stroke-width="1.3"></rect><rect x="1.4" y="8" width="4.6" height="4.6" rx="1.2" fill="none" stroke="#8A93A0" stroke-width="1.3"></rect><rect x="8" y="8" width="4.6" height="4.6" rx="1.2" fill="none" stroke="#8A93A0" stroke-width="1.3"></rect></svg>
+        Tableau de bord
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <span style="display: flex; align-items: center; gap: 9px;">
+          <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="2" width="12" height="10" rx="2" fill="none" stroke="#8A93A0" stroke-width="1.4"></rect><rect x="1" y="5" width="12" height="1.4" fill="#8A93A0"></rect></svg>
+          Événements
+        </span>
+        <span style="font-size: 11px; color: #8A93A0; font-variant-numeric: tabular-nums;">14</span>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <span style="display: flex; align-items: center; gap: 9px;">
+          <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><circle cx="5" cy="5" r="2.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></circle><path d="M1.4 12.2c0-2.1 1.6-3.4 3.6-3.4s3.6 1.3 3.6 3.4" fill="none" stroke="#8A93A0" stroke-width="1.4"></path><rect x="10" y="4.3" width="1.3" height="5" fill="#8A93A0"></rect><rect x="8.2" y="6.1" width="5" height="1.3" fill="#8A93A0"></rect></svg>
+          Staffing
+        </span>
+        <span style="font-size: 11px; font-weight: 500; color: #B42318; background: #FBEDEC; border-radius: 5px; padding: 1px 6px; font-variant-numeric: tabular-nums;">3</span>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <span style="display: flex; align-items: center; gap: 9px;">
+          <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><circle cx="4.4" cy="4.4" r="2.3" fill="none" stroke="#8A93A0" stroke-width="1.4"></circle><circle cx="9.8" cy="9.4" r="2.3" fill="none" stroke="#8A93A0" stroke-width="1.4"></circle><path d="M6.2 6.1 8 7.7" stroke="#8A93A0" stroke-width="1.4"></path></svg>
+          Réseau
+        </span>
+        <span style="font-size: 11px; color: #8A93A0; font-variant-numeric: tabular-nums;">47</span>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <span style="display: flex; align-items: center; gap: 9px;">
+          <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="5.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></circle><rect x="6.3" y="3.5" width="1.4" height="4.2" fill="#8A93A0"></rect></svg>
+          Heures
+        </span>
+        <span style="font-size: 11px; font-weight: 500; color: #A8630B; background: #FBF2E6; border-radius: 5px; padding: 1px 6px; font-variant-numeric: tabular-nums;">12 h</span>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <span style="display: flex; align-items: center; gap: 9px;">
+          <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><rect x="2.4" y="1.4" width="9.2" height="11.2" rx="1.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></rect><rect x="4.6" y="5" width="4.8" height="1.2" fill="#8A93A0"></rect><rect x="4.6" y="8" width="3" height="1.2" fill="#8A93A0"></rect></svg>
+          Factures
+        </span>
+        <span style="font-size: 11px; font-weight: 500; color: #A8630B; background: #FBF2E6; border-radius: 5px; padding: 1px 6px; font-variant-numeric: tabular-nums;">3</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 9px; height: 30px; padding: 0 9px; border-radius: 5px; background: #EAF3F0; color: #1F6F5C; font-weight: 500;">
+        <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="2.2" fill="none" stroke="#1F6F5C" stroke-width="1.4"></circle><circle cx="7" cy="7" r="5.4" fill="none" stroke="#1F6F5C" stroke-width="1.4" stroke-dasharray="2.4 2"></circle></svg>
+        Réglages
+      </div>
+    </div>
+    <div style="margin-top: auto; border-top: 1px solid #E6E8EB; padding: 10px 12px; display: flex; align-items: center; gap: 9px;">
+      <div style="width: 26px; height: 26px; border-radius: 5px; background: #F7F8F9; border: 1px solid #E6E8EB; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; color: #5B6472;">SN</div>
+      <div style="display: flex; flex-direction: column; line-height: 1.25; min-width: 0;">
+        <span style="font-size: 12px; font-weight: 500;">Sophie Nguyen</span>
+        <span style="font-size: 11px; color: #8A93A0;">Chargée de production · owner</span>
+      </div>
+    </div>
+  </nav>
+
+  <main style="min-width: 0;">
+
+    <header style="padding: 16px 20px; border-bottom: 1px solid #E6E8EB; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+      <div>
+        <h1 style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.2; letter-spacing: -0.01em;">Réglages</h1>
+        <p style="margin: 3px 0 0 0; font-size: 12px; color: #5B6472; font-variant-numeric: tabular-nums;">Verso Prod · SIRET 812 664 902 00017 · 47 prestataires au réseau · {{ sousTitre }}</p>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <button style="height: 30px; padding: 0 11px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 13px; font-weight: 500; color: #5B6472; cursor: pointer; white-space: nowrap;" style-hover="background: #F7F8F9; color: #0F1115;">Journal des accès</button>
+        <button onClick="{{ inviter }}" style="height: 30px; padding: 0 12px; border: 1px solid #1F6F5C; background: #1F6F5C; color: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 13px; font-weight: 500; cursor: pointer; white-space: nowrap;" style-hover="background: #17513f; border-color: #17513f;">Inviter un utilisateur</button>
+      </div>
+    </header>
+
+    <div style="display: grid; grid-template-columns: 216px minmax(0, 1fr); gap: 24px; padding: 16px 20px 32px 20px; align-items: start;">
+
+      <nav style="position: sticky; top: 16px; display: flex; flex-direction: column; gap: 1px; border-right: 1px solid #E6E8EB; padding-right: 12px;">
+        <div style="padding: 4px 9px 8px 9px; font-size: 11px; font-weight: 600; color: #8A93A0;">Réglages de l'agence</div>
+        <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+          <span>Agence</span>
+          <span style="font-size: 11px; color: #8A93A0;">Verso Prod</span>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; background: #EAF3F0; color: #1F6F5C; font-weight: 500;">
+          <span>Utilisateurs</span>
+          <span style="font-size: 11px; font-weight: 500; font-variant-numeric: tabular-nums;">4</span>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+          <span>Tarifs</span>
+          <span style="font-size: 11px; color: #8A93A0; font-variant-numeric: tabular-nums;">9 grilles</span>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+          <span>Compétences</span>
+          <span style="font-size: 11px; color: #8A93A0; font-variant-numeric: tabular-nums;">14</span>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+          <span>Modèles de mails</span>
+          <span style="font-size: 11px; color: #8A93A0; font-variant-numeric: tabular-nums;">7</span>
+        </div>
+      </nav>
+
+      <div style="min-width: 0; display: flex; flex-direction: column; gap: 14px;">
+
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
+          <div>
+            <h2 style="margin: 0; font-size: 15px; font-weight: 600;">Utilisateurs</h2>
+            <p style="margin: 3px 0 0 0; font-size: 12px; color: #5B6472;">Les comptes ayant accès au back-office de l'agence. Les prestataires ne sont pas des utilisateurs : ils accèdent à leur propre espace.</p>
+          </div>
+          <span style="font-size: 12px; color: #8A93A0; font-variant-numeric: tabular-nums; flex: none;">{{ resume }}</span>
+        </div>
+
+        <div style="border: 1px solid #E6E8EB; border-radius: 6px; overflow: hidden;">
+          <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) 148px 148px 184px 208px 34px; align-items: center; height: 32px; background: #F7F8F9; border-bottom: 1px solid #E6E8EB; font-size: 11px; font-weight: 600; color: #5B6472;">
+            <span style="padding: 0 12px;">Nom</span>
+            <span style="padding: 0 12px;">E-mail</span>
+            <span style="padding: 0 12px;">Rôle</span>
+            <span style="padding: 0 12px;">État du compte</span>
+            <span style="padding: 0 12px;">Dernière connexion</span>
+            <span style="padding: 0 12px; text-align: right;">Actions</span>
+            <span></span>
+          </div>
+
+          <sc-for list="{{ utilisateurs }}" as="u" hint-placeholder-count="4">
+            <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) 148px 148px 184px 208px 34px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB; background: {{ u.fond }};" style-hover="background: #FCFCFD;">
+              <span style="padding: 0 12px; display: flex; align-items: center; gap: 8px; min-width: 0;">
+                <span style="width: 24px; height: 24px; border-radius: 5px; background: #F7F8F9; border: 1px solid #E6E8EB; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600; color: #5B6472; flex: none;">{{ u.initiales }}</span>
+                <span style="font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ u.nom }}</span>
+                <span style="font-size: 11px; color: #8A93A0; white-space: nowrap;">{{ u.mention }}</span>
+              </span>
+              <span style="padding: 0 12px; color: #5B6472; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ u.email }}</span>
+              <span style="padding: 0 12px;">
+                <sc-if value="{{ u.roleFixe }}" hint-placeholder-val="{{ false }}">
+                  <span style="font-size: 11px; font-weight: 500; color: #1F6F5C; background: #EAF3F0; border-radius: 5px; padding: 2px 7px;">Owner</span>
+                </sc-if>
+                <sc-if value="{{ u.roleModifiable }}" hint-placeholder-val="{{ true }}">
+                  <select value="{{ u.role }}" onChange="{{ u.majRole }}" style="height: 26px; width: 108px; border: 1px solid #E6E8EB; border-radius: 5px; padding: 0 5px; font-size: 12px; color: #0F1115; background: #FFFFFF;">
+                    <option value="admin">Admin</option>
+                    <option value="owner">Owner</option>
+                  </select>
+                </sc-if>
+              </span>
+              <span style="padding: 0 12px;"><span style="font-size: 11px; font-weight: 500; border-radius: 5px; padding: 2px 7px; white-space: nowrap; color: {{ u.etatTexte }}; background: {{ u.etatFond }};">{{ u.etat }}</span></span>
+              <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ u.connexion }}</span>
+              <span style="padding: 0 12px; display: flex; justify-content: flex-end; gap: 6px;">
+                <button onClick="{{ u.action }}" style="{{ u.styleAction }}">{{ u.libelleAction }}</button>
+                <button style="{{ u.styleSecondaire }}">{{ u.libelleSecondaire }}</button>
+              </span>
+              <span style="display: flex; justify-content: center;"><button style="height: 24px; width: 24px; border: 1px solid transparent; background: none; border-radius: 5px; font-family: inherit; font-size: 12px; color: #8A93A0; cursor: pointer;" style-hover="border-color: #E6E8EB; background: #FFFFFF; color: #0F1115;">⋯</button></span>
+            </div>
+          </sc-for>
+
+          <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) 148px 148px 184px 208px 34px; align-items: center; height: 34px; background: #F7F8F9; font-size: 12px; font-weight: 500; color: #5B6472;">
+            <span style="padding: 0 12px; font-variant-numeric: tabular-nums;">{{ totalComptes }}</span>
+            <span style="padding: 0 12px;"></span>
+            <span style="padding: 0 12px; font-variant-numeric: tabular-nums;">{{ repartition }}</span>
+            <span style="padding: 0 12px; font-variant-numeric: tabular-nums;">{{ etats }}</span>
+            <span style="padding: 0 12px;"></span>
+            <span style="padding: 0 12px;"></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div style="border: 1px solid #E6E8EB; border-radius: 6px;">
+          <div style="height: 36px; padding: 0 12px; display: flex; align-items: center; background: #F7F8F9; border-bottom: 1px solid #E6E8EB; border-radius: 6px 6px 0 0;">
+            <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Droits par rôle</span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(0, 1.4fr) 148px 148px; align-items: center; height: 30px; background: #F7F8F9; border-bottom: 1px solid #E6E8EB; font-size: 11px; font-weight: 600; color: #5B6472;">
+            <span style="padding: 0 12px;">Droit</span>
+            <span style="padding: 0 12px; text-align: center;">Owner</span>
+            <span style="padding: 0 12px; text-align: center;">Admin</span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(0, 1.4fr) 148px 148px; align-items: center; height: 34px; border-bottom: 1px solid #E6E8EB;">
+            <span style="padding: 0 12px; color: #5B6472;">Créer et staffer des événements</span>
+            <span style="padding: 0 12px; text-align: center; color: #1F6F5C; font-weight: 600;">•</span>
+            <span style="padding: 0 12px; text-align: center; color: #1F6F5C; font-weight: 600;">•</span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(0, 1.4fr) 148px 148px; align-items: center; height: 34px; border-bottom: 1px solid #E6E8EB;">
+            <span style="padding: 0 12px; color: #5B6472;">Valider les heures et contrôler les factures</span>
+            <span style="padding: 0 12px; text-align: center; color: #1F6F5C; font-weight: 600;">•</span>
+            <span style="padding: 0 12px; text-align: center; color: #1F6F5C; font-weight: 600;">•</span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(0, 1.4fr) 148px 148px; align-items: center; height: 34px; border-bottom: 1px solid #E6E8EB;">
+            <span style="padding: 0 12px; color: #5B6472;">Mettre au paiement et exporter la comptabilité</span>
+            <span style="padding: 0 12px; text-align: center; color: #1F6F5C; font-weight: 600;">•</span>
+            <span style="padding: 0 12px; text-align: center; color: #C3C9D2;">—</span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(0, 1.4fr) 148px 148px; align-items: center; height: 34px; border-bottom: 1px solid #E6E8EB;">
+            <span style="padding: 0 12px; color: #5B6472;">Gérer les utilisateurs et les grilles de tarifs</span>
+            <span style="padding: 0 12px; text-align: center; color: #1F6F5C; font-weight: 600;">•</span>
+            <span style="padding: 0 12px; text-align: center; color: #C3C9D2;">—</span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(0, 1.4fr) 148px 148px; align-items: center; height: 34px;">
+            <span style="padding: 0 12px; color: #5B6472;">Blacklister un prestataire, supprimer l'agence</span>
+            <span style="padding: 0 12px; text-align: center; color: #1F6F5C; font-weight: 600;">•</span>
+            <span style="padding: 0 12px; text-align: center; color: #C3C9D2;">—</span>
+          </div>
+        </div>
+
+        <p style="margin: 0; font-size: 12px; color: #8A93A0;">Une agence doit conserver au moins un compte owner. Le retrait d'un accès est immédiat et journalisé : les événements créés par l'utilisateur restent attribués à l'agence.</p>
+
+      </div>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = {
+    roles: { u2: 'admin', u3: 'admin', u4: 'admin' },
+    invitations: {},
+  };
+
+  base() {
+    return [
+      { id: 'u1', nom: 'Marc Vasselin', mention: '· compte principal', initiales: 'MV', email: 'marc.vasselin@versoprod.fr', role: 'owner', etat: 'Actif', connexion: 'aujourd\u2019hui, 07h58' },
+      { id: 'u2', nom: 'Sophie Nguyen', mention: '· vous', initiales: 'SN', email: 'sophie.nguyen@versoprod.fr', role: 'owner', etat: 'Actif', connexion: 'aujourd\u2019hui, 08h12' },
+      { id: 'u3', nom: 'Yanis Berrada', mention: '· chef d\u2019équipe', initiales: 'YB', email: 'yanis.berrada@versoprod.fr', role: 'admin', etat: 'Actif', connexion: 'hier, 19h34' },
+      { id: 'u4', nom: 'Camille Sorel', mention: '', initiales: 'CS', email: 'camille.sorel@versoprod.fr', role: 'admin', etat: 'Invitation en attente', connexion: 'jamais connectée' },
+    ];
+  }
+
+  renderVals() {
+    const st = this.state;
+
+    const utilisateurs = this.base().map(u => {
+      const fixe = u.id === 'u1' || u.id === 'u2';
+      const role = fixe ? 'owner' : (st.roles[u.id] || u.role);
+      const invite = u.etat === 'Invitation en attente';
+      const relance = st.invitations[u.id];
+      return {
+        ...u,
+        role,
+        roleFixe: fixe,
+        roleModifiable: !fixe,
+        etat: invite ? (relance ? 'Invitation renvoyée' : 'Invitation en attente') : 'Actif',
+        etatTexte: invite ? '#A8630B' : '#1F6F5C',
+        etatFond: invite ? '#FBF2E6' : '#EAF3F0',
+        fond: invite ? '#FEFCF8' : 'transparent',
+        connexion: invite ? 'jamais connectée · invitée le 28 juillet' : u.connexion,
+        libelleAction: invite ? (relance ? 'Renvoyée à ' + relance : 'Renvoyer l\u2019invitation') : 'Modifier l\u2019accès',
+        styleAction: 'height: 26px; padding: 0 10px; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; cursor: pointer; white-space: nowrap; border: 1px solid '
+          + (invite && !relance ? '#1F6F5C' : '#E6E8EB')
+          + '; background: ' + (invite && !relance ? '#1F6F5C' : '#FFFFFF')
+          + '; color: ' + (invite && !relance ? '#FFFFFF' : (relance ? '#1F6F5C' : '#0F1115')) + ';',
+        libelleSecondaire: fixe ? 'Transférer' : (invite ? 'Annuler' : 'Retirer l\u2019accès'),
+        styleSecondaire: 'height: 26px; padding: 0 10px; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; cursor: pointer; white-space: nowrap; border: 1px solid #E6E8EB; background: #FFFFFF; color: '
+          + (fixe ? '#5B6472' : '#B42318') + ';',
+        action: () => {
+          if (!invite) return;
+          const d = new Date();
+          const h = String(d.getHours()).padStart(2, '0') + 'h' + String(d.getMinutes()).padStart(2, '0');
+          this.setState(s => ({ invitations: { ...s.invitations, [u.id]: h } }));
+        },
+        majRole: e => this.setState(s => ({ roles: { ...s.roles, [u.id]: e.target.value } })),
+      };
+    });
+
+    const owners = utilisateurs.filter(u => u.role === 'owner').length;
+    const admins = utilisateurs.length - owners;
+    const attente = utilisateurs.filter(u => u.etat !== 'Actif').length;
+
+    return {
+      utilisateurs,
+      sousTitre: utilisateurs.length + ' utilisateurs du back-office · ' + owners + ' owner, ' + admins + ' admin',
+      resume: attente > 0 ? attente + ' invitation en attente · dernière modification le 28 juillet' : 'Tous les comptes sont actifs',
+      totalComptes: utilisateurs.length + ' comptes',
+      repartition: owners + ' owner · ' + admins + ' admin',
+      etats: (utilisateurs.length - attente) + ' actifs · ' + attente + ' en attente',
+      inviter: () => {},
+    };
+  }
+}
+</script>
+</body>
+</html>

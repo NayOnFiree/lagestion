@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #FFFFFF; font-family: Inter, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #1F6F5C; text-decoration: none; }
+  a:hover { color: #17513f; text-decoration: underline; }
+  textarea { font-family: Inter, sans-serif; }
+  textarea:focus { outline: none; border-color: #1F6F5C; }
+</style>
+</helmet>
+<div style="width: 1920px; min-height: 1080px; display: grid; grid-template-columns: 232px minmax(0, 1fr); background: #FFFFFF; color: #0F1115; font-size: 13px; line-height: 1.4;">
+
+  <nav style="width: 232px; border-right: 1px solid #E6E8EB; display: flex; flex-direction: column; position: sticky; top: 0; height: 100vh; box-sizing: border-box;">
+    <div style="padding: 16px 16px 14px 16px; border-bottom: 1px solid #E6E8EB; display: flex; align-items: center; gap: 8px;">
+      <div style="width: 20px; height: 20px; border-radius: 6px; background: #1F6F5C;"></div>
+      <div style="display: flex; flex-direction: column; line-height: 1.25;">
+        <span style="font-size: 13px; font-weight: 600; letter-spacing: -0.01em;">Verso Prod</span>
+        <span style="font-size: 11px; color: #8A93A0;">Agence · back-office</span>
+      </div>
+    </div>
+    <div style="padding: 8px; display: flex; flex-direction: column; gap: 1px;">
+      <div style="display: flex; align-items: center; gap: 9px; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><rect x="1.4" y="1.4" width="4.6" height="4.6" rx="1.2" fill="#8A93A0"></rect><rect x="8" y="1.4" width="4.6" height="4.6" rx="1.2" fill="none" stroke="#8A93A0" stroke-width="1.3"></rect><rect x="1.4" y="8" width="4.6" height="4.6" rx="1.2" fill="none" stroke="#8A93A0" stroke-width="1.3"></rect><rect x="8" y="8" width="4.6" height="4.6" rx="1.2" fill="none" stroke="#8A93A0" stroke-width="1.3"></rect></svg>
+        Tableau de bord
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <span style="display: flex; align-items: center; gap: 9px;">
+          <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="2" width="12" height="10" rx="2" fill="none" stroke="#8A93A0" stroke-width="1.4"></rect><rect x="1" y="5" width="12" height="1.4" fill="#8A93A0"></rect></svg>
+          Événements
+        </span>
+        <span style="font-size: 11px; color: #8A93A0; font-variant-numeric: tabular-nums;">14</span>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <span style="display: flex; align-items: center; gap: 9px;">
+          <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><circle cx="5" cy="5" r="2.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></circle><path d="M1.4 12.2c0-2.1 1.6-3.4 3.6-3.4s3.6 1.3 3.6 3.4" fill="none" stroke="#8A93A0" stroke-width="1.4"></path><rect x="10" y="4.3" width="1.3" height="5" fill="#8A93A0"></rect><rect x="8.2" y="6.1" width="5" height="1.3" fill="#8A93A0"></rect></svg>
+          Staffing
+        </span>
+        <span style="font-size: 11px; font-weight: 500; color: #B42318; background: #FBEDEC; border-radius: 5px; padding: 1px 6px; font-variant-numeric: tabular-nums;">3</span>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; background: #EAF3F0; color: #1F6F5C; font-weight: 500;">
+        <span style="display: flex; align-items: center; gap: 9px;">
+          <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><circle cx="4.4" cy="4.4" r="2.3" fill="none" stroke="#1F6F5C" stroke-width="1.4"></circle><circle cx="9.8" cy="9.4" r="2.3" fill="none" stroke="#1F6F5C" stroke-width="1.4"></circle><path d="M6.2 6.1 8 7.7" stroke="#1F6F5C" stroke-width="1.4"></path></svg>
+          Réseau
+        </span>
+        <span style="font-size: 11px; font-weight: 500; font-variant-numeric: tabular-nums;">47</span>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <span style="display: flex; align-items: center; gap: 9px;">
+          <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="5.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></circle><rect x="6.3" y="3.5" width="1.4" height="4.2" fill="#8A93A0"></rect></svg>
+          Heures
+        </span>
+        <span style="font-size: 11px; font-weight: 500; color: #A8630B; background: #FBF2E6; border-radius: 5px; padding: 1px 6px; font-variant-numeric: tabular-nums;">12 h</span>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <span style="display: flex; align-items: center; gap: 9px;">
+          <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><rect x="2.4" y="1.4" width="9.2" height="11.2" rx="1.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></rect><rect x="4.6" y="5" width="4.8" height="1.2" fill="#8A93A0"></rect><rect x="4.6" y="8" width="3" height="1.2" fill="#8A93A0"></rect></svg>
+          Factures
+        </span>
+        <span style="font-size: 11px; font-weight: 500; color: #A8630B; background: #FBF2E6; border-radius: 5px; padding: 1px 6px; font-variant-numeric: tabular-nums;">3</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 9px; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="2.2" fill="none" stroke="#8A93A0" stroke-width="1.4"></circle><circle cx="7" cy="7" r="5.4" fill="none" stroke="#8A93A0" stroke-width="1.4" stroke-dasharray="2.4 2"></circle></svg>
+        Réglages
+      </div>
+    </div>
+    <div style="margin-top: auto; border-top: 1px solid #E6E8EB; padding: 10px 12px; display: flex; align-items: center; gap: 9px;">
+      <div style="width: 26px; height: 26px; border-radius: 5px; background: #F7F8F9; border: 1px solid #E6E8EB; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; color: #5B6472;">SN</div>
+      <div style="display: flex; flex-direction: column; line-height: 1.25; min-width: 0;">
+        <span style="font-size: 12px; font-weight: 500;">Sophie Nguyen</span>
+        <span style="font-size: 11px; color: #8A93A0;">Chargée de production</span>
+      </div>
+    </div>
+  </nav>
+
+  <main style="min-width: 0;">
+
+    <header style="padding: 14px 20px 16px 20px; border-bottom: 1px solid #E6E8EB;">
+      <div style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #8A93A0;">
+        <span>Réseau</span>
+        <span>/</span>
+        <span style="color: #5B6472;">Camille Ferrand · PR-0148</span>
+      </div>
+      <div style="margin-top: 8px; display: flex; align-items: flex-start; justify-content: space-between; gap: 24px;">
+        <div style="min-width: 0;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <h1 style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.2; letter-spacing: -0.01em;">Camille Ferrand</h1>
+            <span style="font-size: 11px; font-weight: 500; color: #B42318; background: #FBEDEC; border-radius: 5px; padding: 2px 7px;">Attestation URSSAF expirée</span>
+            <span style="font-size: 11px; font-weight: 500; color: #1F6F5C; background: #EAF3F0; border-radius: 5px; padding: 2px 7px;">NDA signé</span>
+            <span style="font-size: 11px; font-weight: 500; color: #5B6472; background: #F7F8F9; border-radius: 5px; padding: 2px 7px;">RC pro à jour</span>
+            <span style="font-size: 11px; font-weight: 500; color: #5B6472; background: #F7F8F9; border-radius: 5px; padding: 2px 7px; font-variant-numeric: tabular-nums;">Score 95</span>
+          </div>
+          <p style="margin: 5px 0 0 0; font-size: 12px; color: #5B6472; font-variant-numeric: tabular-nums;">Technicienne de montage · Montreuil, 6 km du 8e · Micro-entreprise · 34 missions réalisées depuis janvier 2024 · dernière mission le 2 août 2026</p>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px; flex: none;">
+          <button style="height: 30px; padding: 0 11px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 13px; font-weight: 500; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">Envoyer un message</button>
+          <button style="height: 30px; padding: 0 11px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 13px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Demander l'attestation</button>
+          <button style="height: 30px; padding: 0 12px; border: 1px solid #1F6F5C; background: #1F6F5C; color: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 13px; font-weight: 500; cursor: pointer; white-space: nowrap;" style-hover="background: #17513f; border-color: #17513f;">Proposer une mission</button>
+        </div>
+      </div>
+    </header>
+
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 20px; padding: 16px 20px 32px 20px; align-items: start;">
+
+      <div style="min-width: 0; display: flex; flex-direction: column; gap: 14px;">
+
+        <section style="border: 1px solid #E6E8EB; border-radius: 6px; overflow: hidden;">
+          <div style="height: 36px; padding: 0 12px; display: flex; align-items: center; justify-content: space-between; background: #FBEDEC; border-bottom: 1px solid #E6E8EB;">
+            <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Documents · 1 expiré sur 5</span>
+            <span style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 11px; color: #B42318; font-variant-numeric: tabular-nums;">Aucune nouvelle confirmation possible depuis le 18 juillet</span>
+              <button style="height: 26px; padding: 0 10px; border: 1px solid #1F6F5C; background: #1F6F5C; color: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; cursor: pointer;" style-hover="background: #17513f; border-color: #17513f;">Relancer par SMS</button>
+            </span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(0, 1.2fr) 152px 152px 148px minmax(0, 1fr) 172px; align-items: center; height: 30px; background: #F7F8F9; border-bottom: 1px solid #E6E8EB; font-size: 11px; font-weight: 600; color: #5B6472;">
+            <span style="padding: 0 12px;">Document</span>
+            <span style="padding: 0 12px;">Reçu le</span>
+            <span style="padding: 0 12px;">Valide jusqu'au</span>
+            <span style="padding: 0 12px;">Statut</span>
+            <span style="padding: 0 12px;">Contrôle</span>
+            <span style="padding: 0 12px; text-align: right;">Action</span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(0, 1.2fr) 152px 152px 148px minmax(0, 1fr) 172px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB; background: #FDF7F7;">
+            <span style="padding: 0 12px; font-weight: 500;">Attestation de vigilance URSSAF</span>
+            <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">18 janv. 2026</span>
+            <span style="padding: 0 12px; color: #B42318; font-variant-numeric: tabular-nums;">18 juil. 2026</span>
+            <span style="padding: 0 12px;"><span style="font-size: 11px; font-weight: 500; color: #B42318; background: #FBEDEC; border-radius: 5px; padding: 2px 7px; font-variant-numeric: tabular-nums;">Expirée depuis 16 j</span></span>
+            <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">2 relances envoyées · dernière le 29 juillet</span>
+            <span style="padding: 0 12px; display: flex; justify-content: flex-end; gap: 6px;"><button style="height: 26px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Téléverser</button><button style="height: 26px; width: 26px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">⋯</button></span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(0, 1.2fr) 152px 152px 148px minmax(0, 1fr) 172px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB;" style-hover="background: #FCFCFD;">
+            <span style="padding: 0 12px; font-weight: 500;">Assurance responsabilité civile pro</span>
+            <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">4 févr. 2026</span>
+            <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">4 févr. 2027</span>
+            <span style="padding: 0 12px;"><span style="font-size: 11px; font-weight: 500; color: #1F6F5C; background: #EAF3F0; border-radius: 5px; padding: 2px 7px;">À jour</span></span>
+            <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">Validé le 5 février par Sophie Nguyen</span>
+            <span style="padding: 0 12px; display: flex; justify-content: flex-end; gap: 6px;"><button style="height: 26px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">Consulter</button><button style="height: 26px; width: 26px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">⋯</button></span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(0, 1.2fr) 152px 152px 148px minmax(0, 1fr) 172px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB;" style-hover="background: #FCFCFD;">
+            <span style="padding: 0 12px; font-weight: 500;">Extrait Kbis · avis SIRENE</span>
+            <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">12 janv. 2026</span>
+            <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">12 janv. 2027</span>
+            <span style="padding: 0 12px;"><span style="font-size: 11px; font-weight: 500; color: #1F6F5C; background: #EAF3F0; border-radius: 5px; padding: 2px 7px;">À jour</span></span>
+            <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">Vérifié automatiquement le 1er août</span>
+            <span style="padding: 0 12px; display: flex; justify-content: flex-end; gap: 6px;"><button style="height: 26px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">Consulter</button><button style="height: 26px; width: 26px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">⋯</button></span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(0, 1.2fr) 152px 152px 148px minmax(0, 1fr) 172px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB;" style-hover="background: #FCFCFD;">
+            <span style="padding: 0 12px; font-weight: 500;">Accord de confidentialité · Maison Verly</span>
+            <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">6 févr. 2026</span>
+            <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">Sans limite</span>
+            <span style="padding: 0 12px;"><span style="font-size: 11px; font-weight: 500; color: #1F6F5C; background: #EAF3F0; border-radius: 5px; padding: 2px 7px;">Signé</span></span>
+            <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">Signature électronique · horodatée</span>
+            <span style="padding: 0 12px; display: flex; justify-content: flex-end; gap: 6px;"><button style="height: 26px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">Consulter</button><button style="height: 26px; width: 26px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">⋯</button></span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(0, 1.2fr) 152px 152px 148px minmax(0, 1fr) 172px; align-items: center; height: 40px;" style-hover="background: #FCFCFD;">
+            <span style="padding: 0 12px; font-weight: 500;">Attestation de formation gestes et postures</span>
+            <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">3 mars 2025</span>
+            <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">3 mars 2028</span>
+            <span style="padding: 0 12px;"><span style="font-size: 11px; font-weight: 500; color: #5B6472; background: #F7F8F9; border-radius: 5px; padding: 2px 7px;">Facultatif</span></span>
+            <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">Pièce facultative, fournie par la prestataire</span>
+            <span style="padding: 0 12px; display: flex; justify-content: flex-end; gap: 6px;"><button style="height: 26px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">Consulter</button><button style="height: 26px; width: 26px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">⋯</button></span>
+          </div>
+        </section>
+
+        <section style="border: 1px solid #E6E8EB; border-radius: 6px;">
+          <div style="height: 36px; padding: 0 12px; display: flex; align-items: center; justify-content: space-between; background: #F7F8F9; border-bottom: 1px solid #E6E8EB; border-radius: 6px 6px 0 0;">
+            <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Compétences et zone de déplacement</span>
+            <button style="height: 26px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; color: #5B6472; cursor: pointer;" style-hover="color: #0F1115;">Modifier</button>
+          </div>
+          <div style="padding: 12px; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) 240px; gap: 24px;">
+            <div>
+              <div style="font-size: 11px; font-weight: 600; color: #5B6472;">Compétences validées</div>
+              <div style="margin-top: 7px; display: flex; flex-wrap: wrap; gap: 6px;">
+                <span style="font-size: 12px; font-weight: 500; color: #1F6F5C; background: #EAF3F0; border-radius: 5px; padding: 3px 8px;">Montage · référente</span>
+                <span style="font-size: 12px; color: #5B6472; background: #F7F8F9; border-radius: 5px; padding: 3px 8px;">Manutention</span>
+                <span style="font-size: 12px; color: #5B6472; background: #F7F8F9; border-radius: 5px; padding: 3px 8px;">Accrochage</span>
+                <span style="font-size: 12px; color: #5B6472; background: #F7F8F9; border-radius: 5px; padding: 3px 8px;">Régie plateau</span>
+                <span style="font-size: 12px; color: #5B6472; background: #F7F8F9; border-radius: 5px; padding: 3px 8px;">Lecture de plan</span>
+                <span style="font-size: 12px; color: #8A93A0; border: 1px dashed #C3C9D2; border-radius: 5px; padding: 3px 8px;">Cariste · non validée</span>
+              </div>
+              <div style="margin-top: 12px; font-size: 11px; font-weight: 600; color: #5B6472;">Habilitations</div>
+              <p style="margin: 5px 0 0 0; font-size: 12px; color: #5B6472;">Travail en hauteur jusqu'à 3 m, formation gestes et postures. Pas de CACES, ne peut pas conduire d'engin de levage.</p>
+            </div>
+            <div>
+              <div style="font-size: 11px; font-weight: 600; color: #5B6472;">Zone de déplacement</div>
+              <div style="margin-top: 7px; display: flex; flex-direction: column;">
+                <div style="display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 12px; color: #5B6472;">Base</span><span style="font-size: 12px; font-variant-numeric: tabular-nums;">Montreuil, 93100</span></div>
+                <div style="display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 12px; color: #5B6472;">Rayon accepté</span><span style="font-size: 12px; font-variant-numeric: tabular-nums;">25 km · Paris et petite couronne</span></div>
+                <div style="display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 12px; color: #5B6472;">Véhicule</span><span style="font-size: 12px;">Non · transports en commun</span></div>
+                <div style="display: flex; justify-content: space-between; gap: 12px; padding: 6px 0;"><span style="font-size: 12px; color: #5B6472;">Postes de nuit</span><span style="font-size: 12px;">Acceptés jusqu'à 2h00</span></div>
+              </div>
+            </div>
+            <div>
+              <div style="font-size: 11px; font-weight: 600; color: #5B6472;">Clients travaillés</div>
+              <div style="margin-top: 7px; display: flex; flex-direction: column;">
+                <div style="display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 12px; color: #5B6472;">Maison Verly</span><span style="font-size: 12px; font-variant-numeric: tabular-nums;">11 missions</span></div>
+                <div style="display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 12px; color: #5B6472;">Galerie Perrin</span><span style="font-size: 12px; font-variant-numeric: tabular-nums;">8 missions</span></div>
+                <div style="display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 12px; color: #5B6472;">Palais Brongniart</span><span style="font-size: 12px; font-variant-numeric: tabular-nums;">7 missions</span></div>
+                <div style="display: flex; justify-content: space-between; gap: 12px; padding: 6px 0;"><span style="font-size: 12px; color: #5B6472;">5 autres clients</span><span style="font-size: 12px; font-variant-numeric: tabular-nums;">8 missions</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section style="border: 1px solid #E6E8EB; border-radius: 6px; overflow: hidden;">
+          <div style="height: 36px; padding: 0 12px; display: flex; align-items: center; justify-content: space-between; background: #F7F8F9; border-bottom: 1px solid #E6E8EB;">
+            <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Historique des missions · 10 dernières sur 34</span>
+            <span style="display: flex; align-items: center; gap: 8px;">
+              <button style="height: 26px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; color: #5B6472; cursor: pointer;" style-hover="color: #0F1115;">Tous les clients ▾</button>
+              <button style="height: 26px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #FFFFFF;">Voir les 34 missions</button>
+            </span>
+          </div>
+          <div style="display: grid; grid-template-columns: 128px minmax(0, 1.4fr) 184px 176px 116px 92px 112px 132px; align-items: center; height: 30px; background: #F7F8F9; border-bottom: 1px solid #E6E8EB; font-size: 11px; font-weight: 600; color: #5B6472;">
+            <span style="padding: 0 12px;">Date</span>
+            <span style="padding: 0 12px;">Mission</span>
+            <span style="padding: 0 12px;">Client</span>
+            <span style="padding: 0 12px;">Poste</span>
+            <span style="padding: 0 12px; text-align: right;">Horaires</span>
+            <span style="padding: 0 12px; text-align: right;">Heures</span>
+            <span style="padding: 0 12px; text-align: right;">Montant</span>
+            <span style="padding: 0 12px;">Statut</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 128px minmax(0, 1.4fr) 184px 176px 116px 92px 112px 132px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB;" style-hover="background: #FCFCFD;">
+            <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">2 août 2026</span>
+            <span style="padding: 0 12px; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Montage showroom collection été</span>
+            <span style="padding: 0 12px; color: #5B6472;">Maison Verly</span>
+            <span style="padding: 0 12px; color: #5B6472;">Technicienne montage</span>
+            <span style="padding: 0 12px; text-align: right; color: #5B6472; font-variant-numeric: tabular-nums;">8h – 17h</span>
+            <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">9 h</span>
+            <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">198,00 €</span>
+            <span style="padding: 0 12px;"><span style="font-size: 11px; font-weight: 500; color: #A8630B; background: #FBF2E6; border-radius: 5px; padding: 2px 7px;">À facturer</span></span>
+          </div>
+          <div style="display: grid; grid-template-columns: 128px minmax(0, 1.4fr) 184px 176px 116px 92px 112px 132px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB;" style-hover="background: #FCFCFD;">
+            <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">25 juil. 2026</span>
+            <span style="padding: 0 12px; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Démontage exposition Rives</span>
+            <span style="padding: 0 12px; color: #5B6472;">Galerie Perrin</span>
+            <span style="padding: 0 12px; color: #5B6472;">Manutentionnaire</span>
+            <span style="padding: 0 12px; text-align: right; color: #5B6472; font-variant-numeric: tabular-nums;">6h – 12h</span>
+            <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">6 h</span>
+            <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">132,00 €</span>
+            <span style="padding: 0 12px;"><span style="font-size: 11px; font-weight: 500; color: #5B6472; background: #F7F8F9; border-radius: 5px; padding: 2px 7px;">Réglée</span></span>
+          </div>
+          <div style="display: grid; grid-template-columns: 128px minmax(0, 1.4fr) 184px 176px 116px 92px 112px 132px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB;" style-hover="background: #FCFCFD;">
+            <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">18 juil. 2026</span>
+            <span style="padding: 0 12px; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Montage de la salle de réception</span>
+            <span style="padding: 0 12px; color: #5B6472;">Hôtel Bellecour</span>
+            <span style="padding: 0 12px; color: #5B6472;">Technicienne montage</span>
+            <span style="padding: 0 12px; text-align: right; color: #5B6472; font-variant-numeric: tabular-nums;">9h – 17h</span>
+            <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">8 h</span>
+            <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">176,00 €</span>
+            <span style="padding: 0 12px;"><span style="font-size: 11px; font-weight: 500; color: #5B6472; background: #F7F8F9; border-radius: 5px; padding: 2px 7px;">Réglée</span></span>
+          </div>
+          <div style="display: grid; grid-template-columns: 128px minmax(0, 1.4fr) 184px 176px 116px 92px 112px 132px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB;" style-hover="background: #FCFCFD;">
+            <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">11 juil. 2026</span>
+            <span style="padding: 0 12px; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Chargement du matériel scénique</span>
+            <span style="padding: 0 12px; color: #5B6472;">Palais Brongniart</span>
+            <span style="padding: 0 12px; color: #5B6472;">Manutentionnaire</span>
+            <span style="padding: 0 12px; text-align: right; color: #5B6472; font-variant-numeric: tabular-nums;">6h – 12h</span>
+            <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">6 h</span>
+            <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">132,00 €</span>
+            <span style="padding: 0 12px;"><span style="font-size: 11px; font-weight: 500; color: #5B6472; background: #F7F8F9; border-radius: 5px; padding: 2px 7px;">Réglée</span></span>
+          </div>
+          <div style="display: grid; grid-template-columns: 128px minmax(0, 1.4fr) 184px 176px 116px 92px 112px 132px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB;" style-hover="background: #FCFCFD;">
+            <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">4 juil. 2026</span>
+            <span style="padding: 0 12px; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Régie du salon des créateurs</span>
+            <span style="padding: 0 12px; color: #5B6472;">Studio Nomade</span>
+            <span style="padding: 0 12px; color: #5B6472;">Régie plateau</span>
+            <span style="padding: 0 12px; text-align: right; color: #5B6472; font-variant-numeric: tabular-nums;">9h – 18h</span>
+            <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">9 h</span>
+            <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">198,00 €</span>
+            <span style="padding: 0 12px;"><span style="font-size: 11px; font-weight: 500; color: #5B6472; background: #F7F8F9; border-radius: 5px; padding: 2px 7px;">Réglée</span></span>
+          </div>
+          <div style="display: grid; grid-template-columns: 128px minmax(0, 1.4fr) 184px 176px 116px 92px 112px 132px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB;" style-hover="background: #FCFCFD;">
+            <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">27 juin 2026</span>
+            <span style="padding: 0 12px; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Accrochage des œuvres, salle nord</span>
+            <span style="padding: 0 12px; color: #5B6472;">Galerie Perrin</span>
+            <span style="padding: 0 12px; color: #5B6472;">Technicienne montage</span>
+            <span style="padding: 0 12px; text-align: right; color: #5B6472; font-variant-numeric: tabular-nums;">10h – 17h</span>
+            <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">7 h</span>
+            <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">154,00 €</span>
+            <span style="padding: 0 12px;"><span style="font-size: 11px; font-weight: 500; color: #5B6472; background: #F7F8F9; border-radius: 5px; padding: 2px 7px;">Réglée</span></span>
+          </div>
+          <div style="display: grid; grid-template-columns: 128px minmax(0, 1.4fr) 184px 176px 116px 92px 112px 132px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB;" style-hover="background: #FCFCFD;">
+            <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">20 juin 2026</span>
+            <span style="padding: 0 12px; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Montage du défilé collection été</span>
+            <span style="padding: 0 12px; color: #5B6472;">Maison Verly</span>
+            <span style="padding: 0 12px; color: #5B6472;">Technicienne montage</span>
+            <span style="padding: 0 12px; text-align: right; color: #5B6472; font-variant-numeric: tabular-nums;">8h – 18h</span>
+            <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">10 h</span>
+            <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">220,00 €</span>
+            <span style="padding: 0 12px;"><span style="font-size: 11px; font-weight: 500; color: #5B6472; background: #F7F8F9; border-radius: 5px; padding: 2px 7px;">Réglée</span></span>
+          </div>
+          <div style="display: grid; grid-template-columns: 128px minmax(0, 1.4fr) 184px 176px 116px 92px 112px 132px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB;" style-hover="background: #FCFCFD;">
+            <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">13 juin 2026</span>
+            <span style="padding: 0 12px; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Festival des quais, montage scène</span>
+            <span style="padding: 0 12px; color: #5B6472;">Ville de Pantin</span>
+            <span style="padding: 0 12px; color: #5B6472;">Technicienne montage</span>
+            <span style="padding: 0 12px; text-align: right; color: #5B6472; font-variant-numeric: tabular-nums;">7h – 15h</span>
+            <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">8 h</span>
+            <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">176,00 €</span>
+            <span style="padding: 0 12px;"><span style="font-size: 11px; font-weight: 500; color: #5B6472; background: #F7F8F9; border-radius: 5px; padding: 2px 7px;">Réglée</span></span>
+          </div>
+          <div style="display: grid; grid-template-columns: 128px minmax(0, 1.4fr) 184px 176px 116px 92px 112px 132px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB;" style-hover="background: #FCFCFD;">
+            <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">6 juin 2026</span>
+            <span style="padding: 0 12px; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Presse et showroom, journée acheteurs</span>
+            <span style="padding: 0 12px; color: #5B6472;">Maison Verly</span>
+            <span style="padding: 0 12px; color: #5B6472;">Technicienne montage</span>
+            <span style="padding: 0 12px; text-align: right; color: #5B6472; font-variant-numeric: tabular-nums;">8h – 17h</span>
+            <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">9 h</span>
+            <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">198,00 €</span>
+            <span style="padding: 0 12px;"><span style="font-size: 11px; font-weight: 500; color: #5B6472; background: #F7F8F9; border-radius: 5px; padding: 2px 7px;">Réglée</span></span>
+          </div>
+          <div style="display: grid; grid-template-columns: 128px minmax(0, 1.4fr) 184px 176px 116px 92px 112px 132px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB;" style-hover="background: #FCFCFD;">
+            <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">30 mai 2026</span>
+            <span style="padding: 0 12px; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Transport du matériel depuis l'entrepôt</span>
+            <span style="padding: 0 12px; color: #5B6472;">Grande Halle</span>
+            <span style="padding: 0 12px; color: #5B6472;">Manutentionnaire</span>
+            <span style="padding: 0 12px; text-align: right; color: #5B6472; font-variant-numeric: tabular-nums;">5h – 10h</span>
+            <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">5 h</span>
+            <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">110,00 €</span>
+            <span style="padding: 0 12px;"><span style="font-size: 11px; font-weight: 500; color: #5B6472; background: #F7F8F9; border-radius: 5px; padding: 2px 7px;">Réglée</span></span>
+          </div>
+          <div style="display: grid; grid-template-columns: 128px minmax(0, 1.4fr) 184px 176px 116px 92px 112px 132px; align-items: center; height: 34px; background: #F7F8F9; font-size: 12px; font-weight: 500; color: #5B6472;">
+            <span style="padding: 0 12px;">10 missions</span>
+            <span style="padding: 0 12px;">7 clients</span>
+            <span style="padding: 0 12px;"></span>
+            <span style="padding: 0 12px;"></span>
+            <span style="padding: 0 12px;"></span>
+            <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">77 h</span>
+            <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">1 694,00 €</span>
+            <span style="padding: 0 12px; font-variant-numeric: tabular-nums;">1 à facturer</span>
+          </div>
+        </section>
+
+        <section style="border: 1px solid #E6E8EB; border-radius: 6px;">
+          <div style="height: 36px; padding: 0 12px; display: flex; align-items: center; justify-content: space-between; background: #F7F8F9; border-bottom: 1px solid #E6E8EB; border-radius: 6px 6px 0 0;">
+            <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Notes internes · non visibles par la prestataire</span>
+            <span style="font-size: 11px; color: #8A93A0;">3 notes</span>
+          </div>
+          <div style="padding: 12px; display: flex; flex-direction: column; gap: 10px;">
+            <div style="display: grid; grid-template-columns: 168px minmax(0, 1fr); gap: 16px; padding-bottom: 10px; border-bottom: 1px solid #E6E8EB;">
+              <span style="font-size: 12px; color: #8A93A0; font-variant-numeric: tabular-nums;">29 juil. 2026 · S. Nguyen</span>
+              <span style="font-size: 13px; color: #0F1115;">Relancée pour l'attestation URSSAF, dit l'avoir demandée en ligne. À revérifier avant de la confirmer sur le défilé de septembre.</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 168px minmax(0, 1fr); gap: 16px; padding-bottom: 10px; border-bottom: 1px solid #E6E8EB;">
+              <span style="font-size: 12px; color: #8A93A0; font-variant-numeric: tabular-nums;">20 juin 2026 · Y. Berrada</span>
+              <span style="font-size: 13px; color: #0F1115;">Très bonne lecture de plan, autonome sur le montage podium. Peut encadrer deux manutentionnaires débutants.</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 168px minmax(0, 1fr); gap: 16px;">
+              <span style="font-size: 12px; color: #8A93A0; font-variant-numeric: tabular-nums;">14 févr. 2026 · S. Nguyen</span>
+              <span style="font-size: 13px; color: #0F1115;">Refuse les postes commençant avant 6h00 : pas de véhicule, dépend du premier métro. À prendre en compte au staffing.</span>
+            </div>
+            <textarea rows="2" placeholder="Ajouter une note interne" style="margin-top: 2px; border: 1px solid #E6E8EB; border-radius: 5px; padding: 7px 9px; font-size: 13px; color: #0F1115; resize: vertical; line-height: 1.45;"></textarea>
+          </div>
+        </section>
+
+      </div>
+
+      <aside style="position: sticky; top: 16px; display: flex; flex-direction: column; gap: 12px;">
+
+        <div style="background: #F7F8F9; border-radius: 6px; padding: 14px;">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+            <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Score agence</h2>
+            <span style="font-size: 26px; font-weight: 600; color: #1F6F5C; font-variant-numeric: tabular-nums; line-height: 1.1;">95</span>
+          </div>
+          <p style="margin: 4px 0 0 0; font-size: 12px; color: #8A93A0; font-variant-numeric: tabular-nums;">2e sur 47 · calculé sur les 12 derniers mois</p>
+
+          <div style="margin-top: 12px; display: flex; flex-direction: column; gap: 9px;">
+            <div>
+              <div style="display: flex; justify-content: space-between; gap: 12px;"><span style="font-size: 12px; color: #5B6472;">Ponctualité</span><span style="font-size: 12px; font-weight: 500; font-variant-numeric: tabular-nums;">98 %</span></div>
+              <span style="margin-top: 4px; display: block; height: 4px; border-radius: 2px; background: #EFF1F3; overflow: hidden;"><span style="display: block; height: 4px; width: 98%; border-radius: 2px; background: #1F6F5C;"></span></span>
+              <div style="margin-top: 3px; font-size: 11px; color: #8A93A0; font-variant-numeric: tabular-nums;">1 retard sur 34 missions</div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; gap: 12px;"><span style="font-size: 12px; color: #5B6472;">Taux d'acceptation</span><span style="font-size: 12px; font-weight: 500; font-variant-numeric: tabular-nums;">86 %</span></div>
+              <span style="margin-top: 4px; display: block; height: 4px; border-radius: 2px; background: #EFF1F3; overflow: hidden;"><span style="display: block; height: 4px; width: 86%; border-radius: 2px; background: #1F6F5C;"></span></span>
+              <div style="margin-top: 3px; font-size: 11px; color: #8A93A0; font-variant-numeric: tabular-nums;">37 propositions, 32 acceptées</div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; gap: 12px;"><span style="font-size: 12px; color: #5B6472;">Retours terrain</span><span style="font-size: 12px; font-weight: 500; font-variant-numeric: tabular-nums;">4,8 / 5</span></div>
+              <span style="margin-top: 4px; display: block; height: 4px; border-radius: 2px; background: #EFF1F3; overflow: hidden;"><span style="display: block; height: 4px; width: 96%; border-radius: 2px; background: #1F6F5C;"></span></span>
+              <div style="margin-top: 3px; font-size: 11px; color: #8A93A0; font-variant-numeric: tabular-nums;">12 évaluations chefs d'équipe</div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; gap: 12px;"><span style="font-size: 12px; color: #5B6472;">Délai de réponse moyen</span><span style="font-size: 12px; font-weight: 500; font-variant-numeric: tabular-nums;">3 h 40</span></div>
+              <span style="margin-top: 4px; display: block; height: 4px; border-radius: 2px; background: #EFF1F3; overflow: hidden;"><span style="display: block; height: 4px; width: 88%; border-radius: 2px; background: #1F6F5C;"></span></span>
+              <div style="margin-top: 3px; font-size: 11px; color: #8A93A0; font-variant-numeric: tabular-nums;">Moyenne du réseau : 14 h</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border: 1px solid #E6E8EB; border-radius: 6px; padding: 14px;">
+          <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Coordonnées</h2>
+          <div style="margin-top: 8px; display: flex; flex-direction: column;">
+            <div style="display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-top: 1px solid #E6E8EB;"><span style="font-size: 12px; color: #5B6472;">Téléphone</span><span style="font-size: 12px; font-variant-numeric: tabular-nums;">06 72 45 18 03</span></div>
+            <div style="display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-top: 1px solid #E6E8EB;"><span style="font-size: 12px; color: #5B6472;">E-mail</span><span style="font-size: 12px;">camille.ferrand@mail.fr</span></div>
+            <div style="display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-top: 1px solid #E6E8EB;"><span style="font-size: 12px; color: #5B6472;">Adresse</span><span style="font-size: 12px; text-align: right;">14 rue de la Fédération, 93100 Montreuil</span></div>
+            <div style="display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-top: 1px solid #E6E8EB;"><span style="font-size: 12px; color: #5B6472;">Inscrite depuis</span><span style="font-size: 12px; font-variant-numeric: tabular-nums;">9 janvier 2024</span></div>
+          </div>
+        </div>
+
+        <div style="border: 1px solid #E6E8EB; border-radius: 6px; padding: 14px;">
+          <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Statut juridique et tarif</h2>
+          <div style="margin-top: 8px; display: flex; flex-direction: column;">
+            <div style="display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-top: 1px solid #E6E8EB;"><span style="font-size: 12px; color: #5B6472;">Forme</span><span style="font-size: 12px;">Micro-entreprise</span></div>
+            <div style="display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-top: 1px solid #E6E8EB;"><span style="font-size: 12px; color: #5B6472;">SIRET</span><span style="font-size: 12px; font-variant-numeric: tabular-nums;">918 472 103 00024</span></div>
+            <div style="display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-top: 1px solid #E6E8EB;"><span style="font-size: 12px; color: #5B6472;">TVA</span><span style="font-size: 12px;">Non applicable, art. 293 B</span></div>
+            <div style="display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-top: 1px solid #E6E8EB;"><span style="font-size: 12px; color: #5B6472;">Tarif par défaut</span><span style="font-size: 12px; font-weight: 500; font-variant-numeric: tabular-nums;">22,00 € / h</span></div>
+            <div style="display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-top: 1px solid #E6E8EB;"><span style="font-size: 12px; color: #5B6472;">Majoration nuit</span><span style="font-size: 12px; font-variant-numeric: tabular-nums;">+ 2,00 € / h après 22h00</span></div>
+            <div style="display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-top: 1px solid #E6E8EB;"><span style="font-size: 12px; color: #5B6472;">Délai de règlement</span><span style="font-size: 12px; font-variant-numeric: tabular-nums;">15 jours fin de mission</span></div>
+          </div>
+        </div>
+
+        <div style="border: 1px solid #E6E8EB; border-radius: 6px; padding: 14px;">
+          <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Actions</h2>
+          <div style="margin-top: 10px; display: flex; flex-direction: column; gap: 6px;">
+            <button style="height: 30px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 13px; font-weight: 500; color: #0F1115; cursor: pointer; text-align: left;" style-hover="background: #F7F8F9;">Modifier la fiche</button>
+            <button style="height: 30px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 13px; font-weight: 500; color: #0F1115; cursor: pointer; text-align: left;" style-hover="background: #F7F8F9;">Ajouter à un vivier</button>
+            <button style="height: 30px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 13px; font-weight: 500; color: #0F1115; cursor: pointer; text-align: left;" style-hover="background: #F7F8F9;">Exporter la fiche</button>
+            <button style="height: 30px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 13px; font-weight: 500; color: #B42318; cursor: pointer; text-align: left;" style-hover="background: #FBEDEC; border-color: #F0CFCC;">Blacklister la prestataire</button>
+          </div>
+          <p style="margin: 10px 0 0 0; font-size: 12px; color: #8A93A0;">Le blacklistage retire la prestataire de toutes les recherches de staffing et annule ses propositions en cours. Il reste réversible et journalisé.</p>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}"></script>
+</body>
+</html>

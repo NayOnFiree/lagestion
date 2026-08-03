@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #FFFFFF; font-family: Inter, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #1F6F5C; text-decoration: none; }
+  a:hover { color: #17513f; text-decoration: underline; }
+</style>
+</helmet>
+<div style="display: flex; flex-direction: column; gap: 80px; padding: 40px 0; background: #FFFFFF; color: #0F1115; font-size: 14px; line-height: 1.4;">
+
+  <section style="width: 1920px;">
+    <div style="padding: 0 32px 12px 32px; font-size: 12px; font-weight: 600; color: #5B6472;">1 · Vide</div>
+    <div style="width: 1920px; box-sizing: border-box; border: 1px solid #E6E8EB; display: grid; grid-template-columns: 240px 1fr; background: #FFFFFF;">
+
+      <nav style="border-right: 1px solid #E6E8EB; display: flex; flex-direction: column;">
+        <div style="padding: 24px 16px 20px 16px; display: flex; align-items: center; gap: 8px;">
+          <div style="width: 20px; height: 20px; border-radius: 6px; background: #1F6F5C;"></div>
+          <span style="font-size: 15px; font-weight: 600; letter-spacing: -0.01em;">lagestion</span>
+        </div>
+        <div style="padding: 0 12px; display: flex; flex-direction: column; gap: 2px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; height: 36px; padding: 0 10px; border-radius: 6px; background: #EAF3F0; color: #1F6F5C; font-weight: 500;">
+            <span style="display: flex; align-items: center; gap: 10px;">
+              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="2" width="12" height="10" rx="2" fill="none" stroke="#1F6F5C" stroke-width="1.4"></rect><rect x="1" y="5" width="12" height="1.4" fill="#1F6F5C"></rect></svg>
+              Missions
+            </span>
+            <span style="font-size: 12px; font-weight: 500; font-variant-numeric: tabular-nums;">0</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 10px; border-radius: 6px; color: #5B6472; font-weight: 500;">
+            <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="5.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></circle><rect x="6.3" y="3.5" width="1.4" height="4.2" fill="#8A93A0"></rect></svg>
+            Disponibilités
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 10px; border-radius: 6px; color: #5B6472; font-weight: 500;">
+            <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2.4" y="1.4" width="9.2" height="11.2" rx="1.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></rect><rect x="4.6" y="5" width="4.8" height="1.2" fill="#8A93A0"></rect><rect x="4.6" y="8" width="3" height="1.2" fill="#8A93A0"></rect></svg>
+            Factures
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; height: 36px; padding: 0 10px; border-radius: 6px; color: #5B6472; font-weight: 500;">
+            <span style="display: flex; align-items: center; gap: 10px;">
+              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="1.4" y="2.8" width="11.2" height="8.4" rx="1.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></rect></svg>
+              Messages
+            </span>
+            <span style="font-size: 12px; font-weight: 500; color: #5B6472; background: #F7F8F9; border-radius: 6px; padding: 1px 6px; font-variant-numeric: tabular-nums;">2</span>
+          </div>
+        </div>
+        <div style="margin-top: auto; border-top: 1px solid #E6E8EB; padding: 12px 16px; display: flex; align-items: center; gap: 10px;">
+          <div style="width: 28px; height: 28px; border-radius: 6px; background: #F7F8F9; border: 1px solid #E6E8EB; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: #5B6472;">CF</div>
+          <div style="display: flex; flex-direction: column; line-height: 1.25;">
+            <span style="font-size: 13px; font-weight: 500;">Camille Ferrand</span>
+            <span style="font-size: 12px; color: #8A93A0;">Technicienne de montage</span>
+          </div>
+        </div>
+      </nav>
+
+      <main style="min-width: 0;">
+        <header style="padding: 32px 32px 0 32px; border-bottom: 1px solid #E6E8EB;">
+          <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 32px;">
+            <div>
+              <h1 style="margin: 0; font-size: 32px; font-weight: 600; line-height: 1.2; letter-spacing: -0.015em;">Mes missions</h1>
+              <p style="margin: 8px 0 0 0; font-size: 14px; color: #5B6472; font-variant-numeric: tabular-nums;">Verso Prod · Camille Ferrand, micro-entreprise · Aucune mission enregistrée · Tarif de référence 22,00 € / h</p>
+            </div>
+            <button style="height: 36px; padding: 0 14px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 14px; font-weight: 500; color: #5B6472; cursor: pointer; white-space: nowrap;">Exporter mes missions</button>
+          </div>
+          <div style="margin-top: 24px; display: flex; gap: 24px;">
+            <span style="display: flex; align-items: center; gap: 8px; padding-bottom: 12px; font-size: 14px; font-weight: 500; color: #0F1115; box-shadow: inset 0 -2px 0 0 #0F1115;">Propositions <span style="color: #8A93A0; font-variant-numeric: tabular-nums;">0</span></span>
+            <span style="display: flex; align-items: center; gap: 8px; padding-bottom: 12px; font-size: 14px; font-weight: 500; color: #5B6472;">Confirmées <span style="color: #8A93A0; font-variant-numeric: tabular-nums;">0</span></span>
+            <span style="display: flex; align-items: center; gap: 8px; padding-bottom: 12px; font-size: 14px; font-weight: 500; color: #5B6472;">Passées <span style="color: #8A93A0; font-variant-numeric: tabular-nums;">0</span></span>
+          </div>
+        </header>
+
+        <div style="display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 48px; padding: 32px; align-items: start;">
+          <div style="display: flex; flex-direction: column; gap: 32px; min-width: 0;">
+
+            <section>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid #E6E8EB;">
+                <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Propositions en attente de réponse</h2>
+                <span style="font-size: 12px; color: #8A93A0;">Aucune proposition</span>
+              </div>
+              <div style="margin-top: 24px;">
+                <div style="font-size: 15px; font-weight: 500;">Aucune proposition pour le moment</div>
+                <p style="margin: 4px 0 0 0; font-size: 14px; color: #5B6472;">Verso Prod ne vous adresse des missions que sur les journées déclarées disponibles. Vos disponibilités de mars et d'avril ne sont pas renseignées.</p>
+                <button style="margin-top: 16px; height: 36px; padding: 0 14px; border: 1px solid #1F6F5C; background: #1F6F5C; color: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer;" style-hover="background: #17513f; border-color: #17513f;">Déclarer mes disponibilités</button>
+              </div>
+            </section>
+
+            <section>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid #E6E8EB;">
+                <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Missions confirmées</h2>
+                <span style="font-size: 12px; color: #8A93A0;">Aucune mission</span>
+              </div>
+              <div style="margin-top: 16px; display: grid; grid-template-columns: 200px minmax(0, 1fr) 220px 160px 100px 140px 120px; gap: 24px; padding: 8px 0; border-bottom: 1px solid #E6E8EB;">
+                <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Date</span>
+                <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Intitulé</span>
+                <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Lieu</span>
+                <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Poste</span>
+                <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Horaires</span>
+                <span style="font-size: 12px; font-weight: 600; color: #5B6472; text-align: right;">Rémunération</span>
+                <span></span>
+              </div>
+              <p style="margin: 16px 0 0 0; font-size: 14px; color: #5B6472;">Les missions acceptées apparaîtront ici, groupées par mois.</p>
+            </section>
+
+          </div>
+
+          <aside style="background: #F7F8F9; border-radius: 8px; padding: 24px;">
+            <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Synthèse de mars 2026</h2>
+            <div style="margin-top: 16px; display: flex; flex-direction: column;">
+              <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Missions confirmées</span><span style="font-size: 14px; font-variant-numeric: tabular-nums;">0</span></div>
+              <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Heures travaillées</span><span style="font-size: 14px; font-variant-numeric: tabular-nums;">0 h</span></div>
+              <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Tarif horaire moyen</span><span style="font-size: 14px; color: #8A93A0;">—</span></div>
+              <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Propositions en attente</span><span style="font-size: 14px; font-variant-numeric: tabular-nums;">0</span></div>
+              <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0;"><span style="font-size: 13px; color: #5B6472;">Journées disponibles</span><span style="font-size: 14px; font-variant-numeric: tabular-nums;">0</span></div>
+            </div>
+            <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #E6E8EB; display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
+              <span style="font-size: 13px; color: #5B6472;">Rémunération confirmée</span>
+              <span style="font-size: 28px; font-weight: 600; color: #8A93A0; font-variant-numeric: tabular-nums; line-height: 1.2;">0,00 €</span>
+            </div>
+            <p style="margin: 4px 0 0 0; font-size: 13px; color: #8A93A0; text-align: right;">Brut, hors missions en attente de réponse</p>
+            <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid #E6E8EB;">
+              <h3 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Prochaine mission</h3>
+              <div style="margin-top: 12px; font-size: 15px; font-weight: 500;">Aucune mission planifiée</div>
+              <p style="margin: 4px 0 0 0; font-size: 14px; color: #5B6472;">Déclarez vos journées disponibles pour recevoir des propositions.</p>
+            </div>
+            <button style="margin-top: 24px; width: 100%; height: 36px; border: 1px solid #1F6F5C; background: #1F6F5C; color: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer;" style-hover="background: #17513f; border-color: #17513f;">Mettre à jour mes disponibilités</button>
+          </aside>
+        </div>
+      </main>
+    </div>
+  </section>
+
+  <section style="width: 1920px;">
+    <div style="padding: 0 32px 12px 32px; font-size: 12px; font-weight: 600; color: #5B6472;">2 · Chargement</div>
+    <div style="width: 1920px; box-sizing: border-box; border: 1px solid #E6E8EB; display: grid; grid-template-columns: 240px 1fr; background: #FFFFFF;">
+
+      <nav style="border-right: 1px solid #E6E8EB; display: flex; flex-direction: column;">
+        <div style="padding: 24px 16px 20px 16px; display: flex; align-items: center; gap: 8px;">
+          <div style="width: 20px; height: 20px; border-radius: 6px; background: #1F6F5C;"></div>
+          <span style="font-size: 15px; font-weight: 600; letter-spacing: -0.01em;">lagestion</span>
+        </div>
+        <div style="padding: 0 12px; display: flex; flex-direction: column; gap: 2px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; height: 36px; padding: 0 10px; border-radius: 6px; background: #EAF3F0; color: #1F6F5C; font-weight: 500;">
+            <span style="display: flex; align-items: center; gap: 10px;">
+              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="2" width="12" height="10" rx="2" fill="none" stroke="#1F6F5C" stroke-width="1.4"></rect><rect x="1" y="5" width="12" height="1.4" fill="#1F6F5C"></rect></svg>
+              Missions
+            </span>
+            <span style="font-size: 12px; font-weight: 500; font-variant-numeric: tabular-nums;">3</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 10px; border-radius: 6px; color: #5B6472; font-weight: 500;">
+            <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="5.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></circle><rect x="6.3" y="3.5" width="1.4" height="4.2" fill="#8A93A0"></rect></svg>
+            Disponibilités
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 10px; border-radius: 6px; color: #5B6472; font-weight: 500;">
+            <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2.4" y="1.4" width="9.2" height="11.2" rx="1.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></rect><rect x="4.6" y="5" width="4.8" height="1.2" fill="#8A93A0"></rect><rect x="4.6" y="8" width="3" height="1.2" fill="#8A93A0"></rect></svg>
+            Factures
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; height: 36px; padding: 0 10px; border-radius: 6px; color: #5B6472; font-weight: 500;">
+            <span style="display: flex; align-items: center; gap: 10px;">
+              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="1.4" y="2.8" width="11.2" height="8.4" rx="1.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></rect></svg>
+              Messages
+            </span>
+            <span style="font-size: 12px; font-weight: 500; color: #5B6472; background: #F7F8F9; border-radius: 6px; padding: 1px 6px; font-variant-numeric: tabular-nums;">2</span>
+          </div>
+        </div>
+        <div style="margin-top: auto; border-top: 1px solid #E6E8EB; padding: 12px 16px; display: flex; align-items: center; gap: 10px;">
+          <div style="width: 28px; height: 28px; border-radius: 6px; background: #F7F8F9; border: 1px solid #E6E8EB; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: #5B6472;">CF</div>
+          <div style="display: flex; flex-direction: column; line-height: 1.25;">
+            <span style="font-size: 13px; font-weight: 500;">Camille Ferrand</span>
+            <span style="font-size: 12px; color: #8A93A0;">Technicienne de montage</span>
+          </div>
+        </div>
+      </nav>
+
+      <main style="min-width: 0;">
+        <header style="padding: 32px 32px 0 32px; border-bottom: 1px solid #E6E8EB;">
+          <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 32px;">
+            <div>
+              <h1 style="margin: 0; font-size: 32px; font-weight: 600; line-height: 1.2; letter-spacing: -0.015em;">Mes missions</h1>
+              <p style="margin: 8px 0 0 0; font-size: 14px; color: #5B6472; font-variant-numeric: tabular-nums;">Verso Prod · Camille Ferrand, micro-entreprise · 34 missions réalisées · Tarif de référence 22,00 € / h</p>
+            </div>
+            <button style="height: 36px; padding: 0 14px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 14px; font-weight: 500; color: #0F1115; cursor: pointer; white-space: nowrap;">Exporter mes missions</button>
+          </div>
+          <div style="margin-top: 24px; display: flex; gap: 24px;">
+            <span style="display: flex; align-items: center; gap: 8px; padding-bottom: 12px; font-size: 14px; font-weight: 500; color: #0F1115; box-shadow: inset 0 -2px 0 0 #0F1115;">Propositions <span style="color: #8A93A0; font-variant-numeric: tabular-nums;">3</span></span>
+            <span style="display: flex; align-items: center; gap: 8px; padding-bottom: 12px; font-size: 14px; font-weight: 500; color: #5B6472;">Confirmées <span style="color: #8A93A0; font-variant-numeric: tabular-nums;">5</span></span>
+            <span style="display: flex; align-items: center; gap: 8px; padding-bottom: 12px; font-size: 14px; font-weight: 500; color: #5B6472;">Passées <span style="color: #8A93A0; font-variant-numeric: tabular-nums;">6</span></span>
+          </div>
+        </header>
+
+        <div style="display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 48px; padding: 32px; align-items: start;">
+          <div style="display: flex; flex-direction: column; gap: 32px; min-width: 0;">
+
+            <section>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid #E6E8EB;">
+                <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Propositions en attente de réponse</h2>
+                <div style="width: 280px; height: 12px; border-radius: 6px; background: #F7F8F9;"></div>
+              </div>
+              <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 12px;">
+                <sc-for list="{{ cartes }}" as="carte" hint-placeholder-count="3">
+                  <div style="border: 1px solid #E6E8EB; border-radius: 8px; padding: 20px 24px;">
+                    <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 24px;">
+                      <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                          <div style="width: {{ carte.titre }}; height: 15px; border-radius: 6px; background: #F7F8F9;"></div>
+                          <div style="width: 190px; height: 20px; border-radius: 6px; background: #F7F8F9;"></div>
+                        </div>
+                        <div style="width: 300px; height: 14px; border-radius: 6px; background: #F7F8F9;"></div>
+                      </div>
+                      <div style="display: flex; align-items: center; gap: 8px;">
+                        <div style="width: 92px; height: 36px; border-radius: 6px; background: #F7F8F9;"></div>
+                        <div style="width: 140px; height: 36px; border-radius: 6px; background: #F7F8F9;"></div>
+                      </div>
+                    </div>
+                    <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #E6E8EB; display: grid; grid-template-columns: 200px 160px minmax(0, 1fr) 140px 160px 140px; gap: 24px;">
+                      <div style="display: flex; flex-direction: column; gap: 6px;"><div style="width: 40px; height: 12px; border-radius: 6px; background: #F7F8F9;"></div><div style="width: 160px; height: 14px; border-radius: 6px; background: #F7F8F9;"></div></div>
+                      <div style="display: flex; flex-direction: column; gap: 6px;"><div style="width: 60px; height: 12px; border-radius: 6px; background: #F7F8F9;"></div><div style="width: 110px; height: 14px; border-radius: 6px; background: #F7F8F9;"></div></div>
+                      <div style="display: flex; flex-direction: column; gap: 6px;"><div style="width: 34px; height: 12px; border-radius: 6px; background: #F7F8F9;"></div><div style="width: 80%; height: 14px; border-radius: 6px; background: #F7F8F9;"></div></div>
+                      <div style="display: flex; flex-direction: column; gap: 6px;"><div style="width: 84px; height: 12px; border-radius: 6px; background: #F7F8F9;"></div><div style="width: 90px; height: 14px; border-radius: 6px; background: #F7F8F9;"></div></div>
+                      <div style="display: flex; flex-direction: column; gap: 6px;"><div style="width: 128px; height: 12px; border-radius: 6px; background: #F7F8F9;"></div><div style="width: 120px; height: 14px; border-radius: 6px; background: #F7F8F9;"></div></div>
+                      <div style="display: flex; flex-direction: column; gap: 6px; align-items: flex-end;"><div style="width: 48px; height: 12px; border-radius: 6px; background: #F7F8F9;"></div><div style="width: 80px; height: 14px; border-radius: 6px; background: #F7F8F9;"></div></div>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+            </section>
+
+            <section>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid #E6E8EB;">
+                <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Missions confirmées</h2>
+                <div style="width: 200px; height: 12px; border-radius: 6px; background: #F7F8F9;"></div>
+              </div>
+              <div style="margin-top: 16px;">
+                <div style="padding: 8px 0;"><div style="width: 90px; height: 13px; border-radius: 6px; background: #F7F8F9;"></div></div>
+                <sc-for list="{{ troisLignes }}" as="ligne" hint-placeholder-count="3">
+                  <div style="display: grid; grid-template-columns: 200px minmax(0, 1fr) 220px 160px 100px 140px 120px; gap: 24px; padding: 10px 0; border-top: 1px solid #E6E8EB; align-items: center;">
+                    <div style="width: 130px; height: 13px; border-radius: 6px; background: #F7F8F9;"></div>
+                    <div style="width: {{ ligne.largeur }}; height: 13px; border-radius: 6px; background: #F7F8F9;"></div>
+                    <div style="width: 150px; height: 13px; border-radius: 6px; background: #F7F8F9;"></div>
+                    <div style="width: 130px; height: 13px; border-radius: 6px; background: #F7F8F9;"></div>
+                    <div style="width: 90px; height: 13px; border-radius: 6px; background: #F7F8F9;"></div>
+                    <div style="width: 110px; height: 13px; border-radius: 6px; background: #F7F8F9; justify-self: end;"></div>
+                    <div style="width: 84px; height: 20px; border-radius: 6px; background: #F7F8F9; justify-self: end;"></div>
+                  </div>
+                </sc-for>
+                <div style="padding: 16px 0 8px 0;"><div style="width: 80px; height: 13px; border-radius: 6px; background: #F7F8F9;"></div></div>
+                <sc-for list="{{ deuxLignes }}" as="ligne" hint-placeholder-count="2">
+                  <div style="display: grid; grid-template-columns: 200px minmax(0, 1fr) 220px 160px 100px 140px 120px; gap: 24px; padding: 10px 0; border-top: 1px solid #E6E8EB; align-items: center;">
+                    <div style="width: 120px; height: 13px; border-radius: 6px; background: #F7F8F9;"></div>
+                    <div style="width: {{ ligne.largeur }}; height: 13px; border-radius: 6px; background: #F7F8F9;"></div>
+                    <div style="width: 140px; height: 13px; border-radius: 6px; background: #F7F8F9;"></div>
+                    <div style="width: 130px; height: 13px; border-radius: 6px; background: #F7F8F9;"></div>
+                    <div style="width: 90px; height: 13px; border-radius: 6px; background: #F7F8F9;"></div>
+                    <div style="width: 110px; height: 13px; border-radius: 6px; background: #F7F8F9; justify-self: end;"></div>
+                    <div style="width: 84px; height: 20px; border-radius: 6px; background: #F7F8F9; justify-self: end;"></div>
+                  </div>
+                </sc-for>
+                <div style="border-top: 1px solid #E6E8EB;"></div>
+              </div>
+            </section>
+
+          </div>
+
+          <aside style="background: #F7F8F9; border-radius: 8px; padding: 24px;">
+            <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Synthèse de mars 2026</h2>
+            <div style="margin-top: 16px; display: flex; flex-direction: column;">
+              <sc-for list="{{ cinqLignes }}" as="ligne" hint-placeholder-count="5">
+                <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #E6E8EB;">
+                  <div style="width: {{ ligne.largeur }}; height: 14px; border-radius: 6px; background: #FFFFFF;"></div>
+                  <div style="width: 70px; height: 14px; border-radius: 6px; background: #FFFFFF;"></div>
+                </div>
+              </sc-for>
+            </div>
+            <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #E6E8EB; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+              <div style="width: 150px; height: 14px; border-radius: 6px; background: #FFFFFF;"></div>
+              <div style="width: 130px; height: 32px; border-radius: 6px; background: #FFFFFF;"></div>
+            </div>
+            <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid #E6E8EB;">
+              <h3 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Prochaine mission</h3>
+              <div style="margin-top: 12px; display: flex; flex-direction: column; gap: 8px;">
+                <div style="width: 240px; height: 15px; border-radius: 6px; background: #FFFFFF;"></div>
+                <div style="width: 200px; height: 14px; border-radius: 6px; background: #FFFFFF;"></div>
+              </div>
+              <div style="margin-top: 12px; display: flex; flex-direction: column;">
+                <div style="display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; border-bottom: 1px solid #E6E8EB;"><div style="width: 40px; height: 14px; border-radius: 6px; background: #FFFFFF;"></div><div style="width: 150px; height: 14px; border-radius: 6px; background: #FFFFFF;"></div></div>
+                <div style="display: flex; justify-content: space-between; gap: 16px; padding: 8px 0;"><div style="width: 80px; height: 14px; border-radius: 6px; background: #FFFFFF;"></div><div style="width: 130px; height: 14px; border-radius: 6px; background: #FFFFFF;"></div></div>
+              </div>
+            </div>
+            <div style="margin-top: 24px; height: 36px; border-radius: 6px; background: #FFFFFF;"></div>
+          </aside>
+        </div>
+      </main>
+    </div>
+  </section>
+
+  <section style="width: 1920px;">
+    <div style="padding: 0 32px 12px 32px; font-size: 12px; font-weight: 600; color: #5B6472;">3 · Erreur de chargement</div>
+    <div style="width: 1920px; box-sizing: border-box; border: 1px solid #E6E8EB; display: grid; grid-template-columns: 240px 1fr; background: #FFFFFF;">
+
+      <nav style="border-right: 1px solid #E6E8EB; display: flex; flex-direction: column;">
+        <div style="padding: 24px 16px 20px 16px; display: flex; align-items: center; gap: 8px;">
+          <div style="width: 20px; height: 20px; border-radius: 6px; background: #1F6F5C;"></div>
+          <span style="font-size: 15px; font-weight: 600; letter-spacing: -0.01em;">lagestion</span>
+        </div>
+        <div style="padding: 0 12px; display: flex; flex-direction: column; gap: 2px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; height: 36px; padding: 0 10px; border-radius: 6px; background: #EAF3F0; color: #1F6F5C; font-weight: 500;">
+            <span style="display: flex; align-items: center; gap: 10px;">
+              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="2" width="12" height="10" rx="2" fill="none" stroke="#1F6F5C" stroke-width="1.4"></rect><rect x="1" y="5" width="12" height="1.4" fill="#1F6F5C"></rect></svg>
+              Missions
+            </span>
+            <span style="font-size: 12px; font-weight: 500; font-variant-numeric: tabular-nums;">3</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 10px; border-radius: 6px; color: #5B6472; font-weight: 500;">
+            <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="5.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></circle><rect x="6.3" y="3.5" width="1.4" height="4.2" fill="#8A93A0"></rect></svg>
+            Disponibilités
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 10px; border-radius: 6px; color: #5B6472; font-weight: 500;">
+            <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2.4" y="1.4" width="9.2" height="11.2" rx="1.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></rect><rect x="4.6" y="5" width="4.8" height="1.2" fill="#8A93A0"></rect><rect x="4.6" y="8" width="3" height="1.2" fill="#8A93A0"></rect></svg>
+            Factures
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; height: 36px; padding: 0 10px; border-radius: 6px; color: #5B6472; font-weight: 500;">
+            <span style="display: flex; align-items: center; gap: 10px;">
+              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="1.4" y="2.8" width="11.2" height="8.4" rx="1.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></rect></svg>
+              Messages
+            </span>
+            <span style="font-size: 12px; font-weight: 500; color: #5B6472; background: #F7F8F9; border-radius: 6px; padding: 1px 6px; font-variant-numeric: tabular-nums;">2</span>
+          </div>
+        </div>
+        <div style="margin-top: auto; border-top: 1px solid #E6E8EB; padding: 12px 16px; display: flex; align-items: center; gap: 10px;">
+          <div style="width: 28px; height: 28px; border-radius: 6px; background: #F7F8F9; border: 1px solid #E6E8EB; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: #5B6472;">CF</div>
+          <div style="display: flex; flex-direction: column; line-height: 1.25;">
+            <span style="font-size: 13px; font-weight: 500;">Camille Ferrand</span>
+            <span style="font-size: 12px; color: #8A93A0;">Technicienne de montage</span>
+          </div>
+        </div>
+      </nav>
+
+      <main style="min-width: 0;">
+        <header style="padding: 32px 32px 0 32px; border-bottom: 1px solid #E6E8EB;">
+          <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 32px;">
+            <div>
+              <h1 style="margin: 0; font-size: 32px; font-weight: 600; line-height: 1.2; letter-spacing: -0.015em;">Mes missions</h1>
+              <p style="margin: 8px 0 0 0; font-size: 14px; color: #5B6472; font-variant-numeric: tabular-nums;">Verso Prod · Camille Ferrand, micro-entreprise · 34 missions réalisées · Tarif de référence 22,00 € / h</p>
+            </div>
+            <button style="height: 36px; padding: 0 14px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 14px; font-weight: 500; color: #0F1115; cursor: pointer; white-space: nowrap;" style-hover="background: #F7F8F9;">Exporter mes missions</button>
+          </div>
+          <div style="margin-top: 24px; display: flex; gap: 24px;">
+            <span style="display: flex; align-items: center; gap: 8px; padding-bottom: 12px; font-size: 14px; font-weight: 500; color: #0F1115; box-shadow: inset 0 -2px 0 0 #0F1115;">Propositions <span style="color: #8A93A0; font-variant-numeric: tabular-nums;">3</span></span>
+            <span style="display: flex; align-items: center; gap: 8px; padding-bottom: 12px; font-size: 14px; font-weight: 500; color: #5B6472;">Confirmées <span style="color: #8A93A0; font-variant-numeric: tabular-nums;">5</span></span>
+            <span style="display: flex; align-items: center; gap: 8px; padding-bottom: 12px; font-size: 14px; font-weight: 500; color: #5B6472;">Passées <span style="color: #8A93A0; font-variant-numeric: tabular-nums;">6</span></span>
+          </div>
+        </header>
+
+        <div style="display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 48px; padding: 32px; align-items: start;">
+          <div style="display: flex; flex-direction: column; gap: 32px; min-width: 0;">
+
+            <div style="background: #FBEDEC; border-radius: 8px; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; gap: 32px;">
+              <div>
+                <div style="font-size: 15px; font-weight: 500;">Vos missions n'ont pas pu être chargées</div>
+                <p style="margin: 4px 0 0 0; font-size: 14px; color: #5B6472;">La connexion avec Verso Prod a été interrompue. Aucune réponse à une proposition n'a été perdue ; relancez le chargement pour retrouver la liste.</p>
+              </div>
+              <button style="height: 36px; padding: 0 14px; border: 1px solid #0F1115; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 14px; font-weight: 500; color: #0F1115; cursor: pointer; white-space: nowrap;" style-hover="background: #F7F8F9;">Réessayer</button>
+            </div>
+
+            <section>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid #E6E8EB;">
+                <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Propositions en attente de réponse</h2>
+                <span style="font-size: 12px; color: #8A93A0;">Non chargées</span>
+              </div>
+              <div style="margin-top: 24px;">
+                <div style="font-size: 15px; font-weight: 500;">Propositions indisponibles</div>
+                <p style="margin: 4px 0 0 0; font-size: 14px; color: #5B6472;">Les délais de réponse continuent de courir. En cas d'urgence, appelez Sophie Nguyen au 01 44 63 20 18.</p>
+              </div>
+            </section>
+
+            <section>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid #E6E8EB;">
+                <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Missions confirmées</h2>
+                <span style="font-size: 12px; color: #8A93A0;">Dernière synchronisation le 6 mars à 08h12</span>
+              </div>
+              <div style="margin-top: 16px;">
+                <div style="font-size: 13px; font-weight: 500; color: #5B6472; padding: 8px 0;">Mars 2026, données enregistrées sur cet appareil</div>
+                <div style="display: grid; grid-template-columns: 200px minmax(0, 1fr) 220px 160px 100px 140px 120px; gap: 24px; padding: 10px 0; border-top: 1px solid #E6E8EB; border-bottom: 1px solid #E6E8EB; align-items: baseline;">
+                  <span style="font-size: 13px; font-variant-numeric: tabular-nums;">Vendredi 8 mars</span>
+                  <span style="font-size: 13px;">Chargement du matériel scénique</span>
+                  <span style="font-size: 13px; color: #5B6472;">Palais Brongniart</span>
+                  <span style="font-size: 13px; color: #5B6472;">Manutentionnaire</span>
+                  <span style="font-size: 13px; color: #5B6472; font-variant-numeric: tabular-nums;">6h00 – 12h00</span>
+                  <span style="font-size: 13px; text-align: right; font-variant-numeric: tabular-nums;">132,00 € · 6 h</span>
+                  <span style="justify-self: end; font-size: 12px; font-weight: 500; color: #1F6F5C; background: #EAF3F0; border-radius: 6px; padding: 3px 8px;">Confirmée</span>
+                </div>
+                <p style="margin: 16px 0 0 0; font-size: 14px; color: #5B6472;">Les autres missions confirmées s'afficheront après rechargement.</p>
+              </div>
+            </section>
+
+          </div>
+
+          <aside style="background: #F7F8F9; border-radius: 8px; padding: 24px;">
+            <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Synthèse de mars 2026</h2>
+            <p style="margin: 12px 0 0 0; font-size: 14px; color: #5B6472;">Les compteurs du mois ne sont pas à jour, faute de connexion avec l'agence.</p>
+            <div style="margin-top: 16px; display: flex; flex-direction: column;">
+              <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Missions confirmées</span><span style="font-size: 14px; color: #8A93A0;">—</span></div>
+              <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Heures travaillées</span><span style="font-size: 14px; color: #8A93A0;">—</span></div>
+              <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Tarif horaire moyen</span><span style="font-size: 14px; font-variant-numeric: tabular-nums;">22,00 € / h</span></div>
+              <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Propositions en attente</span><span style="font-size: 14px; color: #8A93A0;">—</span></div>
+              <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0;"><span style="font-size: 13px; color: #5B6472;">Journées disponibles</span><span style="font-size: 14px; color: #8A93A0;">—</span></div>
+            </div>
+            <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #E6E8EB; display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
+              <span style="font-size: 13px; color: #5B6472;">Rémunération confirmée</span>
+              <span style="font-size: 28px; font-weight: 600; color: #8A93A0; font-variant-numeric: tabular-nums; line-height: 1.2;">—</span>
+            </div>
+            <p style="margin: 4px 0 0 0; font-size: 13px; color: #8A93A0; text-align: right;">Affichée après rechargement</p>
+            <button style="margin-top: 24px; width: 100%; height: 36px; border: 1px solid #0F1115; background: #FFFFFF; color: #0F1115; border-radius: 6px; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer;" style-hover="background: #EFF1F3;">Réessayer</button>
+            <p style="margin: 12px 0 0 0; font-size: 13px; color: #8A93A0;">Vos disponibilités et vos factures restent accessibles depuis le menu.</p>
+          </aside>
+        </div>
+      </main>
+    </div>
+  </section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const mk = arr => arr.map(largeur => ({ largeur }));
+    return {
+      cartes: mk(['300px', '420px', '380px']).map((c, i) => ({ titre: ['260px', '380px', '340px'][i] })),
+      troisLignes: mk(['64%', '58%', '70%']),
+      deuxLignes: mk(['66%', '72%']),
+      cinqLignes: mk(['140px', '120px', '150px', '160px', '150px']),
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #FFFFFF; font-family: Inter, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #1F6F5C; text-decoration: none; }
+  a:hover { color: #17513f; text-decoration: underline; }
+</style>
+</helmet>
+<div style="width: 1920px; min-height: 1080px; display: grid; grid-template-columns: 232px minmax(0, 1fr); background: #FFFFFF; color: #0F1115; font-size: 13px; line-height: 1.4;">
+
+  <nav style="width: 232px; border-right: 1px solid #E6E8EB; display: flex; flex-direction: column; position: sticky; top: 0; height: 100vh; box-sizing: border-box;">
+    <div style="padding: 16px 16px 14px 16px; border-bottom: 1px solid #E6E8EB; display: flex; align-items: center; gap: 8px;">
+      <div style="width: 20px; height: 20px; border-radius: 6px; background: #1F6F5C;"></div>
+      <div style="display: flex; flex-direction: column; line-height: 1.25;">
+        <span style="font-size: 13px; font-weight: 600; letter-spacing: -0.01em;">Verso Prod</span>
+        <span style="font-size: 11px; color: #8A93A0;">Agence · back-office</span>
+      </div>
+    </div>
+    <div style="padding: 8px; display: flex; flex-direction: column; gap: 1px;">
+      <div style="display: flex; align-items: center; gap: 9px; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><rect x="1.4" y="1.4" width="4.6" height="4.6" rx="1.2" fill="#8A93A0"></rect><rect x="8" y="1.4" width="4.6" height="4.6" rx="1.2" fill="none" stroke="#8A93A0" stroke-width="1.3"></rect><rect x="1.4" y="8" width="4.6" height="4.6" rx="1.2" fill="none" stroke="#8A93A0" stroke-width="1.3"></rect><rect x="8" y="8" width="4.6" height="4.6" rx="1.2" fill="none" stroke="#8A93A0" stroke-width="1.3"></rect></svg>
+        Tableau de bord
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <span style="display: flex; align-items: center; gap: 9px;">
+          <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="2" width="12" height="10" rx="2" fill="none" stroke="#8A93A0" stroke-width="1.4"></rect><rect x="1" y="5" width="12" height="1.4" fill="#8A93A0"></rect></svg>
+          Événements
+        </span>
+        <span style="font-size: 11px; color: #8A93A0; font-variant-numeric: tabular-nums;">14</span>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <span style="display: flex; align-items: center; gap: 9px;">
+          <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><circle cx="5" cy="5" r="2.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></circle><path d="M1.4 12.2c0-2.1 1.6-3.4 3.6-3.4s3.6 1.3 3.6 3.4" fill="none" stroke="#8A93A0" stroke-width="1.4"></path><rect x="10" y="4.3" width="1.3" height="5" fill="#8A93A0"></rect><rect x="8.2" y="6.1" width="5" height="1.3" fill="#8A93A0"></rect></svg>
+          Staffing
+        </span>
+        <span style="font-size: 11px; font-weight: 500; color: #B42318; background: #FBEDEC; border-radius: 5px; padding: 1px 6px; font-variant-numeric: tabular-nums;">3</span>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; background: #EAF3F0; color: #1F6F5C; font-weight: 500;">
+        <span style="display: flex; align-items: center; gap: 9px;">
+          <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><circle cx="4.4" cy="4.4" r="2.3" fill="none" stroke="#1F6F5C" stroke-width="1.4"></circle><circle cx="9.8" cy="9.4" r="2.3" fill="none" stroke="#1F6F5C" stroke-width="1.4"></circle><path d="M6.2 6.1 8 7.7" stroke="#1F6F5C" stroke-width="1.4"></path></svg>
+          Réseau
+        </span>
+        <span style="font-size: 11px; font-weight: 500; font-variant-numeric: tabular-nums;">47</span>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <span style="display: flex; align-items: center; gap: 9px;">
+          <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="5.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></circle><rect x="6.3" y="3.5" width="1.4" height="4.2" fill="#8A93A0"></rect></svg>
+          Heures
+        </span>
+        <span style="font-size: 11px; font-weight: 500; color: #A8630B; background: #FBF2E6; border-radius: 5px; padding: 1px 6px; font-variant-numeric: tabular-nums;">12 h</span>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <span style="display: flex; align-items: center; gap: 9px;">
+          <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><rect x="2.4" y="1.4" width="9.2" height="11.2" rx="1.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></rect><rect x="4.6" y="5" width="4.8" height="1.2" fill="#8A93A0"></rect><rect x="4.6" y="8" width="3" height="1.2" fill="#8A93A0"></rect></svg>
+          Factures
+        </span>
+        <span style="font-size: 11px; font-weight: 500; color: #A8630B; background: #FBF2E6; border-radius: 5px; padding: 1px 6px; font-variant-numeric: tabular-nums;">3</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 9px; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="2.2" fill="none" stroke="#8A93A0" stroke-width="1.4"></circle><circle cx="7" cy="7" r="5.4" fill="none" stroke="#8A93A0" stroke-width="1.4" stroke-dasharray="2.4 2"></circle></svg>
+        Réglages
+      </div>
+    </div>
+    <div style="margin-top: auto; border-top: 1px solid #E6E8EB; padding: 10px 12px; display: flex; align-items: center; gap: 9px;">
+      <div style="width: 26px; height: 26px; border-radius: 5px; background: #F7F8F9; border: 1px solid #E6E8EB; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; color: #5B6472;">SN</div>
+      <div style="display: flex; flex-direction: column; line-height: 1.25; min-width: 0;">
+        <span style="font-size: 12px; font-weight: 500;">Sophie Nguyen</span>
+        <span style="font-size: 11px; color: #8A93A0;">Chargée de production</span>
+      </div>
+    </div>
+  </nav>
+
+  <main style="min-width: 0; padding-bottom: 72px;">
+
+    <header style="padding: 16px 20px; border-bottom: 1px solid #E6E8EB; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+      <div>
+        <h1 style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.2; letter-spacing: -0.01em;">Réseau</h1>
+        <p style="margin: 3px 0 0 0; font-size: 12px; color: #5B6472; font-variant-numeric: tabular-nums;">{{ sousTitre }}</p>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <button style="height: 30px; padding: 0 11px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 13px; font-weight: 500; color: #5B6472; cursor: pointer; white-space: nowrap;" style-hover="background: #F7F8F9; color: #0F1115;">Relancer les documents</button>
+        <button style="height: 30px; padding: 0 11px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 13px; font-weight: 500; color: #0F1115; cursor: pointer; white-space: nowrap;" style-hover="background: #F7F8F9;">Exporter le réseau</button>
+        <button style="height: 30px; padding: 0 12px; border: 1px solid #1F6F5C; background: #1F6F5C; color: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 13px; font-weight: 500; cursor: pointer; white-space: nowrap;" style-hover="background: #17513f; border-color: #17513f;">Inviter un prestataire</button>
+      </div>
+    </header>
+
+    <div style="padding: 12px 20px; display: flex; align-items: center; gap: 6px; border-bottom: 1px solid #E6E8EB;">
+      <div style="display: flex; align-items: center; height: 28px; border: 1px solid #E6E8EB; border-radius: 5px; padding: 0 8px; gap: 6px; width: 300px; box-sizing: border-box; flex: none;">
+        <svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true" style="flex: none;"><circle cx="6" cy="6" r="4.2" fill="none" stroke="#8A93A0" stroke-width="1.4"></circle><path d="M9.2 9.2 12.4 12.4" stroke="#8A93A0" stroke-width="1.4"></path></svg>
+        <span style="font-size: 12px; color: #8A93A0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Rechercher un nom, une compétence, un SIRET</span>
+      </div>
+      <button onClick="{{ basculerCompetence }}" style="{{ styleCompetence }}">{{ texteCompetence }}</button>
+      <button onClick="{{ basculerRayon }}" style="{{ styleRayon }}">{{ texteRayon }}</button>
+      <button onClick="{{ basculerScore }}" style="{{ styleScore }}">{{ texteScore }}</button>
+      <button onClick="{{ basculerConformite }}" style="{{ styleConformite }}">{{ texteConformite }}</button>
+      <button style="height: 28px; padding: 0 9px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">Statut juridique ▾</button>
+      <span style="margin-left: auto; font-size: 12px; color: #8A93A0; font-variant-numeric: tabular-nums;">{{ resumeFiltres }}</span>
+      <button style="height: 28px; padding: 0 9px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">Colonnes ▾</button>
+    </div>
+
+    <div style="padding: 12px 20px 0 20px;">
+      <div style="border: 1px solid #E6E8EB; border-radius: 6px; overflow: hidden;">
+        <div style="display: grid; grid-template-columns: 34px minmax(0, 1.1fr) 148px minmax(0, 1.35fr) 148px 88px minmax(0, 1.1fr) 108px 136px 34px; align-items: center; height: 32px; background: #F7F8F9; border-bottom: 1px solid #E6E8EB; font-size: 11px; font-weight: 600; color: #5B6472;">
+          <span style="padding: 0 8px; display: flex; align-items: center;"><input type="checkbox" checked="{{ toutCoche }}" onChange="{{ toggleTout }}" style="width: 13px; height: 13px; accent-color: #1F6F5C; cursor: pointer;" /></span>
+          <button onClick="{{ trierNom }}" style="{{ styleTriNom }}">Nom {{ flecheNom }}</button>
+          <span style="padding: 0 12px;">Ville</span>
+          <span style="padding: 0 12px;">Compétences</span>
+          <span style="padding: 0 12px;">Statut juridique</span>
+          <button onClick="{{ trierScore }}" style="{{ styleTriScore }}">Score {{ flecheScore }}</button>
+          <span style="padding: 0 12px;">Conformité</span>
+          <button onClick="{{ trierMissions }}" style="{{ styleTriMissions }}">Missions {{ flecheMissions }}</button>
+          <button onClick="{{ trierDerniere }}" style="{{ styleTriDerniere }}">Dernière mission {{ flecheDerniere }}</button>
+          <span></span>
+        </div>
+
+        <sc-for list="{{ lignes }}" as="p" hint-placeholder-count="14">
+          <div style="display: grid; grid-template-columns: 34px minmax(0, 1.1fr) 148px minmax(0, 1.35fr) 148px 88px minmax(0, 1.1fr) 108px 136px 34px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB; background: {{ p.fond }};" style-hover="background: #FCFCFD;">
+            <span style="padding: 0 8px; display: flex; align-items: center;"><input type="checkbox" checked="{{ p.coche }}" onChange="{{ p.basculer }}" style="width: 13px; height: 13px; accent-color: #1F6F5C; cursor: pointer;" /></span>
+            <span style="padding: 0 12px; display: flex; align-items: center; gap: 6px; min-width: 0;"><span style="width: 5px; height: 5px; border-radius: 3px; flex: none; background: {{ p.pastille }};"></span><span style="font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ p.nom }}</span></span>
+            <span style="padding: 0 12px; color: #5B6472; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ p.ville }}</span>
+            <span style="padding: 0 12px; color: #5B6472; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ p.competences }}</span>
+            <span style="padding: 0 12px; color: #5B6472; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ p.statut }}</span>
+            <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums; color: {{ p.couleurScore }};">{{ p.score }}</span>
+            <span style="padding: 0 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: {{ p.couleurConformite }};">{{ p.conformite }}</span>
+            <span style="padding: 0 12px; text-align: right; color: #5B6472; font-variant-numeric: tabular-nums;">{{ p.missions }}</span>
+            <span style="padding: 0 12px; text-align: right; color: #5B6472; font-variant-numeric: tabular-nums;">{{ p.derniere }}</span>
+            <span style="display: flex; justify-content: center;"><button style="height: 24px; width: 24px; border: 1px solid transparent; background: none; border-radius: 5px; font-family: inherit; font-size: 12px; color: #8A93A0; cursor: pointer;" style-hover="border-color: #E6E8EB; background: #FFFFFF; color: #0F1115;">⋯</button></span>
+          </div>
+        </sc-for>
+
+        <div style="display: grid; grid-template-columns: 34px minmax(0, 1.1fr) 148px minmax(0, 1.35fr) 148px 88px minmax(0, 1.1fr) 108px 136px 34px; align-items: center; height: 34px; background: #F7F8F9; font-size: 12px; font-weight: 500; color: #5B6472;">
+          <span></span>
+          <span style="padding: 0 12px; font-variant-numeric: tabular-nums;">{{ totalLignes }}</span>
+          <span style="padding: 0 12px; font-variant-numeric: tabular-nums;">{{ villesTotal }}</span>
+          <span style="padding: 0 12px;"></span>
+          <span style="padding: 0 12px;"></span>
+          <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">{{ scoreMoyen }}</span>
+          <span style="padding: 0 12px; font-variant-numeric: tabular-nums;">{{ conformesTotal }}</span>
+          <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">{{ missionsTotal }}</span>
+          <span style="padding: 0 12px;"></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div style="margin-top: 8px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+        <p style="margin: 0; font-size: 12px; color: #8A93A0;">Un point rouge signale un document expiré : le prestataire reste visible mais ne peut pas être confirmé sur une mission avant régularisation.</p>
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <span style="font-size: 12px; color: #8A93A0; font-variant-numeric: tabular-nums;">{{ pagination }}</span>
+          <button style="height: 26px; padding: 0 9px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; color: #C3C9D2; cursor: pointer;">Précédent</button>
+          <button style="height: 26px; padding: 0 9px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Suivant</button>
+        </div>
+      </div>
+    </div>
+
+    <sc-if value="{{ aSelection }}" hint-placeholder-val="{{ false }}">
+      <div style="position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%); z-index: 20; display: flex; align-items: center; gap: 10px; height: 44px; padding: 0 12px; background: #0F1115; border-radius: 8px; box-shadow: 0 8px 24px rgba(15, 17, 21, 0.28); color: #FFFFFF;">
+        <span style="font-size: 12px; font-weight: 500; font-variant-numeric: tabular-nums;">{{ texteSelection }}</span>
+        <span style="width: 1px; height: 20px; background: #33383F;"></span>
+        <button style="height: 28px; padding: 0 10px; border: 1px solid #33383F; background: #1A1D22; color: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; cursor: pointer;" style-hover="background: #24272D;">Proposer une mission</button>
+        <button style="height: 28px; padding: 0 10px; border: 1px solid #33383F; background: #1A1D22; color: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; cursor: pointer;" style-hover="background: #24272D;">Demander les documents</button>
+        <button style="height: 28px; padding: 0 10px; border: 1px solid #33383F; background: #1A1D22; color: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; cursor: pointer;" style-hover="background: #24272D;">Message groupé</button>
+        <button style="height: 28px; padding: 0 10px; border: 1px solid #33383F; background: #1A1D22; color: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; cursor: pointer;" style-hover="background: #24272D;">Ajouter à un vivier</button>
+        <button style="height: 28px; padding: 0 10px; border: 1px solid #33383F; background: #1A1D22; color: #E88C84; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; cursor: pointer;" style-hover="background: #24272D;">Suspendre</button>
+        <span style="width: 1px; height: 20px; background: #33383F;"></span>
+        <button onClick="{{ viderSelection }}" style="height: 28px; padding: 0 10px; border: 1px solid transparent; background: none; color: #A9B0BA; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; cursor: pointer;" style-hover="color: #FFFFFF;">Désélectionner</button>
+      </div>
+    </sc-if>
+
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { sel: {}, tri: 'score', sens: -1, competence: 0, rayon: 0, scoreMin: 0, conformesSeuls: false };
+
+  total = 47;
+
+  base() {
+    return [
+      { id: 'r01', nom: 'Yanis Berrada', ville: 'Paris 19e', km: 5, competences: 'Régie, montage, manutention', statut: 'Micro-entreprise', score: 96, missions: 41, jours: 2, derniere: '1 août 2026', conformite: 'À jour', etat: 'ok', dom: 'regie' },
+      { id: 'r02', nom: 'Camille Ferrand', ville: 'Montreuil', km: 6, competences: 'Montage, manutention', statut: 'Micro-entreprise', score: 95, missions: 34, jours: 1, derniere: '2 août 2026', conformite: 'URSSAF expire dans 12 j', etat: 'attention', dom: 'montage' },
+      { id: 'r03', nom: 'Pierre Vasseur', ville: 'Paris 20e', km: 5, competences: 'Manutention, montage', statut: 'Micro-entreprise', score: 94, missions: 22, jours: 4, derniere: '30 juil. 2026', conformite: 'À jour', etat: 'ok', dom: 'manutention' },
+      { id: 'r04', nom: 'Théo Marchand', ville: 'Pantin', km: 7, competences: 'Manutention, chauffeur', statut: 'Auto-entrepreneur', score: 93, missions: 14, jours: 3, derniere: '31 juil. 2026', conformite: 'À jour', etat: 'ok', dom: 'manutention' },
+      { id: 'r05', nom: 'Sarah Kaci', ville: 'Paris 9e', km: 4, competences: 'Régie, montage', statut: 'SASU', score: 92, missions: 27, jours: 9, derniere: '25 juil. 2026', conformite: 'À jour', etat: 'ok', dom: 'regie' },
+      { id: 'r06', nom: 'Awa Diallo', ville: 'Saint-Denis', km: 9, competences: 'Montage, accrochage', statut: 'Micro-entreprise', score: 92, missions: 11, jours: 6, derniere: '28 juil. 2026', conformite: 'RC pro expirée', etat: 'expire', dom: 'montage' },
+      { id: 'r07', nom: 'Mehdi Kacem', ville: 'Paris 11e', km: 4, competences: 'Manutention, montage', statut: 'Micro-entreprise', score: 91, missions: 9, jours: 14, derniere: '20 juil. 2026', conformite: 'À jour', etat: 'ok', dom: 'manutention' },
+      { id: 'r08', nom: 'Lucie Lemoine', ville: 'Paris 18e', km: 6, competences: 'Accueil, manutention', statut: 'Micro-entreprise', score: 90, missions: 16, jours: 1, derniere: '2 août 2026', conformite: 'À jour', etat: 'ok', dom: 'accueil' },
+      { id: 'r09', nom: 'Idriss Bacha', ville: 'Bondy', km: 11, competences: 'Manutention, montage', statut: 'Auto-entrepreneur', score: 90, missions: 19, jours: 5, derniere: '29 juil. 2026', conformite: 'Attestation URSSAF expirée', etat: 'expire', dom: 'manutention' },
+      { id: 'r10', nom: 'Bastien Ferré', ville: 'Ivry-sur-Seine', km: 8, competences: 'Manutention, cariste', statut: 'Micro-entreprise', score: 89, missions: 7, jours: 21, derniere: '13 juil. 2026', conformite: 'À jour', etat: 'ok', dom: 'manutention' },
+      { id: 'r11', nom: 'Sonia Bouras', ville: 'Paris 12e', km: 6, competences: 'Montage, régie', statut: 'SASU', score: 88, missions: 12, jours: 11, derniere: '23 juil. 2026', conformite: 'À jour', etat: 'ok', dom: 'montage' },
+      { id: 'r12', nom: 'Karim Zeroual', ville: 'Aubervilliers', km: 8, competences: 'Manutention', statut: 'Auto-entrepreneur', score: 87, missions: 5, jours: 33, derniere: '1 juil. 2026', conformite: 'NDA non signé', etat: 'attention', dom: 'manutention' },
+      { id: 'r13', nom: 'Élodie Rambert', ville: 'Paris 15e', km: 5, competences: 'Régie, montage, accueil', statut: 'SASU', score: 86, missions: 10, jours: 8, derniere: '26 juil. 2026', conformite: 'À jour', etat: 'ok', dom: 'regie' },
+      { id: 'r14', nom: 'Nadia Osman', ville: 'Montrouge', km: 9, competences: 'Accueil, vestiaire', statut: 'Micro-entreprise', score: 85, missions: 8, jours: 17, derniere: '17 juil. 2026', conformite: 'Pièce d\u2019identité expirée', etat: 'expire', dom: 'accueil' },
+      { id: 'r15', nom: 'Julien Prat', ville: 'Vincennes', km: 8, competences: 'Manutention, chauffeur', statut: 'Micro-entreprise', score: 85, missions: 8, jours: 26, derniere: '8 juil. 2026', conformite: 'À jour', etat: 'ok', dom: 'manutention' },
+      { id: 'r16', nom: 'Chloé Vidal', ville: 'Paris 10e', km: 4, competences: 'Accueil, manutention', statut: 'Micro-entreprise', score: 83, missions: 13, jours: 12, derniere: '22 juil. 2026', conformite: 'À jour', etat: 'ok', dom: 'accueil' },
+      { id: 'r17', nom: 'Hugo Lenoir', ville: 'Clichy', km: 9, competences: 'Manutention, cariste', statut: 'Auto-entrepreneur', score: 82, missions: 4, jours: 41, derniere: '23 juin 2026', conformite: 'RC pro expirée', etat: 'expire', dom: 'manutention' },
+      { id: 'r18', nom: 'Fatou Sylla', ville: 'Saint-Ouen', km: 10, competences: 'Montage, manutention', statut: 'Micro-entreprise', score: 81, missions: 9, jours: 19, derniere: '15 juil. 2026', conformite: 'À jour', etat: 'ok', dom: 'montage' },
+      { id: 'r19', nom: 'Inès Barreau', ville: 'Malakoff', km: 11, competences: 'Accrochage, montage', statut: 'Micro-entreprise', score: 78, missions: 7, jours: 29, derniere: '5 juil. 2026', conformite: 'À jour', etat: 'ok', dom: 'montage' },
+      { id: 'r20', nom: 'Victor Salomon', ville: 'Créteil', km: 13, competences: 'Manutention, montage', statut: 'Auto-entrepreneur', score: 76, missions: 5, jours: 47, derniere: '17 juin 2026', conformite: 'Attestation URSSAF expirée', etat: 'expire', dom: 'manutention' },
+      { id: 'r21', nom: 'Léa Fontaine', ville: 'Nanterre', km: 14, competences: 'Accueil', statut: 'Micro-entreprise', score: 74, missions: 2, jours: 62, derniere: '2 juin 2026', conformite: 'NDA non signé', etat: 'attention', dom: 'accueil' },
+      { id: 'r22', nom: 'Marion Dupleix', ville: 'Cergy', km: 28, competences: 'Montage, manutention', statut: 'Micro-entreprise', score: 66, missions: 4, jours: 54, derniere: '10 juin 2026', conformite: 'À jour', etat: 'ok', dom: 'montage' },
+    ];
+  }
+
+  puce(actif) {
+    return 'height: 28px; padding: 0 9px; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; cursor: pointer; white-space: nowrap; border: 1px solid '
+      + (actif ? '#1F6F5C' : '#E6E8EB') + '; background: ' + (actif ? '#EAF3F0' : '#FFFFFF') + '; color: ' + (actif ? '#1F6F5C' : '#5B6472') + ';';
+  }
+
+  enTete(colonne, aDroite) {
+    const actif = this.state.tri === colonne;
+    return 'appearance: none; border: 0; background: none; height: 32px; padding: 0 12px; font-family: inherit; font-size: 11px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 4px; white-space: nowrap; color: '
+      + (actif ? '#0F1115' : '#5B6472') + '; justify-content: ' + (aDroite ? 'flex-end' : 'flex-start') + ';';
+  }
+
+  fleche(colonne) {
+    if (this.state.tri !== colonne) return '';
+    return this.state.sens === -1 ? '↓' : '↑';
+  }
+
+  trier(colonne) {
+    this.setState(s => (s.tri === colonne ? { sens: -s.sens } : { tri: colonne, sens: colonne === 'nom' ? 1 : -1 }));
+  }
+
+  renderVals() {
+    const st = this.state;
+    const competences = ['toutes', 'montage', 'manutention', 'regie', 'accueil'];
+    const comp = competences[st.competence];
+    const rayons = [0, 10, 20];
+    const rayon = rayons[st.rayon];
+
+    let visibles = this.base().filter(p =>
+      (comp === 'toutes' || p.dom === comp)
+      && (rayon === 0 || p.km <= rayon)
+      && p.score >= st.scoreMin
+      && (!st.conformesSeuls || p.etat === 'ok'));
+
+    const cle = { nom: 'nom', score: 'score', missions: 'missions', derniere: 'jours' }[st.tri];
+    visibles = visibles.slice().sort((a, b) => {
+      if (cle === 'nom') return st.sens * a.nom.localeCompare(b.nom, 'fr');
+      if (cle === 'jours') return -st.sens * (a.jours - b.jours);
+      return st.sens * (a[cle] - b[cle]);
+    });
+
+    const lignes = visibles.map(p => ({
+      ...p,
+      coche: !!st.sel[p.id],
+      fond: st.sel[p.id] ? '#F4F8F6' : 'transparent',
+      pastille: p.etat === 'expire' ? '#B42318' : (p.etat === 'attention' ? '#A8630B' : 'transparent'),
+      couleurScore: p.score >= 90 ? '#1F6F5C' : (p.score >= 75 ? '#0F1115' : '#8A93A0'),
+      couleurConformite: p.etat === 'expire' ? '#B42318' : (p.etat === 'attention' ? '#A8630B' : '#5B6472'),
+      basculer: () => this.setState(s => {
+        const sel = { ...s.sel };
+        if (sel[p.id]) { delete sel[p.id]; } else { sel[p.id] = true; }
+        return { sel };
+      }),
+    }));
+
+    const n = Object.keys(st.sel).length;
+    const expires = this.base().filter(p => p.etat === 'expire').length;
+    const conformes = visibles.filter(p => p.etat === 'ok').length;
+    const villes = new Set(visibles.map(p => p.ville)).size;
+    const scoreMoy = visibles.length ? Math.round(visibles.reduce((a, p) => a + p.score, 0) / visibles.length) : 0;
+    const filtreActif = comp !== 'toutes' || rayon !== 0 || st.scoreMin > 0 || st.conformesSeuls;
+
+    return {
+      lignes,
+      sousTitre: this.total + ' prestataires · ' + expires + ' avec un document expiré · tri par score décroissant',
+      totalLignes: visibles.length + ' affichés',
+      villesTotal: villes + ' villes',
+      scoreMoyen: visibles.length ? String(scoreMoy) : '—',
+      conformesTotal: conformes + ' / ' + visibles.length + ' conformes',
+      missionsTotal: visibles.reduce((a, p) => a + p.missions, 0) + ' missions',
+      resumeFiltres: filtreActif
+        ? visibles.length + ' prestataires sur ' + this.total + ' filtrés'
+        : '22 des ' + this.total + ' prestataires chargés',
+      pagination: 'Page 1 sur 3 · ' + visibles.length + ' lignes affichées',
+      styleCompetence: this.puce(comp !== 'toutes'),
+      texteCompetence: comp === 'toutes' ? 'Compétence : toutes ▾'
+        : 'Compétence : ' + { montage: 'montage', manutention: 'manutention', regie: 'régie', accueil: 'accueil' }[comp] + ' ▾',
+      basculerCompetence: () => this.setState(s => ({ competence: (s.competence + 1) % 5 })),
+      styleRayon: this.puce(rayon !== 0),
+      texteRayon: rayon === 0 ? 'Ville et rayon : Paris, tous ▾' : 'Paris · rayon ' + rayon + ' km ▾',
+      basculerRayon: () => this.setState(s => ({ rayon: (s.rayon + 1) % 3 })),
+      styleScore: this.puce(st.scoreMin > 0),
+      texteScore: st.scoreMin > 0 ? 'Score ≥ ' + st.scoreMin + ' ▾' : 'Score : tous ▾',
+      basculerScore: () => this.setState(s => ({ scoreMin: s.scoreMin === 0 ? 85 : (s.scoreMin === 85 ? 90 : 0) })),
+      styleConformite: this.puce(st.conformesSeuls),
+      texteConformite: st.conformesSeuls ? 'Documents à jour uniquement' : 'Conformité : toutes ▾',
+      basculerConformite: () => this.setState(s => ({ conformesSeuls: !s.conformesSeuls })),
+      styleTriNom: this.enTete('nom', false),
+      styleTriScore: this.enTete('score', true),
+      styleTriMissions: this.enTete('missions', true),
+      styleTriDerniere: this.enTete('derniere', true),
+      flecheNom: this.fleche('nom'),
+      flecheScore: this.fleche('score'),
+      flecheMissions: this.fleche('missions'),
+      flecheDerniere: this.fleche('derniere'),
+      trierNom: () => this.trier('nom'),
+      trierScore: () => this.trier('score'),
+      trierMissions: () => this.trier('missions'),
+      trierDerniere: () => this.trier('derniere'),
+      aSelection: n > 0,
+      toutCoche: n > 0 && n === visibles.length,
+      texteSelection: n + (n > 1 ? ' prestataires sélectionnés' : ' prestataire sélectionné'),
+      toggleTout: () => this.setState(s => {
+        if (Object.keys(s.sel).length === visibles.length) return { sel: {} };
+        const sel = {};
+        visibles.forEach(p => { sel[p.id] = true; });
+        return { sel };
+      }),
+      viderSelection: () => this.setState({ sel: {} }),
+    };
+  }
+}
+</script>
+</body>
+</html>

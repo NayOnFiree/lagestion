@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #FFFFFF; font-family: Inter, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #1F6F5C; text-decoration: none; }
+  a:hover { color: #17513f; text-decoration: underline; }
+  input, select, textarea { font-family: Inter, sans-serif; }
+</style>
+</helmet>
+<div style="width: 1920px; min-height: 1080px; display: grid; grid-template-columns: 240px 1fr; background: #FFFFFF; color: #0F1115; font-size: 14px; line-height: 1.4;">
+
+  <nav style="width: 240px; border-right: 1px solid #E6E8EB; display: flex; flex-direction: column; position: sticky; top: 0; height: 100vh; box-sizing: border-box;">
+    <div style="padding: 24px 16px 20px 16px; display: flex; align-items: center; gap: 8px;">
+      <div style="width: 20px; height: 20px; border-radius: 6px; background: #1F6F5C;"></div>
+      <span style="font-size: 15px; font-weight: 600; letter-spacing: -0.01em;">lagestion</span>
+    </div>
+    <div style="padding: 0 12px; display: flex; flex-direction: column; gap: 2px;">
+      <div style="display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 10px; border-radius: 6px; color: #5B6472; font-weight: 500;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="1.4" y="1.4" width="4.6" height="4.6" rx="1.2" fill="#8A93A0"></rect><rect x="8" y="1.4" width="4.6" height="4.6" rx="1.2" fill="none" stroke="#8A93A0" stroke-width="1.3"></rect><rect x="1.4" y="8" width="4.6" height="4.6" rx="1.2" fill="none" stroke="#8A93A0" stroke-width="1.3"></rect><rect x="8" y="8" width="4.6" height="4.6" rx="1.2" fill="none" stroke="#8A93A0" stroke-width="1.3"></rect></svg>
+        Accueil
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 10px; border-radius: 6px; color: #5B6472; font-weight: 500;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="2" width="12" height="10" rx="2" fill="none" stroke="#8A93A0" stroke-width="1.4"></rect><rect x="1" y="5" width="12" height="1.4" fill="#8A93A0"></rect></svg>
+        Missions
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 10px; border-radius: 6px; color: #5B6472; font-weight: 500;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="5.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></circle><rect x="6.3" y="3.5" width="1.4" height="4.2" fill="#8A93A0"></rect></svg>
+        Disponibilités
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 10px; border-radius: 6px; color: #5B6472; font-weight: 500;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2.4" y="1.4" width="9.2" height="11.2" rx="1.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></rect><rect x="4.6" y="5" width="4.8" height="1.2" fill="#8A93A0"></rect><rect x="4.6" y="8" width="3" height="1.2" fill="#8A93A0"></rect></svg>
+        Documents
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 10px; border-radius: 6px; background: #EAF3F0; color: #1F6F5C; font-weight: 500;">
+        <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="1.4" y="2.8" width="11.2" height="8.4" rx="1.6" fill="none" stroke="#1F6F5C" stroke-width="1.4"></rect><rect x="1.4" y="6" width="11.2" height="1.3" fill="#1F6F5C"></rect></svg>
+        Factures
+      </div>
+    </div>
+    <div style="margin-top: auto; border-top: 1px solid #E6E8EB; padding: 12px 16px; display: flex; align-items: center; gap: 10px;">
+      <div style="width: 28px; height: 28px; border-radius: 6px; background: #F7F8F9; border: 1px solid #E6E8EB; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: #5B6472;">CF</div>
+      <div style="display: flex; flex-direction: column; line-height: 1.25;">
+        <span style="font-size: 13px; font-weight: 500;">Camille Ferrand</span>
+        <span style="font-size: 12px; color: #8A93A0;">Technicienne de montage</span>
+      </div>
+    </div>
+  </nav>
+
+  <main style="min-width: 0;">
+    <header style="padding: 32px; border-bottom: 1px solid #E6E8EB; display: flex; align-items: flex-start; justify-content: space-between; gap: 32px;">
+      <div>
+        <h1 style="margin: 0; font-size: 32px; font-weight: 600; line-height: 1.2; letter-spacing: -0.015em;">Nouvelle facture, mars 2026</h1>
+        <p style="margin: 8px 0 0 0; font-size: 14px; color: #5B6472; font-variant-numeric: tabular-nums;">Facture 2026-014 · Émise à Verso Prod, 18 rue de Paradis, Paris 10e · 5 missions validées sur la période, {{ nombreRetenues }} retenues</p>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <button style="height: 36px; padding: 0 14px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 14px; font-weight: 500; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">Enregistrer le brouillon</button>
+      </div>
+    </header>
+
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 48px; padding: 32px; align-items: start;">
+
+      <div style="display: flex; flex-direction: column; gap: 32px; min-width: 0;">
+
+        <section>
+          <div style="display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid #E6E8EB;">
+            <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Missions validées du 1er au 31 mars 2026</h2>
+            <span style="font-size: 12px; color: #8A93A0; font-variant-numeric: tabular-nums;">Heures validées par l'agence, elles ne sont pas modifiables ici</span>
+          </div>
+          <div style="margin-top: 16px;">
+            <div style="display: grid; grid-template-columns: 32px 150px 240px minmax(0, 1fr) 110px 120px 130px; gap: 24px; padding: 8px 0; border-bottom: 1px solid #E6E8EB;">
+              <span></span>
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Date</span>
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Client</span>
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Intitulé</span>
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472; text-align: right;">Heures</span>
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472; text-align: right;">Tarif</span>
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472; text-align: right;">Montant</span>
+            </div>
+            <sc-for list="{{ missions }}" as="mission" hint-placeholder-count="5">
+              <label style="display: grid; grid-template-columns: 32px 150px 240px minmax(0, 1fr) 110px 120px 130px; gap: 24px; padding: 12px 0; border-bottom: 1px solid #E6E8EB; align-items: center; cursor: pointer;">
+                <input type="checkbox" checked="{{ mission.retenue }}" onChange="{{ mission.basculer }}" style="margin: 0; width: 16px; height: 16px; accent-color: #1F6F5C;" />
+                <span style="font-size: 13px; font-variant-numeric: tabular-nums;">{{ mission.date }}</span>
+                <span style="font-size: 13px;">{{ mission.client }}</span>
+                <span style="font-size: 13px; color: #5B6472;">{{ mission.intitule }}</span>
+                <span style="font-size: 13px; text-align: right; font-variant-numeric: tabular-nums;">{{ mission.heures }}</span>
+                <span style="font-size: 13px; text-align: right; font-variant-numeric: tabular-nums;">{{ mission.tarif }}</span>
+                <span style="font-size: 13px; font-weight: 500; text-align: right; font-variant-numeric: tabular-nums;">{{ mission.montant }}</span>
+              </label>
+            </sc-for>
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 12px 0;">
+              <span style="font-size: 13px; color: #8A93A0;">La mission du 23 mars est écartée : son poste de nuit se termine le 24 mars, elle sera facturée sur avril.</span>
+              <div style="display: flex; gap: 8px;">
+                <button onClick="{{ toutRetenir }}" style="height: 28px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 13px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Tout sélectionner</button>
+                <button onClick="{{ toutRetirer }}" style="height: 28px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 13px; font-weight: 500; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">Tout désélectionner</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div style="display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid #E6E8EB;">
+            <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Lignes de la facture 2026-014</h2>
+            <span style="font-size: 12px; color: #8A93A0; font-variant-numeric: tabular-nums;">Telles qu'elles apparaîtront sur le document remis à l'agence</span>
+          </div>
+          <div style="margin-top: 16px;">
+            <div style="display: grid; grid-template-columns: 60px minmax(0, 1fr) 120px 140px 150px; gap: 24px; padding: 8px 0; border-bottom: 1px solid #E6E8EB;">
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Ligne</span>
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Désignation</span>
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472; text-align: right;">Quantité</span>
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472; text-align: right;">Prix unitaire</span>
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472; text-align: right;">Montant</span>
+            </div>
+            <sc-for list="{{ lignes }}" as="ligne" hint-placeholder-count="4">
+              <div style="display: grid; grid-template-columns: 60px minmax(0, 1fr) 120px 140px 150px; gap: 24px; padding: 12px 0; border-bottom: 1px solid #E6E8EB; align-items: baseline;">
+                <span style="font-size: 13px; color: #8A93A0; font-variant-numeric: tabular-nums;">{{ ligne.rang }}</span>
+                <span style="font-size: 13px;">{{ ligne.designation }}</span>
+                <span style="font-size: 13px; text-align: right; font-variant-numeric: tabular-nums;">{{ ligne.heures }}</span>
+                <span style="font-size: 13px; text-align: right; font-variant-numeric: tabular-nums;">{{ ligne.tarif }}</span>
+                <span style="font-size: 13px; font-weight: 500; text-align: right; font-variant-numeric: tabular-nums;">{{ ligne.montant }}</span>
+              </div>
+            </sc-for>
+            <div style="display: grid; grid-template-columns: 60px minmax(0, 1fr) 120px 140px 150px; gap: 24px; padding: 12px 0; border-bottom: 1px solid #E6E8EB; align-items: baseline;">
+              <span></span>
+              <span style="font-size: 13px; font-weight: 500;">Total, TVA non applicable</span>
+              <span style="font-size: 13px; text-align: right; font-variant-numeric: tabular-nums;">{{ totalHeures }}</span>
+              <span></span>
+              <span style="font-size: 15px; font-weight: 500; text-align: right; font-variant-numeric: tabular-nums;">{{ totalMontant }}</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 24px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px 24px;">
+            <div>
+              <label style="display: block; font-size: 12px; font-weight: 500; color: #5B6472;">Date d'émission</label>
+              <input type="text" value="31/03/2026" style="margin-top: 4px; width: 100%; height: 36px; box-sizing: border-box; padding: 0 10px; border: 1px solid #E6E8EB; border-radius: 6px; font-size: 14px; color: #0F1115; font-variant-numeric: tabular-nums;" />
+            </div>
+            <div>
+              <label style="display: block; font-size: 12px; font-weight: 500; color: #5B6472;">Échéance de règlement</label>
+              <input type="text" value="15/04/2026" style="margin-top: 4px; width: 100%; height: 36px; box-sizing: border-box; padding: 0 10px; border: 1px solid #E6E8EB; border-radius: 6px; font-size: 14px; color: #0F1115; font-variant-numeric: tabular-nums;" />
+            </div>
+            <div>
+              <label style="display: block; font-size: 12px; font-weight: 500; color: #5B6472;">Référence de commande</label>
+              <input type="text" value="VP-MARS-2026-CF" style="margin-top: 4px; width: 100%; height: 36px; box-sizing: border-box; padding: 0 10px; border: 1px solid #E6E8EB; border-radius: 6px; font-size: 14px; color: #0F1115; font-variant-numeric: tabular-nums;" />
+            </div>
+            <div style="grid-column: span 3;">
+              <label style="display: block; font-size: 12px; font-weight: 500; color: #5B6472;">Mentions portées au pied de la facture</label>
+              <textarea rows="2" style="margin-top: 4px; width: 100%; box-sizing: border-box; padding: 8px 10px; border: 1px solid #E6E8EB; border-radius: 6px; font-size: 14px; color: #0F1115; line-height: 1.4; resize: vertical;">TVA non applicable, article 293 B du code général des impôts. Règlement par virement sur le compte FR76 3000 4008 2800 0121 5642 187. Pénalités de retard au taux légal, indemnité forfaitaire de recouvrement de 40,00 €.</textarea>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <aside style="position: sticky; top: 32px; background: #F7F8F9; border-radius: 8px; padding: 24px;">
+        <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Facture à déposer</h2>
+
+        <div style="margin-top: 16px; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Numéro</span><span style="font-size: 14px; font-weight: 500; font-variant-numeric: tabular-nums;">2026-014</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Période</span><span style="font-size: 14px; font-variant-numeric: tabular-nums;">1er – 31 mars 2026</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Destinataire</span><span style="font-size: 14px;">Verso Prod</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Missions retenues</span><span style="font-size: 14px; font-variant-numeric: tabular-nums;">{{ nombreRetenues }} sur 5</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Total d'heures</span><span style="font-size: 14px; font-variant-numeric: tabular-nums;">{{ totalHeures }}</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0;"><span style="font-size: 13px; color: #5B6472;">Tarif appliqué</span><span style="font-size: 14px; font-variant-numeric: tabular-nums;">22,00 € / h</span></div>
+        </div>
+
+        <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #E6E8EB; display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
+          <span style="font-size: 13px; color: #5B6472;">Montant total</span>
+          <span style="font-size: 28px; font-weight: 600; color: #1F6F5C; font-variant-numeric: tabular-nums; line-height: 1.2;">{{ totalMontant }}</span>
+        </div>
+        <p style="margin: 4px 0 0 0; font-size: 13px; color: #8A93A0; text-align: right;">TVA non applicable, art. 293 B du CGI</p>
+
+        <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 8px;">
+          <button style="height: 36px; border: 1px solid #E6E8EB; background: #FFFFFF; color: #0F1115; border-radius: 6px; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer;" style-hover="background: #EFF1F3;">Aperçu du PDF</button>
+          <button style="height: 36px; border: 1px solid #1F6F5C; background: #1F6F5C; color: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer;" style-hover="background: #17513f; border-color: #17513f;">Déposer</button>
+        </div>
+        <p style="margin: 12px 0 0 0; font-size: 13px; color: #8A93A0;">Le dépôt fige le numéro 2026-014 et les lignes retenues. Le règlement intervient sous 15 jours, soit le 15 avril au plus tard.</p>
+      </aside>
+
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    missions: [
+      { date: 'Dimanche 8 mars', client: 'Palais Brongniart', intitule: 'Chargement du matériel scénique, manutention', h: 6, t: 22, retenue: true },
+      { date: 'Samedi 14 mars', client: 'Maison Verly', intitule: 'Montage du défilé printemps, salon d\u2019honneur', h: 10, t: 22, retenue: true },
+      { date: 'Lundi 16 mars', client: 'Hôtel Bellecour', intitule: 'Montage de la salle de réception', h: 9, t: 22, retenue: true },
+      { date: 'Lundi 23 mars', client: 'Studio Nomade', intitule: 'Démontage du salon Nomade, poste de nuit', h: 6.5, t: 24, retenue: false },
+      { date: 'Samedi 28 mars', client: 'Galerie Perrin', intitule: 'Régie du vernissage, exposition Rives', h: 9, t: 22, retenue: true },
+    ],
+  };
+  euro(n) {
+    return n.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d)(?=,))/g, '\u202f') + ' €';
+  }
+  heure(n) {
+    return (Number.isInteger(n) ? String(n) : n.toFixed(1).replace('.', ',')) + ' h';
+  }
+  renderVals() {
+    const ms = this.state.missions;
+    const retenues = ms.filter(m => m.retenue);
+    const totalH = retenues.reduce((s, m) => s + m.h, 0);
+    const totalM = retenues.reduce((s, m) => s + m.h * m.t, 0);
+    return {
+      missions: ms.map((m, i) => ({
+        date: m.date,
+        client: m.client,
+        intitule: m.intitule,
+        heures: this.heure(m.h),
+        tarif: this.euro(m.t) + ' / h',
+        montant: this.euro(m.h * m.t),
+        retenue: m.retenue,
+        basculer: () => this.setState(p => ({
+          missions: p.missions.map((x, j) => (j === i ? Object.assign({}, x, { retenue: !x.retenue }) : x)),
+        })),
+      })),
+      lignes: retenues.map((m, i) => ({
+        rang: String(i + 1).padStart(2, '0'),
+        designation: m.client + ' · ' + m.intitule + ' · ' + m.date.toLowerCase(),
+        heures: this.heure(m.h),
+        tarif: this.euro(m.t),
+        montant: this.euro(m.h * m.t),
+      })),
+      nombreRetenues: retenues.length,
+      totalHeures: this.heure(totalH),
+      totalMontant: this.euro(totalM),
+      toutRetenir: () => this.setState(p => ({ missions: p.missions.map(m => Object.assign({}, m, { retenue: true })) })),
+      toutRetirer: () => this.setState(p => ({ missions: p.missions.map(m => Object.assign({}, m, { retenue: false })) })),
+    };
+  }
+}
+</script>
+</body>
+</html>

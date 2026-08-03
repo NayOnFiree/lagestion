@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #FFFFFF; font-family: Inter, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #1F6F5C; text-decoration: none; }
+  a:hover { color: #17513f; text-decoration: underline; }
+</style>
+</helmet>
+<div style="width: 1920px; min-height: 1080px; display: grid; grid-template-columns: 232px minmax(0, 1fr); background: #FFFFFF; color: #0F1115; font-size: 13px; line-height: 1.4;">
+
+  <nav style="width: 232px; border-right: 1px solid #E6E8EB; display: flex; flex-direction: column; position: sticky; top: 0; height: 100vh; box-sizing: border-box;">
+    <div style="padding: 16px 16px 14px 16px; border-bottom: 1px solid #E6E8EB; display: flex; align-items: center; gap: 8px;">
+      <div style="width: 20px; height: 20px; border-radius: 6px; background: #1F6F5C;"></div>
+      <div style="display: flex; flex-direction: column; line-height: 1.25;">
+        <span style="font-size: 13px; font-weight: 600; letter-spacing: -0.01em;">Verso Prod</span>
+        <span style="font-size: 11px; color: #8A93A0;">Agence · back-office</span>
+      </div>
+    </div>
+    <div style="padding: 8px; display: flex; flex-direction: column; gap: 1px;">
+      <div style="display: flex; align-items: center; gap: 9px; height: 30px; padding: 0 9px; border-radius: 5px; background: #EAF3F0; color: #1F6F5C; font-weight: 500;">
+        <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><rect x="1.4" y="1.4" width="4.6" height="4.6" rx="1.2" fill="#1F6F5C"></rect><rect x="8" y="1.4" width="4.6" height="4.6" rx="1.2" fill="none" stroke="#1F6F5C" stroke-width="1.3"></rect><rect x="1.4" y="8" width="4.6" height="4.6" rx="1.2" fill="none" stroke="#1F6F5C" stroke-width="1.3"></rect><rect x="8" y="8" width="4.6" height="4.6" rx="1.2" fill="none" stroke="#1F6F5C" stroke-width="1.3"></rect></svg>
+        Tableau de bord
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <span style="display: flex; align-items: center; gap: 9px;">
+          <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="2" width="12" height="10" rx="2" fill="none" stroke="#8A93A0" stroke-width="1.4"></rect><rect x="1" y="5" width="12" height="1.4" fill="#8A93A0"></rect></svg>
+          Événements
+        </span>
+        <span style="font-size: 11px; color: #8A93A0; font-variant-numeric: tabular-nums;">14</span>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <span style="display: flex; align-items: center; gap: 9px;">
+          <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><circle cx="5" cy="5" r="2.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></circle><path d="M1.4 12.2c0-2.1 1.6-3.4 3.6-3.4s3.6 1.3 3.6 3.4" fill="none" stroke="#8A93A0" stroke-width="1.4"></path><rect x="10" y="4.3" width="1.3" height="5" fill="#8A93A0"></rect><rect x="8.2" y="6.1" width="5" height="1.3" fill="#8A93A0"></rect></svg>
+          Staffing
+        </span>
+        <span style="font-size: 11px; font-weight: 500; color: #B42318; background: #FBEDEC; border-radius: 5px; padding: 1px 6px; font-variant-numeric: tabular-nums;">3</span>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <span style="display: flex; align-items: center; gap: 9px;">
+          <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><circle cx="4.4" cy="4.4" r="2.3" fill="none" stroke="#8A93A0" stroke-width="1.4"></circle><circle cx="9.8" cy="9.4" r="2.3" fill="none" stroke="#8A93A0" stroke-width="1.4"></circle><path d="M6.2 6.1 8 7.7" stroke="#8A93A0" stroke-width="1.4"></path></svg>
+          Réseau
+        </span>
+        <span style="font-size: 11px; color: #8A93A0; font-variant-numeric: tabular-nums;">248</span>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <span style="display: flex; align-items: center; gap: 9px;">
+          <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="5.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></circle><rect x="6.3" y="3.5" width="1.4" height="4.2" fill="#8A93A0"></rect></svg>
+          Heures
+        </span>
+        <span style="font-size: 11px; font-weight: 500; color: #A8630B; background: #FBF2E6; border-radius: 5px; padding: 1px 6px; font-variant-numeric: tabular-nums;">12 h</span>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <span style="display: flex; align-items: center; gap: 9px;">
+          <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><rect x="2.4" y="1.4" width="9.2" height="11.2" rx="1.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></rect><rect x="4.6" y="5" width="4.8" height="1.2" fill="#8A93A0"></rect><rect x="4.6" y="8" width="3" height="1.2" fill="#8A93A0"></rect></svg>
+          Factures
+        </span>
+        <span style="font-size: 11px; font-weight: 500; color: #A8630B; background: #FBF2E6; border-radius: 5px; padding: 1px 6px; font-variant-numeric: tabular-nums;">3</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 9px; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="2.2" fill="none" stroke="#8A93A0" stroke-width="1.4"></circle><circle cx="7" cy="7" r="5.4" fill="none" stroke="#8A93A0" stroke-width="1.4" stroke-dasharray="2.4 2"></circle></svg>
+        Réglages
+      </div>
+    </div>
+    <div style="margin-top: auto; border-top: 1px solid #E6E8EB; padding: 10px 12px; display: flex; align-items: center; gap: 9px;">
+      <div style="width: 26px; height: 26px; border-radius: 5px; background: #F7F8F9; border: 1px solid #E6E8EB; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; color: #5B6472;">SN</div>
+      <div style="display: flex; flex-direction: column; line-height: 1.25; min-width: 0;">
+        <span style="font-size: 12px; font-weight: 500;">Sophie Nguyen</span>
+        <span style="font-size: 11px; color: #8A93A0;">Chargée de production</span>
+      </div>
+    </div>
+  </nav>
+
+  <main style="min-width: 0; padding-bottom: 64px;">
+
+    <header style="padding: 16px 20px; border-bottom: 1px solid #E6E8EB; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+      <div>
+        <h1 style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.2; letter-spacing: -0.01em;">Tableau de bord</h1>
+        <p style="margin: 3px 0 0 0; font-size: 12px; color: #5B6472; font-variant-numeric: tabular-nums;">Lundi 3 août 2026, 08h12 · 14 événements en cours · 6 prestataires en mission aujourd'hui</p>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <button style="height: 30px; padding: 0 11px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 13px; font-weight: 500; color: #5B6472; cursor: pointer; white-space: nowrap;" style-hover="background: #F7F8F9; color: #0F1115;">Exporter la semaine</button>
+        <button style="height: 30px; padding: 0 11px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 13px; font-weight: 500; color: #0F1115; cursor: pointer; white-space: nowrap;" style-hover="background: #F7F8F9;">Ouvrir le staffing</button>
+        <button style="height: 30px; padding: 0 12px; border: 1px solid #1F6F5C; background: #1F6F5C; color: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 13px; font-weight: 500; cursor: pointer; white-space: nowrap;" style-hover="background: #17513f; border-color: #17513f;">Créer un événement</button>
+      </div>
+    </header>
+
+    <section style="padding: 16px 20px 0 20px;">
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding-bottom: 6px;">
+        <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">À traiter aujourd'hui</h2>
+        <span style="font-size: 12px; color: #8A93A0; font-variant-numeric: tabular-nums;">5 files d'attente · 2 en retard · dernière synchronisation à 08h11</span>
+      </div>
+
+      <div style="border: 1px solid #E6E8EB; border-radius: 6px; overflow: hidden;">
+        <div style="display: grid; grid-template-columns: 96px minmax(0, 1.1fr) minmax(0, 1.5fr) 132px 148px 196px; align-items: center; height: 32px; background: #F7F8F9; border-bottom: 1px solid #E6E8EB; font-size: 11px; font-weight: 600; color: #5B6472;">
+          <span style="padding: 0 12px;">État</span>
+          <span style="padding: 0 12px;">File</span>
+          <span style="padding: 0 12px;">Objets concernés</span>
+          <span style="padding: 0 12px; text-align: right;">Volume</span>
+          <span style="padding: 0 12px; text-align: right;">Échéance</span>
+          <span style="padding: 0 12px; text-align: right;">Action</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 96px minmax(0, 1.1fr) minmax(0, 1.5fr) 132px 148px 196px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB;" style-hover="background: #FCFCFD;">
+          <span style="padding: 0 12px; display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 500; color: #B42318;"><span style="width: 6px; height: 6px; border-radius: 3px; background: #B42318;"></span>Urgent</span>
+          <span style="padding: 0 12px; font-weight: 500;">Postes non pourvus</span>
+          <span style="padding: 0 12px; color: #5B6472; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Défilé printemps Maison Verly, Salon Nomade, Gala Bellecour</span>
+          <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">3 postes</span>
+          <span style="padding: 0 12px; text-align: right; color: #B42318; font-variant-numeric: tabular-nums;">dans 2 jours</span>
+          <span style="padding: 0 12px; display: flex; justify-content: flex-end; gap: 6px;">
+            <button style="height: 26px; padding: 0 10px; border: 1px solid #1F6F5C; background: #1F6F5C; color: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; cursor: pointer;" style-hover="background: #17513f; border-color: #17513f;">Staffer</button>
+            <button style="height: 26px; width: 26px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">⋯</button>
+          </span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 96px minmax(0, 1.1fr) minmax(0, 1.5fr) 132px 148px 196px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB;" style-hover="background: #FCFCFD;">
+          <span style="padding: 0 12px; display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 500; color: #B42318;"><span style="width: 6px; height: 6px; border-radius: 3px; background: #B42318;"></span>En retard</span>
+          <span style="padding: 0 12px; font-weight: 500;">Propositions sans réponse</span>
+          <span style="padding: 0 12px; color: #5B6472; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Camille Ferrand (montage Verly), Idriss Bacha (régie Rives)</span>
+          <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">2 propositions</span>
+          <span style="padding: 0 12px; text-align: right; color: #B42318; font-variant-numeric: tabular-nums;">dépassée de 1 j 04 h</span>
+          <span style="padding: 0 12px; display: flex; justify-content: flex-end; gap: 6px;">
+            <button style="height: 26px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Relancer</button>
+            <button style="height: 26px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">Réattribuer</button>
+            <button style="height: 26px; width: 26px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">⋯</button>
+          </span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 96px minmax(0, 1.1fr) minmax(0, 1.5fr) 132px 148px 196px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB;" style-hover="background: #FCFCFD;">
+          <span style="padding: 0 12px; display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 500; color: #A8630B;"><span style="width: 6px; height: 6px; border-radius: 3px; background: #A8630B;"></span>À surveiller</span>
+          <span style="padding: 0 12px; font-weight: 500;">Documents expirants</span>
+          <span style="padding: 0 12px; color: #5B6472; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">3 attestations URSSAF, 1 assurance RC pro · 4 prestataires</span>
+          <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">4 documents</span>
+          <span style="padding: 0 12px; text-align: right; color: #A8630B; font-variant-numeric: tabular-nums;">sous 30 jours</span>
+          <span style="padding: 0 12px; display: flex; justify-content: flex-end; gap: 6px;">
+            <button style="height: 26px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Contrôler</button>
+            <button style="height: 26px; width: 26px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">⋯</button>
+          </span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 96px minmax(0, 1.1fr) minmax(0, 1.5fr) 132px 148px 196px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB;" style-hover="background: #FCFCFD;">
+          <span style="padding: 0 12px; display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 500; color: #5B6472;"><span style="width: 6px; height: 6px; border-radius: 3px; background: #C3C9D2;"></span>Courant</span>
+          <span style="padding: 0 12px; font-weight: 500;">Heures à valider</span>
+          <span style="padding: 0 12px; color: #5B6472; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Démontage Rives (5 h), chargement Brongniart (4 h), régie Nomade (3 h)</span>
+          <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">12 h</span>
+          <span style="padding: 0 12px; text-align: right; color: #5B6472; font-variant-numeric: tabular-nums;">avant le 5 août</span>
+          <span style="padding: 0 12px; display: flex; justify-content: flex-end; gap: 6px;">
+            <button style="height: 26px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Valider les heures</button>
+            <button style="height: 26px; width: 26px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">⋯</button>
+          </span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 96px minmax(0, 1.1fr) minmax(0, 1.5fr) 132px 148px 196px; align-items: center; height: 40px;" style-hover="background: #FCFCFD;">
+          <span style="padding: 0 12px; display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 500; color: #5B6472;"><span style="width: 6px; height: 6px; border-radius: 3px; background: #C3C9D2;"></span>Courant</span>
+          <span style="padding: 0 12px; font-weight: 500;">Factures reçues</span>
+          <span style="padding: 0 12px; color: #5B6472; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">F-2607-118 Ferrand, F-2607-121 Bacha, F-2607-124 Lemoine</span>
+          <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">3 · 1 042,00 €</span>
+          <span style="padding: 0 12px; text-align: right; color: #5B6472; font-variant-numeric: tabular-nums;">règlement le 10 août</span>
+          <span style="padding: 0 12px; display: flex; justify-content: flex-end; gap: 6px;">
+            <button style="height: 26px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Contrôler</button>
+            <button style="height: 26px; width: 26px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">⋯</button>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <div style="padding: 20px; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 20px; align-items: start;">
+
+      <section style="min-width: 0;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-bottom: 6px;">
+          <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Missions du jour · pointage</h2>
+          <span style="font-size: 12px; color: #8A93A0; font-variant-numeric: tabular-nums;">6 prestataires · 3 événements · 1 non pointé</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 6px; padding: 0 0 8px 0;">
+          <div style="display: flex; align-items: center; height: 28px; border: 1px solid #E6E8EB; border-radius: 5px; padding: 0 8px; gap: 6px; min-width: 200px;">
+            <svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><circle cx="6" cy="6" r="4.2" fill="none" stroke="#8A93A0" stroke-width="1.4"></circle><path d="M9.2 9.2 12.4 12.4" stroke="#8A93A0" stroke-width="1.4"></path></svg>
+            <span style="font-size: 12px; color: #8A93A0;">Prestataire, événement, poste</span>
+          </div>
+          <button style="height: 28px; padding: 0 9px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Tous les états ▾</button>
+          <button style="height: 28px; padding: 0 9px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Tous les événements ▾</button>
+          <button style="height: 28px; padding: 0 9px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Chef d'équipe ▾</button>
+          <span style="margin-left: auto; font-size: 12px; color: #8A93A0;">Filtres actifs : aucun</span>
+        </div>
+
+        <div style="border: 1px solid #E6E8EB; border-radius: 6px; overflow: hidden;">
+          <div style="display: grid; grid-template-columns: 34px minmax(0, 1.1fr) minmax(0, 1.2fr) 128px 116px 132px 34px; align-items: center; height: 32px; background: #F7F8F9; border-bottom: 1px solid #E6E8EB; font-size: 11px; font-weight: 600; color: #5B6472;">
+            <span style="padding: 0 8px; display: flex; align-items: center;"><input type="checkbox" checked="{{ toutCoche }}" onChange="{{ toggleTout }}" style="width: 13px; height: 13px; accent-color: #1F6F5C; cursor: pointer;" /></span>
+            <span style="padding: 0 12px;">Prestataire</span>
+            <span style="padding: 0 12px;">Événement</span>
+            <span style="padding: 0 12px;">Poste</span>
+            <span style="padding: 0 12px; text-align: right;">Horaires</span>
+            <span style="padding: 0 12px; text-align: right;">Pointage</span>
+            <span></span>
+          </div>
+
+          <sc-for list="{{ lignes }}" as="l" hint-placeholder-count="6">
+            <div style="display: grid; grid-template-columns: 34px minmax(0, 1.1fr) minmax(0, 1.2fr) 128px 116px 132px 34px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB; background: {{ l.fond }};" style-hover="background: #FCFCFD;">
+              <span style="padding: 0 8px; display: flex; align-items: center;"><input type="checkbox" checked="{{ l.coche }}" onChange="{{ l.basculer }}" style="width: 13px; height: 13px; accent-color: #1F6F5C; cursor: pointer;" /></span>
+              <span style="padding: 0 12px; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ l.nom }}</span>
+              <span style="padding: 0 12px; color: #5B6472; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ l.evenement }}</span>
+              <span style="padding: 0 12px; color: #5B6472; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ l.poste }}</span>
+              <span style="padding: 0 12px; text-align: right; color: #5B6472; font-variant-numeric: tabular-nums;">{{ l.horaires }}</span>
+              <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums; color: {{ l.couleur }};">{{ l.pointage }}</span>
+              <span style="display: flex; justify-content: center;"><button style="height: 24px; width: 24px; border: 1px solid transparent; background: none; border-radius: 5px; font-family: inherit; font-size: 12px; color: #8A93A0; cursor: pointer;" style-hover="border-color: #E6E8EB; background: #FFFFFF; color: #0F1115;">⋯</button></span>
+            </div>
+          </sc-for>
+
+          <div style="display: grid; grid-template-columns: 34px minmax(0, 1.1fr) minmax(0, 1.2fr) 128px 116px 132px 34px; align-items: center; height: 34px; background: #F7F8F9; font-size: 12px; font-weight: 500; color: #5B6472;">
+            <span></span>
+            <span style="padding: 0 12px;">6 prestataires</span>
+            <span style="padding: 0 12px;">3 événements</span>
+            <span style="padding: 0 12px;"></span>
+            <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">44 h prévues</span>
+            <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">5 / 6 pointés</span>
+            <span></span>
+          </div>
+        </div>
+      </section>
+
+      <section style="min-width: 0;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-bottom: 6px;">
+          <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Remplissage des événements · semaine du 3 au 9 août</h2>
+          <span style="font-size: 12px; color: #8A93A0; font-variant-numeric: tabular-nums;">7 événements · 41 / 44 postes pourvus</span>
+        </div>
+
+        <div style="border: 1px solid #E6E8EB; border-radius: 6px; overflow: hidden;">
+          <div style="display: grid; grid-template-columns: minmax(0, 1.4fr) 108px 96px 120px 112px 34px; align-items: center; height: 32px; background: #F7F8F9; border-bottom: 1px solid #E6E8EB; font-size: 11px; font-weight: 600; color: #5B6472;">
+            <span style="padding: 0 12px;">Événement</span>
+            <span style="padding: 0 12px;">Date</span>
+            <span style="padding: 0 12px; text-align: right;">Postes</span>
+            <span style="padding: 0 12px;">Remplissage</span>
+            <span style="padding: 0 12px; text-align: right;">Heures</span>
+            <span></span>
+          </div>
+
+          <sc-for list="{{ evenements }}" as="e" hint-placeholder-count="7">
+            <div style="display: grid; grid-template-columns: minmax(0, 1.4fr) 108px 96px 120px 112px 34px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB;" style-hover="background: #FCFCFD;">
+              <span style="padding: 0 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"><span style="font-weight: 500;">{{ e.titre }}</span> <span style="color: #8A93A0;">{{ e.client }}</span></span>
+              <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">{{ e.date }}</span>
+              <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums; color: {{ e.couleur }};">{{ e.postes }}</span>
+              <span style="padding: 0 12px;"><span style="display: block; height: 5px; border-radius: 3px; background: #EFF1F3; overflow: hidden;"><span style="display: block; height: 5px; border-radius: 3px; width: {{ e.largeur }}; background: {{ e.couleur }};"></span></span></span>
+              <span style="padding: 0 12px; text-align: right; color: #5B6472; font-variant-numeric: tabular-nums;">{{ e.heures }}</span>
+              <span style="display: flex; justify-content: center;"><button style="height: 24px; width: 24px; border: 1px solid transparent; background: none; border-radius: 5px; font-family: inherit; font-size: 12px; color: #8A93A0; cursor: pointer;" style-hover="border-color: #E6E8EB; background: #FFFFFF; color: #0F1115;">⋯</button></span>
+            </div>
+          </sc-for>
+
+          <div style="display: grid; grid-template-columns: minmax(0, 1.4fr) 108px 96px 120px 112px 34px; align-items: center; height: 34px; background: #F7F8F9; font-size: 12px; font-weight: 500; color: #5B6472;">
+            <span style="padding: 0 12px;">7 événements</span>
+            <span style="padding: 0 12px;"></span>
+            <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">41 / 44</span>
+            <span style="padding: 0 12px; font-variant-numeric: tabular-nums;">93 %</span>
+            <span style="padding: 0 12px; text-align: right; font-variant-numeric: tabular-nums;">312 h</span>
+            <span></span>
+          </div>
+        </div>
+
+        <p style="margin: 8px 0 0 0; font-size: 12px; color: #8A93A0;">3 postes manquants sur 2 événements, tous à moins de 5 jours. Le staffing propose 11 prestataires disponibles et à jour de leurs documents.</p>
+      </section>
+
+    </div>
+
+    <sc-if value="{{ aSelection }}" hint-placeholder-val="{{ false }}">
+      <div style="position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%); z-index: 20; display: flex; align-items: center; gap: 10px; height: 44px; padding: 0 12px; background: #0F1115; border-radius: 8px; box-shadow: 0 8px 24px rgba(15, 17, 21, 0.28); color: #FFFFFF;">
+        <span style="font-size: 12px; font-weight: 500; font-variant-numeric: tabular-nums;">{{ texteSelection }}</span>
+        <span style="width: 1px; height: 20px; background: #33383F;"></span>
+        <button style="height: 28px; padding: 0 10px; border: 1px solid #33383F; background: #1A1D22; color: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; cursor: pointer;" style-hover="background: #24272D;">Relancer le pointage</button>
+        <button style="height: 28px; padding: 0 10px; border: 1px solid #33383F; background: #1A1D22; color: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; cursor: pointer;" style-hover="background: #24272D;">Valider les heures</button>
+        <button style="height: 28px; padding: 0 10px; border: 1px solid #33383F; background: #1A1D22; color: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; cursor: pointer;" style-hover="background: #24272D;">Remplacer</button>
+        <button style="height: 28px; padding: 0 10px; border: 1px solid #33383F; background: #1A1D22; color: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; cursor: pointer;" style-hover="background: #24272D;">Message groupé</button>
+        <span style="width: 1px; height: 20px; background: #33383F;"></span>
+        <button onClick="{{ viderSelection }}" style="height: 28px; padding: 0 10px; border: 1px solid transparent; background: none; color: #A9B0BA; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; cursor: pointer;" style-hover="color: #FFFFFF;">Désélectionner</button>
+      </div>
+    </sc-if>
+
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { sel: {} };
+
+  lignesBase() {
+    return [
+      { id: 'l1', nom: 'Camille Ferrand', evenement: 'Montage showroom été', poste: 'Technicienne montage', horaires: '8h00 – 17h00', pointage: 'Pointée 7h56', etat: 'ok' },
+      { id: 'l2', nom: 'Idriss Bacha', evenement: 'Montage showroom été', poste: 'Régisseur', horaires: '8h00 – 18h00', pointage: 'Pointé 8h04', etat: 'ok' },
+      { id: 'l3', nom: 'Lucie Lemoine', evenement: 'Salon Nomade, jour 1', poste: 'Agent d\u2019accueil', horaires: '9h00 – 19h00', pointage: 'Non pointée', etat: 'alerte' },
+      { id: 'l4', nom: 'Yanis Berrada', evenement: 'Salon Nomade, jour 1', poste: 'Chef d\u2019équipe', horaires: '7h00 – 16h00', pointage: 'Pointé 6h52', etat: 'ok' },
+      { id: 'l5', nom: 'Théo Marchand', evenement: 'Salon Nomade, jour 1', poste: 'Manutentionnaire', horaires: '7h00 – 15h00', pointage: 'Retard 22 min', etat: 'attention' },
+      { id: 'l6', nom: 'Naïma Cherif', evenement: 'Démontage Rives', poste: 'Manutentionnaire', horaires: '6h00 – 12h00', pointage: 'Terminé, 6 h', etat: 'fait' },
+    ];
+  }
+
+  couleurEtat(e) {
+    if (e === 'alerte') return '#B42318';
+    if (e === 'attention') return '#A8630B';
+    if (e === 'fait') return '#5B6472';
+    return '#1F6F5C';
+  }
+
+  renderVals() {
+    const sel = this.state.sel;
+    const base = this.lignesBase();
+    const lignes = base.map(l => ({
+      ...l,
+      coche: !!sel[l.id],
+      fond: sel[l.id] ? '#F4F8F6' : 'transparent',
+      couleur: this.couleurEtat(l.etat),
+      basculer: () => this.setState(s => {
+        const n = { ...s.sel };
+        if (n[l.id]) { delete n[l.id]; } else { n[l.id] = true; }
+        return { sel: n };
+      }),
+    }));
+    const n = Object.keys(sel).length;
+
+    const ev = [
+      { titre: 'Montage showroom été', client: '· Maison Verly', pourvus: 6, total: 6, date: 'lun. 3 août', heures: '54 h' },
+      { titre: 'Salon Nomade, jour 1', client: '· Studio Nomade', pourvus: 8, total: 9, date: 'lun. 3 août', heures: '72 h' },
+      { titre: 'Démontage Rives', client: '· Galerie Perrin', pourvus: 4, total: 4, date: 'mar. 4 août', heures: '24 h' },
+      { titre: 'Défilé printemps', client: '· Maison Verly', pourvus: 7, total: 9, date: 'mer. 5 août', heures: '81 h' },
+      { titre: 'Gala Bellecour', client: '· Hôtel Bellecour', pourvus: 6, total: 6, date: 'ven. 7 août', heures: '48 h' },
+      { titre: 'Chargement Brongniart', client: '· Palais Brongniart', pourvus: 5, total: 5, date: 'sam. 8 août', heures: '20 h' },
+      { titre: 'Régie salon créateurs', client: '· Studio Nomade', pourvus: 5, total: 5, date: 'dim. 9 août', heures: '13 h' },
+    ];
+    const evenements = ev.map(e => {
+      const manque = e.total - e.pourvus;
+      return {
+        ...e,
+        postes: e.pourvus + ' / ' + e.total,
+        largeur: Math.round((e.pourvus / e.total) * 100) + '%',
+        couleur: manque >= 2 ? '#B42318' : (manque === 1 ? '#A8630B' : '#1F6F5C'),
+      };
+    });
+
+    return {
+      lignes,
+      evenements,
+      aSelection: n > 0,
+      toutCoche: n === base.length,
+      texteSelection: n + (n > 1 ? ' lignes sélectionnées' : ' ligne sélectionnée'),
+      toggleTout: () => this.setState(s => {
+        const tout = Object.keys(s.sel).length === base.length;
+        if (tout) return { sel: {} };
+        const n2 = {};
+        base.forEach(l => { n2[l.id] = true; });
+        return { sel: n2 };
+      }),
+      viderSelection: () => this.setState({ sel: {} }),
+    };
+  }
+}
+</script>
+</body>
+</html>

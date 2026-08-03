@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #FFFFFF; font-family: Inter, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #1F6F5C; text-decoration: none; }
+  a:hover { color: #17513f; text-decoration: underline; }
+</style>
+</helmet>
+<div style="width: 1920px; min-height: 1080px; display: grid; grid-template-columns: 232px minmax(0, 1fr); background: #FFFFFF; color: #0F1115; font-size: 13px; line-height: 1.4;">
+
+  <nav style="width: 232px; border-right: 1px solid #E6E8EB; display: flex; flex-direction: column; position: sticky; top: 0; height: 100vh; box-sizing: border-box;">
+    <div style="padding: 16px 16px 14px 16px; border-bottom: 1px solid #E6E8EB; display: flex; align-items: center; gap: 8px;">
+      <div style="width: 20px; height: 20px; border-radius: 6px; background: #1F6F5C;"></div>
+      <div style="display: flex; flex-direction: column; line-height: 1.25;">
+        <span style="font-size: 13px; font-weight: 600; letter-spacing: -0.01em;">Verso Prod</span>
+        <span style="font-size: 11px; color: #8A93A0;">Agence · back-office</span>
+      </div>
+    </div>
+    <div style="padding: 8px; display: flex; flex-direction: column; gap: 1px;">
+      <div style="display: flex; align-items: center; gap: 9px; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><rect x="1.4" y="1.4" width="4.6" height="4.6" rx="1.2" fill="#8A93A0"></rect><rect x="8" y="1.4" width="4.6" height="4.6" rx="1.2" fill="none" stroke="#8A93A0" stroke-width="1.3"></rect><rect x="1.4" y="8" width="4.6" height="4.6" rx="1.2" fill="none" stroke="#8A93A0" stroke-width="1.3"></rect><rect x="8" y="8" width="4.6" height="4.6" rx="1.2" fill="none" stroke="#8A93A0" stroke-width="1.3"></rect></svg>
+        Tableau de bord
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <span style="display: flex; align-items: center; gap: 9px;">
+          <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="2" width="12" height="10" rx="2" fill="none" stroke="#8A93A0" stroke-width="1.4"></rect><rect x="1" y="5" width="12" height="1.4" fill="#8A93A0"></rect></svg>
+          Événements
+        </span>
+        <span style="font-size: 11px; color: #8A93A0; font-variant-numeric: tabular-nums;">14</span>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; background: #EAF3F0; color: #1F6F5C; font-weight: 500;">
+        <span style="display: flex; align-items: center; gap: 9px;">
+          <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><circle cx="5" cy="5" r="2.6" fill="none" stroke="#1F6F5C" stroke-width="1.4"></circle><path d="M1.4 12.2c0-2.1 1.6-3.4 3.6-3.4s3.6 1.3 3.6 3.4" fill="none" stroke="#1F6F5C" stroke-width="1.4"></path><rect x="10" y="4.3" width="1.3" height="5" fill="#1F6F5C"></rect><rect x="8.2" y="6.1" width="5" height="1.3" fill="#1F6F5C"></rect></svg>
+          Staffing
+        </span>
+        <span style="font-size: 11px; font-weight: 500; color: #B42318; background: #FBEDEC; border-radius: 5px; padding: 1px 6px; font-variant-numeric: tabular-nums;">3</span>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <span style="display: flex; align-items: center; gap: 9px;">
+          <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><circle cx="4.4" cy="4.4" r="2.3" fill="none" stroke="#8A93A0" stroke-width="1.4"></circle><circle cx="9.8" cy="9.4" r="2.3" fill="none" stroke="#8A93A0" stroke-width="1.4"></circle><path d="M6.2 6.1 8 7.7" stroke="#8A93A0" stroke-width="1.4"></path></svg>
+          Réseau
+        </span>
+        <span style="font-size: 11px; color: #8A93A0; font-variant-numeric: tabular-nums;">248</span>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <span style="display: flex; align-items: center; gap: 9px;">
+          <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="5.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></circle><rect x="6.3" y="3.5" width="1.4" height="4.2" fill="#8A93A0"></rect></svg>
+          Heures
+        </span>
+        <span style="font-size: 11px; font-weight: 500; color: #A8630B; background: #FBF2E6; border-radius: 5px; padding: 1px 6px; font-variant-numeric: tabular-nums;">12 h</span>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <span style="display: flex; align-items: center; gap: 9px;">
+          <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><rect x="2.4" y="1.4" width="9.2" height="11.2" rx="1.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></rect><rect x="4.6" y="5" width="4.8" height="1.2" fill="#8A93A0"></rect><rect x="4.6" y="8" width="3" height="1.2" fill="#8A93A0"></rect></svg>
+          Factures
+        </span>
+        <span style="font-size: 11px; font-weight: 500; color: #A8630B; background: #FBF2E6; border-radius: 5px; padding: 1px 6px; font-variant-numeric: tabular-nums;">3</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 9px; height: 30px; padding: 0 9px; border-radius: 5px; color: #5B6472; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="2.2" fill="none" stroke="#8A93A0" stroke-width="1.4"></circle><circle cx="7" cy="7" r="5.4" fill="none" stroke="#8A93A0" stroke-width="1.4" stroke-dasharray="2.4 2"></circle></svg>
+        Réglages
+      </div>
+    </div>
+    <div style="margin-top: auto; border-top: 1px solid #E6E8EB; padding: 10px 12px; display: flex; align-items: center; gap: 9px;">
+      <div style="width: 26px; height: 26px; border-radius: 5px; background: #F7F8F9; border: 1px solid #E6E8EB; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; color: #5B6472;">SN</div>
+      <div style="display: flex; flex-direction: column; line-height: 1.25; min-width: 0;">
+        <span style="font-size: 12px; font-weight: 500;">Sophie Nguyen</span>
+        <span style="font-size: 11px; color: #8A93A0;">Chargée de production</span>
+      </div>
+    </div>
+  </nav>
+
+  <main style="min-width: 0; padding-bottom: 32px;">
+
+    <header style="padding: 14px 20px 16px 20px; border-bottom: 1px solid #E6E8EB;">
+      <div style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #8A93A0;">
+        <span>Staffing</span>
+        <span>/</span>
+        <span>Maison Verly</span>
+        <span>/</span>
+        <span style="color: #5B6472;">Défilé printemps · EV-2603-041</span>
+      </div>
+      <div style="margin-top: 8px; display: flex; align-items: flex-start; justify-content: space-between; gap: 24px;">
+        <div style="min-width: 0;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <h1 style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.2; letter-spacing: -0.01em;">Suivi du staffing</h1>
+            <span style="font-size: 11px; font-weight: 500; color: #B42318; background: #FBEDEC; border-radius: 5px; padding: 2px 7px; font-variant-numeric: tabular-nums;">2 deadlines dépassées</span>
+            <span style="font-size: 11px; font-weight: 500; color: #B42318; background: #FBEDEC; border-radius: 5px; padding: 2px 7px;">1 poste toujours vide</span>
+          </div>
+          <p style="margin: 5px 0 0 0; font-size: 12px; color: #5B6472; font-variant-numeric: tabular-nums;">Défilé printemps, Maison Verly · samedi 14 mars 2026 · 4 postes, 11 personnes demandées · 12 propositions envoyées : 5 acceptées, 2 refusées, 5 sans réponse dont 2 hors deadline</p>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px; flex: none;">
+          <button style="height: 30px; padding: 0 11px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 13px; font-weight: 500; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">Journal des envois</button>
+          <button style="height: 30px; padding: 0 11px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 13px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Élargir la recherche</button>
+          <button onClick="{{ relancerTout }}" style="height: 30px; padding: 0 12px; border: 1px solid #1F6F5C; background: #1F6F5C; color: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 13px; font-weight: 500; cursor: pointer; white-space: nowrap;" style-hover="background: #17513f; border-color: #17513f;">{{ libelleRelance }}</button>
+        </div>
+      </div>
+    </header>
+
+    <div style="padding: 16px 20px 0 20px; display: flex; flex-direction: column; gap: 14px;">
+
+      <section style="border: 1px solid #E6E8EB; border-radius: 6px; overflow: hidden;">
+        <div style="padding: 10px 12px; background: #FBF2E6; border-bottom: 1px solid #E6E8EB; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+          <div style="display: flex; align-items: baseline; gap: 12px; min-width: 0;">
+            <span style="font-size: 14px; font-weight: 600;">Technicien·ne de montage</span>
+            <span style="font-size: 12px; font-weight: 500; color: #A8630B; font-variant-numeric: tabular-nums;">2 / 5 pourvus · 3 à couvrir</span>
+            <span style="font-size: 12px; color: #5B6472; font-variant-numeric: tabular-nums;">8h00 – 18h00 · 22,00 € / h · 4 propositions envoyées</span>
+            <span style="font-size: 11px; font-weight: 500; color: #A8630B; background: #FFFFFF; border-radius: 5px; padding: 2px 7px;">1 réponse attendue avant 18h00</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; flex: none;">
+            <span style="width: 132px; height: 5px; border-radius: 3px; background: #FFFFFF; overflow: hidden; display: block;"><span style="display: block; height: 5px; width: 40%; border-radius: 3px; background: #A8630B;"></span></span>
+            <button style="height: 26px; padding: 0 10px; border: 1px solid #1F6F5C; background: #1F6F5C; color: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; cursor: pointer;" style-hover="background: #17513f; border-color: #17513f;">Solliciter 3 prestataires</button>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: minmax(0, 1.1fr) 156px 168px 148px minmax(0, 1fr) 216px 34px; align-items: center; height: 30px; background: #F7F8F9; border-bottom: 1px solid #E6E8EB; font-size: 11px; font-weight: 600; color: #5B6472;">
+          <span style="padding: 0 12px;">Prestataire</span>
+          <span style="padding: 0 12px;">Envoyée le</span>
+          <span style="padding: 0 12px;">Deadline</span>
+          <span style="padding: 0 12px;">Statut</span>
+          <span style="padding: 0 12px;">Dernier échange</span>
+          <span style="padding: 0 12px; text-align: right;">Action</span>
+          <span></span>
+        </div>
+        <div style="display: grid; grid-template-columns: minmax(0, 1.1fr) 156px 168px 148px minmax(0, 1fr) 216px 34px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB;" style-hover="background: #FCFCFD;">
+          <span style="padding: 0 12px; font-weight: 500;">Camille Ferrand</span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">11 mars, 14h02</span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">12 mars, 18h00</span>
+          <span style="padding: 0 12px;"><span style="font-size: 11px; font-weight: 500; color: #1F6F5C; background: #EAF3F0; border-radius: 5px; padding: 2px 7px;">Acceptée</span></span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">Acceptée le 11 mars à 19h40</span>
+          <span style="padding: 0 12px; display: flex; justify-content: flex-end; gap: 6px;"><button style="height: 26px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">Voir la fiche</button></span>
+          <span style="display: flex; justify-content: center;"><button style="height: 24px; width: 24px; border: 1px solid transparent; background: none; border-radius: 5px; font-family: inherit; font-size: 12px; color: #8A93A0; cursor: pointer;" style-hover="border-color: #E6E8EB; background: #FFFFFF; color: #0F1115;">⋯</button></span>
+        </div>
+        <div style="display: grid; grid-template-columns: minmax(0, 1.1fr) 156px 168px 148px minmax(0, 1fr) 216px 34px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB;" style-hover="background: #FCFCFD;">
+          <span style="padding: 0 12px; font-weight: 500;">Marion Dupleix</span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">11 mars, 14h02</span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">12 mars, 18h00</span>
+          <span style="padding: 0 12px;"><span style="font-size: 11px; font-weight: 500; color: #1F6F5C; background: #EAF3F0; border-radius: 5px; padding: 2px 7px;">Acceptée</span></span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">Acceptée le 12 mars à 08h15</span>
+          <span style="padding: 0 12px; display: flex; justify-content: flex-end; gap: 6px;"><button style="height: 26px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">Voir la fiche</button></span>
+          <span style="display: flex; justify-content: center;"><button style="height: 24px; width: 24px; border: 1px solid transparent; background: none; border-radius: 5px; font-family: inherit; font-size: 12px; color: #8A93A0; cursor: pointer;" style-hover="border-color: #E6E8EB; background: #FFFFFF; color: #0F1115;">⋯</button></span>
+        </div>
+        <div style="display: grid; grid-template-columns: minmax(0, 1.1fr) 156px 168px 148px minmax(0, 1fr) 216px 34px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB;" style-hover="background: #FCFCFD;">
+          <span style="padding: 0 12px; font-weight: 500;">Idriss Bacha</span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">11 mars, 14h02</span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">12 mars, 18h00</span>
+          <span style="padding: 0 12px;"><span style="font-size: 11px; font-weight: 500; color: #B42318; background: #FBEDEC; border-radius: 5px; padding: 2px 7px;">Refusée</span></span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">Refus le 12 mars à 09h05 · déjà engagé</span>
+          <span style="padding: 0 12px; display: flex; justify-content: flex-end; gap: 6px;"><button style="height: 26px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Remplacer</button></span>
+          <span style="display: flex; justify-content: center;"><button style="height: 24px; width: 24px; border: 1px solid transparent; background: none; border-radius: 5px; font-family: inherit; font-size: 12px; color: #8A93A0; cursor: pointer;" style-hover="border-color: #E6E8EB; background: #FFFFFF; color: #0F1115;">⋯</button></span>
+        </div>
+        <div style="display: grid; grid-template-columns: minmax(0, 1.1fr) 156px 168px 148px minmax(0, 1fr) 216px 34px; align-items: center; height: 40px; background: {{ m1Fond }};" style-hover="background: #FCFCFD;">
+          <span style="padding: 0 12px; font-weight: 500;">Awa Diallo</span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">12 mars, 10h20</span>
+          <span style="padding: 0 12px; color: #A8630B; font-variant-numeric: tabular-nums;">aujourd'hui, 18h00</span>
+          <span style="padding: 0 12px;"><span style="font-size: 11px; font-weight: 500; color: #A8630B; background: #FBF2E6; border-radius: 5px; padding: 2px 7px;">Sans réponse</span></span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">{{ m1Echange }}</span>
+          <span style="padding: 0 12px; display: flex; justify-content: flex-end; gap: 6px;">
+            <button onClick="{{ m1Relancer }}" style="{{ m1Style }}">{{ m1Libelle }}</button>
+            <button style="height: 26px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">Remplacer</button>
+          </span>
+          <span style="display: flex; justify-content: center;"><button style="height: 24px; width: 24px; border: 1px solid transparent; background: none; border-radius: 5px; font-family: inherit; font-size: 12px; color: #8A93A0; cursor: pointer;" style-hover="border-color: #E6E8EB; background: #FFFFFF; color: #0F1115;">⋯</button></span>
+        </div>
+      </section>
+
+      <section style="border: 1px solid #E6E8EB; border-radius: 6px; overflow: hidden;">
+        <div style="padding: 10px 12px; background: #F7F8F9; border-bottom: 1px solid #E6E8EB; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+          <div style="display: flex; align-items: baseline; gap: 12px; min-width: 0;">
+            <span style="font-size: 14px; font-weight: 600;">Régisseur·se</span>
+            <span style="font-size: 12px; font-weight: 500; color: #1F6F5C; font-variant-numeric: tabular-nums;">2 / 2 pourvus</span>
+            <span style="font-size: 12px; color: #5B6472; font-variant-numeric: tabular-nums;">8h00 – 19h00 · 26,00 € / h · 2 propositions envoyées</span>
+            <span style="font-size: 11px; font-weight: 500; color: #1F6F5C; background: #FFFFFF; border-radius: 5px; padding: 2px 7px;">Poste complet</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; flex: none;">
+            <span style="width: 132px; height: 5px; border-radius: 3px; background: #EFF1F3; overflow: hidden; display: block;"><span style="display: block; height: 5px; width: 100%; border-radius: 3px; background: #1F6F5C;"></span></span>
+            <button style="height: 26px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; color: #5B6472; cursor: pointer;" style-hover="color: #0F1115;">Ajouter un renfort</button>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: minmax(0, 1.1fr) 156px 168px 148px minmax(0, 1fr) 216px 34px; align-items: center; height: 30px; background: #F7F8F9; border-bottom: 1px solid #E6E8EB; font-size: 11px; font-weight: 600; color: #5B6472;">
+          <span style="padding: 0 12px;">Prestataire</span>
+          <span style="padding: 0 12px;">Envoyée le</span>
+          <span style="padding: 0 12px;">Deadline</span>
+          <span style="padding: 0 12px;">Statut</span>
+          <span style="padding: 0 12px;">Dernier échange</span>
+          <span style="padding: 0 12px; text-align: right;">Action</span>
+          <span></span>
+        </div>
+        <div style="display: grid; grid-template-columns: minmax(0, 1.1fr) 156px 168px 148px minmax(0, 1fr) 216px 34px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB;" style-hover="background: #FCFCFD;">
+          <span style="padding: 0 12px; font-weight: 500;">Yanis Berrada <span style="font-size: 11px; font-weight: 500; color: #5B6472;">· chef d'équipe</span></span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">9 mars, 11h30</span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">10 mars, 18h00</span>
+          <span style="padding: 0 12px;"><span style="font-size: 11px; font-weight: 500; color: #1F6F5C; background: #EAF3F0; border-radius: 5px; padding: 2px 7px;">Acceptée</span></span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">Acceptée le 9 mars à 12h04</span>
+          <span style="padding: 0 12px; display: flex; justify-content: flex-end; gap: 6px;"><button style="height: 26px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">Voir la fiche</button></span>
+          <span style="display: flex; justify-content: center;"><button style="height: 24px; width: 24px; border: 1px solid transparent; background: none; border-radius: 5px; font-family: inherit; font-size: 12px; color: #8A93A0; cursor: pointer;" style-hover="border-color: #E6E8EB; background: #FFFFFF; color: #0F1115;">⋯</button></span>
+        </div>
+        <div style="display: grid; grid-template-columns: minmax(0, 1.1fr) 156px 168px 148px minmax(0, 1fr) 216px 34px; align-items: center; height: 40px;" style-hover="background: #FCFCFD;">
+          <span style="padding: 0 12px; font-weight: 500;">Sarah Kaci</span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">9 mars, 11h30</span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">10 mars, 18h00</span>
+          <span style="padding: 0 12px;"><span style="font-size: 11px; font-weight: 500; color: #1F6F5C; background: #EAF3F0; border-radius: 5px; padding: 2px 7px;">Acceptée</span></span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">Acceptée le 10 mars à 09h22</span>
+          <span style="padding: 0 12px; display: flex; justify-content: flex-end; gap: 6px;"><button style="height: 26px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">Voir la fiche</button></span>
+          <span style="display: flex; justify-content: center;"><button style="height: 24px; width: 24px; border: 1px solid transparent; background: none; border-radius: 5px; font-family: inherit; font-size: 12px; color: #8A93A0; cursor: pointer;" style-hover="border-color: #E6E8EB; background: #FFFFFF; color: #0F1115;">⋯</button></span>
+        </div>
+      </section>
+
+      <section style="border: 1px solid #E6E8EB; border-radius: 6px; overflow: hidden;">
+        <div style="padding: 10px 12px; background: #FBEDEC; border-bottom: 1px solid #E6E8EB; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+          <div style="display: flex; align-items: baseline; gap: 12px; min-width: 0;">
+            <span style="font-size: 14px; font-weight: 600;">Manutentionnaire</span>
+            <span style="font-size: 12px; font-weight: 500; color: #B42318; font-variant-numeric: tabular-nums;">1 / 3 pourvus · 2 à couvrir</span>
+            <span style="font-size: 12px; color: #5B6472; font-variant-numeric: tabular-nums;">6h00 – 14h00 · 21,00 € / h · 4 propositions envoyées</span>
+            <span style="font-size: 11px; font-weight: 500; color: #B42318; background: #FFFFFF; border-radius: 5px; padding: 2px 7px; font-variant-numeric: tabular-nums;">2 deadlines dépassées</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; flex: none;">
+            <span style="width: 132px; height: 5px; border-radius: 3px; background: #FFFFFF; overflow: hidden; display: block;"><span style="display: block; height: 5px; width: 33%; border-radius: 3px; background: #B42318;"></span></span>
+            <button style="height: 26px; padding: 0 10px; border: 1px solid #1F6F5C; background: #1F6F5C; color: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; cursor: pointer;" style-hover="background: #17513f; border-color: #17513f;">Solliciter 4 prestataires</button>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: minmax(0, 1.1fr) 156px 168px 148px minmax(0, 1fr) 216px 34px; align-items: center; height: 30px; background: #F7F8F9; border-bottom: 1px solid #E6E8EB; font-size: 11px; font-weight: 600; color: #5B6472;">
+          <span style="padding: 0 12px;">Prestataire</span>
+          <span style="padding: 0 12px;">Envoyée le</span>
+          <span style="padding: 0 12px;">Deadline</span>
+          <span style="padding: 0 12px;">Statut</span>
+          <span style="padding: 0 12px;">Dernier échange</span>
+          <span style="padding: 0 12px; text-align: right;">Action</span>
+          <span></span>
+        </div>
+        <div style="display: grid; grid-template-columns: minmax(0, 1.1fr) 156px 168px 148px minmax(0, 1fr) 216px 34px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB;" style-hover="background: #FCFCFD;">
+          <span style="padding: 0 12px; font-weight: 500;">Naïma Cherif</span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">10 mars, 16h45</span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">11 mars, 18h00</span>
+          <span style="padding: 0 12px;"><span style="font-size: 11px; font-weight: 500; color: #1F6F5C; background: #EAF3F0; border-radius: 5px; padding: 2px 7px;">Acceptée</span></span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">Acceptée le 10 mars à 18h30</span>
+          <span style="padding: 0 12px; display: flex; justify-content: flex-end; gap: 6px;"><button style="height: 26px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">Voir la fiche</button></span>
+          <span style="display: flex; justify-content: center;"><button style="height: 24px; width: 24px; border: 1px solid transparent; background: none; border-radius: 5px; font-family: inherit; font-size: 12px; color: #8A93A0; cursor: pointer;" style-hover="border-color: #E6E8EB; background: #FFFFFF; color: #0F1115;">⋯</button></span>
+        </div>
+        <div style="display: grid; grid-template-columns: minmax(0, 1.1fr) 156px 168px 148px minmax(0, 1fr) 216px 34px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB;" style-hover="background: #FCFCFD;">
+          <span style="padding: 0 12px; font-weight: 500;">Pierre Vasseur</span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">10 mars, 16h45</span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">11 mars, 18h00</span>
+          <span style="padding: 0 12px;"><span style="font-size: 11px; font-weight: 500; color: #B42318; background: #FBEDEC; border-radius: 5px; padding: 2px 7px;">Refusée</span></span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">Refus le 11 mars à 07h10 · indisponible</span>
+          <span style="padding: 0 12px; display: flex; justify-content: flex-end; gap: 6px;"><button style="height: 26px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Remplacer</button></span>
+          <span style="display: flex; justify-content: center;"><button style="height: 24px; width: 24px; border: 1px solid transparent; background: none; border-radius: 5px; font-family: inherit; font-size: 12px; color: #8A93A0; cursor: pointer;" style-hover="border-color: #E6E8EB; background: #FFFFFF; color: #0F1115;">⋯</button></span>
+        </div>
+        <div style="display: grid; grid-template-columns: minmax(0, 1.1fr) 156px 168px 148px minmax(0, 1fr) 216px 34px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB; background: {{ m2Fond }};" style-hover="background: #FCFCFD;">
+          <span style="padding: 0 12px; font-weight: 500;">Théo Marchand</span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">11 mars, 09h15</span>
+          <span style="padding: 0 12px; color: #B42318; font-variant-numeric: tabular-nums;">12 mars, 18h00 · dépassée de 15 h</span>
+          <span style="padding: 0 12px;"><span style="font-size: 11px; font-weight: 500; color: #B42318; background: #FBEDEC; border-radius: 5px; padding: 2px 7px;">Hors deadline</span></span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">{{ m2Echange }}</span>
+          <span style="padding: 0 12px; display: flex; justify-content: flex-end; gap: 6px;">
+            <button onClick="{{ m2Relancer }}" style="{{ m2Style }}">{{ m2Libelle }}</button>
+            <button style="height: 26px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">Remplacer</button>
+          </span>
+          <span style="display: flex; justify-content: center;"><button style="height: 24px; width: 24px; border: 1px solid transparent; background: none; border-radius: 5px; font-family: inherit; font-size: 12px; color: #8A93A0; cursor: pointer;" style-hover="border-color: #E6E8EB; background: #FFFFFF; color: #0F1115;">⋯</button></span>
+        </div>
+        <div style="display: grid; grid-template-columns: minmax(0, 1.1fr) 156px 168px 148px minmax(0, 1fr) 216px 34px; align-items: center; height: 40px; background: {{ m3Fond }};" style-hover="background: #FCFCFD;">
+          <span style="padding: 0 12px; font-weight: 500;">Bastien Ferré</span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">11 mars, 09h15</span>
+          <span style="padding: 0 12px; color: #B42318; font-variant-numeric: tabular-nums;">12 mars, 18h00 · dépassée de 15 h</span>
+          <span style="padding: 0 12px;"><span style="font-size: 11px; font-weight: 500; color: #B42318; background: #FBEDEC; border-radius: 5px; padding: 2px 7px;">Hors deadline</span></span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">{{ m3Echange }}</span>
+          <span style="padding: 0 12px; display: flex; justify-content: flex-end; gap: 6px;">
+            <button onClick="{{ m3Relancer }}" style="{{ m3Style }}">{{ m3Libelle }}</button>
+            <button style="height: 26px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">Remplacer</button>
+          </span>
+          <span style="display: flex; justify-content: center;"><button style="height: 24px; width: 24px; border: 1px solid transparent; background: none; border-radius: 5px; font-family: inherit; font-size: 12px; color: #8A93A0; cursor: pointer;" style-hover="border-color: #E6E8EB; background: #FFFFFF; color: #0F1115;">⋯</button></span>
+        </div>
+      </section>
+
+      <section style="border: 1px solid #E6E8EB; border-radius: 6px; overflow: hidden;">
+        <div style="padding: 10px 12px; background: #FBEDEC; border-bottom: 1px solid #E6E8EB; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+          <div style="display: flex; align-items: baseline; gap: 12px; min-width: 0;">
+            <span style="font-size: 14px; font-weight: 600;">Agent·e d'accueil</span>
+            <span style="font-size: 12px; font-weight: 500; color: #B42318; font-variant-numeric: tabular-nums;">0 / 1 pourvu</span>
+            <span style="font-size: 12px; color: #5B6472; font-variant-numeric: tabular-nums;">17h00 – 23h00 · 20,00 € / h · 2 propositions envoyées</span>
+            <span style="font-size: 11px; font-weight: 500; color: #B42318; background: #FFFFFF; border-radius: 5px; padding: 2px 7px;">Poste toujours vide · réponse attendue ce soir</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; flex: none;">
+            <span style="width: 132px; height: 5px; border-radius: 3px; background: #FFFFFF; overflow: hidden; display: block;"><span style="display: block; height: 5px; width: 0%; border-radius: 3px; background: #B42318;"></span></span>
+            <button style="height: 26px; padding: 0 10px; border: 1px solid #1F6F5C; background: #1F6F5C; color: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; cursor: pointer;" style-hover="background: #17513f; border-color: #17513f;">Solliciter 6 prestataires</button>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: minmax(0, 1.1fr) 156px 168px 148px minmax(0, 1fr) 216px 34px; align-items: center; height: 30px; background: #F7F8F9; border-bottom: 1px solid #E6E8EB; font-size: 11px; font-weight: 600; color: #5B6472;">
+          <span style="padding: 0 12px;">Prestataire</span>
+          <span style="padding: 0 12px;">Envoyée le</span>
+          <span style="padding: 0 12px;">Deadline</span>
+          <span style="padding: 0 12px;">Statut</span>
+          <span style="padding: 0 12px;">Dernier échange</span>
+          <span style="padding: 0 12px; text-align: right;">Action</span>
+          <span></span>
+        </div>
+        <div style="display: grid; grid-template-columns: minmax(0, 1.1fr) 156px 168px 148px minmax(0, 1fr) 216px 34px; align-items: center; height: 40px; border-bottom: 1px solid #E6E8EB; background: {{ m4Fond }};" style-hover="background: #FCFCFD;">
+          <span style="padding: 0 12px; font-weight: 500;">Lucie Lemoine</span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">13 mars, 08h40</span>
+          <span style="padding: 0 12px; color: #A8630B; font-variant-numeric: tabular-nums;">aujourd'hui, 14h00</span>
+          <span style="padding: 0 12px;"><span style="font-size: 11px; font-weight: 500; color: #A8630B; background: #FBF2E6; border-radius: 5px; padding: 2px 7px;">Sans réponse</span></span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">{{ m4Echange }}</span>
+          <span style="padding: 0 12px; display: flex; justify-content: flex-end; gap: 6px;">
+            <button onClick="{{ m4Relancer }}" style="{{ m4Style }}">{{ m4Libelle }}</button>
+            <button style="height: 26px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">Remplacer</button>
+          </span>
+          <span style="display: flex; justify-content: center;"><button style="height: 24px; width: 24px; border: 1px solid transparent; background: none; border-radius: 5px; font-family: inherit; font-size: 12px; color: #8A93A0; cursor: pointer;" style-hover="border-color: #E6E8EB; background: #FFFFFF; color: #0F1115;">⋯</button></span>
+        </div>
+        <div style="display: grid; grid-template-columns: minmax(0, 1.1fr) 156px 168px 148px minmax(0, 1fr) 216px 34px; align-items: center; height: 40px; background: {{ m5Fond }};" style-hover="background: #FCFCFD;">
+          <span style="padding: 0 12px; font-weight: 500;">Chloé Vidal</span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">13 mars, 08h40</span>
+          <span style="padding: 0 12px; color: #A8630B; font-variant-numeric: tabular-nums;">aujourd'hui, 14h00</span>
+          <span style="padding: 0 12px;"><span style="font-size: 11px; font-weight: 500; color: #A8630B; background: #FBF2E6; border-radius: 5px; padding: 2px 7px;">Sans réponse</span></span>
+          <span style="padding: 0 12px; color: #5B6472; font-variant-numeric: tabular-nums;">{{ m5Echange }}</span>
+          <span style="padding: 0 12px; display: flex; justify-content: flex-end; gap: 6px;">
+            <button onClick="{{ m5Relancer }}" style="{{ m5Style }}">{{ m5Libelle }}</button>
+            <button style="height: 26px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">Remplacer</button>
+          </span>
+          <span style="display: flex; justify-content: center;"><button style="height: 24px; width: 24px; border: 1px solid transparent; background: none; border-radius: 5px; font-family: inherit; font-size: 12px; color: #8A93A0; cursor: pointer;" style-hover="border-color: #E6E8EB; background: #FFFFFF; color: #0F1115;">⋯</button></span>
+        </div>
+      </section>
+
+      <p style="margin: 2px 0 0 0; font-size: 12px; color: #8A93A0;">Une relance est envoyée par notification et par SMS. Passé deux relances sans réponse, la proposition est automatiquement retirée et le prestataire redevient disponible pour d'autres missions.</p>
+
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { relances: {} };
+
+  attentes = {
+    m1: 'Envoyée il y a 22 h · lue hier à 11h04',
+    m2: 'Envoyée il y a 2 j · lue le 11 mars à 10h02',
+    m3: 'Envoyée il y a 2 j · non lue',
+    m4: 'Envoyée il y a 5 h · lue à 08h51',
+    m5: 'Envoyée il y a 5 h · non lue',
+  };
+
+  ligne(id) {
+    const relance = this.state.relances[id];
+    return {
+      [id + 'Echange']: relance ? 'Relancée à ' + relance + ' · en attente de réponse' : this.attentes[id],
+      [id + 'Fond']: relance ? '#F4F8F6' : 'transparent',
+      [id + 'Libelle']: relance ? 'Relancée' : 'Relancer',
+      [id + 'Style']: 'height: 26px; padding: 0 10px; border-radius: 5px; font-family: inherit; font-size: 12px; font-weight: 500; cursor: pointer; border: 1px solid '
+        + (relance ? '#C9E0D8' : '#E6E8EB') + '; background: ' + (relance ? '#EAF3F0' : '#FFFFFF') + '; color: ' + (relance ? '#1F6F5C' : '#0F1115') + ';',
+      [id + 'Relancer']: () => this.relancer([id]),
+    };
+  }
+
+  heure() {
+    const d = new Date();
+    return String(d.getHours()).padStart(2, '0') + 'h' + String(d.getMinutes()).padStart(2, '0');
+  }
+
+  relancer(ids) {
+    const h = this.heure();
+    this.setState(s => {
+      const relances = { ...s.relances };
+      ids.forEach(id => { relances[id] = h; });
+      return { relances };
+    });
+  }
+
+  renderVals() {
+    const ids = ['m1', 'm2', 'm3', 'm4', 'm5'];
+    const restants = ids.filter(id => !this.state.relances[id]);
+    let vals = {
+      libelleRelance: restants.length === 0
+        ? 'Sans-réponse relancés'
+        : 'Relancer les ' + restants.length + ' sans-réponse',
+      relancerTout: () => this.relancer(restants),
+    };
+    ids.forEach(id => { vals = { ...vals, ...this.ligne(id) }; });
+    return vals;
+  }
+}
+</script>
+</body>
+</html>

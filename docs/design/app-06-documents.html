@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #FFFFFF; font-family: Inter, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #1F6F5C; text-decoration: none; }
+  a:hover { color: #17513f; text-decoration: underline; }
+  input, select, textarea { font-family: Inter, sans-serif; }
+</style>
+</helmet>
+<div style="width: 1920px; min-height: 1080px; display: grid; grid-template-columns: 240px 1fr; background: #FFFFFF; color: #0F1115; font-size: 14px; line-height: 1.4; position: relative;">
+
+  <nav style="width: 240px; border-right: 1px solid #E6E8EB; display: flex; flex-direction: column; position: sticky; top: 0; height: 100vh; box-sizing: border-box;">
+    <div style="padding: 24px 16px 20px 16px; display: flex; align-items: center; gap: 8px;">
+      <div style="width: 20px; height: 20px; border-radius: 6px; background: #1F6F5C;"></div>
+      <span style="font-size: 15px; font-weight: 600; letter-spacing: -0.01em;">lagestion</span>
+    </div>
+    <div style="padding: 0 12px; display: flex; flex-direction: column; gap: 2px;">
+      <div style="display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 10px; border-radius: 6px; color: #5B6472; font-weight: 500;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="1.4" y="1.4" width="4.6" height="4.6" rx="1.2" fill="#8A93A0"></rect><rect x="8" y="1.4" width="4.6" height="4.6" rx="1.2" fill="none" stroke="#8A93A0" stroke-width="1.3"></rect><rect x="1.4" y="8" width="4.6" height="4.6" rx="1.2" fill="none" stroke="#8A93A0" stroke-width="1.3"></rect><rect x="8" y="8" width="4.6" height="4.6" rx="1.2" fill="none" stroke="#8A93A0" stroke-width="1.3"></rect></svg>
+        Accueil
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 36px; padding: 0 10px; border-radius: 6px; color: #5B6472; font-weight: 500;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <span style="display: flex; align-items: center; gap: 10px;">
+          <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="2" width="12" height="10" rx="2" fill="none" stroke="#8A93A0" stroke-width="1.4"></rect><rect x="1" y="5" width="12" height="1.4" fill="#8A93A0"></rect></svg>
+          Missions
+        </span>
+        <span style="font-size: 12px; font-weight: 500; color: #5B6472; background: #F7F8F9; border-radius: 6px; padding: 1px 6px; font-variant-numeric: tabular-nums;">1</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 10px; border-radius: 6px; color: #5B6472; font-weight: 500;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="5.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></circle><rect x="6.3" y="3.5" width="1.4" height="4.2" fill="#8A93A0"></rect></svg>
+        Disponibilités
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 10px; border-radius: 6px; background: #EAF3F0; color: #1F6F5C; font-weight: 500;">
+        <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2.4" y="1.4" width="9.2" height="11.2" rx="1.6" fill="none" stroke="#1F6F5C" stroke-width="1.4"></rect><rect x="4.6" y="5" width="4.8" height="1.2" fill="#1F6F5C"></rect><rect x="4.6" y="8" width="3" height="1.2" fill="#1F6F5C"></rect></svg>
+        Documents
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 10px; border-radius: 6px; color: #5B6472; font-weight: 500;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="1.4" y="2.8" width="11.2" height="8.4" rx="1.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></rect></svg>
+        Factures
+      </div>
+    </div>
+    <div style="margin-top: auto; border-top: 1px solid #E6E8EB; padding: 12px 16px; display: flex; align-items: center; gap: 10px;">
+      <div style="width: 28px; height: 28px; border-radius: 6px; background: #F7F8F9; border: 1px solid #E6E8EB; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: #5B6472;">CF</div>
+      <div style="display: flex; flex-direction: column; line-height: 1.25;">
+        <span style="font-size: 13px; font-weight: 500;">Camille Ferrand</span>
+        <span style="font-size: 12px; color: #8A93A0;">Technicienne de montage</span>
+      </div>
+    </div>
+  </nav>
+
+  <main style="min-width: 0;">
+    <header style="padding: 32px; border-bottom: 1px solid #E6E8EB; display: flex; align-items: flex-start; justify-content: space-between; gap: 32px;">
+      <div>
+        <h1 style="margin: 0; font-size: 32px; font-weight: 600; line-height: 1.2; letter-spacing: -0.015em;">Mes documents</h1>
+        <p style="margin: 8px 0 0 0; font-size: 14px; color: #5B6472; font-variant-numeric: tabular-nums;">5 documents déposés · 1 expiré, 1 expire dans 12 jours · 3 documents attendus par l'agence · Contrôle du 4 mars 2026</p>
+      </div>
+      <div style="text-align: right;">
+        <div style="font-size: 13px; color: #5B6472;">Prochaine échéance</div>
+        <div style="font-size: 14px; font-weight: 500; font-variant-numeric: tabular-nums;">Mercredi 18 mars 2026, attestation URSSAF</div>
+      </div>
+    </header>
+
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 48px; padding: 32px; align-items: start;">
+
+      <div style="display: flex; flex-direction: column; gap: 32px; min-width: 0;">
+
+        <section>
+          <div style="display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid #E6E8EB;">
+            <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">À traiter en priorité</h2>
+            <span style="font-size: 12px; color: #8A93A0;">Documents expirés ou arrivant à échéance sous 30 jours</span>
+          </div>
+
+          <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 12px;">
+
+            <div style="border: 1px solid #E6E8EB; border-radius: 8px; padding: 16px 20px;">
+              <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 24px;">
+                <div>
+                  <div style="display: flex; align-items: center; gap: 12px;">
+                    <span style="font-size: 15px; font-weight: 500;">Habilitation travail en hauteur et port du harnais</span>
+                    <span style="font-size: 12px; font-weight: 500; color: #B42318; background: #FBEDEC; border-radius: 6px; padding: 3px 8px;">Expirée depuis 12 jours</span>
+                  </div>
+                  <div style="margin-top: 4px; font-size: 14px; color: #5B6472; font-variant-numeric: tabular-nums;">habilitation-hauteur-2024.pdf · 1,2 Mo · Déposé le 22 février 2024</div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <button style="height: 36px; padding: 0 14px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 14px; font-weight: 500; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">Consulter</button>
+                  <button onClick="{{ ouvrirDepot }}" style="height: 36px; padding: 0 14px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 14px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Remplacer</button>
+                </div>
+              </div>
+              <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #E6E8EB; display: grid; grid-template-columns: 220px 220px 260px minmax(0, 1fr); gap: 24px;">
+                <div><div style="font-size: 12px; font-weight: 500; color: #8A93A0;">Validité</div><div style="margin-top: 2px; font-size: 14px; font-variant-numeric: tabular-nums;">22/02/2024 – 22/02/2026</div></div>
+                <div><div style="font-size: 12px; font-weight: 500; color: #8A93A0;">Validation par l'agence</div><div style="margin-top: 2px; font-size: 14px; color: #B42318;">Refusée, document périmé</div></div>
+                <div><div style="font-size: 12px; font-weight: 500; color: #8A93A0;">Organisme</div><div style="margin-top: 2px; font-size: 14px;">Centre de formation Aptiva, Bagnolet</div></div>
+                <div><div style="font-size: 12px; font-weight: 500; color: #8A93A0;">Conséquence</div><div style="margin-top: 2px; font-size: 14px; color: #5B6472;">Les missions avec travail en nacelle ou sur pont ne vous sont plus proposées</div></div>
+              </div>
+            </div>
+
+            <div style="border: 1px solid #E6E8EB; border-radius: 8px; padding: 16px 20px;">
+              <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 24px;">
+                <div>
+                  <div style="display: flex; align-items: center; gap: 12px;">
+                    <span style="font-size: 15px; font-weight: 500;">Attestation de vigilance URSSAF</span>
+                    <span style="font-size: 12px; font-weight: 500; color: #A8630B; background: #FBF2E6; border-radius: 6px; padding: 3px 8px;">Expire dans 12 jours</span>
+                  </div>
+                  <div style="margin-top: 4px; font-size: 14px; color: #5B6472; font-variant-numeric: tabular-nums;">urssaf-vigilance-decembre-2025.pdf · 340 Ko · Déposé le 18 décembre 2025</div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <button style="height: 36px; padding: 0 14px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 14px; font-weight: 500; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">Consulter</button>
+                  <button onClick="{{ ouvrirDepot }}" style="height: 36px; padding: 0 14px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 14px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Remplacer</button>
+                </div>
+              </div>
+              <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #E6E8EB; display: grid; grid-template-columns: 220px 220px 260px minmax(0, 1fr); gap: 24px;">
+                <div><div style="font-size: 12px; font-weight: 500; color: #8A93A0;">Validité</div><div style="margin-top: 2px; font-size: 14px; font-variant-numeric: tabular-nums;">18/12/2025 – 18/03/2026</div></div>
+                <div><div style="font-size: 12px; font-weight: 500; color: #8A93A0;">Validation par l'agence</div><div style="margin-top: 2px; font-size: 14px; color: #1F6F5C;">Validée le 19 décembre</div></div>
+                <div><div style="font-size: 12px; font-weight: 500; color: #8A93A0;">Renouvellement</div><div style="margin-top: 2px; font-size: 14px;">À demander sur votre espace URSSAF</div></div>
+                <div><div style="font-size: 12px; font-weight: 500; color: #8A93A0;">Conséquence</div><div style="margin-top: 2px; font-size: 14px; color: #5B6472;">Passé le 18 mars, les propositions et le règlement des factures sont suspendus</div></div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section>
+          <div style="display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid #E6E8EB;">
+            <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Documents à jour</h2>
+            <span style="font-size: 12px; color: #8A93A0; font-variant-numeric: tabular-nums;">3 documents validés par l'agence</span>
+          </div>
+          <div style="margin-top: 16px;">
+            <div style="display: grid; grid-template-columns: 260px minmax(220px, 1fr) 110px 170px 130px 190px; gap: 24px; padding: 8px 0; border-bottom: 1px solid #E6E8EB;">
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Document</span>
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Fichier</span>
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Dépôt</span>
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Validité</span>
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Validation</span>
+              <span></span>
+            </div>
+            <div style="display: grid; grid-template-columns: 260px minmax(220px, 1fr) 110px 170px 130px 190px; gap: 24px; padding: 12px 0; border-bottom: 1px solid #E6E8EB; align-items: center;">
+              <span style="font-size: 13px;">Attestation d'assurance responsabilité civile professionnelle</span>
+              <span style="font-size: 13px; color: #5B6472; font-variant-numeric: tabular-nums;">rc-pro-maif-2026.pdf · 512 Ko</span>
+              <span style="font-size: 13px; font-variant-numeric: tabular-nums;">08/01/2026</span>
+              <span style="font-size: 13px; font-variant-numeric: tabular-nums;">Jusqu'au 31/12/2026</span>
+              <span style="font-size: 12px; font-weight: 500; color: #1F6F5C; background: #EAF3F0; border-radius: 6px; padding: 3px 8px; justify-self: start;">Validée</span>
+              <span style="display: flex; gap: 8px; justify-self: end;">
+                <button style="height: 28px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 13px; font-weight: 500; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">Consulter</button>
+                <button onClick="{{ ouvrirDepot }}" style="height: 28px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 13px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Remplacer</button>
+              </span>
+            </div>
+            <div style="display: grid; grid-template-columns: 260px minmax(220px, 1fr) 110px 170px 130px 190px; gap: 24px; padding: 12px 0; border-bottom: 1px solid #E6E8EB; align-items: center;">
+              <span style="font-size: 13px;">Pièce d'identité, carte nationale</span>
+              <span style="font-size: 13px; color: #5B6472; font-variant-numeric: tabular-nums;">cni-recto-verso.pdf · 1,8 Mo</span>
+              <span style="font-size: 13px; font-variant-numeric: tabular-nums;">03/09/2021</span>
+              <span style="font-size: 13px; font-variant-numeric: tabular-nums;">Jusqu'au 14/06/2029</span>
+              <span style="font-size: 12px; font-weight: 500; color: #1F6F5C; background: #EAF3F0; border-radius: 6px; padding: 3px 8px; justify-self: start;">Validée</span>
+              <span style="display: flex; gap: 8px; justify-self: end;">
+                <button style="height: 28px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 13px; font-weight: 500; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">Consulter</button>
+                <button onClick="{{ ouvrirDepot }}" style="height: 28px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 13px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Remplacer</button>
+              </span>
+            </div>
+            <div style="display: grid; grid-template-columns: 260px minmax(220px, 1fr) 110px 170px 130px 190px; gap: 24px; padding: 12px 0; border-bottom: 1px solid #E6E8EB; align-items: center;">
+              <span style="font-size: 13px;">Permis de conduire, catégorie B</span>
+              <span style="font-size: 13px; color: #5B6472; font-variant-numeric: tabular-nums;">permis-b.pdf · 760 Ko</span>
+              <span style="font-size: 13px; font-variant-numeric: tabular-nums;">11/10/2023</span>
+              <span style="font-size: 13px; font-variant-numeric: tabular-nums;">Jusqu'au 09/02/2031</span>
+              <span style="font-size: 12px; font-weight: 500; color: #1F6F5C; background: #EAF3F0; border-radius: 6px; padding: 3px 8px; justify-self: start;">Validé</span>
+              <span style="display: flex; gap: 8px; justify-self: end;">
+                <button style="height: 28px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 13px; font-weight: 500; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">Consulter</button>
+                <button onClick="{{ ouvrirDepot }}" style="height: 28px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 13px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Remplacer</button>
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div style="display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid #E6E8EB;">
+            <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Documents attendus, jamais fournis</h2>
+            <span style="font-size: 12px; color: #8A93A0; font-variant-numeric: tabular-nums;">3 documents · 1 obligatoire pour continuer à recevoir des missions</span>
+          </div>
+          <div style="margin-top: 16px;">
+            <div style="display: grid; grid-template-columns: 300px minmax(240px, 1fr) 140px 140px 120px; gap: 24px; padding: 8px 0; border-bottom: 1px solid #E6E8EB;">
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Document</span>
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Motif de la demande</span>
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Demandé le</span>
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Caractère</span>
+              <span></span>
+            </div>
+            <div style="display: grid; grid-template-columns: 300px minmax(240px, 1fr) 140px 140px 120px; gap: 24px; padding: 12px 0; border-bottom: 1px solid #E6E8EB; align-items: center;">
+              <span style="font-size: 13px;">Avis de situation SIRENE de moins de trois mois</span>
+              <span style="font-size: 13px; color: #5B6472;">Contrôle annuel du statut de micro-entreprise</span>
+              <span style="font-size: 13px; font-variant-numeric: tabular-nums;">02/03/2026</span>
+              <span style="font-size: 12px; font-weight: 500; color: #B42318; background: #FBEDEC; border-radius: 6px; padding: 3px 8px; justify-self: start;">Obligatoire</span>
+              <button onClick="{{ ouvrirDepot }}" style="justify-self: end; height: 28px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 13px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Déposer</button>
+            </div>
+            <div style="display: grid; grid-template-columns: 300px minmax(240px, 1fr) 140px 140px 120px; gap: 24px; padding: 12px 0; border-bottom: 1px solid #E6E8EB; align-items: center;">
+              <span style="font-size: 13px;">Habilitation électrique H0B0</span>
+              <span style="font-size: 13px; color: #5B6472;">Requise pour les missions de câblage lumière</span>
+              <span style="font-size: 13px; font-variant-numeric: tabular-nums;">14/01/2026</span>
+              <span style="font-size: 12px; font-weight: 500; color: #5B6472; background: #F7F8F9; border-radius: 6px; padding: 3px 8px; justify-self: start;">Facultative</span>
+              <button onClick="{{ ouvrirDepot }}" style="justify-self: end; height: 28px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 13px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Déposer</button>
+            </div>
+            <div style="display: grid; grid-template-columns: 300px minmax(240px, 1fr) 140px 140px 120px; gap: 24px; padding: 12px 0; border-bottom: 1px solid #E6E8EB; align-items: center;">
+              <span style="font-size: 13px;">Attestation de formation aux premiers secours</span>
+              <span style="font-size: 13px; color: #5B6472;">Valorisée sur les missions de régie et d'accueil</span>
+              <span style="font-size: 13px; font-variant-numeric: tabular-nums;">14/01/2026</span>
+              <span style="font-size: 12px; font-weight: 500; color: #5B6472; background: #F7F8F9; border-radius: 6px; padding: 3px 8px; justify-self: start;">Facultative</span>
+              <button onClick="{{ ouvrirDepot }}" style="justify-self: end; height: 28px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 13px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Déposer</button>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <aside style="position: sticky; top: 32px; background: #F7F8F9; border-radius: 8px; padding: 24px;">
+        <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">État de conformité</h2>
+        <div style="margin-top: 12px; display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
+          <span style="font-size: 13px; color: #5B6472;">Documents à jour</span>
+          <span style="font-size: 28px; font-weight: 600; color: #1F6F5C; font-variant-numeric: tabular-nums; line-height: 1.2;">3 / 5</span>
+        </div>
+        <p style="margin: 4px 0 0 0; font-size: 13px; color: #8A93A0;">Un document expiré et un document arrivant à échéance vous empêchent d'atteindre la conformité complète.</p>
+
+        <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #E6E8EB; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Expirés</span><span style="font-size: 14px; font-variant-numeric: tabular-nums;">1</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Échéance sous 30 jours</span><span style="font-size: 14px; font-variant-numeric: tabular-nums;">1</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Attendus, jamais fournis</span><span style="font-size: 14px; font-variant-numeric: tabular-nums;">3</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 16px; padding: 8px 0;"><span style="font-size: 13px; color: #5B6472;">Dernier contrôle de l'agence</span><span style="font-size: 14px; font-variant-numeric: tabular-nums;">4 mars 2026</span></div>
+        </div>
+
+        <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #E6E8EB;">
+          <h3 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Ce qu'exige Verso Prod</h3>
+          <div style="margin-top: 12px; display: flex; flex-direction: column;">
+            <div style="display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 14px;">Pièce d'identité</span><span style="font-size: 13px; color: #5B6472;">En permanence</span></div>
+            <div style="display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 14px;">Attestation de vigilance URSSAF</span><span style="font-size: 13px; color: #5B6472;">Tous les 6 mois</span></div>
+            <div style="display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 14px;">Assurance responsabilité civile</span><span style="font-size: 13px; color: #5B6472;">Chaque année</span></div>
+            <div style="display: flex; justify-content: space-between; gap: 16px; padding: 8px 0;"><span style="font-size: 14px;">Habilitations liées au poste</span><span style="font-size: 13px; color: #5B6472;">Selon la mission</span></div>
+          </div>
+          <p style="margin: 12px 0 0 0; font-size: 13px; color: #8A93A0;">Formats acceptés : PDF, JPEG ou PNG, 10 Mo au maximum. Chaque dépôt est contrôlé par l'agence sous 48 heures ouvrées.</p>
+        </div>
+
+        <button onClick="{{ ouvrirDepot }}" style="margin-top: 24px; width: 100%; height: 36px; border: 1px solid #1F6F5C; background: #1F6F5C; color: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer;" style-hover="background: #17513f; border-color: #17513f;">Ajouter un document</button>
+      </aside>
+
+    </div>
+  </main>
+
+  <sc-if value="{{ depotOuvert }}" hint-placeholder-val="{{ false }}">
+    <div style="position: fixed; inset: 0; background: rgba(15, 17, 21, 0.28); display: flex; justify-content: flex-end; z-index: 10;">
+      <div onClick="{{ fermerDepot }}" style="flex: 1;"></div>
+      <div style="width: 480px; background: #FFFFFF; height: 100%; box-sizing: border-box; padding: 32px; overflow-y: auto; box-shadow: 0 1px 2px rgba(16,24,40,0.05);">
+        <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; padding-bottom: 16px; border-bottom: 1px solid #E6E8EB;">
+          <div>
+            <h2 style="margin: 0; font-size: 15px; font-weight: 500;">Déposer un document</h2>
+            <p style="margin: 4px 0 0 0; font-size: 13px; color: #8A93A0;">Le document remplace la version précédente du même type.</p>
+          </div>
+          <button onClick="{{ fermerDepot }}" style="appearance: none; border: 0; background: none; padding: 0; font-family: inherit; font-size: 16px; line-height: 1; color: #8A93A0; cursor: pointer;" style-hover="color: #0F1115;">×</button>
+        </div>
+
+        <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 16px;">
+          <div>
+            <label style="display: block; font-size: 12px; font-weight: 500; color: #5B6472;">Type de document</label>
+            <select style="margin-top: 4px; width: 100%; height: 36px; box-sizing: border-box; padding: 0 8px; border: 1px solid #E6E8EB; border-radius: 6px; background: #FFFFFF; font-size: 14px; color: #0F1115;">
+              <option selected="selected">Attestation de vigilance URSSAF</option>
+              <option>Habilitation travail en hauteur</option>
+              <option>Avis de situation SIRENE</option>
+              <option>Attestation d'assurance responsabilité civile</option>
+              <option>Habilitation électrique H0B0</option>
+              <option>Pièce d'identité</option>
+              <option>Permis de conduire</option>
+            </select>
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 12px; font-weight: 500; color: #5B6472;">Fichier</label>
+            <div style="margin-top: 4px; border: 1px dashed #C3C9D2; border-radius: 8px; padding: 24px; text-align: center;">
+              <div style="font-size: 14px;">Glissez le fichier ici</div>
+              <div style="margin-top: 4px; font-size: 13px; color: #8A93A0; font-variant-numeric: tabular-nums;">PDF, JPEG ou PNG · 10 Mo au maximum</div>
+              <button style="margin-top: 12px; height: 36px; padding: 0 14px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 14px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Choisir un fichier</button>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+            <div>
+              <label style="display: block; font-size: 12px; font-weight: 500; color: #5B6472;">Date de délivrance</label>
+              <input type="text" value="06/03/2026" style="margin-top: 4px; width: 100%; height: 36px; box-sizing: border-box; padding: 0 10px; border: 1px solid #E6E8EB; border-radius: 6px; font-size: 14px; color: #0F1115; font-variant-numeric: tabular-nums;" />
+            </div>
+            <div>
+              <label style="display: block; font-size: 12px; font-weight: 500; color: #5B6472;">Valable jusqu'au</label>
+              <input type="text" value="06/09/2026" style="margin-top: 4px; width: 100%; height: 36px; box-sizing: border-box; padding: 0 10px; border: 1px solid #E6E8EB; border-radius: 6px; font-size: 14px; color: #0F1115; font-variant-numeric: tabular-nums;" />
+            </div>
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 12px; font-weight: 500; color: #5B6472;">Message à l'agence</label>
+            <textarea rows="3" style="margin-top: 4px; width: 100%; box-sizing: border-box; padding: 8px 10px; border: 1px solid #E6E8EB; border-radius: 6px; font-size: 14px; color: #0F1115; line-height: 1.4; resize: vertical;"></textarea>
+          </div>
+
+          <label style="display: flex; align-items: flex-start; gap: 8px; cursor: pointer;">
+            <input type="checkbox" style="margin: 2px 0 0 0; width: 16px; height: 16px; accent-color: #1F6F5C;" />
+            <span style="font-size: 14px;">Me prévenir 30 jours avant l'expiration de ce document</span>
+          </label>
+        </div>
+
+        <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #E6E8EB; display: flex; gap: 8px;">
+          <button onClick="{{ fermerDepot }}" style="flex: 1; height: 36px; border: 1px solid #1F6F5C; background: #1F6F5C; color: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer;" style-hover="background: #17513f; border-color: #17513f;">Déposer le document</button>
+          <button onClick="{{ fermerDepot }}" style="height: 36px; padding: 0 14px; border: 1px solid #E6E8EB; background: #FFFFFF; color: #5B6472; border-radius: 6px; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">Annuler</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { depot: false };
+  renderVals() {
+    return {
+      depotOuvert: this.state.depot,
+      ouvrirDepot: () => this.setState({ depot: true }),
+      fermerDepot: () => this.setState({ depot: false }),
+    };
+  }
+}
+</script>
+</body>
+</html>

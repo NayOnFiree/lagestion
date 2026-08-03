@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #F7F8F9; font-family: Inter, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #1F6F5C; text-decoration: none; }
+  a:hover { color: #17513f; text-decoration: underline; }
+  input { font-family: Inter, sans-serif; }
+</style>
+</helmet>
+<div style="width: 1920px; min-height: 1080px; box-sizing: border-box; background: #F7F8F9; color: #0F1115; font-size: 14px; line-height: 1.4; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px; padding: 96px 32px;">
+
+  <div style="width: 420px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #E6E8EB; border-radius: 8px; padding: 32px;">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <div style="width: 20px; height: 20px; border-radius: 6px; background: #1F6F5C;"></div>
+      <span style="font-size: 15px; font-weight: 600; letter-spacing: -0.01em;">lagestion</span>
+    </div>
+
+    <h1 style="margin: 24px 0 0 0; font-size: 32px; font-weight: 600; line-height: 1.2; letter-spacing: -0.015em;">Connexion</h1>
+    <p style="margin: 8px 0 0 0; font-size: 14px; color: #5B6472;">Espace prestataire. Vos missions, vos disponibilités et vos factures.</p>
+
+    <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 16px;">
+      <div>
+        <label style="display: block; font-size: 12px; font-weight: 500; color: #5B6472;">Adresse électronique</label>
+        <input type="text" value="" style="margin-top: 4px; width: 100%; height: 36px; box-sizing: border-box; padding: 0 10px; border: 1px solid #E6E8EB; border-radius: 6px; font-size: 14px; color: #0F1115;" style-focus="border-color: #1F6F5C; outline: none;" />
+      </div>
+      <div>
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+          <label style="display: block; font-size: 12px; font-weight: 500; color: #5B6472;">Mot de passe</label>
+          <button onClick="{{ basculerVisibilite }}" style="appearance: none; border: 0; background: none; padding: 0; font-family: inherit; font-size: 12px; font-weight: 500; color: #5B6472; cursor: pointer;" style-hover="color: #0F1115;">{{ libelleVisibilite }}</button>
+        </div>
+        <input type="{{ typeMotDePasse }}" value="" style="margin-top: 4px; width: 100%; height: 36px; box-sizing: border-box; padding: 0 10px; border: 1px solid #E6E8EB; border-radius: 6px; font-size: 14px; color: #0F1115;" style-focus="border-color: #1F6F5C; outline: none;" />
+      </div>
+
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+          <input type="checkbox" style="margin: 0; width: 16px; height: 16px; accent-color: #1F6F5C;" />
+          <span style="font-size: 13px; color: #5B6472;">Rester connectée sur cet appareil</span>
+        </label>
+        <a href="#mot-de-passe-oublie" style="font-size: 13px;">Mot de passe oublié</a>
+      </div>
+
+      <button style="width: 100%; height: 36px; border: 1px solid #1F6F5C; background: #1F6F5C; color: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer;" style-hover="background: #17513f; border-color: #17513f;">Se connecter</button>
+    </div>
+
+    <p style="margin: 16px 0 0 0; padding-top: 16px; border-top: 1px solid #E6E8EB; font-size: 13px; color: #8A93A0;">Pas encore de compte ? Votre accès est créé par l'agence Verso Prod après validation de votre dossier.</p>
+  </div>
+
+  <p style="margin: 0; font-size: 13px; color: #8A93A0;">Vous travaillez à l'agence ? <a href="#back-office">Accéder au back-office Verso Prod</a></p>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { visible: false };
+  renderVals() {
+    return {
+      typeMotDePasse: this.state.visible ? 'text' : 'password',
+      libelleVisibilite: this.state.visible ? 'Masquer' : 'Afficher',
+      basculerVisibilite: () => this.setState(p => ({ visible: !p.visible })),
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #FFFFFF; font-family: Inter, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #1F6F5C; text-decoration: none; }
+  a:hover { color: #17513f; text-decoration: underline; }
+</style>
+</helmet>
+<div style="width: 1920px; min-height: 1080px; display: grid; grid-template-columns: 240px 1fr; background: #FFFFFF; color: #0F1115; font-size: 14px; line-height: 1.4;">
+
+  <nav style="width: 240px; border-right: 1px solid #E6E8EB; display: flex; flex-direction: column; position: sticky; top: 0; height: 100vh; box-sizing: border-box;">
+    <div style="padding: 24px 16px 20px 16px; display: flex; align-items: center; gap: 8px;">
+      <div style="width: 20px; height: 20px; border-radius: 6px; background: #1F6F5C;"></div>
+      <span style="font-size: 15px; font-weight: 600; letter-spacing: -0.01em;">lagestion</span>
+    </div>
+    <div style="padding: 0 12px; display: flex; flex-direction: column; gap: 2px;">
+      <div style="display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 10px; border-radius: 6px; color: #5B6472; font-weight: 500;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="1.4" y="1.4" width="4.6" height="4.6" rx="1.2" fill="#8A93A0"></rect><rect x="8" y="1.4" width="4.6" height="4.6" rx="1.2" fill="none" stroke="#8A93A0" stroke-width="1.3"></rect><rect x="1.4" y="8" width="4.6" height="4.6" rx="1.2" fill="none" stroke="#8A93A0" stroke-width="1.3"></rect><rect x="8" y="8" width="4.6" height="4.6" rx="1.2" fill="none" stroke="#8A93A0" stroke-width="1.3"></rect></svg>
+        Accueil
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 36px; padding: 0 10px; border-radius: 6px; color: #5B6472; font-weight: 500;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <span style="display: flex; align-items: center; gap: 10px;">
+          <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="2" width="12" height="10" rx="2" fill="none" stroke="#8A93A0" stroke-width="1.4"></rect><rect x="1" y="5" width="12" height="1.4" fill="#8A93A0"></rect></svg>
+          Missions
+        </span>
+        <span style="font-size: 12px; font-weight: 500; color: #5B6472; background: #F7F8F9; border-radius: 6px; padding: 1px 6px; font-variant-numeric: tabular-nums;">1</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 10px; border-radius: 6px; color: #5B6472; font-weight: 500;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="5.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></circle><rect x="6.3" y="3.5" width="1.4" height="4.2" fill="#8A93A0"></rect></svg>
+        Disponibilités
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 10px; border-radius: 6px; color: #5B6472; font-weight: 500;" style-hover="background: #F7F8F9; color: #0F1115;">
+        <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2.4" y="1.4" width="9.2" height="11.2" rx="1.6" fill="none" stroke="#8A93A0" stroke-width="1.4"></rect><rect x="4.6" y="5" width="4.8" height="1.2" fill="#8A93A0"></rect><rect x="4.6" y="8" width="3" height="1.2" fill="#8A93A0"></rect></svg>
+        Documents
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 36px; padding: 0 10px; border-radius: 6px; background: #EAF3F0; color: #1F6F5C; font-weight: 500;">
+        <span style="display: flex; align-items: center; gap: 10px;">
+          <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="1.4" y="2.8" width="11.2" height="8.4" rx="1.6" fill="none" stroke="#1F6F5C" stroke-width="1.4"></rect><rect x="1.4" y="6" width="11.2" height="1.3" fill="#1F6F5C"></rect></svg>
+          Factures
+        </span>
+        <span style="font-size: 12px; font-weight: 500; font-variant-numeric: tabular-nums;">2</span>
+      </div>
+    </div>
+    <div style="margin-top: auto; border-top: 1px solid #E6E8EB; padding: 12px 16px; display: flex; align-items: center; gap: 10px;">
+      <div style="width: 28px; height: 28px; border-radius: 6px; background: #F7F8F9; border: 1px solid #E6E8EB; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: #5B6472;">CF</div>
+      <div style="display: flex; flex-direction: column; line-height: 1.25;">
+        <span style="font-size: 13px; font-weight: 500;">Camille Ferrand</span>
+        <span style="font-size: 12px; color: #8A93A0;">Technicienne de montage</span>
+      </div>
+    </div>
+  </nav>
+
+  <main style="min-width: 0;">
+    <header style="padding: 32px; border-bottom: 1px solid #E6E8EB; display: flex; align-items: flex-start; justify-content: space-between; gap: 32px;">
+      <div>
+        <h1 style="margin: 0; font-size: 32px; font-weight: 600; line-height: 1.2; letter-spacing: -0.015em;">Mes factures</h1>
+        <p style="margin: 8px 0 0 0; font-size: 14px; color: #5B6472; font-variant-numeric: tabular-nums;">9 factures émises depuis juin 2025 · 1 en attente de paiement · 2 missions validées restent à facturer · Délai de règlement de 15 jours</p>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <button style="height: 36px; padding: 0 14px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 14px; font-weight: 500; color: #5B6472; cursor: pointer;" style-hover="background: #F7F8F9; color: #0F1115;">Exporter le récapitulatif</button>
+        <button style="height: 36px; padding: 0 14px; border: 1px solid #1F6F5C; background: #1F6F5C; color: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer; white-space: nowrap;" style-hover="background: #17513f; border-color: #17513f;">Établir une facture</button>
+      </div>
+    </header>
+
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 48px; padding: 32px; align-items: start;">
+
+      <div style="display: flex; flex-direction: column; gap: 32px; min-width: 0;">
+
+        <div style="background: #FBF2E6; border-radius: 8px; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; gap: 32px;">
+          <div>
+            <div style="font-size: 15px; font-weight: 500;">2 missions validées à facturer, soit 330,00 €</div>
+            <p style="margin: 4px 0 0 0; font-size: 14px; color: #5B6472; font-variant-numeric: tabular-nums;">Accrochage des œuvres du 19 janvier, Galerie Perrin, 7 h · Accueil du dîner de gala du 23 février, Hôtel Bellecour, 8 h. Les heures ont été validées par l'agence, la facture reste à établir.</p>
+          </div>
+          <button style="height: 36px; padding: 0 14px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 14px; font-weight: 500; color: #0F1115; cursor: pointer; white-space: nowrap;" style-hover="background: #F7F8F9;">Voir les missions concernées</button>
+        </div>
+
+        <section>
+          <div style="display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid #E6E8EB;">
+            <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Factures 2026</h2>
+            <span style="font-size: 12px; color: #8A93A0; font-variant-numeric: tabular-nums;">3 factures · 7 missions · 52 h · 1 144,00 €</span>
+          </div>
+          <div style="margin-top: 16px;">
+            <div style="display: grid; grid-template-columns: 130px minmax(200px, 1fr) 90px 80px 130px 270px 120px; gap: 24px; padding: 8px 0; border-bottom: 1px solid #E6E8EB;">
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Numéro</span>
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Période</span>
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472; text-align: right;">Missions</span>
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472; text-align: right;">Heures</span>
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472; text-align: right;">Montant</span>
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Statut</span>
+              <span></span>
+            </div>
+            <div style="display: grid; grid-template-columns: 130px minmax(200px, 1fr) 90px 80px 130px 270px 120px; gap: 24px; padding: 12px 0; border-bottom: 1px solid #E6E8EB; align-items: center;">
+              <span style="font-size: 13px; font-weight: 500; font-variant-numeric: tabular-nums;">2026-003</span>
+              <span style="font-size: 13px; font-variant-numeric: tabular-nums;">Février 2026 · Maison Verly, Palais Brongniart, Hôtel Bellecour</span>
+              <span style="font-size: 13px; text-align: right; font-variant-numeric: tabular-nums;">3</span>
+              <span style="font-size: 13px; text-align: right; font-variant-numeric: tabular-nums;">24 h</span>
+              <span style="font-size: 13px; font-weight: 500; text-align: right; font-variant-numeric: tabular-nums;">528,00 €</span>
+              <span style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 12px; font-weight: 500; color: #A8630B; background: #FBF2E6; border-radius: 6px; padding: 3px 8px; white-space: nowrap;">En attente de paiement</span>
+                <span style="font-size: 13px; color: #8A93A0; font-variant-numeric: tabular-nums;">Échéance 15/03</span>
+              </span>
+              <button style="justify-self: end; height: 28px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 13px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Télécharger</button>
+            </div>
+            <div style="display: grid; grid-template-columns: 130px minmax(200px, 1fr) 90px 80px 130px 270px 120px; gap: 24px; padding: 12px 0; border-bottom: 1px solid #E6E8EB; align-items: center;">
+              <span style="font-size: 13px; font-weight: 500; font-variant-numeric: tabular-nums;">2026-002</span>
+              <span style="font-size: 13px; font-variant-numeric: tabular-nums;">Janvier 2026, seconde quinzaine · Studio Nomade, Galerie Perrin</span>
+              <span style="font-size: 13px; text-align: right; font-variant-numeric: tabular-nums;">2</span>
+              <span style="font-size: 13px; text-align: right; font-variant-numeric: tabular-nums;">16 h</span>
+              <span style="font-size: 13px; font-weight: 500; text-align: right; font-variant-numeric: tabular-nums;">352,00 €</span>
+              <span style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 12px; font-weight: 500; color: #1F6F5C; background: #EAF3F0; border-radius: 6px; padding: 3px 8px; white-space: nowrap;">Encaissée</span>
+                <span style="font-size: 13px; color: #8A93A0; font-variant-numeric: tabular-nums;">Le 05/02</span>
+              </span>
+              <button style="justify-self: end; height: 28px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 13px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Télécharger</button>
+            </div>
+            <div style="display: grid; grid-template-columns: 130px minmax(200px, 1fr) 90px 80px 130px 270px 120px; gap: 24px; padding: 12px 0; border-bottom: 1px solid #E6E8EB; align-items: center;">
+              <span style="font-size: 13px; font-weight: 500; font-variant-numeric: tabular-nums;">2026-001</span>
+              <span style="font-size: 13px; font-variant-numeric: tabular-nums;">Janvier 2026, première quinzaine · Grande Halle de la Villette</span>
+              <span style="font-size: 13px; text-align: right; font-variant-numeric: tabular-nums;">2</span>
+              <span style="font-size: 13px; text-align: right; font-variant-numeric: tabular-nums;">12 h</span>
+              <span style="font-size: 13px; font-weight: 500; text-align: right; font-variant-numeric: tabular-nums;">264,00 €</span>
+              <span style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 12px; font-weight: 500; color: #1F6F5C; background: #EAF3F0; border-radius: 6px; padding: 3px 8px; white-space: nowrap;">Encaissée</span>
+                <span style="font-size: 13px; color: #8A93A0; font-variant-numeric: tabular-nums;">Le 22/01</span>
+              </span>
+              <button style="justify-self: end; height: 28px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 13px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Télécharger</button>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div style="display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid #E6E8EB;">
+            <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Factures 2025</h2>
+            <span style="font-size: 12px; color: #8A93A0; font-variant-numeric: tabular-nums;">6 factures · 17 missions · 136 h · 2 992,00 € · Toutes encaissées</span>
+          </div>
+          <div style="margin-top: 16px;">
+            <div style="display: grid; grid-template-columns: 130px minmax(200px, 1fr) 90px 80px 130px 270px 120px; gap: 24px; padding: 8px 0; border-bottom: 1px solid #E6E8EB;">
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Numéro</span>
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Période</span>
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472; text-align: right;">Missions</span>
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472; text-align: right;">Heures</span>
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472; text-align: right;">Montant</span>
+              <span style="font-size: 12px; font-weight: 600; color: #5B6472;">Statut</span>
+              <span></span>
+            </div>
+            <div style="display: grid; grid-template-columns: 130px minmax(200px, 1fr) 90px 80px 130px 270px 120px; gap: 24px; padding: 12px 0; border-bottom: 1px solid #E6E8EB; align-items: center;">
+              <span style="font-size: 13px; font-weight: 500; font-variant-numeric: tabular-nums;">2025-006</span>
+              <span style="font-size: 13px; font-variant-numeric: tabular-nums;">Décembre 2025 · Maison Verly, Hôtel Bellecour</span>
+              <span style="font-size: 13px; text-align: right; font-variant-numeric: tabular-nums;">3</span>
+              <span style="font-size: 13px; text-align: right; font-variant-numeric: tabular-nums;">26 h</span>
+              <span style="font-size: 13px; font-weight: 500; text-align: right; font-variant-numeric: tabular-nums;">572,00 €</span>
+              <span style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 12px; font-weight: 500; color: #1F6F5C; background: #EAF3F0; border-radius: 6px; padding: 3px 8px; white-space: nowrap;">Encaissée</span>
+                <span style="font-size: 13px; color: #8A93A0; font-variant-numeric: tabular-nums;">Le 12/01/2026</span>
+              </span>
+              <button style="justify-self: end; height: 28px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 13px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Télécharger</button>
+            </div>
+            <div style="display: grid; grid-template-columns: 130px minmax(200px, 1fr) 90px 80px 130px 270px 120px; gap: 24px; padding: 12px 0; border-bottom: 1px solid #E6E8EB; align-items: center;">
+              <span style="font-size: 13px; font-weight: 500; font-variant-numeric: tabular-nums;">2025-005</span>
+              <span style="font-size: 13px; font-variant-numeric: tabular-nums;">Novembre 2025 · Palais Brongniart</span>
+              <span style="font-size: 13px; text-align: right; font-variant-numeric: tabular-nums;">2</span>
+              <span style="font-size: 13px; text-align: right; font-variant-numeric: tabular-nums;">18 h</span>
+              <span style="font-size: 13px; font-weight: 500; text-align: right; font-variant-numeric: tabular-nums;">396,00 €</span>
+              <span style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 12px; font-weight: 500; color: #1F6F5C; background: #EAF3F0; border-radius: 6px; padding: 3px 8px; white-space: nowrap;">Encaissée</span>
+                <span style="font-size: 13px; color: #8A93A0; font-variant-numeric: tabular-nums;">Le 08/12</span>
+              </span>
+              <button style="justify-self: end; height: 28px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 13px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Télécharger</button>
+            </div>
+            <div style="display: grid; grid-template-columns: 130px minmax(200px, 1fr) 90px 80px 130px 270px 120px; gap: 24px; padding: 12px 0; border-bottom: 1px solid #E6E8EB; align-items: center;">
+              <span style="font-size: 13px; font-weight: 500; font-variant-numeric: tabular-nums;">2025-004</span>
+              <span style="font-size: 13px; font-variant-numeric: tabular-nums;">Octobre 2025 · Studio Nomade, Galerie Perrin</span>
+              <span style="font-size: 13px; text-align: right; font-variant-numeric: tabular-nums;">4</span>
+              <span style="font-size: 13px; text-align: right; font-variant-numeric: tabular-nums;">31 h</span>
+              <span style="font-size: 13px; font-weight: 500; text-align: right; font-variant-numeric: tabular-nums;">682,00 €</span>
+              <span style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 12px; font-weight: 500; color: #1F6F5C; background: #EAF3F0; border-radius: 6px; padding: 3px 8px; white-space: nowrap;">Encaissée</span>
+                <span style="font-size: 13px; color: #8A93A0; font-variant-numeric: tabular-nums;">Le 06/11</span>
+              </span>
+              <button style="justify-self: end; height: 28px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 13px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Télécharger</button>
+            </div>
+            <div style="display: grid; grid-template-columns: 130px minmax(200px, 1fr) 90px 80px 130px 270px 120px; gap: 24px; padding: 12px 0; border-bottom: 1px solid #E6E8EB; align-items: center;">
+              <span style="font-size: 13px; font-weight: 500; font-variant-numeric: tabular-nums;">2025-003</span>
+              <span style="font-size: 13px; font-variant-numeric: tabular-nums;">Septembre 2025 · Maison Verly, Grande Halle de la Villette</span>
+              <span style="font-size: 13px; text-align: right; font-variant-numeric: tabular-nums;">3</span>
+              <span style="font-size: 13px; text-align: right; font-variant-numeric: tabular-nums;">22 h</span>
+              <span style="font-size: 13px; font-weight: 500; text-align: right; font-variant-numeric: tabular-nums;">484,00 €</span>
+              <span style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 12px; font-weight: 500; color: #1F6F5C; background: #EAF3F0; border-radius: 6px; padding: 3px 8px; white-space: nowrap;">Encaissée</span>
+                <span style="font-size: 13px; color: #8A93A0; font-variant-numeric: tabular-nums;">Le 09/10</span>
+              </span>
+              <button style="justify-self: end; height: 28px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 13px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Télécharger</button>
+            </div>
+            <div style="display: grid; grid-template-columns: 130px minmax(200px, 1fr) 90px 80px 130px 270px 120px; gap: 24px; padding: 12px 0; border-bottom: 1px solid #E6E8EB; align-items: center;">
+              <span style="font-size: 13px; font-weight: 500; font-variant-numeric: tabular-nums;">2025-002</span>
+              <span style="font-size: 13px; font-variant-numeric: tabular-nums;">Juillet 2025 · Hôtel Bellecour</span>
+              <span style="font-size: 13px; text-align: right; font-variant-numeric: tabular-nums;">2</span>
+              <span style="font-size: 13px; text-align: right; font-variant-numeric: tabular-nums;">15 h</span>
+              <span style="font-size: 13px; font-weight: 500; text-align: right; font-variant-numeric: tabular-nums;">330,00 €</span>
+              <span style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 12px; font-weight: 500; color: #1F6F5C; background: #EAF3F0; border-radius: 6px; padding: 3px 8px; white-space: nowrap;">Encaissée</span>
+                <span style="font-size: 13px; color: #8A93A0; font-variant-numeric: tabular-nums;">Le 05/08</span>
+              </span>
+              <button style="justify-self: end; height: 28px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 13px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Télécharger</button>
+            </div>
+            <div style="display: grid; grid-template-columns: 130px minmax(200px, 1fr) 90px 80px 130px 270px 120px; gap: 24px; padding: 12px 0; border-bottom: 1px solid #E6E8EB; align-items: center;">
+              <span style="font-size: 13px; font-weight: 500; font-variant-numeric: tabular-nums;">2025-001</span>
+              <span style="font-size: 13px; font-variant-numeric: tabular-nums;">Juin 2025 · Galerie Perrin, Palais Brongniart</span>
+              <span style="font-size: 13px; text-align: right; font-variant-numeric: tabular-nums;">3</span>
+              <span style="font-size: 13px; text-align: right; font-variant-numeric: tabular-nums;">24 h</span>
+              <span style="font-size: 13px; font-weight: 500; text-align: right; font-variant-numeric: tabular-nums;">528,00 €</span>
+              <span style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 12px; font-weight: 500; color: #1F6F5C; background: #EAF3F0; border-radius: 6px; padding: 3px 8px; white-space: nowrap;">Encaissée</span>
+                <span style="font-size: 13px; color: #8A93A0; font-variant-numeric: tabular-nums;">Le 07/07</span>
+              </span>
+              <button style="justify-self: end; height: 28px; padding: 0 10px; border: 1px solid #E6E8EB; background: #FFFFFF; border-radius: 6px; font-family: inherit; font-size: 13px; font-weight: 500; color: #0F1115; cursor: pointer;" style-hover="background: #F7F8F9;">Télécharger</button>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <aside style="position: sticky; top: 32px; background: #F7F8F9; border-radius: 8px; padding: 24px;">
+        <h2 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Année 2026</h2>
+
+        <div style="margin-top: 16px; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Facturé</span><span style="font-size: 14px; font-variant-numeric: tabular-nums;">1 144,00 €</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">En attente de paiement</span><span style="font-size: 14px; font-variant-numeric: tabular-nums;">528,00 €</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Validé, non facturé</span><span style="font-size: 14px; font-variant-numeric: tabular-nums;">330,00 €</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Missions facturées</span><span style="font-size: 14px; font-variant-numeric: tabular-nums;">7 · 52 h</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0;"><span style="font-size: 13px; color: #5B6472;">Délai de paiement moyen</span><span style="font-size: 14px; font-variant-numeric: tabular-nums;">11 jours</span></div>
+        </div>
+
+        <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #E6E8EB; display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
+          <span style="font-size: 13px; color: #5B6472;">Encaissé en 2026</span>
+          <span style="font-size: 28px; font-weight: 600; color: #1F6F5C; font-variant-numeric: tabular-nums; line-height: 1.2;">616,00 €</span>
+        </div>
+        <p style="margin: 4px 0 0 0; font-size: 13px; color: #8A93A0; text-align: right;">Brut, TVA non applicable</p>
+
+        <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #E6E8EB;">
+          <h3 style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6472;">Rappel de l'année 2025</h3>
+          <div style="margin-top: 12px; display: flex; flex-direction: column;">
+            <div style="display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Facturé et encaissé</span><span style="font-size: 14px; font-variant-numeric: tabular-nums;">2 992,00 €</span></div>
+            <div style="display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; border-bottom: 1px solid #E6E8EB;"><span style="font-size: 13px; color: #5B6472;">Missions</span><span style="font-size: 14px; font-variant-numeric: tabular-nums;">17 · 136 h</span></div>
+            <div style="display: flex; justify-content: space-between; gap: 16px; padding: 8px 0;"><span style="font-size: 13px; color: #5B6472;">Plafond micro-entreprise</span><span style="font-size: 14px; font-variant-numeric: tabular-nums;">4 136,00 € sur 77 700 €</span></div>
+          </div>
+        </div>
+
+        <p style="margin: 16px 0 0 0; font-size: 13px; color: #8A93A0;">Une facture est réglée sous 15 jours après validation des heures par l'agence. Passé ce délai, contactez Sophie Nguyen au 01 44 63 20 18.</p>
+      </aside>
+
+    </div>
+  </main>
+</div>
+</x-dc>
+</body>
+</html>
