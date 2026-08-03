@@ -49,6 +49,23 @@ Access token court en mémoire, refresh token en cookie httpOnly + SameSite.
 Rôles : contractor / admin / owner. Pas de provider externe : outil interne,
 pas de besoin MFA/SSO à ce stade.
 
+**Un événement s'annule, il ne se supprime pas.** Tranché le 2026-08-03.
+`events.status` vaut `Draft`, `Published` ou `Cancelled`. Un événement a
+existé, des prestataires ont pu être sollicités : l'effacer réécrirait
+l'histoire. L'annulation horodate et bascule d'office les propositions en
+cours en `Cancelled`, sans les supprimer non plus. Les postes, eux, restent
+supprimables tant qu'aucune proposition ne les référence.
+
+**Le tarif et les horaires d'un poste restent modifiables après
+acceptation.** Tranché le 2026-08-03, contre l'avis initial. Le risque est
+réel — un prestataire a accepté des conditions précises, les changer
+unilatéralement est exactement ce qui nourrit une requalification — mais la
+souplesse a été jugée prioritaire. Compensation : l'API renvoie la liste des
+prestataires engagés dès qu'un tarif ou un horaire change, et le back-office
+la montre avant de fermer le formulaire. Rien n'est bloqué, rien n'est
+silencieux. Si un jour un litige survient, il faudra un journal des
+modifications : il n'existe pas.
+
 **Numérotation des factures.**
 Séquence par prestataire (`contractor_id` + `sequence_index`), continue et
 sans trou. Contrainte d'unicité en base. Le numéro est attribué à la

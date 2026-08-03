@@ -11,6 +11,14 @@ public sealed class EventConfiguration : EntityConfiguration<Event>
         builder.Property(e => e.Title).HasMaxLength(200).IsRequired();
         builder.Property(e => e.ClientName).HasMaxLength(200);
         builder.Property(e => e.Address).HasMaxLength(500);
+        // Valeur par défaut explicite : sans elle, la migration qui ajoute la
+        // colonne remplit les lignes existantes avec une chaîne vide, qui ne
+        // se reconvertit en aucune valeur de l'énumération.
+        builder.Property(e => e.Status)
+            .HasConversion<string>()
+            .HasMaxLength(20)
+            .HasDefaultValue(EventStatus.Draft)
+            .IsRequired();
 
         // Le back-office liste les événements par période.
         builder.HasIndex(e => new { e.AgencyId, e.StartsAt });

@@ -96,6 +96,7 @@ public sealed class DevelopmentSeeder(
             ClientName = "Client de démonstration",
             Address = "Quai des Antilles, 44200 Nantes",
             AccessNotes = "Entrée personnel côté est, badge à retirer à l'accueil.",
+            Status = EventStatus.Published,
             StartsAt = startsAt,
             EndsAt = startsAt.AddHours(6),
         });

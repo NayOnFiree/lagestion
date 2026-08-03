@@ -208,6 +208,29 @@ en production, derrière une implémentation S3-compatible.
 
 ---
 
+## Événements et postes
+
+Un événement porte le contexte — client, lieu, dates, modalités d'accès — et
+se découpe en **postes** : un intitulé, un effectif recherché, un créneau, un
+tarif horaire, une tenue et un brief. Un poste peut déborder du créneau de
+l'événement : le montage arrive avant, le démontage repart après.
+
+**Un événement s'annule, il ne se supprime pas.** Statut `Draft`, `Published`
+ou `Cancelled`. L'annulation horodate et bascule les propositions en cours en
+annulées, sans rien effacer. Un poste, lui, reste supprimable tant qu'aucun
+prestataire n'y a été sollicité ; au-delà l'API répond 409.
+
+**La duplication décale, elle ne resollicite pas.** L'événement et ses postes
+sont recopiés en appliquant le même écart de dates à tout le monde, ce qui
+préserve les durées et l'enchaînement des postes. La copie repart en
+brouillon. Les propositions de mission ne sont **jamais** recopiées.
+
+Le tarif et les horaires d'un poste restent modifiables après acceptation.
+L'API renvoie alors la liste des prestataires engagés, que le back-office
+affiche avant de refermer le formulaire : à l'agence de les prévenir.
+
+---
+
 ## Disponibilités et calendrier
 
 Le prestataire **déclare** être disponible ou indisponible, par journée ou par

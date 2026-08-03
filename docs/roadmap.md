@@ -50,9 +50,13 @@ On avance dans l'ordre. Une phase = une branche = une validation.
       planifiée existera, ou en re-déclarant à la main d'ici là.
 
 ## Phase 5 — Événements et postes (admin)
-- [ ] CRUD événements (client, lieu, dates, confidentialité)
-- [ ] Découpage en postes (intitulé, effectif, horaires, tarif, tenue, brief)
-- [ ] Duplication d'un événement
+- [x] CRUD événements (client, lieu, dates, confidentialité)
+      — la suppression est une annulation : statut `Cancelled`, jamais d'effacement
+- [x] Découpage en postes (intitulé, effectif, horaires, tarif, tenue, brief)
+- [x] Duplication d'un événement
+- [ ] **Reste ouvert** : modifier le tarif ou les horaires d'un poste déjà
+      accepté est permis et signalé, mais rien n'en garde trace. Un journal
+      des modifications sera nécessaire le jour d'un litige.
 
 ## Phase 6 — Staffing et missions
 - [ ] Recherche de prestataires disponibles (date + compétence + zone)
