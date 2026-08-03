@@ -18,10 +18,11 @@ const buttonVariants = cva(
         ghost: 'text-secondary hover:bg-surface hover:text-primary',
       },
       size: {
-        // Cible tactile confortable : l'écran est utilisé à une main.
-        default: 'h-11 px-3',
+        // Back-office : 36px, 32px en dense. C'est un outil de travail, pas
+        // une interface tactile — la hauteur mobile gaspillait la densité.
+        default: 'h-9 px-3',
         dense: 'h-8 px-3',
-        block: 'h-11 w-full px-3',
+        block: 'h-9 w-full px-3',
       },
     },
     defaultVariants: {

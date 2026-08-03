@@ -4,6 +4,8 @@ import { RequireAuth } from '@/components/RequireAuth'
 import { AuthProvider } from '@/lib/auth'
 import { CompliancePage } from '@/pages/CompliancePage'
 import { DashboardPage } from '@/pages/DashboardPage'
+import { EventDetailPage } from '@/pages/EventDetailPage'
+import { EventsPage } from '@/pages/EventsPage'
 import { LoginPage } from '@/pages/LoginPage'
 import { StatusPage } from '@/pages/StatusPage'
 
@@ -17,6 +19,8 @@ export default function App() {
           <Route element={<RequireAuth />}>
             <Route element={<Layout />}>
               <Route index element={<DashboardPage />} />
+              <Route path="evenements" element={<EventsPage />} />
+              <Route path="evenements/:id" element={<EventDetailPage />} />
               <Route path="conformite" element={<CompliancePage />} />
               <Route path="statut" element={<StatusPage />} />
             </Route>
