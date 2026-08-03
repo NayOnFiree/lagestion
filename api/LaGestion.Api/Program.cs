@@ -3,6 +3,7 @@ using System.Text.Json;
 using LaGestion.Api.Domain;
 using LaGestion.Api.Features.Auth;
 using LaGestion.Api.Infrastructure;
+using LaGestion.Api.Infrastructure.Notifications;
 using LaGestion.Api.Infrastructure.Storage;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -74,6 +75,20 @@ builder.Services
 
 builder.Services.AddSingleton<IDocumentStorage, LocalDiskDocumentStorage>();
 builder.Services.AddSingleton<DocumentLinkSigner>();
+
+// --- Notifications ---------------------------------------------------------
+// Le mail est le canal fiable et obligatoire. Rien n'est envoyé dans le fil de
+// la requête : une panne du serveur de mail ne doit pas faire échouer une
+// action métier qui, elle, a réussi.
+builder.Services
+    .AddOptions<EmailOptions>()
+    .Bind(builder.Configuration.GetSection(EmailOptions.SectionName))
+    .ValidateDataAnnotations()
+    .ValidateOnStart();
+
+builder.Services.AddSingleton<IEmailSender, SmtpEmailSender>();
+builder.Services.AddScoped<NotificationQueue>();
+builder.Services.AddHostedService<NotificationWorker>();
 
 // --- Génération des PDF de factures ----------------------------------------
 // Licence Community : gratuite tant que le chiffre d'affaires de l'éditeur

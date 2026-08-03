@@ -121,6 +121,16 @@ Toutes les tables métier portent `agency_id`, `created_at`, `updated_at`.
 Aucune suppression physique sur invoices, timesheets et assignments : statut
 annulé, pour la traçabilité.
 
+**Envoi des mails par SMTP, via MailKit.** Tranché le 2026-08-03. Une
+bibliothèque, n'importe quel fournisseur : Brevo, Mailjet, OVH ou Scaleway se
+configurent par hôte, port et identifiants sans toucher au code. Une API
+transactionnelle aurait offert un meilleur suivi de délivrabilité, au prix
+d'un choix figé dans le code.
+
+**Les rappels périodiques sont déclenchés par un service hébergé dans l'API**
+plutôt que par un cron externe : rien à installer ni à configurer sur le
+serveur. Contrepartie assumée — le service suppose une instance unique, et il
+faudra un verrou partagé le jour d'une montée en charge horizontale.
+
 ## Points ouverts
-- Fournisseur d'envoi de mails à choisir
 - Génération PDF : bibliothèque à arbitrer au moment de la phase 8

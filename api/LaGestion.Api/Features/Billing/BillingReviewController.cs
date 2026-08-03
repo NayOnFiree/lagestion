@@ -3,6 +3,7 @@ using System.Text;
 using LaGestion.Api.Domain;
 using LaGestion.Api.Features.Documents;
 using LaGestion.Api.Infrastructure;
+using LaGestion.Api.Infrastructure.Notifications;
 using LaGestion.Api.Infrastructure.Storage;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -20,7 +21,8 @@ public sealed class BillingReviewController(
     LaGestionDbContext db,
     DocumentLinkSigner linkSigner,
     TimeProvider timeProvider,
-    LinkGenerator linkGenerator) : ControllerBase
+    LinkGenerator linkGenerator,
+    NotificationQueue notifications) : ControllerBase
 {
     /// <summary>Factures reçues par l'agence.</summary>
     /// <param name="status">Filtre facultatif : Submitted, Validated, Paid, Cancelled.</param>
@@ -192,6 +194,20 @@ public sealed class BillingReviewController(
         if (next == InvoiceStatus.Paid)
         {
             invoice.PaidAt = timeProvider.GetUtcNow();
+
+            var contractor = await db.Contractors
+                .Include(c => c.User)
+                .FirstAsync(c => c.Id == invoice.ContractorId, cancellationToken);
+
+            notifications.Enqueue(
+                invoice.AgencyId,
+                contractor.User!,
+                NotificationTemplates.InvoicePaid,
+                new Dictionary<string, string>
+                {
+                    ["number"] = invoice.Number,
+                    ["total"] = $"{invoice.TotalAmount:0.00} €",
+                });
         }
 
         await db.SaveChangesAsync(cancellationToken);

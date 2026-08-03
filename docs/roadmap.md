@@ -38,8 +38,7 @@ On avance dans l'ordre. Une phase = une branche = une validation.
 - [x] Coffre à documents (upload, date de validité, statut de validation)
 - [x] Indicateur de complétude du dossier
 - [x] Côté admin : validation des documents, alertes d'expiration
-- [ ] **Reste ouvert** : les relances d'expiration sont affichées, pas envoyées.
-      L'envoi de mails relève de la phase 9.
+- [x] Relances d'expiration envoyées par mail — livré en phase 9
 
 ## Phase 4 — Disponibilités
 - [x] Déclaration par jour ou créneau, avec récurrence
@@ -69,7 +68,8 @@ On avance dans l'ordre. Une phase = une branche = une validation.
 - [x] Remplacement d'un désistement
 - [ ] **Reste ouvert** : une proposition dont le délai est dépassé reste
       « en attente » en base, l'expiration n'étant que calculée à la lecture.
-      Aucun rappel n'est envoyé — cela relève de la phase 9.
+      Le rappel J-1 est envoyé depuis la phase 9, mais rien ne relance une
+      proposition restée sans réponse.
 
 ## Phase 7 — Heures
 - [ ] ~~Check-in / check-out~~ — **abandonné** le 2026-08-03. Le prestataire
@@ -96,9 +96,18 @@ On avance dans l'ordre. Une phase = une branche = une validation.
       corrigée dans l'application.
 
 ## Phase 9 — Notifications
-- [ ] Mails transactionnels (proposition, confirmation, rappel J-1,
-      document expiré, facture à déposer, paiement)
-- [ ] Push web en complément
+- [x] Mails transactionnels : proposition, confirmation, annulation, rappel
+      J-1, document refusé, document expirant, heures contestées, facture à
+      déposer, facture payée
+- [x] Service de fond hébergé dans l'API : dépile la file toutes les 5 min,
+      balaie les rappels une fois par jour
+- [x] Journal des envois côté agence, avec relance d'un envoi abandonné
+- [ ] **Push web reporté à la phase 11**, où le service worker de la PWA sera
+      mis en place. Le faire ici aurait signifié écrire un service worker
+      jetable. Rien de critique n'en dépend.
+- [ ] **Reste ouvert** : le service de fond suppose une instance unique. En
+      cas de montée en charge, il faudra un verrou partagé — la clé d'unicité
+      des notifications limite la casse mais ne le remplace pas.
 
 ## Phase 10 — Scoring
 - [ ] Ponctualité, taux d'acceptation, retours terrain

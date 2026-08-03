@@ -231,6 +231,54 @@ affiche avant de refermer le formulaire : à l'agence de les prévenir.
 
 ---
 
+## Notifications
+
+**Le mail est le canal fiable et obligatoire.** Le push web est reporté à la
+phase 11, où le service worker de la PWA sera mis en place ; rien de critique
+n'en dépend.
+
+Rien n'est envoyé dans le fil de la requête : une panne du serveur de mail ne
+doit pas faire échouer une action métier qui, elle, a réussi. Les messages
+sont mis en file dans la table `notifications`, dans la **même transaction**
+que l'action qui les déclenche — un message ne part donc jamais sur une
+opération qui n'a pas abouti.
+
+Un service de fond hébergé dans l'API dépile la file toutes les cinq minutes
+et, une fois par jour, balaie les rappels : mission du lendemain, pièce
+expirée ou expirant sous 30 jours, prestations validées non facturées.
+
+**Le balayage quotidien est idempotent** grâce à une clé d'unicité par
+message : repasser sur les mêmes données ne renvoie rien. La clé des pièces
+expirantes porte le mois, une pièce qui reste périmée est donc rappelée une
+fois par mois, pas tous les jours.
+
+### Configuration
+
+```bash
+dotnet user-secrets set "Email:SmtpHost" "smtp-relay.brevo.com"
+dotnet user-secrets set "Email:SmtpUser" "..."
+dotnet user-secrets set "Email:SmtpPassword" "..."
+```
+
+L'envoi passe par **MailKit**, volontairement agnostique du fournisseur :
+Brevo, Mailjet, OVH ou Scaleway se configurent par hôte, port et identifiants
+sans toucher au code.
+
+**Sans `SmtpHost` configuré — le cas en développement — les mails sont écrits
+en fichiers `.eml` dans `storage/mails/`** au lieu d'être envoyés. On relit ce
+qui serait parti, sans rien expédier.
+
+Le back-office expose un journal des envois, avec relance manuelle d'un
+message abandonné après cinq tentatives.
+
+### Limite connue
+
+Le service de fond suppose **une seule instance de l'API**. En cas de montée
+en charge horizontale, il faudra un verrou partagé : la clé d'unicité limite
+la casse mais ne remplace pas un verrou.
+
+---
+
 ## Facturation
 
 **Le prestataire reste l'émetteur.** L'application pré-remplit, numérote selon

@@ -9,6 +9,7 @@ import { EventsPage } from '@/pages/EventsPage'
 import { HoursPage } from '@/pages/HoursPage'
 import { InvoicesPage } from '@/pages/InvoicesPage'
 import { LoginPage } from '@/pages/LoginPage'
+import { NotificationsPage } from '@/pages/NotificationsPage'
 import { StaffingPage } from '@/pages/StaffingPage'
 import { StatusPage } from '@/pages/StatusPage'
 
@@ -28,6 +29,7 @@ export default function App() {
               <Route path="heures" element={<HoursPage />} />
               <Route path="factures" element={<InvoicesPage />} />
               <Route path="conformite" element={<CompliancePage />} />
+              <Route path="envois" element={<NotificationsPage />} />
               <Route path="statut" element={<StatusPage />} />
             </Route>
           </Route>

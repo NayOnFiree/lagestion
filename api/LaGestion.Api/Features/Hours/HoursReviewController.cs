@@ -2,6 +2,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using LaGestion.Api.Domain;
 using LaGestion.Api.Infrastructure;
+using LaGestion.Api.Infrastructure.Notifications;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -22,7 +23,10 @@ public sealed record MissingDeclaration(
 [ApiController]
 [Route("timesheets")]
 [Authorize(Policy = "admin")]
-public sealed class HoursReviewController(LaGestionDbContext db, TimeProvider timeProvider) : ControllerBase
+public sealed class HoursReviewController(
+    LaGestionDbContext db,
+    TimeProvider timeProvider,
+    NotificationQueue notifications) : ControllerBase
 {
     /// <summary>Relevés d'heures de l'agence.</summary>
     /// <param name="status">Filtre facultatif : Submitted, Validated ou Disputed.</param>
@@ -184,7 +188,7 @@ public sealed class HoursReviewController(LaGestionDbContext db, TimeProvider ti
             }
         }
 
-        var sheet = await db.Timesheets.FirstOrDefaultAsync(t => t.Id == id, cancellationToken);
+        var sheet = await MyHoursController.Query(db).FirstOrDefaultAsync(t => t.Id == id, cancellationToken);
 
         if (sheet is null)
         {
@@ -194,6 +198,22 @@ public sealed class HoursReviewController(LaGestionDbContext db, TimeProvider ti
         if (request.ActualHours is { } hours)
         {
             sheet.ActualHours = hours;
+        }
+
+        if (!request.Validated)
+        {
+            var position = sheet.Assignment!.Position!;
+
+            notifications.Enqueue(
+                sheet.AgencyId,
+                sheet.Assignment.Contractor!.User!,
+                NotificationTemplates.HoursDisputed,
+                new Dictionary<string, string>
+                {
+                    ["positionLabel"] = position.Label,
+                    ["when"] = NotificationWorker.Describe(position.StartsAt, position.EndsAt),
+                    ["reason"] = note!,
+                });
         }
 
         sheet.ReviewNote = note;

@@ -1,6 +1,7 @@
 using LaGestion.Api.Domain;
 using LaGestion.Api.Features.Documents;
 using LaGestion.Api.Infrastructure;
+using LaGestion.Api.Infrastructure.Notifications;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -52,7 +53,10 @@ public sealed record ProposeRequest(IReadOnlyList<Guid> ContractorIds, DateTimeO
 
 [ApiController]
 [Authorize(Policy = "admin")]
-public sealed class StaffingController(LaGestionDbContext db, TimeProvider timeProvider) : ControllerBase
+public sealed class StaffingController(
+    LaGestionDbContext db,
+    TimeProvider timeProvider,
+    NotificationQueue notifications) : ControllerBase
 {
     /// <summary>
     /// Prestataires proposables sur un poste : déclarés disponibles sur tout
@@ -217,6 +221,11 @@ public sealed class StaffingController(LaGestionDbContext db, TimeProvider timeP
             .Where(a => a.PositionId == id)
             .ToListAsync(cancellationToken);
 
+        var recipients = await db.Contractors
+            .Include(c => c.User)
+            .Where(c => request.ContractorIds.Contains(c.Id))
+            .ToDictionaryAsync(c => c.Id, c => c.User!, cancellationToken);
+
         foreach (var contractorId in request.ContractorIds.Distinct())
         {
             // Une proposition encore en jeu ne se double pas ; une refusée ou
@@ -234,6 +243,21 @@ public sealed class StaffingController(LaGestionDbContext db, TimeProvider timeP
                 ProposedAt = now,
                 ResponseDeadline = request.ResponseDeadline,
             });
+
+            if (recipients.TryGetValue(contractorId, out var user))
+            {
+                notifications.Enqueue(
+                    position.AgencyId,
+                    user,
+                    NotificationTemplates.MissionProposed,
+                    new Dictionary<string, string>
+                    {
+                        ["positionLabel"] = position.Label,
+                        ["eventTitle"] = position.Event.Title,
+                        ["when"] = NotificationWorker.Describe(position.StartsAt, position.EndsAt),
+                        ["deadline"] = request.ResponseDeadline?.ToLocalTime().ToString("dd/MM/yyyy") ?? string.Empty,
+                    });
+            }
         }
 
         await db.SaveChangesAsync(cancellationToken);
@@ -295,6 +319,24 @@ public sealed class StaffingController(LaGestionDbContext db, TimeProvider timeP
         }
 
         assignment.Status = AssignmentStatus.Confirmed;
+
+        var contractor = await db.Contractors
+            .Include(c => c.User)
+            .FirstAsync(c => c.Id == assignment.ContractorId, cancellationToken);
+
+        notifications.Enqueue(
+            assignment.AgencyId,
+            contractor.User!,
+            NotificationTemplates.MissionConfirmed,
+            new Dictionary<string, string>
+            {
+                ["positionLabel"] = assignment.Position.Label,
+                ["eventTitle"] = assignment.Position.Event!.Title,
+                ["when"] = NotificationWorker.Describe(
+                    assignment.Position.StartsAt,
+                    assignment.Position.EndsAt),
+            });
+
         await db.SaveChangesAsync(cancellationToken);
 
         return Ok(await ToStaffingAsync(assignment.Position, cancellationToken));
@@ -320,7 +362,33 @@ public sealed class StaffingController(LaGestionDbContext db, TimeProvider timeP
             return NotFound();
         }
 
+        // On ne prévient que ceux qui s'étaient engagés : annuler une simple
+        // proposition sans réponse n'appelle pas de message.
+        var wasEngaged = assignment.Status
+            is AssignmentStatus.Accepted or AssignmentStatus.Confirmed;
+
         assignment.Status = AssignmentStatus.Cancelled;
+
+        if (wasEngaged)
+        {
+            var contractor = await db.Contractors
+                .Include(c => c.User)
+                .FirstAsync(c => c.Id == assignment.ContractorId, cancellationToken);
+
+            notifications.Enqueue(
+                assignment.AgencyId,
+                contractor.User!,
+                NotificationTemplates.MissionCancelled,
+                new Dictionary<string, string>
+                {
+                    ["positionLabel"] = assignment.Position!.Label,
+                    ["eventTitle"] = assignment.Position.Event!.Title,
+                    ["when"] = NotificationWorker.Describe(
+                        assignment.Position.StartsAt,
+                        assignment.Position.EndsAt),
+                });
+        }
+
         await db.SaveChangesAsync(cancellationToken);
 
         return Ok(await ToStaffingAsync(assignment.Position!, cancellationToken));

@@ -2,6 +2,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using LaGestion.Api.Domain;
 using LaGestion.Api.Infrastructure;
+using LaGestion.Api.Infrastructure.Notifications;
 using LaGestion.Api.Infrastructure.Storage;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -54,7 +55,8 @@ public sealed class ComplianceController(
     LaGestionDbContext db,
     DocumentLinkSigner linkSigner,
     TimeProvider timeProvider,
-    LinkGenerator linkGenerator) : ControllerBase
+    LinkGenerator linkGenerator,
+    NotificationQueue notifications) : ControllerBase
 {
     /// <summary>Fenêtre de relance : au-delà, l'expiration n'est pas encore un sujet.</summary>
     private const int ExpiringSoonDays = 30;
@@ -169,6 +171,21 @@ public sealed class ComplianceController(
         document.ReviewNote = note;
         document.ReviewedByUserId = Guid.Parse(User.FindFirstValue(JwtRegisteredClaimNames.Sub)!);
         document.ReviewedAt = timeProvider.GetUtcNow();
+
+        // Un refus muet obligerait le prestataire à deviner : c'est le seul
+        // cas des deux où un message s'impose.
+        if (!request.Approved)
+        {
+            notifications.Enqueue(
+                document.AgencyId,
+                document.Contractor!.User!,
+                NotificationTemplates.DocumentRejected,
+                new Dictionary<string, string>
+                {
+                    ["documentType"] = DocumentLabels.For(document.Type),
+                    ["reason"] = note!,
+                });
+        }
 
         await db.SaveChangesAsync(cancellationToken);
 

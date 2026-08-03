@@ -75,9 +75,16 @@ public sealed class NotificationConfiguration : EntityConfiguration<Notification
         builder.Property(n => n.Status).HasConversion<string>().HasMaxLength(20).IsRequired();
         builder.Property(n => n.Template).HasMaxLength(100).IsRequired();
         builder.Property(n => n.Payload).HasColumnType("jsonb");
+        builder.Property(n => n.Recipient).HasMaxLength(320).IsRequired();
+        builder.Property(n => n.DedupKey).HasMaxLength(200);
+        builder.Property(n => n.LastError).HasMaxLength(1000);
 
         // File d'envoi : on balaie les notifications en attente.
         builder.HasIndex(n => new { n.Status, n.CreatedAt });
+
+        // C'est cette contrainte qui rend le balayage quotidien idempotent :
+        // la seconde tentative d'insertion du même rappel est rejetée.
+        builder.HasIndex(n => new { n.AgencyId, n.DedupKey }).IsUnique();
 
         builder
             .HasOne(n => n.User)
