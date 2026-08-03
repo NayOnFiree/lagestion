@@ -110,18 +110,26 @@ Prestataire, mission, disponibilité, rémunération, tarif horaire, facture.
 Jamais : road, salaire, employé, planning imposé, contrat de travail.
 Les libellés sont en français, sans majuscule à chaque mot, sans point final.
 
-## Spécifique à app/ (prestataire, mobile)
+## Spécifique à app/ (prestataire, responsive)
 
-- Une seule colonne. Largeur de contenu maximale 100%, padding latéral 16px.
-- Cible tactile minimum 44x44px. Rien d'important ne dépend d'un survol.
-- Navigation basse fixe, 4 entrées maximum, libellés visibles sous l'icône.
-- Contraste renforcé : l'écran est lu en extérieur, en plein soleil.
-  Aucun texte sous #5B6472 pour une information utile.
-- Un écran répond à une seule question. Si un écran a deux objectifs,
-  c'est deux écrans.
-- Les dates s'affichent en toutes lettres ("jeu. 14 mars, 8h–18h"),
-  jamais en 14/03/2026 08:00.
-- Bouton d'action principal en bas, pleine largeur, au-dessus de la nav.
+Conçue mobile d'abord, mais elle doit tenir sur desktop sans avoir l'air
+d'une app téléphone agrandie.
+
+- Breakpoints : < 768px mobile · 768–1279px tablette · ≥ 1280px desktop
+- Conteneur : pleine largeur en mobile (padding 16px), max-width 1120px
+  centré au-delà de 1280px. Jamais une colonne étroite perdue au milieu
+  d'un écran large.
+- Navigation : barre basse fixe à 4 entrées en mobile → barre haute
+  horizontale en tablette → sidebar rétractable en desktop.
+- Mise en page : une colonne en mobile → deux colonnes en desktop
+  (liste à gauche, détail à droite pour missions, factures, documents).
+  Le calendrier passe de la vue liste compacte à la vue mois complète.
+- Action principale : bouton fixe en bas pleine largeur en mobile →
+  bouton aligné en haut à droite de la page en desktop. Pas de bouton
+  flottant sur grand écran.
+- Cible tactile 44px en mobile, 36px acceptable en desktop.
+- Rien d'important ne dépend d'un survol (le survol n'existe pas au doigt).
+- Contraste renforcé partout : l'écran est lu en extérieur, au soleil.
 
 ## Spécifique à admin/ (back-office, desktop)
 
