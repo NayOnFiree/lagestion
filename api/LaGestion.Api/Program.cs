@@ -75,6 +75,11 @@ builder.Services
 builder.Services.AddSingleton<IDocumentStorage, LocalDiskDocumentStorage>();
 builder.Services.AddSingleton<DocumentLinkSigner>();
 
+// --- Génération des PDF de factures ----------------------------------------
+// Licence Community : gratuite tant que le chiffre d'affaires de l'éditeur
+// reste sous le seuil fixé par QuestPDF. À revoir si l'outil est vendu.
+QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
+
 var jwt = builder.Configuration.GetSection(JwtOptions.SectionName).Get<JwtOptions>() ?? new JwtOptions();
 
 builder.Services

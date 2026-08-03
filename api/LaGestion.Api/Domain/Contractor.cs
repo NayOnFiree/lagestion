@@ -44,6 +44,19 @@ public class Contractor : AgencyOwnedEntity
     /// <summary>Score de fiabilité, alimenté en phase 10. Nul tant qu'aucun retour n'existe.</summary>
     public decimal? Score { get; set; }
 
+    /// <summary>
+    /// Préfixe de numérotation, tel que le prestataire l'utilise déjà.
+    /// Exemple : « F2026- ».
+    /// </summary>
+    public string? InvoicePrefix { get; set; }
+
+    /// <summary>
+    /// Rang de la prochaine facture. Démarre à 1, mais se règle : un
+    /// prestataire qui a déjà facturé jusqu'à 41 ailleurs reprend à 42, sans
+    /// quoi il émettrait une seconde facture n° 1.
+    /// </summary>
+    public int NextInvoiceSequence { get; set; } = 1;
+
     public string? Notes { get; set; }
 
     public User? User { get; set; }

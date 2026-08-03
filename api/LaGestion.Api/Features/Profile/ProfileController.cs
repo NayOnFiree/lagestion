@@ -21,12 +21,19 @@ public sealed record ContractorProfile(
     string? Iban,
     decimal? DefaultHourlyRate,
     string? BaseCity,
-    int? TravelRadiusKm);
+    int? TravelRadiusKm,
+    string? InvoicePrefix,
+    int NextInvoiceSequence,
+    bool NumberingLocked);
 
 /// <summary>
 /// Champs modifiables par le prestataire. Ni le rôle, ni l'agence, ni le
 /// score ne s'y trouvent : ce sont des données de l'agence, pas du compte.
 /// </summary>
+/// <param name="NextInvoiceSequence">
+/// Rang de la prochaine facture. Ignoré dès qu'une facture a été émise : le
+/// modifier ensuite produirait deux factures portant le même numéro.
+/// </param>
 public sealed record UpdateProfileRequest(
     string FirstName,
     string LastName,
@@ -37,7 +44,9 @@ public sealed record UpdateProfileRequest(
     string? Iban,
     decimal? DefaultHourlyRate,
     string? BaseCity,
-    int? TravelRadiusKm);
+    int? TravelRadiusKm,
+    string? InvoicePrefix,
+    int? NextInvoiceSequence);
 
 [ApiController]
 [Route("me/profile")]
@@ -54,7 +63,7 @@ public sealed class ProfileController(LaGestionDbContext db) : ControllerBase
 
         return contractor is null
             ? NoContractorFile()
-            : Ok(ToProfile(contractor));
+            : Ok(ToProfile(contractor, await HasInvoicesAsync(contractor.Id, cancellationToken)));
     }
 
     /// <summary>Met à jour la fiche du prestataire connecté.</summary>
@@ -112,10 +121,28 @@ public sealed class ProfileController(LaGestionDbContext db) : ControllerBase
         contractor.DefaultHourlyRate = request.DefaultHourlyRate;
         contractor.BaseCity = Normalise(request.BaseCity);
         contractor.TravelRadiusKm = request.TravelRadiusKm;
+        contractor.InvoicePrefix = Normalise(request.InvoicePrefix);
+
+        // Le rang de départ ne se règle qu'avant la première facture. Après,
+        // le modifier ferait rejouer un numéro déjà émis.
+        var numberingLocked = await HasInvoicesAsync(contractor.Id, cancellationToken);
+
+        if (!numberingLocked && request.NextInvoiceSequence is { } next)
+        {
+            if (next < 1)
+            {
+                ModelState.AddModelError(
+                    nameof(request.NextInvoiceSequence),
+                    "Le rang de la prochaine facture démarre à 1.");
+                return ValidationProblem(ModelState);
+            }
+
+            contractor.NextInvoiceSequence = next;
+        }
 
         await db.SaveChangesAsync(cancellationToken);
 
-        return Ok(ToProfile(contractor));
+        return Ok(ToProfile(contractor, numberingLocked));
     }
 
     /// <summary>
@@ -137,7 +164,10 @@ public sealed class ProfileController(LaGestionDbContext db) : ControllerBase
         detail: "Ce compte n'est rattaché à aucune fiche prestataire.",
         statusCode: StatusCodes.Status404NotFound);
 
-    private static ContractorProfile ToProfile(Contractor contractor) => new(
+    private Task<bool> HasInvoicesAsync(Guid contractorId, CancellationToken cancellationToken) =>
+        db.Invoices.AnyAsync(i => i.ContractorId == contractorId, cancellationToken);
+
+    private static ContractorProfile ToProfile(Contractor contractor, bool numberingLocked) => new(
         contractor.Id,
         contractor.User!.FirstName,
         contractor.User.LastName,
@@ -149,7 +179,10 @@ public sealed class ProfileController(LaGestionDbContext db) : ControllerBase
         contractor.Iban,
         contractor.DefaultHourlyRate,
         contractor.BaseCity,
-        contractor.TravelRadiusKm);
+        contractor.TravelRadiusKm,
+        contractor.InvoicePrefix,
+        contractor.NextInvoiceSequence,
+        numberingLocked);
 
     private static string? Normalise(string? value)
         => string.IsNullOrWhiteSpace(value) ? null : value.Trim();

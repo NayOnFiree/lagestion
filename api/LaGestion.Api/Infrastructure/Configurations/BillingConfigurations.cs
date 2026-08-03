@@ -9,7 +9,16 @@ public sealed class InvoiceConfiguration : EntityConfiguration<Invoice>
     protected override void ConfigureEntity(EntityTypeBuilder<Invoice> builder)
     {
         builder.Property(i => i.Status).HasConversion<string>().HasMaxLength(20).IsRequired();
-        builder.Property(i => i.Number).HasMaxLength(50);
+        builder.Property(i => i.Number).HasMaxLength(50).IsRequired();
+        builder.Property(i => i.IssuerName).HasMaxLength(200).IsRequired();
+        builder.Property(i => i.IssuerAddress).HasMaxLength(500);
+        builder.Property(i => i.IssuerSiret).HasMaxLength(14);
+        builder.Property(i => i.ClientName).HasMaxLength(200).IsRequired();
+        builder.Property(i => i.ClientAddress).HasMaxLength(500);
+        builder.Property(i => i.ClientSiret).HasMaxLength(14);
+
+        // Le numéro complet ne se répète jamais chez un même prestataire.
+        builder.HasIndex(i => new { i.ContractorId, i.Number }).IsUnique();
         builder.Property(i => i.TotalAmount).HasPrecision(12, 2).IsRequired();
         builder.Property(i => i.PdfKey).HasMaxLength(500);
 

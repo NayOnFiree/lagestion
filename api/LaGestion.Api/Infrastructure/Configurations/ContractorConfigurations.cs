@@ -15,6 +15,8 @@ public sealed class ContractorConfiguration : EntityConfiguration<Contractor>
         builder.Property(c => c.DefaultHourlyRate).HasPrecision(10, 2);
         builder.Property(c => c.BaseCity).HasMaxLength(150);
         builder.Property(c => c.Score).HasPrecision(4, 2);
+        builder.Property(c => c.InvoicePrefix).HasMaxLength(20);
+        builder.Property(c => c.NextInvoiceSequence).HasDefaultValue(1);
 
         // Un compte donne accès à au plus une fiche prestataire.
         builder.HasIndex(c => c.UserId).IsUnique();

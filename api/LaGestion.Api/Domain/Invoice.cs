@@ -3,10 +3,7 @@ namespace LaGestion.Api.Domain;
 /// <summary>Suivi d'une facture émise par un prestataire.</summary>
 public enum InvoiceStatus
 {
-    /// <summary>Brouillon pré-rempli par l'application, pas encore numéroté.</summary>
-    Draft,
-
-    /// <summary>Numérotée et PDF généré.</summary>
+    /// <summary>Numérotée, PDF généré, pas encore transmise à l'agence.</summary>
     Issued,
 
     /// <summary>Déposée auprès de l'agence.</summary>
@@ -18,7 +15,10 @@ public enum InvoiceStatus
     /// <summary>Payée.</summary>
     Paid,
 
-    /// <summary>Annulée. Jamais supprimée, pour ne pas créer de trou dans la numérotation.</summary>
+    /// <summary>
+    /// Annulée. Jamais supprimée : son numéro reste consommé, sans quoi la
+    /// séquence présenterait un trou.
+    /// </summary>
     Cancelled,
 }
 
@@ -34,17 +34,37 @@ public class Invoice : AgencyOwnedEntity
 {
     public Guid ContractorId { get; set; }
 
-    /// <summary>Numéro affiché, tel que le prestataire le porte sur sa facture.</summary>
-    public string? Number { get; set; }
+    /// <summary>Numéro affiché, préfixe compris. Attribué à l'émission, jamais réécrit.</summary>
+    public required string Number { get; set; }
 
     /// <summary>Rang dans la séquence du prestataire. Unique par prestataire.</summary>
-    public int? SequenceIndex { get; set; }
+    public int SequenceIndex { get; set; }
+
+    // --- Mentions figées à l'émission --------------------------------------
+    // Recopiées et non lues à l'affichage : un prestataire qui déménage ou
+    // corrige son SIRET ne doit pas réécrire les factures déjà transmises.
+
+    public required string IssuerName { get; set; }
+
+    public string? IssuerAddress { get; set; }
+
+    public string? IssuerSiret { get; set; }
+
+    public required string ClientName { get; set; }
+
+    public string? ClientAddress { get; set; }
+
+    public string? ClientSiret { get; set; }
 
     public DateOnly PeriodStart { get; set; }
 
     public DateOnly PeriodEnd { get; set; }
 
-    public DateTimeOffset? IssuedAt { get; set; }
+    public DateTimeOffset IssuedAt { get; set; }
+
+    public DateTimeOffset? SubmittedAt { get; set; }
+
+    public DateTimeOffset? PaidAt { get; set; }
 
     /// <summary>Montant total, en euros.</summary>
     public decimal TotalAmount { get; set; }
@@ -52,7 +72,7 @@ public class Invoice : AgencyOwnedEntity
     /// <summary>Franchise en base de TVA, mention obligatoire sur le PDF.</summary>
     public bool VatExempt { get; set; } = true;
 
-    public InvoiceStatus Status { get; set; } = InvoiceStatus.Draft;
+    public InvoiceStatus Status { get; set; } = InvoiceStatus.Issued;
 
     /// <summary>Clé de stockage du PDF généré.</summary>
     public string? PdfKey { get; set; }
