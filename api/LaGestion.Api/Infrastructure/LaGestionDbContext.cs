@@ -43,6 +43,7 @@ public class LaGestionDbContext : DbContext
     public DbSet<Position> Positions => Set<Position>();
     public DbSet<Assignment> Assignments => Set<Assignment>();
     public DbSet<Timesheet> Timesheets => Set<Timesheet>();
+    public DbSet<MissionRating> MissionRatings => Set<MissionRating>();
     public DbSet<Invoice> Invoices => Set<Invoice>();
     public DbSet<InvoiceLine> InvoiceLines => Set<InvoiceLine>();
     public DbSet<Notification> Notifications => Set<Notification>();

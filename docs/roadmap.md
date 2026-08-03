@@ -78,9 +78,8 @@ On avance dans l'ordre. Une phase = une branche = une validation.
 - [x] Écart heures estimées / réelles
 - [x] Validation par l'admin, avec correction motivée ou contestation
 - [x] Saisie par l'agence quand le prestataire a oublié de déclarer
-- [ ] **Conséquence** : la ponctualité, critère de scoring de la phase 10,
-      n'a plus de source de données. À retrancher de la phase 10 ou à
-      alimenter autrement.
+- [x] **Conséquence traitée en phase 10** : la ponctualité est remplacée par un
+      indicateur de fiabilité, calculé sur les désistements et les non-réponses.
 
 ## Phase 8 — Facturation
 - [x] Sélection des missions validées du mois
@@ -102,7 +101,7 @@ On avance dans l'ordre. Une phase = une branche = une validation.
 - [x] Service de fond hébergé dans l'API : dépile la file toutes les 5 min,
       balaie les rappels une fois par jour
 - [x] Journal des envois côté agence, avec relance d'un envoi abandonné
-- [ ] **Push web reporté à la phase 11**, où le service worker de la PWA sera
+- [ ] **Push web reporté à la phase A11**, où le service worker de la PWA sera
       mis en place. Le faire ici aurait signifié écrire un service worker
       jetable. Rien de critique n'en dépend.
 - [ ] **Reste ouvert** : le service de fond suppose une instance unique. En
@@ -110,8 +109,21 @@ On avance dans l'ordre. Une phase = une branche = une validation.
       des notifications limite la casse mais ne le remplace pas.
 
 ## Phase 10 — Scoring
-- [ ] Ponctualité, taux d'acceptation, retours terrain
-- [ ] Tri des meilleurs profils côté admin
+- [ ] ~~Ponctualité~~ — **sans source de données** depuis l'abandon du
+      pointage. Remplacée par un indicateur de **fiabilité** calculé sur
+      l'existant : désistements après engagement et propositions laissées
+      sans réponse jusqu'à échéance.
+- [x] Taux d'acceptation
+- [x] Retours terrain : appréciation de 1 à 5 avec commentaire, **facultative**,
+      saisie par l'agence sur une prestation terminée
+- [x] Tri des meilleurs profils côté admin, avec le détail qui justifie le score
+- [x] Score calculé à la lecture, jamais stocké — la colonne `contractors.score`,
+      que rien n'avait jamais écrite depuis la phase 1, est supprimée
+- [ ] **Limite connue** : l'annulation d'une mission confirmée ne distingue pas
+      un désistement du prestataire d'une annulation par l'agence. Le calcul
+      utilise l'état de l'événement comme garde-fou — une mission portée par un
+      événement annulé ne pénalise personne — mais l'annulation d'un seul poste
+      sur un événement actif pénalise encore à tort.
 
 ## Phase 11 — PWA
 - [ ] Manifest + installation sur écran d'accueil

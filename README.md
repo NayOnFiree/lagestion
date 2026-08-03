@@ -231,6 +231,47 @@ affiche avant de refermer le formulaire : à l'agence de les prévenir.
 
 ---
 
+## Scoring
+
+Trois indicateurs, **tous calculés à la lecture** — aucun score n'est stocké.
+Un score stocké serait faux entre deux recalculs et obligerait à se souvenir
+de le rafraîchir après chaque événement qui l'affecte.
+
+| Indicateur | Calcul |
+| --- | --- |
+| Acceptation | propositions acceptées ÷ propositions auxquelles le prestataire a répondu |
+| Fiabilité | 1 − (désistements + non-réponses à échéance) ÷ propositions reçues |
+| Note moyenne | moyenne des appréciations, de 1 à 5 |
+
+Le **score sur 100** est la moyenne des seuls indicateurs qui ont des données.
+Un prestataire sans appréciation n'est pas pénalisé pour cette absence : elle
+est ignorée, pas comptée comme un zéro. Un prestataire sans aucun historique
+n'a **pas de score** — ce n'est ni bon ni mauvais.
+
+L'API expose le détail de chaque indicateur, numérateur et dénominateur
+compris : un score doit pouvoir s'expliquer, pas seulement s'afficher.
+
+**La ponctualité n'est pas calculée.** Elle figurait dans la spec, mais rien
+n'enregistre l'heure d'arrivée depuis l'abandon du pointage. La fiabilité la
+remplace : c'est le signal que l'agence cherche vraiment — « puis-je compter
+dessus ».
+
+### Appréciations
+
+Facultatives. L'agence note une prestation terminée de 1 à 5 avec un
+commentaire ; valider des heures n'a jamais exigé de note. Noter à nouveau
+corrige la note précédente au lieu d'en empiler une seconde.
+
+### Limite connue
+
+L'annulation d'une mission confirmée ne distingue pas un désistement du
+prestataire d'une annulation par l'agence. Le calcul utilise l'état de
+l'événement comme garde-fou — une mission portée par un **événement annulé**
+ne pénalise personne — mais annuler un seul poste sur un événement toujours
+actif pénalise encore le prestataire à tort.
+
+---
+
 ## Notifications
 
 **Le mail est le canal fiable et obligatoire.** Le push web est reporté à la

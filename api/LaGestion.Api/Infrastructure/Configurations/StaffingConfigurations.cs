@@ -78,6 +78,32 @@ public sealed class AssignmentConfiguration : EntityConfiguration<Assignment>
     }
 }
 
+public sealed class MissionRatingConfiguration : EntityConfiguration<MissionRating>
+{
+    protected override void ConfigureEntity(EntityTypeBuilder<MissionRating> builder)
+    {
+        builder.Property(r => r.Comment).HasMaxLength(1000);
+
+        // Une appréciation par prestation : réévaluer, c'est corriger la
+        // précédente, pas en empiler une seconde.
+        builder.HasIndex(r => r.AssignmentId).IsUnique();
+
+        builder
+            .HasOne(r => r.Assignment)
+            .WithMany()
+            .HasPrincipalKey(a => new { a.Id, a.AgencyId })
+            .HasForeignKey(r => new { r.AssignmentId, r.AgencyId })
+            .OnDelete(DeleteBehavior.Restrict);
+
+        builder
+            .HasOne(r => r.RatedBy)
+            .WithMany()
+            .HasPrincipalKey(u => new { u.Id, u.AgencyId })
+            .HasForeignKey(r => new { r.RatedByUserId, r.AgencyId })
+            .OnDelete(DeleteBehavior.Restrict);
+    }
+}
+
 public sealed class TimesheetConfiguration : EntityConfiguration<Timesheet>
 {
     protected override void ConfigureEntity(EntityTypeBuilder<Timesheet> builder)

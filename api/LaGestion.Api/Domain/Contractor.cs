@@ -41,9 +41,6 @@ public class Contractor : AgencyOwnedEntity
     /// <summary>Rayon de déplacement accepté, en kilomètres.</summary>
     public int? TravelRadiusKm { get; set; }
 
-    /// <summary>Score de fiabilité, alimenté en phase 10. Nul tant qu'aucun retour n'existe.</summary>
-    public decimal? Score { get; set; }
-
     /// <summary>
     /// Préfixe de numérotation, tel que le prestataire l'utilise déjà.
     /// Exemple : « F2026- ».

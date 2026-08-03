@@ -710,6 +710,171 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/network": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description OK */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["NetworkContractor"][];
+                        "application/json": components["schemas"]["NetworkContractor"][];
+                        "text/json": components["schemas"]["NetworkContractor"][];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/network/{contractorId}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    contractorId: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description OK */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["ContractorProfileDetail"];
+                        "application/json": components["schemas"]["ContractorProfileDetail"];
+                        "text/json": components["schemas"]["ContractorProfileDetail"];
+                    };
+                };
+                /** @description Not Found */
+                404: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["ProblemDetails"];
+                        "application/json": components["schemas"]["ProblemDetails"];
+                        "text/json": components["schemas"]["ProblemDetails"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/network/assignments/{assignmentId}/rating": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    assignmentId: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["RateMissionRequest"];
+                    "text/json": components["schemas"]["RateMissionRequest"];
+                    "application/*+json": components["schemas"]["RateMissionRequest"];
+                };
+            };
+            responses: {
+                /** @description OK */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["MissionRatingView"];
+                        "application/json": components["schemas"]["MissionRatingView"];
+                        "text/json": components["schemas"]["MissionRatingView"];
+                    };
+                };
+                /** @description Bad Request */
+                400: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["ProblemDetails"];
+                        "application/json": components["schemas"]["ProblemDetails"];
+                        "text/json": components["schemas"]["ProblemDetails"];
+                    };
+                };
+                /** @description Not Found */
+                404: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["ProblemDetails"];
+                        "application/json": components["schemas"]["ProblemDetails"];
+                        "text/json": components["schemas"]["ProblemDetails"];
+                    };
+                };
+                /** @description Conflict */
+                409: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/plain": components["schemas"]["ProblemDetails"];
+                        "application/json": components["schemas"]["ProblemDetails"];
+                        "text/json": components["schemas"]["ProblemDetails"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/me/hours": {
         parameters: {
             query?: never;
@@ -3200,6 +3365,23 @@ export interface components {
             nextInvoiceSequence: number;
             numberingLocked: boolean;
         };
+        ContractorProfileDetail: {
+            contractor: components["schemas"]["NetworkContractor"];
+            ratings: components["schemas"]["MissionRatingView"][];
+            unrated: components["schemas"]["MissionRatingView"][];
+        };
+        ContractorScore: {
+            /** Format: int32 */
+            score: null | number;
+            acceptance: components["schemas"]["Indicator"];
+            reliability: components["schemas"]["Indicator"];
+            /** Format: double */
+            averageRating: null | number;
+            /** Format: int32 */
+            ratingCount: number;
+            /** Format: int32 */
+            completedMissions: number;
+        };
         DeclareAvailabilityRequest: {
             /** Format: date */
             date: string;
@@ -3313,6 +3495,14 @@ export interface components {
         };
         /** Format: binary */
         IFormFile: string;
+        Indicator: {
+            /** Format: double */
+            value: null | number;
+            /** Format: int32 */
+            numerator: number;
+            /** Format: int32 */
+            denominator: number;
+        };
         InvoiceDraft: {
             /** Format: date */
             periodStart: string;
@@ -3412,6 +3602,19 @@ export interface components {
             /** Format: date-time */
             respondedAt: null | string;
         };
+        MissionRatingView: {
+            /** Format: uuid */
+            assignmentId: string;
+            eventTitle: string;
+            positionLabel: string;
+            /** Format: date-time */
+            startsAt: string;
+            /** Format: int32 */
+            rating: number;
+            comment: null | string;
+            /** Format: date-time */
+            ratedAt: string;
+        };
         MonthCalendar: {
             /** Format: int32 */
             year: number;
@@ -3427,6 +3630,18 @@ export interface components {
             plannedHours: number;
             /** Format: double */
             estimatedAmount: number;
+        };
+        NetworkContractor: {
+            /** Format: uuid */
+            contractorId: string;
+            name: string;
+            email: string;
+            baseCity: null | string;
+            skills: string[];
+            /** Format: double */
+            defaultHourlyRate: null | number;
+            dossierComplete: boolean;
+            score: components["schemas"]["ContractorScore"];
         };
         NotificationEntry: {
             /** Format: uuid */
@@ -3490,6 +3705,11 @@ export interface components {
             contractorIds: string[];
             /** Format: date-time */
             responseDeadline: null | string;
+        };
+        RateMissionRequest: {
+            /** Format: int32 */
+            rating: number;
+            comment: null | string;
         };
         RecordHoursRequest: {
             /** Format: uuid */
