@@ -101,9 +101,9 @@ On avance dans l'ordre. Une phase = une branche = une validation.
 - [x] Service de fond hébergé dans l'API : dépile la file toutes les 5 min,
       balaie les rappels une fois par jour
 - [x] Journal des envois côté agence, avec relance d'un envoi abandonné
-- [ ] **Push web reporté à la phase A11**, où le service worker de la PWA sera
-      mis en place. Le faire ici aurait signifié écrire un service worker
-      jetable. Rien de critique n'en dépend.
+- [ ] ~~Push web~~ — **abandonné** avec la phase 11, qui devait apporter le
+      service worker dont il dépend. Le mail reste le canal unique, ce qui est
+      de toute façon la règle : rien de critique ne reposait sur le push.
 - [ ] **Reste ouvert** : le service de fond suppose une instance unique. En
       cas de montée en charge, il faudra un verrou partagé — la clé d'unicité
       des notifications limite la casse mais ne le remplace pas.
@@ -125,6 +125,24 @@ On avance dans l'ordre. Une phase = une branche = une validation.
       événement annulé ne pénalise personne — mais l'annulation d'un seul poste
       sur un événement actif pénalise encore à tort.
 
-## Phase 11 — PWA
-- [ ] Manifest + installation sur écran d'accueil
-- [ ] Fiche mission consultable hors ligne
+## Phase 11 — PWA — **abandonnée** le 2026-08-03
+- [ ] ~~Manifest + installation sur écran d'accueil~~
+- [ ] ~~Fiche mission consultable hors ligne~~
+
+Décision prise en connaissance de cause : une application web *fonctionne*
+hors ligne dès qu'elle a un service worker, et le push web *fonctionne*, y
+compris sur iOS 16.4+ pour une application ajoutée à l'écran d'accueil. Rien
+ne l'empêchait techniquement.
+
+Conséquences à connaître :
+
+- L'application reste inutilisable sans réseau. Or `product.md` décrit un
+  prestataire qui l'ouvre « sur un parking, avec un réseau moyen » : c'est
+  précisément ce cas qui n'est pas couvert.
+- Pas d'installation sur écran d'accueil : `app/` s'ouvre dans un onglet de
+  navigateur, avec sa barre d'adresse.
+- Le push web est abandonné avec elle. Le mail reste le canal unique — ce qui
+  est cohérent avec `CLAUDE.md`, où il est de toute façon le seul canal
+  obligatoire.
+
+À rouvrir si le terrain remonte des difficultés de connexion.
