@@ -154,9 +154,39 @@ public sealed class DevelopmentSeeder(
                 RespondedAt = proposedAt.AddHours(9),
             });
 
-        // Quelques disponibilités déclarées, pour que le calendrier ne soit pas
-        // vide à la première ouverture.
-        var firstOfMonth = DateOnly.FromDateTime(timeProvider.GetUtcNow().UtcDateTime).AddDays(1);
+        // Référentiel de compétences, propre à l'agence.
+        var skills = new[] { "Barman", "Accueil", "Manutention", "Régie" }
+            .Select(name => new Skill { AgencyId = DemoAgencyId, Name = name })
+            .ToArray();
+
+        db.Skills.AddRange(skills);
+
+        // Chacun sa spécialité, avec un recouvrement : sans ça le filtre par
+        // compétence ne se distingue pas de l'absence de filtre.
+        var skillsByContractor = new[]
+        {
+            (Contractor: Contractors[0].ContractorId, Names: new[] { "Barman", "Accueil" }),
+            (Contractor: Contractors[1].ContractorId, Names: new[] { "Accueil", "Manutention" }),
+            (Contractor: Contractors[2].ContractorId, Names: new[] { "Régie", "Manutention" }),
+        };
+
+        foreach (var (contractorId, names) in skillsByContractor)
+        {
+            foreach (var name in names)
+            {
+                db.ContractorSkills.Add(new ContractorSkill
+                {
+                    AgencyId = DemoAgencyId,
+                    ContractorId = contractorId,
+                    SkillId = skills.First(s => s.Name == name).Id,
+                });
+            }
+        }
+
+        // Disponibilités : quelques jours proches pour le calendrier, et les
+        // jours de l'événement pour que la recherche de candidats renvoie
+        // quelque chose dès le premier lancement.
+        var tomorrow = DateOnly.FromDateTime(timeProvider.GetUtcNow().UtcDateTime).AddDays(1);
 
         foreach (var offset in new[] { 0, 1, 2, 6, 7, 8 })
         {
@@ -164,9 +194,29 @@ public sealed class DevelopmentSeeder(
             {
                 AgencyId = DemoAgencyId,
                 ContractorId = Contractors[0].ContractorId,
-                Date = firstOfMonth.AddDays(offset),
+                Date = tomorrow.AddDays(offset),
                 Status = offset % 3 == 2 ? AvailabilityStatus.Unavailable : AvailabilityStatus.Available,
             });
+        }
+
+        var eventDays = new[]
+        {
+            DateOnly.FromDateTime(startsAt.UtcDateTime),
+            DateOnly.FromDateTime(startsAt.AddHours(6).UtcDateTime),
+        }.Distinct();
+
+        foreach (var day in eventDays)
+        {
+            foreach (var contractor in Contractors)
+            {
+                db.Availabilities.Add(new Availability
+                {
+                    AgencyId = DemoAgencyId,
+                    ContractorId = contractor.ContractorId,
+                    Date = day,
+                    Status = AvailabilityStatus.Available,
+                });
+            }
         }
 
         await db.SaveChangesAsync(cancellationToken);

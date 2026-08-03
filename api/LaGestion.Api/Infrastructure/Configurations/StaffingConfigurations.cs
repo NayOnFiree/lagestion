@@ -50,8 +50,12 @@ public sealed class AssignmentConfiguration : EntityConfiguration<Assignment>
     {
         builder.Property(a => a.Status).HasConversion<string>().HasMaxLength(20).IsRequired();
 
-        // Un prestataire n'est sollicité qu'une fois par poste.
-        builder.HasIndex(a => new { a.PositionId, a.ContractorId }).IsUnique();
+        // Index non unique, volontairement : un prestataire qui a refusé ou
+        // s'est désisté peut être resollicité sur le même poste, et les deux
+        // propositions doivent rester lisibles. L'unicité porte sur les
+        // propositions *en cours*, que le code fait respecter — la base ne
+        // sait pas exprimer « au plus une ligne parmi ces statuts ».
+        builder.HasIndex(a => new { a.PositionId, a.ContractorId });
 
         // « Mes missions », côté prestataire.
         builder.HasIndex(a => new { a.ContractorId, a.Status });
