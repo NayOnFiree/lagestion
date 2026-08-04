@@ -11,7 +11,12 @@ dist/
 
 # --- Pièces justificatives déposées en local ---
 # Les fichiers vivent hors base et hors dépôt : seule leur clé est persistée.
-storage/
+#
+# La barre oblique initiale est indispensable : sans elle le motif s'applique à
+# toute profondeur, et comme git est insensible à la casse sous Windows, il
+# attrapait aussi api/LaGestion.Api/Infrastructure/Storage/ — du code source,
+# silencieusement exclu du dépôt.
+/storage/
 
 # --- Environnement local ---
 # Les .env contiennent des URLs et éventuellement des secrets : seuls les
